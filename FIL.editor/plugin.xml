@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated fIL -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="fIL.presentation.FILModelWizardID"
+            name="%_UI_FILModelWizard_label"
+            class="fIL.presentation.FILModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FILModelFile.gif">
+         <description>%_UI_FILModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated fIL -->
+      <editor
+            id="fIL.presentation.FILEditorID"
+            name="%_UI_FILEditor_label"
+            icon="icons/full/obj16/FILModelFile.gif"
+            extensions="fil"
+            class="fIL.presentation.FILEditor"
+            contributorClass="fIL.presentation.FILActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
