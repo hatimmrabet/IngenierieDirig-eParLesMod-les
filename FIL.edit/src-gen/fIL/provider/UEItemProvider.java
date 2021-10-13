@@ -57,6 +57,8 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 
 			addNomPropertyDescriptor(object);
 			addPseudoPropertyDescriptor(object);
+			addEnseignantsPropertyDescriptor(object);
+			addResponsablePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,6 +91,34 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 						getString("_UI_PropertyDescriptor_description", "_UI_UE_pseudo_feature", "_UI_UE_type"),
 						FILPackage.Literals.UE__PSEUDO, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 						null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Enseignants feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEnseignantsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_UE_enseignants_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_UE_enseignants_feature", "_UI_UE_type"),
+						FILPackage.Literals.UE__ENSEIGNANTS, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Responsable feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResponsablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_UE_responsable_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_UE_responsable_feature", "_UI_UE_type"),
+						FILPackage.Literals.UE__RESPONSABLE, true, false, true, null, null, null));
 	}
 
 	/**
@@ -209,6 +239,12 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 
 		newChildDescriptors.add(
 				createChildParameter(FILPackage.Literals.UE__INTERVENANT, FILFactory.eINSTANCE.createIntervenant()));
+
+		newChildDescriptors.add(
+				createChildParameter(FILPackage.Literals.UE__INTERVENANT, FILFactory.eINSTANCE.createResponsable()));
+
+		newChildDescriptors.add(
+				createChildParameter(FILPackage.Literals.UE__INTERVENANT, FILFactory.eINSTANCE.createEnseignant()));
 	}
 
 	/**

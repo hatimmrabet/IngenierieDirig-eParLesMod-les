@@ -142,6 +142,24 @@ public class FILSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case FILPackage.RESPONSABLE: {
+			Responsable responsable = (Responsable) theEObject;
+			T result = caseResponsable(responsable);
+			if (result == null)
+				result = caseIntervenant(responsable);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case FILPackage.ENSEIGNANT: {
+			Enseignant enseignant = (Enseignant) theEObject;
+			T result = caseEnseignant(enseignant);
+			if (result == null)
+				result = caseIntervenant(enseignant);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -294,6 +312,36 @@ public class FILSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFaculte(Faculte object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Responsable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Responsable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseResponsable(Responsable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Enseignant</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Enseignant</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnseignant(Enseignant object) {
 		return null;
 	}
 

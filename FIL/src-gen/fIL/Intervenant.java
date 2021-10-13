@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fIL.Intervenant#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.Intervenant#getPrenom <em>Prenom</em>}</li>
- *   <li>{@link fIL.Intervenant#getStatut <em>Statut</em>}</li>
  * </ul>
  *
  * @see fIL.FILPackage#getIntervenant()
@@ -66,27 +65,5 @@ public interface Intervenant extends EObject {
 	 * @generated
 	 */
 	void setPrenom(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Statut</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Statut</em>' attribute.
-	 * @see #setStatut(String)
-	 * @see fIL.FILPackage#getIntervenant_Statut()
-	 * @model
-	 * @generated
-	 */
-	String getStatut();
-
-	/**
-	 * Sets the value of the '{@link fIL.Intervenant#getStatut <em>Statut</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Statut</em>' attribute.
-	 * @see #getStatut()
-	 * @generated
-	 */
-	void setStatut(String value);
 
 } // Intervenant

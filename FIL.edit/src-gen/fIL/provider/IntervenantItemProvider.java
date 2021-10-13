@@ -55,7 +55,6 @@ public class IntervenantItemProvider extends ItemProviderAdapter implements IEdi
 
 			addNomPropertyDescriptor(object);
 			addPrenomPropertyDescriptor(object);
-			addStatutPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,22 +88,6 @@ public class IntervenantItemProvider extends ItemProviderAdapter implements IEdi
 						getString("_UI_PropertyDescriptor_description", "_UI_Intervenant_prenom_feature",
 								"_UI_Intervenant_type"),
 						FILPackage.Literals.INTERVENANT__PRENOM, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Statut feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStatutPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Intervenant_statut_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Intervenant_statut_feature",
-								"_UI_Intervenant_type"),
-						FILPackage.Literals.INTERVENANT__STATUT, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -156,7 +139,6 @@ public class IntervenantItemProvider extends ItemProviderAdapter implements IEdi
 		switch (notification.getFeatureID(Intervenant.class)) {
 		case FILPackage.INTERVENANT__NOM:
 		case FILPackage.INTERVENANT__PRENOM:
-		case FILPackage.INTERVENANT__STATUT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

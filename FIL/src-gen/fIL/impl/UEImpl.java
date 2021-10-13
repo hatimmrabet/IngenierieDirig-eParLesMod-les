@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -34,6 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fIL.impl.UEImpl#getDocuments <em>Documents</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getPresentation <em>Presentation</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getIntervenant <em>Intervenant</em>}</li>
+ *   <li>{@link fIL.impl.UEImpl#getEnseignants <em>Enseignants</em>}</li>
+ *   <li>{@link fIL.impl.UEImpl#getResponsable <em>Responsable</em>}</li>
  * </ul>
  *
  * @generated
@@ -108,6 +111,26 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	 * @ordered
 	 */
 	protected EList<Intervenant> intervenant;
+
+	/**
+	 * The cached value of the '{@link #getEnseignants() <em>Enseignants</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnseignants()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Intervenant> enseignants;
+
+	/**
+	 * The cached value of the '{@link #getResponsable() <em>Responsable</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResponsable()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Intervenant> responsable;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,6 +272,30 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Intervenant> getEnseignants() {
+		if (enseignants == null) {
+			enseignants = new EObjectResolvingEList<Intervenant>(Intervenant.class, this, FILPackage.UE__ENSEIGNANTS);
+		}
+		return enseignants;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Intervenant> getResponsable() {
+		if (responsable == null) {
+			responsable = new EObjectResolvingEList<Intervenant>(Intervenant.class, this, FILPackage.UE__RESPONSABLE);
+		}
+		return responsable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -280,6 +327,10 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return getPresentation();
 		case FILPackage.UE__INTERVENANT:
 			return getIntervenant();
+		case FILPackage.UE__ENSEIGNANTS:
+			return getEnseignants();
+		case FILPackage.UE__RESPONSABLE:
+			return getResponsable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -310,6 +361,14 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			getIntervenant().clear();
 			getIntervenant().addAll((Collection<? extends Intervenant>) newValue);
 			return;
+		case FILPackage.UE__ENSEIGNANTS:
+			getEnseignants().clear();
+			getEnseignants().addAll((Collection<? extends Intervenant>) newValue);
+			return;
+		case FILPackage.UE__RESPONSABLE:
+			getResponsable().clear();
+			getResponsable().addAll((Collection<? extends Intervenant>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -337,6 +396,12 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 		case FILPackage.UE__INTERVENANT:
 			getIntervenant().clear();
 			return;
+		case FILPackage.UE__ENSEIGNANTS:
+			getEnseignants().clear();
+			return;
+		case FILPackage.UE__RESPONSABLE:
+			getResponsable().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -359,6 +424,10 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return presentation != null;
 		case FILPackage.UE__INTERVENANT:
 			return intervenant != null && !intervenant.isEmpty();
+		case FILPackage.UE__ENSEIGNANTS:
+			return enseignants != null && !enseignants.isEmpty();
+		case FILPackage.UE__RESPONSABLE:
+			return responsable != null && !responsable.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

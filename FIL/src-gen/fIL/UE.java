@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fIL.UE#getDocuments <em>Documents</em>}</li>
  *   <li>{@link fIL.UE#getPresentation <em>Presentation</em>}</li>
  *   <li>{@link fIL.UE#getIntervenant <em>Intervenant</em>}</li>
+ *   <li>{@link fIL.UE#getEnseignants <em>Enseignants</em>}</li>
+ *   <li>{@link fIL.UE#getResponsable <em>Responsable</em>}</li>
  * </ul>
  *
  * @see fIL.FILPackage#getUE()
@@ -115,5 +117,29 @@ public interface UE extends EObject {
 	 * @generated
 	 */
 	EList<Intervenant> getIntervenant();
+
+	/**
+	 * Returns the value of the '<em><b>Enseignants</b></em>' reference list.
+	 * The list contents are of type {@link fIL.Intervenant}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Enseignants</em>' reference list.
+	 * @see fIL.FILPackage#getUE_Enseignants()
+	 * @model
+	 * @generated
+	 */
+	EList<Intervenant> getEnseignants();
+
+	/**
+	 * Returns the value of the '<em><b>Responsable</b></em>' reference list.
+	 * The list contents are of type {@link fIL.Intervenant}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Responsable</em>' reference list.
+	 * @see fIL.FILPackage#getUE_Responsable()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<Intervenant> getResponsable();
 
 } // UE

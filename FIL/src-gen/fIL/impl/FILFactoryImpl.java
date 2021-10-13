@@ -75,6 +75,10 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 			return createPresentation();
 		case FILPackage.FACULTE:
 			return createFaculte();
+		case FILPackage.RESPONSABLE:
+			return createResponsable();
+		case FILPackage.ENSEIGNANT:
+			return createEnseignant();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -128,6 +132,26 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 	public Faculte createFaculte() {
 		FaculteImpl faculte = new FaculteImpl();
 		return faculte;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Responsable createResponsable() {
+		ResponsableImpl responsable = new ResponsableImpl();
+		return responsable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enseignant createEnseignant() {
+		EnseignantImpl enseignant = new EnseignantImpl();
+		return enseignant;
 	}
 
 	/**

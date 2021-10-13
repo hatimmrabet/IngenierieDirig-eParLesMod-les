@@ -4,6 +4,7 @@ package fIL.impl;
 
 import fIL.Audio;
 import fIL.Documents;
+import fIL.Enseignant;
 import fIL.FILFactory;
 import fIL.FILPackage;
 import fIL.Faculte;
@@ -12,6 +13,7 @@ import fIL.Formation;
 import fIL.Intervenant;
 import fIL.Niveau;
 import fIL.Presentation;
+import fIL.Responsable;
 import fIL.Video;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -61,6 +63,20 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * @generated
 	 */
 	private EClass faculteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass responsableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass enseignantEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -274,6 +290,24 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getUE_Enseignants() {
+		return (EReference) ueEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUE_Responsable() {
+		return (EReference) ueEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAudio() {
 		return audioEClass;
 	}
@@ -346,6 +380,24 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getResponsable() {
+		return responsableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEnseignant() {
+		return enseignantEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNiveau() {
 		return niveauEClass;
 	}
@@ -402,15 +454,6 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 */
 	public EAttribute getIntervenant_Prenom() {
 		return (EAttribute) intervenantEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIntervenant_Statut() {
-		return (EAttribute) intervenantEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -536,6 +579,8 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		createEReference(ueEClass, UE__DOCUMENTS);
 		createEReference(ueEClass, UE__PRESENTATION);
 		createEReference(ueEClass, UE__INTERVENANT);
+		createEReference(ueEClass, UE__ENSEIGNANTS);
+		createEReference(ueEClass, UE__RESPONSABLE);
 
 		niveauEClass = createEClass(NIVEAU);
 		createEAttribute(niveauEClass, NIVEAU__NOM);
@@ -545,7 +590,6 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		intervenantEClass = createEClass(INTERVENANT);
 		createEAttribute(intervenantEClass, INTERVENANT__NOM);
 		createEAttribute(intervenantEClass, INTERVENANT__PRENOM);
-		createEAttribute(intervenantEClass, INTERVENANT__STATUT);
 
 		documentsEClass = createEClass(DOCUMENTS);
 		createEAttribute(documentsEClass, DOCUMENTS__NOM);
@@ -569,6 +613,10 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		faculteEClass = createEClass(FACULTE);
 		createEAttribute(faculteEClass, FACULTE__NOM);
 		createEReference(faculteEClass, FACULTE__NIVEAU);
+
+		responsableEClass = createEClass(RESPONSABLE);
+
+		enseignantEClass = createEClass(ENSEIGNANT);
 	}
 
 	/**
@@ -603,6 +651,8 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		videoEClass.getESuperTypes().add(this.getDocuments());
 		fichierEClass.getESuperTypes().add(this.getDocuments());
 		audioEClass.getESuperTypes().add(this.getDocuments());
+		responsableEClass.getESuperTypes().add(this.getIntervenant());
+		enseignantEClass.getESuperTypes().add(this.getIntervenant());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(formationEClass, Formation.class, "Formation", !IS_ABSTRACT, !IS_INTERFACE,
@@ -635,6 +685,12 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		initEReference(getUE_Intervenant(), this.getIntervenant(), null, "intervenant", null, 1, -1, fIL.UE.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUE_Enseignants(), this.getIntervenant(), null, "enseignants", null, 0, -1, fIL.UE.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUE_Responsable(), this.getIntervenant(), null, "responsable", null, 1, -1, fIL.UE.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(niveauEClass, Niveau.class, "Niveau", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNiveau_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Niveau.class, !IS_TRANSIENT,
@@ -650,8 +706,6 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		initEAttribute(getIntervenant_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Intervenant.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntervenant_Prenom(), ecorePackage.getEString(), "prenom", null, 0, 1, Intervenant.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIntervenant_Statut(), ecorePackage.getEString(), "statut", null, 0, 1, Intervenant.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentsEClass, Documents.class, "Documents", !IS_ABSTRACT, !IS_INTERFACE,
@@ -692,6 +746,12 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		initEReference(getFaculte_Niveau(), this.getNiveau(), null, "niveau", null, 1, -1, Faculte.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		initEClass(responsableEClass, Responsable.class, "Responsable", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(enseignantEClass, Enseignant.class, "Enseignant", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

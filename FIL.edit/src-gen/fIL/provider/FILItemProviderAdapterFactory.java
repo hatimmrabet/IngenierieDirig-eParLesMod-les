@@ -188,6 +188,52 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fIL.Responsable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ResponsableItemProvider responsableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fIL.Responsable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createResponsableAdapter() {
+		if (responsableItemProvider == null) {
+			responsableItemProvider = new ResponsableItemProvider(this);
+		}
+
+		return responsableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fIL.Enseignant} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnseignantItemProvider enseignantItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fIL.Enseignant}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnseignantAdapter() {
+		if (enseignantItemProvider == null) {
+			enseignantItemProvider = new EnseignantItemProvider(this);
+		}
+
+		return enseignantItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link fIL.Niveau} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -421,6 +467,10 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 			presentationItemProvider.dispose();
 		if (faculteItemProvider != null)
 			faculteItemProvider.dispose();
+		if (responsableItemProvider != null)
+			responsableItemProvider.dispose();
+		if (enseignantItemProvider != null)
+			enseignantItemProvider.dispose();
 	}
 
 }

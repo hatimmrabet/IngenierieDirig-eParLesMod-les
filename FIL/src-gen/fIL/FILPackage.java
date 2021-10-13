@@ -185,13 +185,31 @@ public interface FILPackage extends EPackage {
 	int UE__INTERVENANT = 4;
 
 	/**
+	 * The feature id for the '<em><b>Enseignants</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UE__ENSEIGNANTS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Responsable</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UE__RESPONSABLE = 6;
+
+	/**
 	 * The number of structural features of the '<em>UE</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UE_FEATURE_COUNT = 5;
+	int UE_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>UE</em>' class.
@@ -326,22 +344,13 @@ public interface FILPackage extends EPackage {
 	int INTERVENANT__PRENOM = 1;
 
 	/**
-	 * The feature id for the '<em><b>Statut</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERVENANT__STATUT = 2;
-
-	/**
 	 * The number of structural features of the '<em>Intervenant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVENANT_FEATURE_COUNT = 3;
+	int INTERVENANT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Intervenant</em>' class.
@@ -661,6 +670,98 @@ public interface FILPackage extends EPackage {
 	int FACULTE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link fIL.impl.ResponsableImpl <em>Responsable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fIL.impl.ResponsableImpl
+	 * @see fIL.impl.FILPackageImpl#getResponsable()
+	 * @generated
+	 */
+	int RESPONSABLE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSABLE__NOM = INTERVENANT__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Prenom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSABLE__PRENOM = INTERVENANT__PRENOM;
+
+	/**
+	 * The number of structural features of the '<em>Responsable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSABLE_FEATURE_COUNT = INTERVENANT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Responsable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSABLE_OPERATION_COUNT = INTERVENANT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fIL.impl.EnseignantImpl <em>Enseignant</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fIL.impl.EnseignantImpl
+	 * @see fIL.impl.FILPackageImpl#getEnseignant()
+	 * @generated
+	 */
+	int ENSEIGNANT = 11;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSEIGNANT__NOM = INTERVENANT__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Prenom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSEIGNANT__PRENOM = INTERVENANT__PRENOM;
+
+	/**
+	 * The number of structural features of the '<em>Enseignant</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSEIGNANT_FEATURE_COUNT = INTERVENANT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Enseignant</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENSEIGNANT_OPERATION_COUNT = INTERVENANT_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link fIL.Formation <em>Formation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -791,6 +892,28 @@ public interface FILPackage extends EPackage {
 	EReference getUE_Intervenant();
 
 	/**
+	 * Returns the meta object for the reference list '{@link fIL.UE#getEnseignants <em>Enseignants</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Enseignants</em>'.
+	 * @see fIL.UE#getEnseignants()
+	 * @see #getUE()
+	 * @generated
+	 */
+	EReference getUE_Enseignants();
+
+	/**
+	 * Returns the meta object for the reference list '{@link fIL.UE#getResponsable <em>Responsable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Responsable</em>'.
+	 * @see fIL.UE#getResponsable()
+	 * @see #getUE()
+	 * @generated
+	 */
+	EReference getUE_Responsable();
+
+	/**
 	 * Returns the meta object for class '{@link fIL.Audio <em>Audio</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -876,6 +999,26 @@ public interface FILPackage extends EPackage {
 	EReference getFaculte_Niveau();
 
 	/**
+	 * Returns the meta object for class '{@link fIL.Responsable <em>Responsable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Responsable</em>'.
+	 * @see fIL.Responsable
+	 * @generated
+	 */
+	EClass getResponsable();
+
+	/**
+	 * Returns the meta object for class '{@link fIL.Enseignant <em>Enseignant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Enseignant</em>'.
+	 * @see fIL.Enseignant
+	 * @generated
+	 */
+	EClass getEnseignant();
+
+	/**
 	 * Returns the meta object for class '{@link fIL.Niveau <em>Niveau</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -949,17 +1092,6 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getIntervenant_Prenom();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fIL.Intervenant#getStatut <em>Statut</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Statut</em>'.
-	 * @see fIL.Intervenant#getStatut()
-	 * @see #getIntervenant()
-	 * @generated
-	 */
-	EAttribute getIntervenant_Statut();
 
 	/**
 	 * Returns the meta object for class '{@link fIL.Documents <em>Documents</em>}'.
@@ -1181,6 +1313,22 @@ public interface FILPackage extends EPackage {
 		EReference UE__INTERVENANT = eINSTANCE.getUE_Intervenant();
 
 		/**
+		 * The meta object literal for the '<em><b>Enseignants</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UE__ENSEIGNANTS = eINSTANCE.getUE_Enseignants();
+
+		/**
+		 * The meta object literal for the '<em><b>Responsable</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UE__RESPONSABLE = eINSTANCE.getUE_Responsable();
+
+		/**
 		 * The meta object literal for the '{@link fIL.impl.AudioImpl <em>Audio</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1251,6 +1399,26 @@ public interface FILPackage extends EPackage {
 		EReference FACULTE__NIVEAU = eINSTANCE.getFaculte_Niveau();
 
 		/**
+		 * The meta object literal for the '{@link fIL.impl.ResponsableImpl <em>Responsable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fIL.impl.ResponsableImpl
+		 * @see fIL.impl.FILPackageImpl#getResponsable()
+		 * @generated
+		 */
+		EClass RESPONSABLE = eINSTANCE.getResponsable();
+
+		/**
+		 * The meta object literal for the '{@link fIL.impl.EnseignantImpl <em>Enseignant</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fIL.impl.EnseignantImpl
+		 * @see fIL.impl.FILPackageImpl#getEnseignant()
+		 * @generated
+		 */
+		EClass ENSEIGNANT = eINSTANCE.getEnseignant();
+
+		/**
 		 * The meta object literal for the '{@link fIL.impl.NiveauImpl <em>Niveau</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1309,14 +1477,6 @@ public interface FILPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INTERVENANT__PRENOM = eINSTANCE.getIntervenant_Prenom();
-
-		/**
-		 * The meta object literal for the '<em><b>Statut</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INTERVENANT__STATUT = eINSTANCE.getIntervenant_Statut();
 
 		/**
 		 * The meta object literal for the '{@link fIL.impl.DocumentsImpl <em>Documents</em>}' class.

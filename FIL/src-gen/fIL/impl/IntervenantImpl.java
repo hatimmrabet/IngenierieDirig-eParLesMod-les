@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link fIL.impl.IntervenantImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.impl.IntervenantImpl#getPrenom <em>Prenom</em>}</li>
- *   <li>{@link fIL.impl.IntervenantImpl#getStatut <em>Statut</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,26 +63,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 	 * @ordered
 	 */
 	protected String prenom = PRENOM_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getStatut() <em>Statut</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatut()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String STATUT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStatut() <em>Statut</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStatut()
-	 * @generated
-	 * @ordered
-	 */
-	protected String statut = STATUT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,27 +130,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getStatut() {
-		return statut;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStatut(String newStatut) {
-		String oldStatut = statut;
-		statut = newStatut;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.INTERVENANT__STATUT, oldStatut, statut));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -179,8 +137,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 			return getNom();
 		case FILPackage.INTERVENANT__PRENOM:
 			return getPrenom();
-		case FILPackage.INTERVENANT__STATUT:
-			return getStatut();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -200,9 +156,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 		case FILPackage.INTERVENANT__PRENOM:
 			setPrenom((String) newValue);
 			return;
-		case FILPackage.INTERVENANT__STATUT:
-			setStatut((String) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -221,9 +174,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 		case FILPackage.INTERVENANT__PRENOM:
 			setPrenom(PRENOM_EDEFAULT);
 			return;
-		case FILPackage.INTERVENANT__STATUT:
-			setStatut(STATUT_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -240,8 +190,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 		case FILPackage.INTERVENANT__PRENOM:
 			return PRENOM_EDEFAULT == null ? prenom != null : !PRENOM_EDEFAULT.equals(prenom);
-		case FILPackage.INTERVENANT__STATUT:
-			return STATUT_EDEFAULT == null ? statut != null : !STATUT_EDEFAULT.equals(statut);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -261,8 +209,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 		result.append(nom);
 		result.append(", prenom: ");
 		result.append(prenom);
-		result.append(", statut: ");
-		result.append(statut);
 		result.append(')');
 		return result.toString();
 	}

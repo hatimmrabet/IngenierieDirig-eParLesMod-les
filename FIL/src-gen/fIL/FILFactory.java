@@ -67,6 +67,24 @@ public interface FILFactory extends EFactory {
 	Faculte createFaculte();
 
 	/**
+	 * Returns a new object of class '<em>Responsable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Responsable</em>'.
+	 * @generated
+	 */
+	Responsable createResponsable();
+
+	/**
+	 * Returns a new object of class '<em>Enseignant</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enseignant</em>'.
+	 * @generated
+	 */
+	Enseignant createEnseignant();
+
+	/**
 	 * Returns a new object of class '<em>Niveau</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

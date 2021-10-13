@@ -204,6 +204,12 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 
 		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__INTERVENANT,
 				FILFactory.eINSTANCE.createIntervenant()));
+
+		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__INTERVENANT,
+				FILFactory.eINSTANCE.createResponsable()));
+
+		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__INTERVENANT,
+				FILFactory.eINSTANCE.createEnseignant()));
 	}
 
 	/**

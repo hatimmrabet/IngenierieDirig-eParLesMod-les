@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fIL:Faculte xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fIL="http://www.example.org/fIL" nom="de science">
-  <niveau nom="master 1 " pseudo="m1">
-    <formation nom="genie logiicicel" pseudo="hl">
-      <presentation/>
-      <intervenant nom="hatim" prenom="mrabet" statut="mm"/>
-    </formation>
-    <formation nom="machinelearning" pseudo="ml">
-      <intervenant nom="hatim" prenom="mrabet" statut="elkhomssi"/>
+<fIL:Faculte xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fIL="http://www.example.org/fIL" nom="science">
+  <niveau>
+    <formation>
+      <ues nom="idm" enseignants="//@niveau.0/@formation.0/@ues.1/@intervenant.0 //@niveau.0/@formation.0/@ues.0/@intervenant.0" responsable="//@niveau.0/@formation.0/@ues.1/@intervenant.1">
+        <intervenant xsi:type="fIL:Responsable" nom="hatim"/>
+        <intervenant xsi:type="fIL:Enseignant" nom="hetim"/>
+      </ues>
+      <ues nom="sd" enseignants="//@niveau.0/@formation.0/@ues.0/@intervenant.0">
+        <intervenant xsi:type="fIL:Enseignant" nom="hihi"/>
+        <intervenant nom="jjjj"/>
+      </ues>
+      <intervenant nom="hg,jh"/>
     </formation>
   </niveau>
 </fIL:Faculte>
