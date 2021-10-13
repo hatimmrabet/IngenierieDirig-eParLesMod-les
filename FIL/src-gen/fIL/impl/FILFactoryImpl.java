@@ -59,18 +59,22 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 			return createFormation();
 		case FILPackage.UE:
 			return createUE();
-		case FILPackage.ENSEIGNANT:
-			return createEnseignant();
-		case FILPackage.PRESENTATION:
-			return createPresentation();
-		case FILPackage.CONTACT:
-			return createContact();
-		case FILPackage.ARTICLE:
-			return createArticle();
-		case FILPackage.INFORMATION:
-			return createInformation();
 		case FILPackage.NIVEAU:
 			return createNiveau();
+		case FILPackage.INTERVENANT:
+			return createIntervenant();
+		case FILPackage.DOCUMENTS:
+			return createDocuments();
+		case FILPackage.VIDEO:
+			return createVideo();
+		case FILPackage.FICHIER:
+			return createFichier();
+		case FILPackage.AUDIO:
+			return createAudio();
+		case FILPackage.PRESENTATION:
+			return createPresentation();
+		case FILPackage.FACULTE:
+			return createFaculte();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -101,9 +105,9 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Enseignant createEnseignant() {
-		EnseignantImpl enseignant = new EnseignantImpl();
-		return enseignant;
+	public Audio createAudio() {
+		AudioImpl audio = new AudioImpl();
+		return audio;
 	}
 
 	/**
@@ -121,29 +125,9 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Contact createContact() {
-		ContactImpl contact = new ContactImpl();
-		return contact;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Article createArticle() {
-		ArticleImpl article = new ArticleImpl();
-		return article;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Information createInformation() {
-		InformationImpl information = new InformationImpl();
-		return information;
+	public Faculte createFaculte() {
+		FaculteImpl faculte = new FaculteImpl();
+		return faculte;
 	}
 
 	/**
@@ -154,6 +138,46 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 	public Niveau createNiveau() {
 		NiveauImpl niveau = new NiveauImpl();
 		return niveau;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Intervenant createIntervenant() {
+		IntervenantImpl intervenant = new IntervenantImpl();
+		return intervenant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Documents createDocuments() {
+		DocumentsImpl documents = new DocumentsImpl();
+		return documents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Video createVideo() {
+		VideoImpl video = new VideoImpl();
+		return video;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Fichier createFichier() {
+		FichierImpl fichier = new FichierImpl();
+		return fichier;
 	}
 
 	/**

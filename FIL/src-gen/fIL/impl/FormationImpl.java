@@ -2,10 +2,9 @@
  */
 package fIL.impl;
 
-import fIL.Contact;
 import fIL.FILPackage;
 import fIL.Formation;
-import fIL.Niveau;
+import fIL.Intervenant;
 import fIL.Presentation;
 import fIL.UE;
 
@@ -35,10 +34,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fIL.impl.FormationImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getPseudo <em>Pseudo</em>}</li>
- *   <li>{@link fIL.impl.FormationImpl#getContient <em>Contient</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getUes <em>Ues</em>}</li>
- *   <li>{@link fIL.impl.FormationImpl#getContacts <em>Contacts</em>}</li>
- *   <li>{@link fIL.impl.FormationImpl#getNiveau <em>Niveau</em>}</li>
+ *   <li>{@link fIL.impl.FormationImpl#getPresentation <em>Presentation</em>}</li>
+ *   <li>{@link fIL.impl.FormationImpl#getIntervenant <em>Intervenant</em>}</li>
  * </ul>
  *
  * @generated
@@ -85,16 +83,6 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	protected String pseudo = PSEUDO_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getContient() <em>Contient</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContient()
-	 * @generated
-	 * @ordered
-	 */
-	protected Presentation contient;
-
-	/**
 	 * The cached value of the '{@link #getUes() <em>Ues</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,24 +93,24 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	protected EList<UE> ues;
 
 	/**
-	 * The cached value of the '{@link #getContacts() <em>Contacts</em>}' containment reference list.
+	 * The cached value of the '{@link #getPresentation() <em>Presentation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContacts()
+	 * @see #getPresentation()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Contact> contacts;
+	protected Presentation presentation;
 
 	/**
-	 * The cached value of the '{@link #getNiveau() <em>Niveau</em>}' reference.
+	 * The cached value of the '{@link #getIntervenant() <em>Intervenant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNiveau()
+	 * @see #getIntervenant()
 	 * @generated
 	 * @ordered
 	 */
-	protected Niveau niveau;
+	protected EList<Intervenant> intervenant;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,56 +178,6 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Presentation getContient() {
-		return contient;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetContient(Presentation newContient, NotificationChain msgs) {
-		Presentation oldContient = contient;
-		contient = newContient;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					FILPackage.FORMATION__CONTIENT, oldContient, newContient);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setContient(Presentation newContient) {
-		if (newContient != contient) {
-			NotificationChain msgs = null;
-			if (contient != null)
-				msgs = ((InternalEObject) contient).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - FILPackage.FORMATION__CONTIENT, null, msgs);
-			if (newContient != null)
-				msgs = ((InternalEObject) newContient).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - FILPackage.FORMATION__CONTIENT, null, msgs);
-			msgs = basicSetContient(newContient, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__CONTIENT, newContient,
-					newContient));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<UE> getUes() {
 		if (ues == null) {
 			ues = new EObjectContainmentEList<UE>(UE.class, this, FILPackage.FORMATION__UES);
@@ -252,11 +190,12 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Contact> getContacts() {
-		if (contacts == null) {
-			contacts = new EObjectContainmentEList<Contact>(Contact.class, this, FILPackage.FORMATION__CONTACTS);
+	public EList<Intervenant> getIntervenant() {
+		if (intervenant == null) {
+			intervenant = new EObjectContainmentEList<Intervenant>(Intervenant.class, this,
+					FILPackage.FORMATION__INTERVENANT);
 		}
-		return contacts;
+		return intervenant;
 	}
 
 	/**
@@ -264,17 +203,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Niveau getNiveau() {
-		if (niveau != null && niveau.eIsProxy()) {
-			InternalEObject oldNiveau = (InternalEObject) niveau;
-			niveau = (Niveau) eResolveProxy(oldNiveau);
-			if (niveau != oldNiveau) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FILPackage.FORMATION__NIVEAU, oldNiveau,
-							niveau));
-			}
-		}
-		return niveau;
+	public Presentation getPresentation() {
+		return presentation;
 	}
 
 	/**
@@ -282,21 +212,12 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Niveau basicGetNiveau() {
-		return niveau;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetNiveau(Niveau newNiveau, NotificationChain msgs) {
-		Niveau oldNiveau = niveau;
-		niveau = newNiveau;
+	public NotificationChain basicSetPresentation(Presentation newPresentation, NotificationChain msgs) {
+		Presentation oldPresentation = presentation;
+		presentation = newPresentation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__NIVEAU,
-					oldNiveau, newNiveau);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					FILPackage.FORMATION__PRESENTATION, oldPresentation, newPresentation);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -310,37 +231,21 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNiveau(Niveau newNiveau) {
-		if (newNiveau != niveau) {
+	public void setPresentation(Presentation newPresentation) {
+		if (newPresentation != presentation) {
 			NotificationChain msgs = null;
-			if (niveau != null)
-				msgs = ((InternalEObject) niveau).eInverseRemove(this, FILPackage.NIVEAU__FORMATIONS, Niveau.class,
-						msgs);
-			if (newNiveau != null)
-				msgs = ((InternalEObject) newNiveau).eInverseAdd(this, FILPackage.NIVEAU__FORMATIONS, Niveau.class,
-						msgs);
-			msgs = basicSetNiveau(newNiveau, msgs);
+			if (presentation != null)
+				msgs = ((InternalEObject) presentation).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - FILPackage.FORMATION__PRESENTATION, null, msgs);
+			if (newPresentation != null)
+				msgs = ((InternalEObject) newPresentation).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - FILPackage.FORMATION__PRESENTATION, null, msgs);
+			msgs = basicSetPresentation(newPresentation, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__NIVEAU, newNiveau, newNiveau));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case FILPackage.FORMATION__NIVEAU:
-			if (niveau != null)
-				msgs = ((InternalEObject) niveau).eInverseRemove(this, FILPackage.NIVEAU__FORMATIONS, Niveau.class,
-						msgs);
-			return basicSetNiveau((Niveau) otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__PRESENTATION, newPresentation,
+					newPresentation));
 	}
 
 	/**
@@ -351,14 +256,12 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case FILPackage.FORMATION__CONTIENT:
-			return basicSetContient(null, msgs);
 		case FILPackage.FORMATION__UES:
 			return ((InternalEList<?>) getUes()).basicRemove(otherEnd, msgs);
-		case FILPackage.FORMATION__CONTACTS:
-			return ((InternalEList<?>) getContacts()).basicRemove(otherEnd, msgs);
-		case FILPackage.FORMATION__NIVEAU:
-			return basicSetNiveau(null, msgs);
+		case FILPackage.FORMATION__PRESENTATION:
+			return basicSetPresentation(null, msgs);
+		case FILPackage.FORMATION__INTERVENANT:
+			return ((InternalEList<?>) getIntervenant()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -375,16 +278,12 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			return getNom();
 		case FILPackage.FORMATION__PSEUDO:
 			return getPseudo();
-		case FILPackage.FORMATION__CONTIENT:
-			return getContient();
 		case FILPackage.FORMATION__UES:
 			return getUes();
-		case FILPackage.FORMATION__CONTACTS:
-			return getContacts();
-		case FILPackage.FORMATION__NIVEAU:
-			if (resolve)
-				return getNiveau();
-			return basicGetNiveau();
+		case FILPackage.FORMATION__PRESENTATION:
+			return getPresentation();
+		case FILPackage.FORMATION__INTERVENANT:
+			return getIntervenant();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -404,19 +303,16 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 		case FILPackage.FORMATION__PSEUDO:
 			setPseudo((String) newValue);
 			return;
-		case FILPackage.FORMATION__CONTIENT:
-			setContient((Presentation) newValue);
-			return;
 		case FILPackage.FORMATION__UES:
 			getUes().clear();
 			getUes().addAll((Collection<? extends UE>) newValue);
 			return;
-		case FILPackage.FORMATION__CONTACTS:
-			getContacts().clear();
-			getContacts().addAll((Collection<? extends Contact>) newValue);
+		case FILPackage.FORMATION__PRESENTATION:
+			setPresentation((Presentation) newValue);
 			return;
-		case FILPackage.FORMATION__NIVEAU:
-			setNiveau((Niveau) newValue);
+		case FILPackage.FORMATION__INTERVENANT:
+			getIntervenant().clear();
+			getIntervenant().addAll((Collection<? extends Intervenant>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -436,17 +332,14 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 		case FILPackage.FORMATION__PSEUDO:
 			setPseudo(PSEUDO_EDEFAULT);
 			return;
-		case FILPackage.FORMATION__CONTIENT:
-			setContient((Presentation) null);
-			return;
 		case FILPackage.FORMATION__UES:
 			getUes().clear();
 			return;
-		case FILPackage.FORMATION__CONTACTS:
-			getContacts().clear();
+		case FILPackage.FORMATION__PRESENTATION:
+			setPresentation((Presentation) null);
 			return;
-		case FILPackage.FORMATION__NIVEAU:
-			setNiveau((Niveau) null);
+		case FILPackage.FORMATION__INTERVENANT:
+			getIntervenant().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -464,14 +357,12 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 		case FILPackage.FORMATION__PSEUDO:
 			return PSEUDO_EDEFAULT == null ? pseudo != null : !PSEUDO_EDEFAULT.equals(pseudo);
-		case FILPackage.FORMATION__CONTIENT:
-			return contient != null;
 		case FILPackage.FORMATION__UES:
 			return ues != null && !ues.isEmpty();
-		case FILPackage.FORMATION__CONTACTS:
-			return contacts != null && !contacts.isEmpty();
-		case FILPackage.FORMATION__NIVEAU:
-			return niveau != null;
+		case FILPackage.FORMATION__PRESENTATION:
+			return presentation != null;
+		case FILPackage.FORMATION__INTERVENANT:
+			return intervenant != null && !intervenant.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

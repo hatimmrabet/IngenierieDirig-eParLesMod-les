@@ -2,9 +2,9 @@
  */
 package fIL.impl;
 
-import fIL.Article;
 import fIL.FILPackage;
-import fIL.Information;
+import fIL.Faculte;
+import fIL.Niveau;
 
 import java.util.Collection;
 
@@ -19,60 +19,60 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Information</b></em>'.
+ * An implementation of the model object '<em><b>Faculte</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fIL.impl.InformationImpl#getTitre <em>Titre</em>}</li>
- *   <li>{@link fIL.impl.InformationImpl#getArticles <em>Articles</em>}</li>
+ *   <li>{@link fIL.impl.FaculteImpl#getNom <em>Nom</em>}</li>
+ *   <li>{@link fIL.impl.FaculteImpl#getNiveau <em>Niveau</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InformationImpl extends MinimalEObjectImpl.Container implements Information {
+public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte {
 	/**
-	 * The default value of the '{@link #getTitre() <em>Titre</em>}' attribute.
+	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitre()
+	 * @see #getNom()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TITRE_EDEFAULT = null;
+	protected static final String NOM_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTitre() <em>Titre</em>}' attribute.
+	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTitre()
+	 * @see #getNom()
 	 * @generated
 	 * @ordered
 	 */
-	protected String titre = TITRE_EDEFAULT;
+	protected String nom = NOM_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getArticles() <em>Articles</em>}' reference list.
+	 * The cached value of the '{@link #getNiveau() <em>Niveau</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getArticles()
+	 * @see #getNiveau()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Article> articles;
+	protected EList<Niveau> niveau;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InformationImpl() {
+	protected FaculteImpl() {
 		super();
 	}
 
@@ -83,7 +83,7 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FILPackage.Literals.INFORMATION;
+		return FILPackage.Literals.FACULTE;
 	}
 
 	/**
@@ -91,8 +91,8 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTitre() {
-		return titre;
+	public String getNom() {
+		return nom;
 	}
 
 	/**
@@ -100,11 +100,11 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTitre(String newTitre) {
-		String oldTitre = titre;
-		titre = newTitre;
+	public void setNom(String newNom) {
+		String oldNom = nom;
+		nom = newNom;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.INFORMATION__TITRE, oldTitre, titre));
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FACULTE__NOM, oldNom, nom));
 	}
 
 	/**
@@ -112,27 +112,11 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Article> getArticles() {
-		if (articles == null) {
-			articles = new EObjectWithInverseResolvingEList<Article>(Article.class, this,
-					FILPackage.INFORMATION__ARTICLES, FILPackage.ARTICLE__ONGLET);
+	public EList<Niveau> getNiveau() {
+		if (niveau == null) {
+			niveau = new EObjectContainmentEList<Niveau>(Niveau.class, this, FILPackage.FACULTE__NIVEAU);
 		}
-		return articles;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case FILPackage.INFORMATION__ARTICLES:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getArticles()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+		return niveau;
 	}
 
 	/**
@@ -143,8 +127,8 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case FILPackage.INFORMATION__ARTICLES:
-			return ((InternalEList<?>) getArticles()).basicRemove(otherEnd, msgs);
+		case FILPackage.FACULTE__NIVEAU:
+			return ((InternalEList<?>) getNiveau()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -157,10 +141,10 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case FILPackage.INFORMATION__TITRE:
-			return getTitre();
-		case FILPackage.INFORMATION__ARTICLES:
-			return getArticles();
+		case FILPackage.FACULTE__NOM:
+			return getNom();
+		case FILPackage.FACULTE__NIVEAU:
+			return getNiveau();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,12 +158,12 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case FILPackage.INFORMATION__TITRE:
-			setTitre((String) newValue);
+		case FILPackage.FACULTE__NOM:
+			setNom((String) newValue);
 			return;
-		case FILPackage.INFORMATION__ARTICLES:
-			getArticles().clear();
-			getArticles().addAll((Collection<? extends Article>) newValue);
+		case FILPackage.FACULTE__NIVEAU:
+			getNiveau().clear();
+			getNiveau().addAll((Collection<? extends Niveau>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,11 +177,11 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case FILPackage.INFORMATION__TITRE:
-			setTitre(TITRE_EDEFAULT);
+		case FILPackage.FACULTE__NOM:
+			setNom(NOM_EDEFAULT);
 			return;
-		case FILPackage.INFORMATION__ARTICLES:
-			getArticles().clear();
+		case FILPackage.FACULTE__NIVEAU:
+			getNiveau().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -211,10 +195,10 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case FILPackage.INFORMATION__TITRE:
-			return TITRE_EDEFAULT == null ? titre != null : !TITRE_EDEFAULT.equals(titre);
-		case FILPackage.INFORMATION__ARTICLES:
-			return articles != null && !articles.isEmpty();
+		case FILPackage.FACULTE__NOM:
+			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
+		case FILPackage.FACULTE__NIVEAU:
+			return niveau != null && !niveau.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -230,10 +214,10 @@ public class InformationImpl extends MinimalEObjectImpl.Container implements Inf
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (titre: ");
-		result.append(titre);
+		result.append(" (nom: ");
+		result.append(nom);
 		result.append(')');
 		return result.toString();
 	}
 
-} //InformationImpl
+} //FaculteImpl

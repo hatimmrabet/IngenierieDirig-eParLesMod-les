@@ -2,8 +2,8 @@
  */
 package fIL.provider;
 
-import fIL.Contact;
 import fIL.FILPackage;
+import fIL.Video;
 
 import java.util.Collection;
 import java.util.List;
@@ -11,34 +11,25 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fIL.Contact} object.
+ * This is the item provider adapter for a {@link fIL.Video} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContactItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class VideoItemProvider extends DocumentsItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContactItemProvider(AdapterFactory adapterFactory) {
+	public VideoItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,52 +44,35 @@ public class ContactItemProvider extends ItemProviderAdapter implements IEditing
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addResponsablesPropertyDescriptor(object);
-			addStatutPropertyDescriptor(object);
+			addDureePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Responsables feature.
+	 * This adds a property descriptor for the Duree feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addResponsablesPropertyDescriptor(Object object) {
+	protected void addDureePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Contact_responsables_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Contact_responsables_feature",
-								"_UI_Contact_type"),
-						FILPackage.Literals.CONTACT__RESPONSABLES, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Statut feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStatutPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Contact_statut_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Contact_statut_feature",
-								"_UI_Contact_type"),
-						FILPackage.Literals.CONTACT__STATUT, true, false, false,
+						getResourceLocator(), getString("_UI_Video_duree_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Video_duree_feature", "_UI_Video_type"),
+						FILPackage.Literals.VIDEO__DUREE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns Contact.gif.
+	 * This returns Video.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Contact"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Video"));
 	}
 
 	/**
@@ -119,9 +93,9 @@ public class ContactItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Contact) object).getStatut();
-		return label == null || label.length() == 0 ? getString("_UI_Contact_type")
-				: getString("_UI_Contact_type") + " " + label;
+		String label = ((Video) object).getNom();
+		return label == null || label.length() == 0 ? getString("_UI_Video_type")
+				: getString("_UI_Video_type") + " " + label;
 	}
 
 	/**
@@ -135,8 +109,8 @@ public class ContactItemProvider extends ItemProviderAdapter implements IEditing
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Contact.class)) {
-		case FILPackage.CONTACT__STATUT:
+		switch (notification.getFeatureID(Video.class)) {
+		case FILPackage.VIDEO__DUREE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -153,17 +127,6 @@ public class ContactItemProvider extends ItemProviderAdapter implements IEditing
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return FILEditPlugin.INSTANCE;
 	}
 
 }

@@ -2,8 +2,8 @@
  */
 package fIL.provider;
 
-import fIL.Article;
 import fIL.FILPackage;
+import fIL.Intervenant;
 
 import java.util.Collection;
 import java.util.List;
@@ -25,12 +25,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fIL.Article} object.
+ * This is the item provider adapter for a {@link fIL.Intervenant} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ArticleItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class IntervenantItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +38,7 @@ public class ArticleItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ArticleItemProvider(AdapterFactory adapterFactory) {
+	public IntervenantItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,69 +53,70 @@ public class ArticleItemProvider extends ItemProviderAdapter implements IEditing
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTitrePropertyDescriptor(object);
-			addContenuePropertyDescriptor(object);
-			addOngletPropertyDescriptor(object);
+			addNomPropertyDescriptor(object);
+			addPrenomPropertyDescriptor(object);
+			addStatutPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Titre feature.
+	 * This adds a property descriptor for the Nom feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTitrePropertyDescriptor(Object object) {
+	protected void addNomPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Article_titre_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Article_titre_feature",
-								"_UI_Article_type"),
-						FILPackage.Literals.ARTICLE__TITRE, true, false, false,
+						getResourceLocator(), getString("_UI_Intervenant_nom_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Intervenant_nom_feature",
+								"_UI_Intervenant_type"),
+						FILPackage.Literals.INTERVENANT__NOM, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Contenue feature.
+	 * This adds a property descriptor for the Prenom feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addContenuePropertyDescriptor(Object object) {
+	protected void addPrenomPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Article_contenue_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Article_contenue_feature",
-								"_UI_Article_type"),
-						FILPackage.Literals.ARTICLE__CONTENUE, true, false, false,
+						getResourceLocator(), getString("_UI_Intervenant_prenom_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Intervenant_prenom_feature",
+								"_UI_Intervenant_type"),
+						FILPackage.Literals.INTERVENANT__PRENOM, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Onglet feature.
+	 * This adds a property descriptor for the Statut feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOngletPropertyDescriptor(Object object) {
+	protected void addStatutPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Article_onglet_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Article_onglet_feature",
-								"_UI_Article_type"),
-						FILPackage.Literals.ARTICLE__ONGLET, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Intervenant_statut_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Intervenant_statut_feature",
+								"_UI_Intervenant_type"),
+						FILPackage.Literals.INTERVENANT__STATUT, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns Article.gif.
+	 * This returns Intervenant.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Article"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Intervenant"));
 	}
 
 	/**
@@ -136,9 +137,9 @@ public class ArticleItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Article) object).getTitre();
-		return label == null || label.length() == 0 ? getString("_UI_Article_type")
-				: getString("_UI_Article_type") + " " + label;
+		String label = ((Intervenant) object).getNom();
+		return label == null || label.length() == 0 ? getString("_UI_Intervenant_type")
+				: getString("_UI_Intervenant_type") + " " + label;
 	}
 
 	/**
@@ -152,9 +153,10 @@ public class ArticleItemProvider extends ItemProviderAdapter implements IEditing
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Article.class)) {
-		case FILPackage.ARTICLE__TITRE:
-		case FILPackage.ARTICLE__CONTENUE:
+		switch (notification.getFeatureID(Intervenant.class)) {
+		case FILPackage.INTERVENANT__NOM:
+		case FILPackage.INTERVENANT__PRENOM:
+		case FILPackage.INTERVENANT__STATUT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

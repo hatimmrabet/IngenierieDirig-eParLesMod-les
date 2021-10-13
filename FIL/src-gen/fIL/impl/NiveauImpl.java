@@ -10,16 +10,14 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -32,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fIL.impl.NiveauImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.impl.NiveauImpl#getPseudo <em>Pseudo</em>}</li>
- *   <li>{@link fIL.impl.NiveauImpl#getFormations <em>Formations</em>}</li>
+ *   <li>{@link fIL.impl.NiveauImpl#getFormation <em>Formation</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,14 +77,14 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	protected String pseudo = PSEUDO_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFormations() <em>Formations</em>}' reference list.
+	 * The cached value of the '{@link #getFormation() <em>Formation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFormations()
+	 * @see #getFormation()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Formation> formations;
+	protected EList<Formation> formation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,27 +152,11 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Formation> getFormations() {
-		if (formations == null) {
-			formations = new EObjectWithInverseResolvingEList<Formation>(Formation.class, this,
-					FILPackage.NIVEAU__FORMATIONS, FILPackage.FORMATION__NIVEAU);
+	public EList<Formation> getFormation() {
+		if (formation == null) {
+			formation = new EObjectContainmentEList<Formation>(Formation.class, this, FILPackage.NIVEAU__FORMATION);
 		}
-		return formations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case FILPackage.NIVEAU__FORMATIONS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFormations()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+		return formation;
 	}
 
 	/**
@@ -185,8 +167,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case FILPackage.NIVEAU__FORMATIONS:
-			return ((InternalEList<?>) getFormations()).basicRemove(otherEnd, msgs);
+		case FILPackage.NIVEAU__FORMATION:
+			return ((InternalEList<?>) getFormation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -203,8 +185,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 			return getNom();
 		case FILPackage.NIVEAU__PSEUDO:
 			return getPseudo();
-		case FILPackage.NIVEAU__FORMATIONS:
-			return getFormations();
+		case FILPackage.NIVEAU__FORMATION:
+			return getFormation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -224,9 +206,9 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 		case FILPackage.NIVEAU__PSEUDO:
 			setPseudo((String) newValue);
 			return;
-		case FILPackage.NIVEAU__FORMATIONS:
-			getFormations().clear();
-			getFormations().addAll((Collection<? extends Formation>) newValue);
+		case FILPackage.NIVEAU__FORMATION:
+			getFormation().clear();
+			getFormation().addAll((Collection<? extends Formation>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -246,8 +228,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 		case FILPackage.NIVEAU__PSEUDO:
 			setPseudo(PSEUDO_EDEFAULT);
 			return;
-		case FILPackage.NIVEAU__FORMATIONS:
-			getFormations().clear();
+		case FILPackage.NIVEAU__FORMATION:
+			getFormation().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -265,8 +247,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 		case FILPackage.NIVEAU__PSEUDO:
 			return PSEUDO_EDEFAULT == null ? pseudo != null : !PSEUDO_EDEFAULT.equals(pseudo);
-		case FILPackage.NIVEAU__FORMATIONS:
-			return formations != null && !formations.isEmpty();
+		case FILPackage.NIVEAU__FORMATION:
+			return formation != null && !formation.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

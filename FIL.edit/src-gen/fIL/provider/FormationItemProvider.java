@@ -58,7 +58,6 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 
 			addNomPropertyDescriptor(object);
 			addPseudoPropertyDescriptor(object);
-			addNiveauPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -96,21 +95,6 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 	}
 
 	/**
-	 * This adds a property descriptor for the Niveau feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNiveauPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Formation_niveau_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Formation_niveau_feature",
-								"_UI_Formation_type"),
-						FILPackage.Literals.FORMATION__NIVEAU, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -122,9 +106,9 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(FILPackage.Literals.FORMATION__CONTIENT);
 			childrenFeatures.add(FILPackage.Literals.FORMATION__UES);
-			childrenFeatures.add(FILPackage.Literals.FORMATION__CONTACTS);
+			childrenFeatures.add(FILPackage.Literals.FORMATION__PRESENTATION);
+			childrenFeatures.add(FILPackage.Literals.FORMATION__INTERVENANT);
 		}
 		return childrenFeatures;
 	}
@@ -192,9 +176,9 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 		case FILPackage.FORMATION__PSEUDO:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case FILPackage.FORMATION__CONTIENT:
 		case FILPackage.FORMATION__UES:
-		case FILPackage.FORMATION__CONTACTS:
+		case FILPackage.FORMATION__PRESENTATION:
+		case FILPackage.FORMATION__INTERVENANT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -212,14 +196,14 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__CONTIENT,
-				FILFactory.eINSTANCE.createPresentation()));
-
 		newChildDescriptors
 				.add(createChildParameter(FILPackage.Literals.FORMATION__UES, FILFactory.eINSTANCE.createUE()));
 
-		newChildDescriptors.add(
-				createChildParameter(FILPackage.Literals.FORMATION__CONTACTS, FILFactory.eINSTANCE.createContact()));
+		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__PRESENTATION,
+				FILFactory.eINSTANCE.createPresentation()));
+
+		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__INTERVENANT,
+				FILFactory.eINSTANCE.createIntervenant()));
 	}
 
 	/**

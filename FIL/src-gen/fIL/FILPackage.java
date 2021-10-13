@@ -85,40 +85,31 @@ public interface FILPackage extends EPackage {
 	int FORMATION__PSEUDO = 1;
 
 	/**
-	 * The feature id for the '<em><b>Contient</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORMATION__CONTIENT = 2;
-
-	/**
 	 * The feature id for the '<em><b>Ues</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMATION__UES = 3;
+	int FORMATION__UES = 2;
 
 	/**
-	 * The feature id for the '<em><b>Contacts</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Presentation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMATION__CONTACTS = 4;
+	int FORMATION__PRESENTATION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Niveau</b></em>' reference.
+	 * The feature id for the '<em><b>Intervenant</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMATION__NIVEAU = 5;
+	int FORMATION__INTERVENANT = 4;
 
 	/**
 	 * The number of structural features of the '<em>Formation</em>' class.
@@ -127,7 +118,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORMATION_FEATURE_COUNT = 6;
+	int FORMATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Formation</em>' class.
@@ -167,13 +158,40 @@ public interface FILPackage extends EPackage {
 	int UE__PSEUDO = 1;
 
 	/**
+	 * The feature id for the '<em><b>Documents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UE__DOCUMENTS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Presentation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UE__PRESENTATION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Intervenant</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UE__INTERVENANT = 4;
+
+	/**
 	 * The number of structural features of the '<em>UE</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UE_FEATURE_COUNT = 2;
+	int UE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>UE</em>' class.
@@ -185,261 +203,14 @@ public interface FILPackage extends EPackage {
 	int UE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link fIL.impl.EnseignantImpl <em>Enseignant</em>}' class.
+	 * The meta object id for the '{@link fIL.impl.AudioImpl <em>Audio</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fIL.impl.EnseignantImpl
-	 * @see fIL.impl.FILPackageImpl#getEnseignant()
+	 * @see fIL.impl.AudioImpl
+	 * @see fIL.impl.FILPackageImpl#getAudio()
 	 * @generated
 	 */
-	int ENSEIGNANT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENSEIGNANT__NOM = 0;
-
-	/**
-	 * The feature id for the '<em><b>Prenom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENSEIGNANT__PRENOM = 1;
-
-	/**
-	 * The feature id for the '<em><b>Mail</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENSEIGNANT__MAIL = 2;
-
-	/**
-	 * The feature id for the '<em><b>Tel</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENSEIGNANT__TEL = 3;
-
-	/**
-	 * The feature id for the '<em><b>Adresse</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENSEIGNANT__ADRESSE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Fax</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENSEIGNANT__FAX = 5;
-
-	/**
-	 * The number of structural features of the '<em>Enseignant</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENSEIGNANT_FEATURE_COUNT = 6;
-
-	/**
-	 * The number of operations of the '<em>Enseignant</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENSEIGNANT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link fIL.impl.PresentationImpl <em>Presentation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see fIL.impl.PresentationImpl
-	 * @see fIL.impl.FILPackageImpl#getPresentation()
-	 * @generated
-	 */
-	int PRESENTATION = 3;
-
-	/**
-	 * The number of structural features of the '<em>Presentation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRESENTATION_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Presentation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRESENTATION_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link fIL.impl.ContactImpl <em>Contact</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see fIL.impl.ContactImpl
-	 * @see fIL.impl.FILPackageImpl#getContact()
-	 * @generated
-	 */
-	int CONTACT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Responsables</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT__RESPONSABLES = 0;
-
-	/**
-	 * The feature id for the '<em><b>Statut</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT__STATUT = 1;
-
-	/**
-	 * The number of structural features of the '<em>Contact</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Contact</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTACT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link fIL.impl.ArticleImpl <em>Article</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see fIL.impl.ArticleImpl
-	 * @see fIL.impl.FILPackageImpl#getArticle()
-	 * @generated
-	 */
-	int ARTICLE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Titre</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTICLE__TITRE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Contenue</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTICLE__CONTENUE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Onglet</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTICLE__ONGLET = 2;
-
-	/**
-	 * The number of structural features of the '<em>Article</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTICLE_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Article</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTICLE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link fIL.impl.InformationImpl <em>Information</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see fIL.impl.InformationImpl
-	 * @see fIL.impl.FILPackageImpl#getInformation()
-	 * @generated
-	 */
-	int INFORMATION = 6;
-
-	/**
-	 * The feature id for the '<em><b>Titre</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INFORMATION__TITRE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Articles</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INFORMATION__ARTICLES = 1;
-
-	/**
-	 * The number of structural features of the '<em>Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INFORMATION_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Information</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INFORMATION_OPERATION_COUNT = 0;
+	int AUDIO = 7;
 
 	/**
 	 * The meta object id for the '{@link fIL.impl.NiveauImpl <em>Niveau</em>}' class.
@@ -449,7 +220,47 @@ public interface FILPackage extends EPackage {
 	 * @see fIL.impl.FILPackageImpl#getNiveau()
 	 * @generated
 	 */
-	int NIVEAU = 7;
+	int NIVEAU = 2;
+
+	/**
+	 * The meta object id for the '{@link fIL.impl.IntervenantImpl <em>Intervenant</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fIL.impl.IntervenantImpl
+	 * @see fIL.impl.FILPackageImpl#getIntervenant()
+	 * @generated
+	 */
+	int INTERVENANT = 3;
+
+	/**
+	 * The meta object id for the '{@link fIL.impl.DocumentsImpl <em>Documents</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fIL.impl.DocumentsImpl
+	 * @see fIL.impl.FILPackageImpl#getDocuments()
+	 * @generated
+	 */
+	int DOCUMENTS = 4;
+
+	/**
+	 * The meta object id for the '{@link fIL.impl.VideoImpl <em>Video</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fIL.impl.VideoImpl
+	 * @see fIL.impl.FILPackageImpl#getVideo()
+	 * @generated
+	 */
+	int VIDEO = 5;
+
+	/**
+	 * The meta object id for the '{@link fIL.impl.FichierImpl <em>Fichier</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fIL.impl.FichierImpl
+	 * @see fIL.impl.FILPackageImpl#getFichier()
+	 * @generated
+	 */
+	int FICHIER = 6;
 
 	/**
 	 * The feature id for the '<em><b>Nom</b></em>' attribute.
@@ -470,13 +281,13 @@ public interface FILPackage extends EPackage {
 	int NIVEAU__PSEUDO = 1;
 
 	/**
-	 * The feature id for the '<em><b>Formations</b></em>' reference list.
+	 * The feature id for the '<em><b>Formation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NIVEAU__FORMATIONS = 2;
+	int NIVEAU__FORMATION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Niveau</em>' class.
@@ -495,6 +306,359 @@ public interface FILPackage extends EPackage {
 	 * @ordered
 	 */
 	int NIVEAU_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERVENANT__NOM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Prenom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERVENANT__PRENOM = 1;
+
+	/**
+	 * The feature id for the '<em><b>Statut</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERVENANT__STATUT = 2;
+
+	/**
+	 * The number of structural features of the '<em>Intervenant</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERVENANT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Intervenant</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERVENANT_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENTS__NOM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENTS__DESCRIPTION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Taille</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENTS__TAILLE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Documents</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENTS_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Documents</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENTS_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO__NOM = DOCUMENTS__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO__DESCRIPTION = DOCUMENTS__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Taille</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO__TAILLE = DOCUMENTS__TAILLE;
+
+	/**
+	 * The feature id for the '<em><b>Duree</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO__DUREE = DOCUMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Video</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO_FEATURE_COUNT = DOCUMENTS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Video</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIDEO_OPERATION_COUNT = DOCUMENTS_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER__NOM = DOCUMENTS__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER__DESCRIPTION = DOCUMENTS__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Taille</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER__TAILLE = DOCUMENTS__TAILLE;
+
+	/**
+	 * The feature id for the '<em><b>Lien</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER__LIEN = DOCUMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Auteur</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER__AUTEUR = DOCUMENTS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Fichier</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER_FEATURE_COUNT = DOCUMENTS_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Fichier</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FICHIER_OPERATION_COUNT = DOCUMENTS_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO__NOM = DOCUMENTS__NOM;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO__DESCRIPTION = DOCUMENTS__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Taille</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO__TAILLE = DOCUMENTS__TAILLE;
+
+	/**
+	 * The feature id for the '<em><b>Duree</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO__DUREE = DOCUMENTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Audio</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO_FEATURE_COUNT = DOCUMENTS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Audio</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUDIO_OPERATION_COUNT = DOCUMENTS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fIL.impl.PresentationImpl <em>Presentation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fIL.impl.PresentationImpl
+	 * @see fIL.impl.FILPackageImpl#getPresentation()
+	 * @generated
+	 */
+	int PRESENTATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Titre</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRESENTATION__TITRE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Contenue</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRESENTATION__CONTENUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Presentation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRESENTATION_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Presentation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRESENTATION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link fIL.impl.FaculteImpl <em>Faculte</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fIL.impl.FaculteImpl
+	 * @see fIL.impl.FILPackageImpl#getFaculte()
+	 * @generated
+	 */
+	int FACULTE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACULTE__NOM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Niveau</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACULTE__NIVEAU = 1;
+
+	/**
+	 * The number of structural features of the '<em>Faculte</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACULTE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Faculte</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACULTE_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link fIL.Formation <em>Formation</em>}'.
@@ -529,17 +693,6 @@ public interface FILPackage extends EPackage {
 	EAttribute getFormation_Pseudo();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link fIL.Formation#getContient <em>Contient</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Contient</em>'.
-	 * @see fIL.Formation#getContient()
-	 * @see #getFormation()
-	 * @generated
-	 */
-	EReference getFormation_Contient();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link fIL.Formation#getUes <em>Ues</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -551,26 +704,26 @@ public interface FILPackage extends EPackage {
 	EReference getFormation_Ues();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fIL.Formation#getContacts <em>Contacts</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fIL.Formation#getIntervenant <em>Intervenant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Contacts</em>'.
-	 * @see fIL.Formation#getContacts()
+	 * @return the meta object for the containment reference list '<em>Intervenant</em>'.
+	 * @see fIL.Formation#getIntervenant()
 	 * @see #getFormation()
 	 * @generated
 	 */
-	EReference getFormation_Contacts();
+	EReference getFormation_Intervenant();
 
 	/**
-	 * Returns the meta object for the reference '{@link fIL.Formation#getNiveau <em>Niveau</em>}'.
+	 * Returns the meta object for the containment reference '{@link fIL.Formation#getPresentation <em>Presentation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Niveau</em>'.
-	 * @see fIL.Formation#getNiveau()
+	 * @return the meta object for the containment reference '<em>Presentation</em>'.
+	 * @see fIL.Formation#getPresentation()
 	 * @see #getFormation()
 	 * @generated
 	 */
-	EReference getFormation_Niveau();
+	EReference getFormation_Presentation();
 
 	/**
 	 * Returns the meta object for class '{@link fIL.UE <em>UE</em>}'.
@@ -605,80 +758,58 @@ public interface FILPackage extends EPackage {
 	EAttribute getUE_Pseudo();
 
 	/**
-	 * Returns the meta object for class '{@link fIL.Enseignant <em>Enseignant</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fIL.UE#getDocuments <em>Documents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Enseignant</em>'.
-	 * @see fIL.Enseignant
+	 * @return the meta object for the containment reference list '<em>Documents</em>'.
+	 * @see fIL.UE#getDocuments()
+	 * @see #getUE()
 	 * @generated
 	 */
-	EClass getEnseignant();
+	EReference getUE_Documents();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Enseignant#getNom <em>Nom</em>}'.
+	 * Returns the meta object for the containment reference '{@link fIL.UE#getPresentation <em>Presentation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see fIL.Enseignant#getNom()
-	 * @see #getEnseignant()
+	 * @return the meta object for the containment reference '<em>Presentation</em>'.
+	 * @see fIL.UE#getPresentation()
+	 * @see #getUE()
 	 * @generated
 	 */
-	EAttribute getEnseignant_Nom();
+	EReference getUE_Presentation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Enseignant#getPrenom <em>Prenom</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fIL.UE#getIntervenant <em>Intervenant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Prenom</em>'.
-	 * @see fIL.Enseignant#getPrenom()
-	 * @see #getEnseignant()
+	 * @return the meta object for the containment reference list '<em>Intervenant</em>'.
+	 * @see fIL.UE#getIntervenant()
+	 * @see #getUE()
 	 * @generated
 	 */
-	EAttribute getEnseignant_Prenom();
+	EReference getUE_Intervenant();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Enseignant#getMail <em>Mail</em>}'.
+	 * Returns the meta object for class '{@link fIL.Audio <em>Audio</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mail</em>'.
-	 * @see fIL.Enseignant#getMail()
-	 * @see #getEnseignant()
+	 * @return the meta object for class '<em>Audio</em>'.
+	 * @see fIL.Audio
 	 * @generated
 	 */
-	EAttribute getEnseignant_Mail();
+	EClass getAudio();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Enseignant#getTel <em>Tel</em>}'.
+	 * Returns the meta object for the attribute '{@link fIL.Audio#getDuree <em>Duree</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tel</em>'.
-	 * @see fIL.Enseignant#getTel()
-	 * @see #getEnseignant()
+	 * @return the meta object for the attribute '<em>Duree</em>'.
+	 * @see fIL.Audio#getDuree()
+	 * @see #getAudio()
 	 * @generated
 	 */
-	EAttribute getEnseignant_Tel();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fIL.Enseignant#getAdresse <em>Adresse</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Adresse</em>'.
-	 * @see fIL.Enseignant#getAdresse()
-	 * @see #getEnseignant()
-	 * @generated
-	 */
-	EAttribute getEnseignant_Adresse();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fIL.Enseignant#getFax <em>Fax</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Fax</em>'.
-	 * @see fIL.Enseignant#getFax()
-	 * @see #getEnseignant()
-	 * @generated
-	 */
-	EAttribute getEnseignant_Fax();
+	EAttribute getAudio_Duree();
 
 	/**
 	 * Returns the meta object for class '{@link fIL.Presentation <em>Presentation</em>}'.
@@ -691,111 +822,58 @@ public interface FILPackage extends EPackage {
 	EClass getPresentation();
 
 	/**
-	 * Returns the meta object for class '{@link fIL.Contact <em>Contact</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Contact</em>'.
-	 * @see fIL.Contact
-	 * @generated
-	 */
-	EClass getContact();
-
-	/**
-	 * Returns the meta object for the reference list '{@link fIL.Contact#getResponsables <em>Responsables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Responsables</em>'.
-	 * @see fIL.Contact#getResponsables()
-	 * @see #getContact()
-	 * @generated
-	 */
-	EReference getContact_Responsables();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fIL.Contact#getStatut <em>Statut</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Statut</em>'.
-	 * @see fIL.Contact#getStatut()
-	 * @see #getContact()
-	 * @generated
-	 */
-	EAttribute getContact_Statut();
-
-	/**
-	 * Returns the meta object for class '{@link fIL.Article <em>Article</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Article</em>'.
-	 * @see fIL.Article
-	 * @generated
-	 */
-	EClass getArticle();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fIL.Article#getTitre <em>Titre</em>}'.
+	 * Returns the meta object for the attribute '{@link fIL.Presentation#getTitre <em>Titre</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Titre</em>'.
-	 * @see fIL.Article#getTitre()
-	 * @see #getArticle()
+	 * @see fIL.Presentation#getTitre()
+	 * @see #getPresentation()
 	 * @generated
 	 */
-	EAttribute getArticle_Titre();
+	EAttribute getPresentation_Titre();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Article#getContenue <em>Contenue</em>}'.
+	 * Returns the meta object for the attribute '{@link fIL.Presentation#getContenue <em>Contenue</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Contenue</em>'.
-	 * @see fIL.Article#getContenue()
-	 * @see #getArticle()
+	 * @see fIL.Presentation#getContenue()
+	 * @see #getPresentation()
 	 * @generated
 	 */
-	EAttribute getArticle_Contenue();
+	EAttribute getPresentation_Contenue();
 
 	/**
-	 * Returns the meta object for the reference '{@link fIL.Article#getOnglet <em>Onglet</em>}'.
+	 * Returns the meta object for class '{@link fIL.Faculte <em>Faculte</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Onglet</em>'.
-	 * @see fIL.Article#getOnglet()
-	 * @see #getArticle()
+	 * @return the meta object for class '<em>Faculte</em>'.
+	 * @see fIL.Faculte
 	 * @generated
 	 */
-	EReference getArticle_Onglet();
+	EClass getFaculte();
 
 	/**
-	 * Returns the meta object for class '{@link fIL.Information <em>Information</em>}'.
+	 * Returns the meta object for the attribute '{@link fIL.Faculte#getNom <em>Nom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Information</em>'.
-	 * @see fIL.Information
+	 * @return the meta object for the attribute '<em>Nom</em>'.
+	 * @see fIL.Faculte#getNom()
+	 * @see #getFaculte()
 	 * @generated
 	 */
-	EClass getInformation();
+	EAttribute getFaculte_Nom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Information#getTitre <em>Titre</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fIL.Faculte#getNiveau <em>Niveau</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Titre</em>'.
-	 * @see fIL.Information#getTitre()
-	 * @see #getInformation()
+	 * @return the meta object for the containment reference list '<em>Niveau</em>'.
+	 * @see fIL.Faculte#getNiveau()
+	 * @see #getFaculte()
 	 * @generated
 	 */
-	EAttribute getInformation_Titre();
-
-	/**
-	 * Returns the meta object for the reference list '{@link fIL.Information#getArticles <em>Articles</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Articles</em>'.
-	 * @see fIL.Information#getArticles()
-	 * @see #getInformation()
-	 * @generated
-	 */
-	EReference getInformation_Articles();
+	EReference getFaculte_Niveau();
 
 	/**
 	 * Returns the meta object for class '{@link fIL.Niveau <em>Niveau</em>}'.
@@ -830,15 +908,154 @@ public interface FILPackage extends EPackage {
 	EAttribute getNiveau_Pseudo();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fIL.Niveau#getFormations <em>Formations</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fIL.Niveau#getFormation <em>Formation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Formations</em>'.
-	 * @see fIL.Niveau#getFormations()
+	 * @return the meta object for the containment reference list '<em>Formation</em>'.
+	 * @see fIL.Niveau#getFormation()
 	 * @see #getNiveau()
 	 * @generated
 	 */
-	EReference getNiveau_Formations();
+	EReference getNiveau_Formation();
+
+	/**
+	 * Returns the meta object for class '{@link fIL.Intervenant <em>Intervenant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Intervenant</em>'.
+	 * @see fIL.Intervenant
+	 * @generated
+	 */
+	EClass getIntervenant();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fIL.Intervenant#getNom <em>Nom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nom</em>'.
+	 * @see fIL.Intervenant#getNom()
+	 * @see #getIntervenant()
+	 * @generated
+	 */
+	EAttribute getIntervenant_Nom();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fIL.Intervenant#getPrenom <em>Prenom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Prenom</em>'.
+	 * @see fIL.Intervenant#getPrenom()
+	 * @see #getIntervenant()
+	 * @generated
+	 */
+	EAttribute getIntervenant_Prenom();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fIL.Intervenant#getStatut <em>Statut</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Statut</em>'.
+	 * @see fIL.Intervenant#getStatut()
+	 * @see #getIntervenant()
+	 * @generated
+	 */
+	EAttribute getIntervenant_Statut();
+
+	/**
+	 * Returns the meta object for class '{@link fIL.Documents <em>Documents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Documents</em>'.
+	 * @see fIL.Documents
+	 * @generated
+	 */
+	EClass getDocuments();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fIL.Documents#getNom <em>Nom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nom</em>'.
+	 * @see fIL.Documents#getNom()
+	 * @see #getDocuments()
+	 * @generated
+	 */
+	EAttribute getDocuments_Nom();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fIL.Documents#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see fIL.Documents#getDescription()
+	 * @see #getDocuments()
+	 * @generated
+	 */
+	EAttribute getDocuments_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fIL.Documents#getTaille <em>Taille</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Taille</em>'.
+	 * @see fIL.Documents#getTaille()
+	 * @see #getDocuments()
+	 * @generated
+	 */
+	EAttribute getDocuments_Taille();
+
+	/**
+	 * Returns the meta object for class '{@link fIL.Video <em>Video</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Video</em>'.
+	 * @see fIL.Video
+	 * @generated
+	 */
+	EClass getVideo();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fIL.Video#getDuree <em>Duree</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Duree</em>'.
+	 * @see fIL.Video#getDuree()
+	 * @see #getVideo()
+	 * @generated
+	 */
+	EAttribute getVideo_Duree();
+
+	/**
+	 * Returns the meta object for class '{@link fIL.Fichier <em>Fichier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fichier</em>'.
+	 * @see fIL.Fichier
+	 * @generated
+	 */
+	EClass getFichier();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fIL.Fichier#getLien <em>Lien</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lien</em>'.
+	 * @see fIL.Fichier#getLien()
+	 * @see #getFichier()
+	 * @generated
+	 */
+	EAttribute getFichier_Lien();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fIL.Fichier#getAuteur <em>Auteur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Auteur</em>'.
+	 * @see fIL.Fichier#getAuteur()
+	 * @see #getFichier()
+	 * @generated
+	 */
+	EAttribute getFichier_Auteur();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -890,14 +1107,6 @@ public interface FILPackage extends EPackage {
 		EAttribute FORMATION__PSEUDO = eINSTANCE.getFormation_Pseudo();
 
 		/**
-		 * The meta object literal for the '<em><b>Contient</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FORMATION__CONTIENT = eINSTANCE.getFormation_Contient();
-
-		/**
 		 * The meta object literal for the '<em><b>Ues</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -906,20 +1115,20 @@ public interface FILPackage extends EPackage {
 		EReference FORMATION__UES = eINSTANCE.getFormation_Ues();
 
 		/**
-		 * The meta object literal for the '<em><b>Contacts</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Intervenant</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FORMATION__CONTACTS = eINSTANCE.getFormation_Contacts();
+		EReference FORMATION__INTERVENANT = eINSTANCE.getFormation_Intervenant();
 
 		/**
-		 * The meta object literal for the '<em><b>Niveau</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Presentation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FORMATION__NIVEAU = eINSTANCE.getFormation_Niveau();
+		EReference FORMATION__PRESENTATION = eINSTANCE.getFormation_Presentation();
 
 		/**
 		 * The meta object literal for the '{@link fIL.impl.UEImpl <em>UE</em>}' class.
@@ -948,62 +1157,46 @@ public interface FILPackage extends EPackage {
 		EAttribute UE__PSEUDO = eINSTANCE.getUE_Pseudo();
 
 		/**
-		 * The meta object literal for the '{@link fIL.impl.EnseignantImpl <em>Enseignant</em>}' class.
+		 * The meta object literal for the '<em><b>Documents</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fIL.impl.EnseignantImpl
-		 * @see fIL.impl.FILPackageImpl#getEnseignant()
 		 * @generated
 		 */
-		EClass ENSEIGNANT = eINSTANCE.getEnseignant();
+		EReference UE__DOCUMENTS = eINSTANCE.getUE_Documents();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Presentation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENSEIGNANT__NOM = eINSTANCE.getEnseignant_Nom();
+		EReference UE__PRESENTATION = eINSTANCE.getUE_Presentation();
 
 		/**
-		 * The meta object literal for the '<em><b>Prenom</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Intervenant</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENSEIGNANT__PRENOM = eINSTANCE.getEnseignant_Prenom();
+		EReference UE__INTERVENANT = eINSTANCE.getUE_Intervenant();
 
 		/**
-		 * The meta object literal for the '<em><b>Mail</b></em>' attribute feature.
+		 * The meta object literal for the '{@link fIL.impl.AudioImpl <em>Audio</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see fIL.impl.AudioImpl
+		 * @see fIL.impl.FILPackageImpl#getAudio()
 		 * @generated
 		 */
-		EAttribute ENSEIGNANT__MAIL = eINSTANCE.getEnseignant_Mail();
+		EClass AUDIO = eINSTANCE.getAudio();
 
 		/**
-		 * The meta object literal for the '<em><b>Tel</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Duree</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ENSEIGNANT__TEL = eINSTANCE.getEnseignant_Tel();
-
-		/**
-		 * The meta object literal for the '<em><b>Adresse</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENSEIGNANT__ADRESSE = eINSTANCE.getEnseignant_Adresse();
-
-		/**
-		 * The meta object literal for the '<em><b>Fax</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ENSEIGNANT__FAX = eINSTANCE.getEnseignant_Fax();
+		EAttribute AUDIO__DUREE = eINSTANCE.getAudio_Duree();
 
 		/**
 		 * The meta object literal for the '{@link fIL.impl.PresentationImpl <em>Presentation</em>}' class.
@@ -1016,48 +1209,12 @@ public interface FILPackage extends EPackage {
 		EClass PRESENTATION = eINSTANCE.getPresentation();
 
 		/**
-		 * The meta object literal for the '{@link fIL.impl.ContactImpl <em>Contact</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see fIL.impl.ContactImpl
-		 * @see fIL.impl.FILPackageImpl#getContact()
-		 * @generated
-		 */
-		EClass CONTACT = eINSTANCE.getContact();
-
-		/**
-		 * The meta object literal for the '<em><b>Responsables</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTACT__RESPONSABLES = eINSTANCE.getContact_Responsables();
-
-		/**
-		 * The meta object literal for the '<em><b>Statut</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTACT__STATUT = eINSTANCE.getContact_Statut();
-
-		/**
-		 * The meta object literal for the '{@link fIL.impl.ArticleImpl <em>Article</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see fIL.impl.ArticleImpl
-		 * @see fIL.impl.FILPackageImpl#getArticle()
-		 * @generated
-		 */
-		EClass ARTICLE = eINSTANCE.getArticle();
-
-		/**
 		 * The meta object literal for the '<em><b>Titre</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARTICLE__TITRE = eINSTANCE.getArticle_Titre();
+		EAttribute PRESENTATION__TITRE = eINSTANCE.getPresentation_Titre();
 
 		/**
 		 * The meta object literal for the '<em><b>Contenue</b></em>' attribute feature.
@@ -1065,41 +1222,33 @@ public interface FILPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ARTICLE__CONTENUE = eINSTANCE.getArticle_Contenue();
+		EAttribute PRESENTATION__CONTENUE = eINSTANCE.getPresentation_Contenue();
 
 		/**
-		 * The meta object literal for the '<em><b>Onglet</b></em>' reference feature.
+		 * The meta object literal for the '{@link fIL.impl.FaculteImpl <em>Faculte</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fIL.impl.FaculteImpl
+		 * @see fIL.impl.FILPackageImpl#getFaculte()
+		 * @generated
+		 */
+		EClass FACULTE = eINSTANCE.getFaculte();
+
+		/**
+		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ARTICLE__ONGLET = eINSTANCE.getArticle_Onglet();
+		EAttribute FACULTE__NOM = eINSTANCE.getFaculte_Nom();
 
 		/**
-		 * The meta object literal for the '{@link fIL.impl.InformationImpl <em>Information</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see fIL.impl.InformationImpl
-		 * @see fIL.impl.FILPackageImpl#getInformation()
-		 * @generated
-		 */
-		EClass INFORMATION = eINSTANCE.getInformation();
-
-		/**
-		 * The meta object literal for the '<em><b>Titre</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Niveau</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INFORMATION__TITRE = eINSTANCE.getInformation_Titre();
-
-		/**
-		 * The meta object literal for the '<em><b>Articles</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INFORMATION__ARTICLES = eINSTANCE.getInformation_Articles();
+		EReference FACULTE__NIVEAU = eINSTANCE.getFaculte_Niveau();
 
 		/**
 		 * The meta object literal for the '{@link fIL.impl.NiveauImpl <em>Niveau</em>}' class.
@@ -1128,12 +1277,124 @@ public interface FILPackage extends EPackage {
 		EAttribute NIVEAU__PSEUDO = eINSTANCE.getNiveau_Pseudo();
 
 		/**
-		 * The meta object literal for the '<em><b>Formations</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Formation</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference NIVEAU__FORMATIONS = eINSTANCE.getNiveau_Formations();
+		EReference NIVEAU__FORMATION = eINSTANCE.getNiveau_Formation();
+
+		/**
+		 * The meta object literal for the '{@link fIL.impl.IntervenantImpl <em>Intervenant</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fIL.impl.IntervenantImpl
+		 * @see fIL.impl.FILPackageImpl#getIntervenant()
+		 * @generated
+		 */
+		EClass INTERVENANT = eINSTANCE.getIntervenant();
+
+		/**
+		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERVENANT__NOM = eINSTANCE.getIntervenant_Nom();
+
+		/**
+		 * The meta object literal for the '<em><b>Prenom</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERVENANT__PRENOM = eINSTANCE.getIntervenant_Prenom();
+
+		/**
+		 * The meta object literal for the '<em><b>Statut</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERVENANT__STATUT = eINSTANCE.getIntervenant_Statut();
+
+		/**
+		 * The meta object literal for the '{@link fIL.impl.DocumentsImpl <em>Documents</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fIL.impl.DocumentsImpl
+		 * @see fIL.impl.FILPackageImpl#getDocuments()
+		 * @generated
+		 */
+		EClass DOCUMENTS = eINSTANCE.getDocuments();
+
+		/**
+		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOCUMENTS__NOM = eINSTANCE.getDocuments_Nom();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOCUMENTS__DESCRIPTION = eINSTANCE.getDocuments_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Taille</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOCUMENTS__TAILLE = eINSTANCE.getDocuments_Taille();
+
+		/**
+		 * The meta object literal for the '{@link fIL.impl.VideoImpl <em>Video</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fIL.impl.VideoImpl
+		 * @see fIL.impl.FILPackageImpl#getVideo()
+		 * @generated
+		 */
+		EClass VIDEO = eINSTANCE.getVideo();
+
+		/**
+		 * The meta object literal for the '<em><b>Duree</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VIDEO__DUREE = eINSTANCE.getVideo_Duree();
+
+		/**
+		 * The meta object literal for the '{@link fIL.impl.FichierImpl <em>Fichier</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fIL.impl.FichierImpl
+		 * @see fIL.impl.FILPackageImpl#getFichier()
+		 * @generated
+		 */
+		EClass FICHIER = eINSTANCE.getFichier();
+
+		/**
+		 * The meta object literal for the '<em><b>Lien</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FICHIER__LIEN = eINSTANCE.getFichier_Lien();
+
+		/**
+		 * The meta object literal for the '<em><b>Auteur</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FICHIER__AUTEUR = eINSTANCE.getFichier_Auteur();
 
 	}
 

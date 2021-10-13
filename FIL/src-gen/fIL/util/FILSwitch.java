@@ -80,9 +80,50 @@ public class FILSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case FILPackage.ENSEIGNANT: {
-			Enseignant enseignant = (Enseignant) theEObject;
-			T result = caseEnseignant(enseignant);
+		case FILPackage.NIVEAU: {
+			Niveau niveau = (Niveau) theEObject;
+			T result = caseNiveau(niveau);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case FILPackage.INTERVENANT: {
+			Intervenant intervenant = (Intervenant) theEObject;
+			T result = caseIntervenant(intervenant);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case FILPackage.DOCUMENTS: {
+			Documents documents = (Documents) theEObject;
+			T result = caseDocuments(documents);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case FILPackage.VIDEO: {
+			Video video = (Video) theEObject;
+			T result = caseVideo(video);
+			if (result == null)
+				result = caseDocuments(video);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case FILPackage.FICHIER: {
+			Fichier fichier = (Fichier) theEObject;
+			T result = caseFichier(fichier);
+			if (result == null)
+				result = caseDocuments(fichier);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case FILPackage.AUDIO: {
+			Audio audio = (Audio) theEObject;
+			T result = caseAudio(audio);
+			if (result == null)
+				result = caseDocuments(audio);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -94,30 +135,9 @@ public class FILSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case FILPackage.CONTACT: {
-			Contact contact = (Contact) theEObject;
-			T result = caseContact(contact);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case FILPackage.ARTICLE: {
-			Article article = (Article) theEObject;
-			T result = caseArticle(article);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case FILPackage.INFORMATION: {
-			Information information = (Information) theEObject;
-			T result = caseInformation(information);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case FILPackage.NIVEAU: {
-			Niveau niveau = (Niveau) theEObject;
-			T result = caseNiveau(niveau);
+		case FILPackage.FACULTE: {
+			Faculte faculte = (Faculte) theEObject;
+			T result = caseFaculte(faculte);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -158,17 +178,92 @@ public class FILSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Enseignant</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Niveau</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Enseignant</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Niveau</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEnseignant(Enseignant object) {
+	public T caseNiveau(Niveau object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Intervenant</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Intervenant</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntervenant(Intervenant object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Documents</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Documents</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDocuments(Documents object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Video</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Video</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVideo(Video object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Fichier</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Fichier</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFichier(Fichier object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Audio</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Audio</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAudio(Audio object) {
 		return null;
 	}
 
@@ -188,62 +283,17 @@ public class FILSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Contact</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Faculte</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Contact</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Faculte</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseContact(Contact object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Article</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Article</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseArticle(Article object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Information</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Information</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInformation(Information object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Niveau</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Niveau</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNiveau(Niveau object) {
+	public T caseFaculte(Faculte object) {
 		return null;
 	}
 

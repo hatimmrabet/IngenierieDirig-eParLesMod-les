@@ -2,21 +2,24 @@
  */
 package fIL.provider;
 
+import fIL.FILPackage;
+import fIL.Presentation;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link fIL.Presentation} object.
@@ -47,8 +50,42 @@ public class PresentationItemProvider extends ItemProviderAdapter implements IEd
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTitrePropertyDescriptor(object);
+			addContenuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Titre feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitrePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Presentation_titre_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Presentation_titre_feature",
+								"_UI_Presentation_type"),
+						FILPackage.Literals.PRESENTATION__TITRE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Contenue feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContenuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Presentation_contenue_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Presentation_contenue_feature",
+								"_UI_Presentation_type"),
+						FILPackage.Literals.PRESENTATION__CONTENUE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -80,7 +117,9 @@ public class PresentationItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Presentation_type");
+		String label = ((Presentation) object).getTitre();
+		return label == null || label.length() == 0 ? getString("_UI_Presentation_type")
+				: getString("_UI_Presentation_type") + " " + label;
 	}
 
 	/**
@@ -93,6 +132,13 @@ public class PresentationItemProvider extends ItemProviderAdapter implements IEd
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Presentation.class)) {
+		case FILPackage.PRESENTATION__TITRE:
+		case FILPackage.PRESENTATION__CONTENUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		}
 		super.notifyChanged(notification);
 	}
 

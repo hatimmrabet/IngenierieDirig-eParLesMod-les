@@ -3,7 +3,7 @@
 package fIL.provider;
 
 import fIL.FILPackage;
-import fIL.Information;
+import fIL.Fichier;
 
 import java.util.Collection;
 import java.util.List;
@@ -11,34 +11,25 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fIL.Information} object.
+ * This is the item provider adapter for a {@link fIL.Fichier} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class InformationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class FichierItemProvider extends DocumentsItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InformationItemProvider(AdapterFactory adapterFactory) {
+	public FichierItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,52 +44,52 @@ public class InformationItemProvider extends ItemProviderAdapter implements IEdi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTitrePropertyDescriptor(object);
-			addArticlesPropertyDescriptor(object);
+			addLienPropertyDescriptor(object);
+			addAuteurPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Titre feature.
+	 * This adds a property descriptor for the Lien feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTitrePropertyDescriptor(Object object) {
+	protected void addLienPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Information_titre_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Information_titre_feature",
-								"_UI_Information_type"),
-						FILPackage.Literals.INFORMATION__TITRE, true, false, false,
+						getResourceLocator(), getString("_UI_Fichier_lien_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Fichier_lien_feature", "_UI_Fichier_type"),
+						FILPackage.Literals.FICHIER__LIEN, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Articles feature.
+	 * This adds a property descriptor for the Auteur feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addArticlesPropertyDescriptor(Object object) {
+	protected void addAuteurPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Information_articles_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Information_articles_feature",
-								"_UI_Information_type"),
-						FILPackage.Literals.INFORMATION__ARTICLES, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_Fichier_auteur_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Fichier_auteur_feature",
+								"_UI_Fichier_type"),
+						FILPackage.Literals.FICHIER__AUTEUR, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns Information.gif.
+	 * This returns Fichier.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Information"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Fichier"));
 	}
 
 	/**
@@ -119,9 +110,9 @@ public class InformationItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Information) object).getTitre();
-		return label == null || label.length() == 0 ? getString("_UI_Information_type")
-				: getString("_UI_Information_type") + " " + label;
+		String label = ((Fichier) object).getNom();
+		return label == null || label.length() == 0 ? getString("_UI_Fichier_type")
+				: getString("_UI_Fichier_type") + " " + label;
 	}
 
 	/**
@@ -135,8 +126,9 @@ public class InformationItemProvider extends ItemProviderAdapter implements IEdi
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Information.class)) {
-		case FILPackage.INFORMATION__TITRE:
+		switch (notification.getFeatureID(Fichier.class)) {
+		case FILPackage.FICHIER__LIEN:
+		case FILPackage.FICHIER__AUTEUR:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
@@ -153,17 +145,6 @@ public class InformationItemProvider extends ItemProviderAdapter implements IEdi
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return FILEditPlugin.INSTANCE;
 	}
 
 }

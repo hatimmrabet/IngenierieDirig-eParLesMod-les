@@ -17,10 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fIL.Formation#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.Formation#getPseudo <em>Pseudo</em>}</li>
- *   <li>{@link fIL.Formation#getContient <em>Contient</em>}</li>
  *   <li>{@link fIL.Formation#getUes <em>Ues</em>}</li>
- *   <li>{@link fIL.Formation#getContacts <em>Contacts</em>}</li>
- *   <li>{@link fIL.Formation#getNiveau <em>Niveau</em>}</li>
+ *   <li>{@link fIL.Formation#getPresentation <em>Presentation</em>}</li>
+ *   <li>{@link fIL.Formation#getIntervenant <em>Intervenant</em>}</li>
  * </ul>
  *
  * @see fIL.FILPackage#getFormation()
@@ -73,28 +72,6 @@ public interface Formation extends EObject {
 	void setPseudo(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Contient</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contient</em>' containment reference.
-	 * @see #setContient(Presentation)
-	 * @see fIL.FILPackage#getFormation_Contient()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Presentation getContient();
-
-	/**
-	 * Sets the value of the '{@link fIL.Formation#getContient <em>Contient</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Contient</em>' containment reference.
-	 * @see #getContient()
-	 * @generated
-	 */
-	void setContient(Presentation value);
-
-	/**
 	 * Returns the value of the '<em><b>Ues</b></em>' containment reference list.
 	 * The list contents are of type {@link fIL.UE}.
 	 * <!-- begin-user-doc -->
@@ -107,39 +84,37 @@ public interface Formation extends EObject {
 	EList<UE> getUes();
 
 	/**
-	 * Returns the value of the '<em><b>Contacts</b></em>' containment reference list.
-	 * The list contents are of type {@link fIL.Contact}.
+	 * Returns the value of the '<em><b>Intervenant</b></em>' containment reference list.
+	 * The list contents are of type {@link fIL.Intervenant}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contacts</em>' containment reference list.
-	 * @see fIL.FILPackage#getFormation_Contacts()
+	 * @return the value of the '<em>Intervenant</em>' containment reference list.
+	 * @see fIL.FILPackage#getFormation_Intervenant()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Contact> getContacts();
+	EList<Intervenant> getIntervenant();
 
 	/**
-	 * Returns the value of the '<em><b>Niveau</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link fIL.Niveau#getFormations <em>Formations</em>}'.
+	 * Returns the value of the '<em><b>Presentation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Niveau</em>' reference.
-	 * @see #setNiveau(Niveau)
-	 * @see fIL.FILPackage#getFormation_Niveau()
-	 * @see fIL.Niveau#getFormations
-	 * @model opposite="formations" required="true"
+	 * @return the value of the '<em>Presentation</em>' containment reference.
+	 * @see #setPresentation(Presentation)
+	 * @see fIL.FILPackage#getFormation_Presentation()
+	 * @model containment="true"
 	 * @generated
 	 */
-	Niveau getNiveau();
+	Presentation getPresentation();
 
 	/**
-	 * Sets the value of the '{@link fIL.Formation#getNiveau <em>Niveau</em>}' reference.
+	 * Sets the value of the '{@link fIL.Formation#getPresentation <em>Presentation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Niveau</em>' reference.
-	 * @see #getNiveau()
+	 * @param value the new value of the '<em>Presentation</em>' containment reference.
+	 * @see #getPresentation()
 	 * @generated
 	 */
-	void setNiveau(Niveau value);
+	void setPresentation(Presentation value);
 
 } // Formation

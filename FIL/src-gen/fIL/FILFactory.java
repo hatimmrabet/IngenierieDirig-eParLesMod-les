@@ -40,13 +40,13 @@ public interface FILFactory extends EFactory {
 	UE createUE();
 
 	/**
-	 * Returns a new object of class '<em>Enseignant</em>'.
+	 * Returns a new object of class '<em>Audio</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Enseignant</em>'.
+	 * @return a new object of class '<em>Audio</em>'.
 	 * @generated
 	 */
-	Enseignant createEnseignant();
+	Audio createAudio();
 
 	/**
 	 * Returns a new object of class '<em>Presentation</em>'.
@@ -58,31 +58,13 @@ public interface FILFactory extends EFactory {
 	Presentation createPresentation();
 
 	/**
-	 * Returns a new object of class '<em>Contact</em>'.
+	 * Returns a new object of class '<em>Faculte</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Contact</em>'.
+	 * @return a new object of class '<em>Faculte</em>'.
 	 * @generated
 	 */
-	Contact createContact();
-
-	/**
-	 * Returns a new object of class '<em>Article</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Article</em>'.
-	 * @generated
-	 */
-	Article createArticle();
-
-	/**
-	 * Returns a new object of class '<em>Information</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Information</em>'.
-	 * @generated
-	 */
-	Information createInformation();
+	Faculte createFaculte();
 
 	/**
 	 * Returns a new object of class '<em>Niveau</em>'.
@@ -92,6 +74,42 @@ public interface FILFactory extends EFactory {
 	 * @generated
 	 */
 	Niveau createNiveau();
+
+	/**
+	 * Returns a new object of class '<em>Intervenant</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Intervenant</em>'.
+	 * @generated
+	 */
+	Intervenant createIntervenant();
+
+	/**
+	 * Returns a new object of class '<em>Documents</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Documents</em>'.
+	 * @generated
+	 */
+	Documents createDocuments();
+
+	/**
+	 * Returns a new object of class '<em>Video</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Video</em>'.
+	 * @generated
+	 */
+	Video createVideo();
+
+	/**
+	 * Returns a new object of class '<em>Fichier</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fichier</em>'.
+	 * @generated
+	 */
+	Fichier createFichier();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fIL.Niveau#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.Niveau#getPseudo <em>Pseudo</em>}</li>
- *   <li>{@link fIL.Niveau#getFormations <em>Formations</em>}</li>
+ *   <li>{@link fIL.Niveau#getFormation <em>Formation</em>}</li>
  * </ul>
  *
  * @see fIL.FILPackage#getNiveau()
@@ -70,17 +70,15 @@ public interface Niveau extends EObject {
 	void setPseudo(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Formations</b></em>' reference list.
+	 * Returns the value of the '<em><b>Formation</b></em>' containment reference list.
 	 * The list contents are of type {@link fIL.Formation}.
-	 * It is bidirectional and its opposite is '{@link fIL.Formation#getNiveau <em>Niveau</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Formations</em>' reference list.
-	 * @see fIL.FILPackage#getNiveau_Formations()
-	 * @see fIL.Formation#getNiveau
-	 * @model opposite="niveau" required="true"
+	 * @return the value of the '<em>Formation</em>' containment reference list.
+	 * @see fIL.FILPackage#getNiveau_Formation()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Formation> getFormations();
+	EList<Formation> getFormation();
 
 } // Niveau
