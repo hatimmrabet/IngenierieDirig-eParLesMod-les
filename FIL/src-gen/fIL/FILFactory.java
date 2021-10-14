@@ -22,6 +22,24 @@ public interface FILFactory extends EFactory {
 	FILFactory eINSTANCE = fIL.impl.FILFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Faculte</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Faculte</em>'.
+	 * @generated
+	 */
+	Faculte createFaculte();
+
+	/**
+	 * Returns a new object of class '<em>Niveau</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Niveau</em>'.
+	 * @generated
+	 */
+	Niveau createNiveau();
+
+	/**
 	 * Returns a new object of class '<em>Formation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,6 +56,33 @@ public interface FILFactory extends EFactory {
 	 * @generated
 	 */
 	UE createUE();
+
+	/**
+	 * Returns a new object of class '<em>Document</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Document</em>'.
+	 * @generated
+	 */
+	Document createDocument();
+
+	/**
+	 * Returns a new object of class '<em>Video</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Video</em>'.
+	 * @generated
+	 */
+	Video createVideo();
+
+	/**
+	 * Returns a new object of class '<em>Fichier</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Fichier</em>'.
+	 * @generated
+	 */
+	Fichier createFichier();
 
 	/**
 	 * Returns a new object of class '<em>Audio</em>'.
@@ -58,13 +103,13 @@ public interface FILFactory extends EFactory {
 	Presentation createPresentation();
 
 	/**
-	 * Returns a new object of class '<em>Faculte</em>'.
+	 * Returns a new object of class '<em>Intervenant</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Faculte</em>'.
+	 * @return a new object of class '<em>Intervenant</em>'.
 	 * @generated
 	 */
-	Faculte createFaculte();
+	Intervenant createIntervenant();
 
 	/**
 	 * Returns a new object of class '<em>Responsable</em>'.
@@ -83,51 +128,6 @@ public interface FILFactory extends EFactory {
 	 * @generated
 	 */
 	Enseignant createEnseignant();
-
-	/**
-	 * Returns a new object of class '<em>Niveau</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Niveau</em>'.
-	 * @generated
-	 */
-	Niveau createNiveau();
-
-	/**
-	 * Returns a new object of class '<em>Intervenant</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Intervenant</em>'.
-	 * @generated
-	 */
-	Intervenant createIntervenant();
-
-	/**
-	 * Returns a new object of class '<em>Documents</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Documents</em>'.
-	 * @generated
-	 */
-	Documents createDocuments();
-
-	/**
-	 * Returns a new object of class '<em>Video</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Video</em>'.
-	 * @generated
-	 */
-	Video createVideo();
-
-	/**
-	 * Returns a new object of class '<em>Fichier</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fichier</em>'.
-	 * @generated
-	 */
-	Fichier createFichier();
 
 	/**
 	 * Returns the package supported by this factory.

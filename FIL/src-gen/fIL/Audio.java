@@ -18,7 +18,7 @@ package fIL;
  * @model
  * @generated
  */
-public interface Audio extends Documents {
+public interface Audio extends Document {
 	/**
 	 * Returns the value of the '<em><b>Duree</b></em>' attribute.
 	 * <!-- begin-user-doc -->

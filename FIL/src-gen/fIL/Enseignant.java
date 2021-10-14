@@ -13,5 +13,4 @@ package fIL;
  * @generated
  */
 public interface Enseignant extends Intervenant {
-
 } // Enseignant

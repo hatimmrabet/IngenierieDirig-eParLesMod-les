@@ -106,9 +106,8 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(FILPackage.Literals.FORMATION__UES);
 			childrenFeatures.add(FILPackage.Literals.FORMATION__PRESENTATION);
-			childrenFeatures.add(FILPackage.Literals.FORMATION__INTERVENANT);
+			childrenFeatures.add(FILPackage.Literals.FORMATION__UES);
 		}
 		return childrenFeatures;
 	}
@@ -176,9 +175,8 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 		case FILPackage.FORMATION__PSEUDO:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case FILPackage.FORMATION__UES:
 		case FILPackage.FORMATION__PRESENTATION:
-		case FILPackage.FORMATION__INTERVENANT:
+		case FILPackage.FORMATION__UES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -196,20 +194,11 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors
-				.add(createChildParameter(FILPackage.Literals.FORMATION__UES, FILFactory.eINSTANCE.createUE()));
-
 		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__PRESENTATION,
 				FILFactory.eINSTANCE.createPresentation()));
 
-		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__INTERVENANT,
-				FILFactory.eINSTANCE.createIntervenant()));
-
-		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__INTERVENANT,
-				FILFactory.eINSTANCE.createResponsable()));
-
-		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__INTERVENANT,
-				FILFactory.eINSTANCE.createEnseignant()));
+		newChildDescriptors
+				.add(createChildParameter(FILPackage.Literals.FORMATION__UES, FILFactory.eINSTANCE.createUE()));
 	}
 
 	/**

@@ -67,6 +67,16 @@ public class FILAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected FILSwitch<Adapter> modelSwitch = new FILSwitch<Adapter>() {
 		@Override
+		public Adapter caseFaculte(Faculte object) {
+			return createFaculteAdapter();
+		}
+
+		@Override
+		public Adapter caseNiveau(Niveau object) {
+			return createNiveauAdapter();
+		}
+
+		@Override
 		public Adapter caseFormation(Formation object) {
 			return createFormationAdapter();
 		}
@@ -77,18 +87,8 @@ public class FILAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseNiveau(Niveau object) {
-			return createNiveauAdapter();
-		}
-
-		@Override
-		public Adapter caseIntervenant(Intervenant object) {
-			return createIntervenantAdapter();
-		}
-
-		@Override
-		public Adapter caseDocuments(Documents object) {
-			return createDocumentsAdapter();
+		public Adapter caseDocument(Document object) {
+			return createDocumentAdapter();
 		}
 
 		@Override
@@ -112,8 +112,8 @@ public class FILAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseFaculte(Faculte object) {
-			return createFaculteAdapter();
+		public Adapter caseIntervenant(Intervenant object) {
+			return createIntervenantAdapter();
 		}
 
 		@Override
@@ -146,6 +146,34 @@ public class FILAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link fIL.Faculte <em>Faculte</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fIL.Faculte
+	 * @generated
+	 */
+	public Adapter createFaculteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fIL.Niveau <em>Niveau</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fIL.Niveau
+	 * @generated
+	 */
+	public Adapter createNiveauAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link fIL.Formation <em>Formation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -174,44 +202,16 @@ public class FILAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fIL.Niveau <em>Niveau</em>}'.
+	 * Creates a new adapter for an object of class '{@link fIL.Document <em>Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fIL.Niveau
+	 * @see fIL.Document
 	 * @generated
 	 */
-	public Adapter createNiveauAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link fIL.Intervenant <em>Intervenant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fIL.Intervenant
-	 * @generated
-	 */
-	public Adapter createIntervenantAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link fIL.Documents <em>Documents</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fIL.Documents
-	 * @generated
-	 */
-	public Adapter createDocumentsAdapter() {
+	public Adapter createDocumentAdapter() {
 		return null;
 	}
 
@@ -272,16 +272,16 @@ public class FILAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fIL.Faculte <em>Faculte</em>}'.
+	 * Creates a new adapter for an object of class '{@link fIL.Intervenant <em>Intervenant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fIL.Faculte
+	 * @see fIL.Intervenant
 	 * @generated
 	 */
-	public Adapter createFaculteAdapter() {
+	public Adapter createIntervenantAdapter() {
 		return null;
 	}
 

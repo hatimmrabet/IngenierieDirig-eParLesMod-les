@@ -88,7 +88,7 @@ public class FaculteItemProvider extends ItemProviderAdapter implements IEditing
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(FILPackage.Literals.FACULTE__NIVEAU);
+			childrenFeatures.add(FILPackage.Literals.FACULTE__NIVEAUX);
 		}
 		return childrenFeatures;
 	}
@@ -155,7 +155,7 @@ public class FaculteItemProvider extends ItemProviderAdapter implements IEditing
 		case FILPackage.FACULTE__NOM:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case FILPackage.FACULTE__NIVEAU:
+		case FILPackage.FACULTE__NIVEAUX:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -174,7 +174,7 @@ public class FaculteItemProvider extends ItemProviderAdapter implements IEditing
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors
-				.add(createChildParameter(FILPackage.Literals.FACULTE__NIVEAU, FILFactory.eINSTANCE.createNiveau()));
+				.add(createChildParameter(FILPackage.Literals.FACULTE__NIVEAUX, FILFactory.eINSTANCE.createNiveau()));
 	}
 
 	/**

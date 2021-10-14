@@ -6,6 +6,7 @@ import fIL.FILPackage;
 import fIL.Presentation;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -35,6 +36,7 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * @ordered
 	 */
 	protected static final String TITRE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getTitre() <em>Titre</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,6 +56,7 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
 	 * @ordered
 	 */
 	protected static final String CONTENUE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getContenue() <em>Contenue</em>}' attribute.
 	 * <!-- begin-user-doc -->

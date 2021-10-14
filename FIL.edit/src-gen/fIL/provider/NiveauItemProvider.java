@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -103,7 +104,7 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(FILPackage.Literals.NIVEAU__FORMATION);
+			childrenFeatures.add(FILPackage.Literals.NIVEAU__FORMATIONS);
 		}
 		return childrenFeatures;
 	}
@@ -171,7 +172,7 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 		case FILPackage.NIVEAU__PSEUDO:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case FILPackage.NIVEAU__FORMATION:
+		case FILPackage.NIVEAU__FORMATIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -190,7 +191,7 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(
-				createChildParameter(FILPackage.Literals.NIVEAU__FORMATION, FILFactory.eINSTANCE.createFormation()));
+				createChildParameter(FILPackage.Literals.NIVEAU__FORMATIONS, FILFactory.eINSTANCE.createFormation()));
 	}
 
 	/**

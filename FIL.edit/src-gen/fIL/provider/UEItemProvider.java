@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -57,8 +58,6 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 
 			addNomPropertyDescriptor(object);
 			addPseudoPropertyDescriptor(object);
-			addEnseignantsPropertyDescriptor(object);
-			addResponsablePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -94,34 +93,6 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 	}
 
 	/**
-	 * This adds a property descriptor for the Enseignants feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEnseignantsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_UE_enseignants_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_UE_enseignants_feature", "_UI_UE_type"),
-						FILPackage.Literals.UE__ENSEIGNANTS, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Responsable feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResponsablePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_UE_responsable_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_UE_responsable_feature", "_UI_UE_type"),
-						FILPackage.Literals.UE__RESPONSABLE, true, false, true, null, null, null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -135,7 +106,7 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(FILPackage.Literals.UE__DOCUMENTS);
 			childrenFeatures.add(FILPackage.Literals.UE__PRESENTATION);
-			childrenFeatures.add(FILPackage.Literals.UE__INTERVENANT);
+			childrenFeatures.add(FILPackage.Literals.UE__INTERVENANTS);
 		}
 		return childrenFeatures;
 	}
@@ -204,7 +175,7 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 			return;
 		case FILPackage.UE__DOCUMENTS:
 		case FILPackage.UE__PRESENTATION:
-		case FILPackage.UE__INTERVENANT:
+		case FILPackage.UE__INTERVENANTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -223,7 +194,7 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors
-				.add(createChildParameter(FILPackage.Literals.UE__DOCUMENTS, FILFactory.eINSTANCE.createDocuments()));
+				.add(createChildParameter(FILPackage.Literals.UE__DOCUMENTS, FILFactory.eINSTANCE.createDocument()));
 
 		newChildDescriptors
 				.add(createChildParameter(FILPackage.Literals.UE__DOCUMENTS, FILFactory.eINSTANCE.createVideo()));
@@ -238,13 +209,13 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 				createChildParameter(FILPackage.Literals.UE__PRESENTATION, FILFactory.eINSTANCE.createPresentation()));
 
 		newChildDescriptors.add(
-				createChildParameter(FILPackage.Literals.UE__INTERVENANT, FILFactory.eINSTANCE.createIntervenant()));
+				createChildParameter(FILPackage.Literals.UE__INTERVENANTS, FILFactory.eINSTANCE.createIntervenant()));
 
 		newChildDescriptors.add(
-				createChildParameter(FILPackage.Literals.UE__INTERVENANT, FILFactory.eINSTANCE.createResponsable()));
+				createChildParameter(FILPackage.Literals.UE__INTERVENANTS, FILFactory.eINSTANCE.createResponsable()));
 
 		newChildDescriptors.add(
-				createChildParameter(FILPackage.Literals.UE__INTERVENANT, FILFactory.eINSTANCE.createEnseignant()));
+				createChildParameter(FILPackage.Literals.UE__INTERVENANTS, FILFactory.eINSTANCE.createEnseignant()));
 	}
 
 	/**

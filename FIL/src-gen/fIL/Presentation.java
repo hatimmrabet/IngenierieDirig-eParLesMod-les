@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Presentation extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Titre</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -66,4 +65,5 @@ public interface Presentation extends EObject {
 	 * @generated
 	 */
 	void setContenue(String value);
+
 } // Presentation

@@ -2,24 +2,26 @@
  */
 package fIL.impl;
 
-import fIL.Documents;
+import fIL.Document;
 import fIL.FILPackage;
 import fIL.Intervenant;
 import fIL.Presentation;
 import fIL.UE;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -34,9 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fIL.impl.UEImpl#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getDocuments <em>Documents</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getPresentation <em>Presentation</em>}</li>
- *   <li>{@link fIL.impl.UEImpl#getIntervenant <em>Intervenant</em>}</li>
- *   <li>{@link fIL.impl.UEImpl#getEnseignants <em>Enseignants</em>}</li>
- *   <li>{@link fIL.impl.UEImpl#getResponsable <em>Responsable</em>}</li>
+ *   <li>{@link fIL.impl.UEImpl#getIntervenants <em>Intervenants</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,47 +90,27 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Documents> documents;
+	protected EList<Document> documents;
 
 	/**
-	 * The cached value of the '{@link #getPresentation() <em>Presentation</em>}' containment reference.
+	 * The cached value of the '{@link #getPresentation() <em>Presentation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPresentation()
 	 * @generated
 	 * @ordered
 	 */
-	protected Presentation presentation;
+	protected EList<Presentation> presentation;
 
 	/**
-	 * The cached value of the '{@link #getIntervenant() <em>Intervenant</em>}' containment reference list.
+	 * The cached value of the '{@link #getIntervenants() <em>Intervenants</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIntervenant()
+	 * @see #getIntervenants()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Intervenant> intervenant;
-
-	/**
-	 * The cached value of the '{@link #getEnseignants() <em>Enseignants</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnseignants()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Intervenant> enseignants;
-
-	/**
-	 * The cached value of the '{@link #getResponsable() <em>Responsable</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResponsable()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Intervenant> responsable;
+	protected EList<Intervenant> intervenants;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,9 +178,9 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Documents> getDocuments() {
+	public EList<Document> getDocuments() {
 		if (documents == null) {
-			documents = new EObjectContainmentEList<Documents>(Documents.class, this, FILPackage.UE__DOCUMENTS);
+			documents = new EObjectContainmentEList<Document>(Document.class, this, FILPackage.UE__DOCUMENTS);
 		}
 		return documents;
 	}
@@ -210,7 +190,11 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Presentation getPresentation() {
+	public EList<Presentation> getPresentation() {
+		if (presentation == null) {
+			presentation = new EObjectContainmentEList<Presentation>(Presentation.class, this,
+					FILPackage.UE__PRESENTATION);
+		}
 		return presentation;
 	}
 
@@ -219,76 +203,12 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPresentation(Presentation newPresentation, NotificationChain msgs) {
-		Presentation oldPresentation = presentation;
-		presentation = newPresentation;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FILPackage.UE__PRESENTATION,
-					oldPresentation, newPresentation);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+	public EList<Intervenant> getIntervenants() {
+		if (intervenants == null) {
+			intervenants = new EObjectContainmentEList<Intervenant>(Intervenant.class, this,
+					FILPackage.UE__INTERVENANTS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPresentation(Presentation newPresentation) {
-		if (newPresentation != presentation) {
-			NotificationChain msgs = null;
-			if (presentation != null)
-				msgs = ((InternalEObject) presentation).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - FILPackage.UE__PRESENTATION, null, msgs);
-			if (newPresentation != null)
-				msgs = ((InternalEObject) newPresentation).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - FILPackage.UE__PRESENTATION, null, msgs);
-			msgs = basicSetPresentation(newPresentation, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.UE__PRESENTATION, newPresentation,
-					newPresentation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Intervenant> getIntervenant() {
-		if (intervenant == null) {
-			intervenant = new EObjectContainmentEList<Intervenant>(Intervenant.class, this, FILPackage.UE__INTERVENANT);
-		}
-		return intervenant;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Intervenant> getEnseignants() {
-		if (enseignants == null) {
-			enseignants = new EObjectResolvingEList<Intervenant>(Intervenant.class, this, FILPackage.UE__ENSEIGNANTS);
-		}
-		return enseignants;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Intervenant> getResponsable() {
-		if (responsable == null) {
-			responsable = new EObjectResolvingEList<Intervenant>(Intervenant.class, this, FILPackage.UE__RESPONSABLE);
-		}
-		return responsable;
+		return intervenants;
 	}
 
 	/**
@@ -302,9 +222,9 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 		case FILPackage.UE__DOCUMENTS:
 			return ((InternalEList<?>) getDocuments()).basicRemove(otherEnd, msgs);
 		case FILPackage.UE__PRESENTATION:
-			return basicSetPresentation(null, msgs);
-		case FILPackage.UE__INTERVENANT:
-			return ((InternalEList<?>) getIntervenant()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getPresentation()).basicRemove(otherEnd, msgs);
+		case FILPackage.UE__INTERVENANTS:
+			return ((InternalEList<?>) getIntervenants()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -325,12 +245,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return getDocuments();
 		case FILPackage.UE__PRESENTATION:
 			return getPresentation();
-		case FILPackage.UE__INTERVENANT:
-			return getIntervenant();
-		case FILPackage.UE__ENSEIGNANTS:
-			return getEnseignants();
-		case FILPackage.UE__RESPONSABLE:
-			return getResponsable();
+		case FILPackage.UE__INTERVENANTS:
+			return getIntervenants();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -352,22 +268,15 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return;
 		case FILPackage.UE__DOCUMENTS:
 			getDocuments().clear();
-			getDocuments().addAll((Collection<? extends Documents>) newValue);
+			getDocuments().addAll((Collection<? extends Document>) newValue);
 			return;
 		case FILPackage.UE__PRESENTATION:
-			setPresentation((Presentation) newValue);
+			getPresentation().clear();
+			getPresentation().addAll((Collection<? extends Presentation>) newValue);
 			return;
-		case FILPackage.UE__INTERVENANT:
-			getIntervenant().clear();
-			getIntervenant().addAll((Collection<? extends Intervenant>) newValue);
-			return;
-		case FILPackage.UE__ENSEIGNANTS:
-			getEnseignants().clear();
-			getEnseignants().addAll((Collection<? extends Intervenant>) newValue);
-			return;
-		case FILPackage.UE__RESPONSABLE:
-			getResponsable().clear();
-			getResponsable().addAll((Collection<? extends Intervenant>) newValue);
+		case FILPackage.UE__INTERVENANTS:
+			getIntervenants().clear();
+			getIntervenants().addAll((Collection<? extends Intervenant>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -391,16 +300,10 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			getDocuments().clear();
 			return;
 		case FILPackage.UE__PRESENTATION:
-			setPresentation((Presentation) null);
+			getPresentation().clear();
 			return;
-		case FILPackage.UE__INTERVENANT:
-			getIntervenant().clear();
-			return;
-		case FILPackage.UE__ENSEIGNANTS:
-			getEnseignants().clear();
-			return;
-		case FILPackage.UE__RESPONSABLE:
-			getResponsable().clear();
+		case FILPackage.UE__INTERVENANTS:
+			getIntervenants().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -421,13 +324,9 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 		case FILPackage.UE__DOCUMENTS:
 			return documents != null && !documents.isEmpty();
 		case FILPackage.UE__PRESENTATION:
-			return presentation != null;
-		case FILPackage.UE__INTERVENANT:
-			return intervenant != null && !intervenant.isEmpty();
-		case FILPackage.UE__ENSEIGNANTS:
-			return enseignants != null && !enseignants.isEmpty();
-		case FILPackage.UE__RESPONSABLE:
-			return responsable != null && !responsable.isEmpty();
+			return presentation != null && !presentation.isEmpty();
+		case FILPackage.UE__INTERVENANTS:
+			return intervenants != null && !intervenants.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

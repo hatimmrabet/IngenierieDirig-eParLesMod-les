@@ -19,7 +19,7 @@ package fIL;
  * @model
  * @generated
  */
-public interface Fichier extends Documents {
+public interface Fichier extends Document {
 	/**
 	 * Returns the value of the '<em><b>Lien</b></em>' attribute.
 	 * <!-- begin-user-doc -->

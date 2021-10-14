@@ -73,6 +73,52 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fIL.Faculte} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FaculteItemProvider faculteItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fIL.Faculte}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFaculteAdapter() {
+		if (faculteItemProvider == null) {
+			faculteItemProvider = new FaculteItemProvider(this);
+		}
+
+		return faculteItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fIL.Niveau} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NiveauItemProvider niveauItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fIL.Niveau}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNiveauAdapter() {
+		if (niveauItemProvider == null) {
+			niveauItemProvider = new NiveauItemProvider(this);
+		}
+
+		return niveauItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link fIL.Formation} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,6 +162,75 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 		}
 
 		return ueItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fIL.Document} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DocumentItemProvider documentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fIL.Document}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDocumentAdapter() {
+		if (documentItemProvider == null) {
+			documentItemProvider = new DocumentItemProvider(this);
+		}
+
+		return documentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fIL.Video} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected VideoItemProvider videoItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fIL.Video}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createVideoAdapter() {
+		if (videoItemProvider == null) {
+			videoItemProvider = new VideoItemProvider(this);
+		}
+
+		return videoItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fIL.Fichier} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FichierItemProvider fichierItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fIL.Fichier}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFichierAdapter() {
+		if (fichierItemProvider == null) {
+			fichierItemProvider = new FichierItemProvider(this);
+		}
+
+		return fichierItemProvider;
 	}
 
 	/**
@@ -165,26 +280,26 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fIL.Faculte} instances.
+	 * This keeps track of the one adapter used for all {@link fIL.Intervenant} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FaculteItemProvider faculteItemProvider;
+	protected IntervenantItemProvider intervenantItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fIL.Faculte}.
+	 * This creates an adapter for a {@link fIL.Intervenant}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFaculteAdapter() {
-		if (faculteItemProvider == null) {
-			faculteItemProvider = new FaculteItemProvider(this);
+	public Adapter createIntervenantAdapter() {
+		if (intervenantItemProvider == null) {
+			intervenantItemProvider = new IntervenantItemProvider(this);
 		}
 
-		return faculteItemProvider;
+		return intervenantItemProvider;
 	}
 
 	/**
@@ -231,121 +346,6 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 		}
 
 		return enseignantItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link fIL.Niveau} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NiveauItemProvider niveauItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fIL.Niveau}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createNiveauAdapter() {
-		if (niveauItemProvider == null) {
-			niveauItemProvider = new NiveauItemProvider(this);
-		}
-
-		return niveauItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link fIL.Intervenant} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IntervenantItemProvider intervenantItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fIL.Intervenant}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createIntervenantAdapter() {
-		if (intervenantItemProvider == null) {
-			intervenantItemProvider = new IntervenantItemProvider(this);
-		}
-
-		return intervenantItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link fIL.Documents} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DocumentsItemProvider documentsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fIL.Documents}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDocumentsAdapter() {
-		if (documentsItemProvider == null) {
-			documentsItemProvider = new DocumentsItemProvider(this);
-		}
-
-		return documentsItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link fIL.Video} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected VideoItemProvider videoItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fIL.Video}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createVideoAdapter() {
-		if (videoItemProvider == null) {
-			videoItemProvider = new VideoItemProvider(this);
-		}
-
-		return videoItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link fIL.Fichier} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FichierItemProvider fichierItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fIL.Fichier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFichierAdapter() {
-		if (fichierItemProvider == null) {
-			fichierItemProvider = new FichierItemProvider(this);
-		}
-
-		return fichierItemProvider;
 	}
 
 	/**
@@ -447,16 +447,16 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
+		if (faculteItemProvider != null)
+			faculteItemProvider.dispose();
+		if (niveauItemProvider != null)
+			niveauItemProvider.dispose();
 		if (formationItemProvider != null)
 			formationItemProvider.dispose();
 		if (ueItemProvider != null)
 			ueItemProvider.dispose();
-		if (niveauItemProvider != null)
-			niveauItemProvider.dispose();
-		if (intervenantItemProvider != null)
-			intervenantItemProvider.dispose();
-		if (documentsItemProvider != null)
-			documentsItemProvider.dispose();
+		if (documentItemProvider != null)
+			documentItemProvider.dispose();
 		if (videoItemProvider != null)
 			videoItemProvider.dispose();
 		if (fichierItemProvider != null)
@@ -465,8 +465,8 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 			audioItemProvider.dispose();
 		if (presentationItemProvider != null)
 			presentationItemProvider.dispose();
-		if (faculteItemProvider != null)
-			faculteItemProvider.dispose();
+		if (intervenantItemProvider != null)
+			intervenantItemProvider.dispose();
 		if (responsableItemProvider != null)
 			responsableItemProvider.dispose();
 		if (enseignantItemProvider != null)

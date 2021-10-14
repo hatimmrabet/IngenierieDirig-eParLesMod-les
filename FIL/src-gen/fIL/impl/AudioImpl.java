@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class AudioImpl extends DocumentsImpl implements Audio {
+public class AudioImpl extends DocumentImpl implements Audio {
 	/**
 	 * The default value of the '{@link #getDuree() <em>Duree</em>}' attribute.
 	 * <!-- begin-user-doc -->

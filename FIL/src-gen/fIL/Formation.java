@@ -17,9 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fIL.Formation#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.Formation#getPseudo <em>Pseudo</em>}</li>
- *   <li>{@link fIL.Formation#getUes <em>Ues</em>}</li>
  *   <li>{@link fIL.Formation#getPresentation <em>Presentation</em>}</li>
- *   <li>{@link fIL.Formation#getIntervenant <em>Intervenant</em>}</li>
+ *   <li>{@link fIL.Formation#getUes <em>Ues</em>}</li>
  * </ul>
  *
  * @see fIL.FILPackage#getFormation()
@@ -72,30 +71,6 @@ public interface Formation extends EObject {
 	void setPseudo(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Ues</b></em>' containment reference list.
-	 * The list contents are of type {@link fIL.UE}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ues</em>' containment reference list.
-	 * @see fIL.FILPackage#getFormation_Ues()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<UE> getUes();
-
-	/**
-	 * Returns the value of the '<em><b>Intervenant</b></em>' containment reference list.
-	 * The list contents are of type {@link fIL.Intervenant}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Intervenant</em>' containment reference list.
-	 * @see fIL.FILPackage#getFormation_Intervenant()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Intervenant> getIntervenant();
-
-	/**
 	 * Returns the value of the '<em><b>Presentation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,5 +91,17 @@ public interface Formation extends EObject {
 	 * @generated
 	 */
 	void setPresentation(Presentation value);
+
+	/**
+	 * Returns the value of the '<em><b>Ues</b></em>' containment reference list.
+	 * The list contents are of type {@link fIL.UE}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ues</em>' containment reference list.
+	 * @see fIL.FILPackage#getFormation_Ues()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EList<UE> getUes();
 
 } // Formation

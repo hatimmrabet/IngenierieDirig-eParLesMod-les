@@ -3,7 +3,7 @@
 package fIL.impl;
 
 import fIL.Audio;
-import fIL.Documents;
+import fIL.Document;
 import fIL.Enseignant;
 import fIL.FILFactory;
 import fIL.FILPackage;
@@ -15,6 +15,7 @@ import fIL.Niveau;
 import fIL.Presentation;
 import fIL.Responsable;
 import fIL.Video;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -34,6 +35,20 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass faculteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass niveauEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass formationEClass = null;
 
 	/**
@@ -42,6 +57,27 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * @generated
 	 */
 	private EClass ueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass documentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass videoEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fichierEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +98,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass faculteEClass = null;
+	private EClass intervenantEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,41 +113,6 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * @generated
 	 */
 	private EClass enseignantEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass niveauEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass intervenantEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass documentsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass videoEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass fichierEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -182,6 +183,69 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFaculte() {
+		return faculteEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFaculte_Nom() {
+		return (EAttribute) faculteEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFaculte_Niveaux() {
+		return (EReference) faculteEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNiveau() {
+		return niveauEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNiveau_Nom() {
+		return (EAttribute) niveauEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNiveau_Pseudo() {
+		return (EAttribute) niveauEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNiveau_Formations() {
+		return (EReference) niveauEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFormation() {
 		return formationEClass;
 	}
@@ -209,7 +273,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFormation_Ues() {
+	public EReference getFormation_Presentation() {
 		return (EReference) formationEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -218,16 +282,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFormation_Intervenant() {
-		return (EReference) formationEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFormation_Presentation() {
+	public EReference getFormation_Ues() {
 		return (EReference) formationEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -281,7 +336,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUE_Intervenant() {
+	public EReference getUE_Intervenants() {
 		return (EReference) ueEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -290,8 +345,8 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUE_Enseignants() {
-		return (EReference) ueEClass.getEStructuralFeatures().get(5);
+	public EClass getDocument() {
+		return documentEClass;
 	}
 
 	/**
@@ -299,8 +354,8 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUE_Responsable() {
-		return (EReference) ueEClass.getEStructuralFeatures().get(6);
+	public EAttribute getDocument_Nom() {
+		return (EAttribute) documentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -308,8 +363,8 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAudio() {
-		return audioEClass;
+	public EAttribute getDocument_Description() {
+		return (EAttribute) documentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -317,179 +372,8 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAudio_Duree() {
-		return (EAttribute) audioEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPresentation() {
-		return presentationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPresentation_Titre() {
-		return (EAttribute) presentationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPresentation_Contenue() {
-		return (EAttribute) presentationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFaculte() {
-		return faculteEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFaculte_Nom() {
-		return (EAttribute) faculteEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getFaculte_Niveau() {
-		return (EReference) faculteEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getResponsable() {
-		return responsableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEnseignant() {
-		return enseignantEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNiveau() {
-		return niveauEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNiveau_Nom() {
-		return (EAttribute) niveauEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNiveau_Pseudo() {
-		return (EAttribute) niveauEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getNiveau_Formation() {
-		return (EReference) niveauEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getIntervenant() {
-		return intervenantEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIntervenant_Nom() {
-		return (EAttribute) intervenantEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIntervenant_Prenom() {
-		return (EAttribute) intervenantEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDocuments() {
-		return documentsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDocuments_Nom() {
-		return (EAttribute) documentsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDocuments_Description() {
-		return (EAttribute) documentsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDocuments_Taille() {
-		return (EAttribute) documentsEClass.getEStructuralFeatures().get(2);
+	public EAttribute getDocument_Taille() {
+		return (EAttribute) documentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -542,6 +426,96 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAudio() {
+		return audioEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAudio_Duree() {
+		return (EAttribute) audioEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPresentation() {
+		return presentationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPresentation_Titre() {
+		return (EAttribute) presentationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPresentation_Contenue() {
+		return (EAttribute) presentationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIntervenant() {
+		return intervenantEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIntervenant_Nom() {
+		return (EAttribute) intervenantEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIntervenant_Prenom() {
+		return (EAttribute) intervenantEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getResponsable() {
+		return responsableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEnseignant() {
+		return enseignantEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public FILFactory getFILFactory() {
 		return (FILFactory) getEFactoryInstance();
 	}
@@ -566,35 +540,32 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		faculteEClass = createEClass(FACULTE);
+		createEAttribute(faculteEClass, FACULTE__NOM);
+		createEReference(faculteEClass, FACULTE__NIVEAUX);
+
+		niveauEClass = createEClass(NIVEAU);
+		createEAttribute(niveauEClass, NIVEAU__NOM);
+		createEAttribute(niveauEClass, NIVEAU__PSEUDO);
+		createEReference(niveauEClass, NIVEAU__FORMATIONS);
+
 		formationEClass = createEClass(FORMATION);
 		createEAttribute(formationEClass, FORMATION__NOM);
 		createEAttribute(formationEClass, FORMATION__PSEUDO);
-		createEReference(formationEClass, FORMATION__UES);
 		createEReference(formationEClass, FORMATION__PRESENTATION);
-		createEReference(formationEClass, FORMATION__INTERVENANT);
+		createEReference(formationEClass, FORMATION__UES);
 
 		ueEClass = createEClass(UE);
 		createEAttribute(ueEClass, UE__NOM);
 		createEAttribute(ueEClass, UE__PSEUDO);
 		createEReference(ueEClass, UE__DOCUMENTS);
 		createEReference(ueEClass, UE__PRESENTATION);
-		createEReference(ueEClass, UE__INTERVENANT);
-		createEReference(ueEClass, UE__ENSEIGNANTS);
-		createEReference(ueEClass, UE__RESPONSABLE);
+		createEReference(ueEClass, UE__INTERVENANTS);
 
-		niveauEClass = createEClass(NIVEAU);
-		createEAttribute(niveauEClass, NIVEAU__NOM);
-		createEAttribute(niveauEClass, NIVEAU__PSEUDO);
-		createEReference(niveauEClass, NIVEAU__FORMATION);
-
-		intervenantEClass = createEClass(INTERVENANT);
-		createEAttribute(intervenantEClass, INTERVENANT__NOM);
-		createEAttribute(intervenantEClass, INTERVENANT__PRENOM);
-
-		documentsEClass = createEClass(DOCUMENTS);
-		createEAttribute(documentsEClass, DOCUMENTS__NOM);
-		createEAttribute(documentsEClass, DOCUMENTS__DESCRIPTION);
-		createEAttribute(documentsEClass, DOCUMENTS__TAILLE);
+		documentEClass = createEClass(DOCUMENT);
+		createEAttribute(documentEClass, DOCUMENT__NOM);
+		createEAttribute(documentEClass, DOCUMENT__DESCRIPTION);
+		createEAttribute(documentEClass, DOCUMENT__TAILLE);
 
 		videoEClass = createEClass(VIDEO);
 		createEAttribute(videoEClass, VIDEO__DUREE);
@@ -610,9 +581,9 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		createEAttribute(presentationEClass, PRESENTATION__TITRE);
 		createEAttribute(presentationEClass, PRESENTATION__CONTENUE);
 
-		faculteEClass = createEClass(FACULTE);
-		createEAttribute(faculteEClass, FACULTE__NOM);
-		createEReference(faculteEClass, FACULTE__NIVEAU);
+		intervenantEClass = createEClass(INTERVENANT);
+		createEAttribute(intervenantEClass, INTERVENANT__NOM);
+		createEAttribute(intervenantEClass, INTERVENANT__PRENOM);
 
 		responsableEClass = createEClass(RESPONSABLE);
 
@@ -648,48 +619,18 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		videoEClass.getESuperTypes().add(this.getDocuments());
-		fichierEClass.getESuperTypes().add(this.getDocuments());
-		audioEClass.getESuperTypes().add(this.getDocuments());
+		videoEClass.getESuperTypes().add(this.getDocument());
+		fichierEClass.getESuperTypes().add(this.getDocument());
+		audioEClass.getESuperTypes().add(this.getDocument());
 		responsableEClass.getESuperTypes().add(this.getIntervenant());
 		enseignantEClass.getESuperTypes().add(this.getIntervenant());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(formationEClass, Formation.class, "Formation", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFormation_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Formation.class, !IS_TRANSIENT,
+		initEClass(faculteEClass, Faculte.class, "Faculte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFaculte_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Faculte.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFormation_Pseudo(), ecorePackage.getEString(), "pseudo", null, 0, 1, Formation.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFormation_Ues(), this.getUE(), null, "ues", null, 1, -1, Formation.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getFormation_Presentation(), this.getPresentation(), null, "presentation", null, 0, 1,
-				Formation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFormation_Intervenant(), this.getIntervenant(), null, "intervenant", null, 1, -1,
-				Formation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(ueEClass, fIL.UE.class, "UE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUE_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, fIL.UE.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUE_Pseudo(), ecorePackage.getEString(), "pseudo", null, 0, 1, fIL.UE.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUE_Documents(), this.getDocuments(), null, "documents", null, 0, -1, fIL.UE.class,
+		initEReference(getFaculte_Niveaux(), this.getNiveau(), null, "niveaux", null, 1, -1, Faculte.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUE_Presentation(), this.getPresentation(), null, "presentation", null, 0, 1, fIL.UE.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUE_Intervenant(), this.getIntervenant(), null, "intervenant", null, 1, -1, fIL.UE.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUE_Enseignants(), this.getIntervenant(), null, "enseignants", null, 0, -1, fIL.UE.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUE_Responsable(), this.getIntervenant(), null, "responsable", null, 1, -1, fIL.UE.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(niveauEClass, Niveau.class, "Niveau", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -697,25 +638,45 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNiveau_Pseudo(), ecorePackage.getEString(), "pseudo", null, 0, 1, Niveau.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNiveau_Formation(), this.getFormation(), null, "formation", null, 0, -1, Niveau.class,
+		initEReference(getNiveau_Formations(), this.getFormation(), null, "formations", null, 1, -1, Niveau.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(intervenantEClass, Intervenant.class, "Intervenant", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(formationEClass, Formation.class, "Formation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntervenant_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Intervenant.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIntervenant_Prenom(), ecorePackage.getEString(), "prenom", null, 0, 1, Intervenant.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(documentsEClass, Documents.class, "Documents", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDocuments_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Documents.class, !IS_TRANSIENT,
+		initEAttribute(getFormation_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Formation.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDocuments_Description(), ecorePackage.getEString(), "description", null, 0, 1,
-				Documents.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDocuments_Taille(), ecorePackage.getEString(), "taille", null, 0, 1, Documents.class,
+		initEAttribute(getFormation_Pseudo(), ecorePackage.getEString(), "pseudo", null, 0, 1, Formation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFormation_Presentation(), this.getPresentation(), null, "presentation", null, 0, 1,
+				Formation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFormation_Ues(), this.getUE(), null, "ues", null, 1, -1, Formation.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(ueEClass, fIL.UE.class, "UE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUE_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, fIL.UE.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUE_Pseudo(), ecorePackage.getEString(), "pseudo", null, 0, 1, fIL.UE.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUE_Documents(), this.getDocument(), null, "documents", null, 0, -1, fIL.UE.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUE_Presentation(), this.getPresentation(), null, "presentation", null, 0, -1, fIL.UE.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUE_Intervenants(), this.getIntervenant(), null, "intervenants", null, 1, -1, fIL.UE.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(documentEClass, Document.class, "Document", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDocument_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Document.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocument_Description(), ecorePackage.getEString(), "description", null, 0, 1, Document.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocument_Taille(), ecorePackage.getEString(), "taille", null, 0, 1, Document.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(videoEClass, Video.class, "Video", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -740,12 +701,12 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 				Presentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(faculteEClass, Faculte.class, "Faculte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFaculte_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Faculte.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFaculte_Niveau(), this.getNiveau(), null, "niveau", null, 1, -1, Faculte.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEClass(intervenantEClass, Intervenant.class, "Intervenant", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIntervenant_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Intervenant.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntervenant_Prenom(), ecorePackage.getEString(), "prenom", null, 0, 1, Intervenant.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(responsableEClass, Responsable.class, "Responsable", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

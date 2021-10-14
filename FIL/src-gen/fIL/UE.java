@@ -3,6 +3,7 @@
 package fIL;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,9 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fIL.UE#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fIL.UE#getDocuments <em>Documents</em>}</li>
  *   <li>{@link fIL.UE#getPresentation <em>Presentation</em>}</li>
- *   <li>{@link fIL.UE#getIntervenant <em>Intervenant</em>}</li>
- *   <li>{@link fIL.UE#getEnseignants <em>Enseignants</em>}</li>
- *   <li>{@link fIL.UE#getResponsable <em>Responsable</em>}</li>
+ *   <li>{@link fIL.UE#getIntervenants <em>Intervenants</em>}</li>
  * </ul>
  *
  * @see fIL.FILPackage#getUE()
@@ -74,7 +73,7 @@ public interface UE extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Documents</b></em>' containment reference list.
-	 * The list contents are of type {@link fIL.Documents}.
+	 * The list contents are of type {@link fIL.Document}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Documents</em>' containment reference list.
@@ -82,64 +81,30 @@ public interface UE extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Documents> getDocuments();
+	EList<Document> getDocuments();
 
 	/**
-	 * Returns the value of the '<em><b>Presentation</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Presentation</b></em>' containment reference list.
+	 * The list contents are of type {@link fIL.Presentation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Presentation</em>' containment reference.
-	 * @see #setPresentation(Presentation)
+	 * @return the value of the '<em>Presentation</em>' containment reference list.
 	 * @see fIL.FILPackage#getUE_Presentation()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Presentation getPresentation();
+	EList<Presentation> getPresentation();
 
 	/**
-	 * Sets the value of the '{@link fIL.UE#getPresentation <em>Presentation</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Presentation</em>' containment reference.
-	 * @see #getPresentation()
-	 * @generated
-	 */
-	void setPresentation(Presentation value);
-
-	/**
-	 * Returns the value of the '<em><b>Intervenant</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Intervenants</b></em>' containment reference list.
 	 * The list contents are of type {@link fIL.Intervenant}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Intervenant</em>' containment reference list.
-	 * @see fIL.FILPackage#getUE_Intervenant()
+	 * @return the value of the '<em>Intervenants</em>' containment reference list.
+	 * @see fIL.FILPackage#getUE_Intervenants()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Intervenant> getIntervenant();
-
-	/**
-	 * Returns the value of the '<em><b>Enseignants</b></em>' reference list.
-	 * The list contents are of type {@link fIL.Intervenant}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Enseignants</em>' reference list.
-	 * @see fIL.FILPackage#getUE_Enseignants()
-	 * @model
-	 * @generated
-	 */
-	EList<Intervenant> getEnseignants();
-
-	/**
-	 * Returns the value of the '<em><b>Responsable</b></em>' reference list.
-	 * The list contents are of type {@link fIL.Intervenant}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Responsable</em>' reference list.
-	 * @see fIL.FILPackage#getUE_Responsable()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<Intervenant> getResponsable();
+	EList<Intervenant> getIntervenants();
 
 } // UE

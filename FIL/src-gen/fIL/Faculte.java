@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fIL.Faculte#getNom <em>Nom</em>}</li>
- *   <li>{@link fIL.Faculte#getNiveau <em>Niveau</em>}</li>
+ *   <li>{@link fIL.Faculte#getNiveaux <em>Niveaux</em>}</li>
  * </ul>
  *
  * @see fIL.FILPackage#getFaculte()
@@ -47,15 +47,15 @@ public interface Faculte extends EObject {
 	void setNom(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Niveau</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Niveaux</b></em>' containment reference list.
 	 * The list contents are of type {@link fIL.Niveau}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Niveau</em>' containment reference list.
-	 * @see fIL.FILPackage#getFaculte_Niveau()
+	 * @return the value of the '<em>Niveaux</em>' containment reference list.
+	 * @see fIL.FILPackage#getFaculte_Niveaux()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Niveau> getNiveau();
+	EList<Niveau> getNiveaux();
 
 } // Faculte

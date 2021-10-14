@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class FichierImpl extends DocumentsImpl implements Fichier {
+public class FichierImpl extends DocumentImpl implements Fichier {
 	/**
 	 * The default value of the '{@link #getLien() <em>Lien</em>}' attribute.
 	 * <!-- begin-user-doc -->

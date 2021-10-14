@@ -55,16 +55,16 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+		case FILPackage.FACULTE:
+			return createFaculte();
+		case FILPackage.NIVEAU:
+			return createNiveau();
 		case FILPackage.FORMATION:
 			return createFormation();
 		case FILPackage.UE:
 			return createUE();
-		case FILPackage.NIVEAU:
-			return createNiveau();
-		case FILPackage.INTERVENANT:
-			return createIntervenant();
-		case FILPackage.DOCUMENTS:
-			return createDocuments();
+		case FILPackage.DOCUMENT:
+			return createDocument();
 		case FILPackage.VIDEO:
 			return createVideo();
 		case FILPackage.FICHIER:
@@ -73,8 +73,8 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 			return createAudio();
 		case FILPackage.PRESENTATION:
 			return createPresentation();
-		case FILPackage.FACULTE:
-			return createFaculte();
+		case FILPackage.INTERVENANT:
+			return createIntervenant();
 		case FILPackage.RESPONSABLE:
 			return createResponsable();
 		case FILPackage.ENSEIGNANT:
@@ -82,6 +82,26 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Faculte createFaculte() {
+		FaculteImpl faculte = new FaculteImpl();
+		return faculte;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Niveau createNiveau() {
+		NiveauImpl niveau = new NiveauImpl();
+		return niveau;
 	}
 
 	/**
@@ -109,79 +129,9 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Audio createAudio() {
-		AudioImpl audio = new AudioImpl();
-		return audio;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Presentation createPresentation() {
-		PresentationImpl presentation = new PresentationImpl();
-		return presentation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Faculte createFaculte() {
-		FaculteImpl faculte = new FaculteImpl();
-		return faculte;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Responsable createResponsable() {
-		ResponsableImpl responsable = new ResponsableImpl();
-		return responsable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enseignant createEnseignant() {
-		EnseignantImpl enseignant = new EnseignantImpl();
-		return enseignant;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Niveau createNiveau() {
-		NiveauImpl niveau = new NiveauImpl();
-		return niveau;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Intervenant createIntervenant() {
-		IntervenantImpl intervenant = new IntervenantImpl();
-		return intervenant;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Documents createDocuments() {
-		DocumentsImpl documents = new DocumentsImpl();
-		return documents;
+	public Document createDocument() {
+		DocumentImpl document = new DocumentImpl();
+		return document;
 	}
 
 	/**
@@ -202,6 +152,56 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 	public Fichier createFichier() {
 		FichierImpl fichier = new FichierImpl();
 		return fichier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Audio createAudio() {
+		AudioImpl audio = new AudioImpl();
+		return audio;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Presentation createPresentation() {
+		PresentationImpl presentation = new PresentationImpl();
+		return presentation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Intervenant createIntervenant() {
+		IntervenantImpl intervenant = new IntervenantImpl();
+		return intervenant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Responsable createResponsable() {
+		ResponsableImpl responsable = new ResponsableImpl();
+		return responsable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Enseignant createEnseignant() {
+		EnseignantImpl enseignant = new EnseignantImpl();
+		return enseignant;
 	}
 
 	/**

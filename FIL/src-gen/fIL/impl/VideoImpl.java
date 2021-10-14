@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class VideoImpl extends DocumentsImpl implements Video {
+public class VideoImpl extends DocumentImpl implements Video {
 	/**
 	 * The default value of the '{@link #getDuree() <em>Duree</em>}' attribute.
 	 * <!-- begin-user-doc -->

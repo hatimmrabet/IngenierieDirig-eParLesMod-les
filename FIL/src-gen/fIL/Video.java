@@ -18,7 +18,7 @@ package fIL;
  * @model
  * @generated
  */
-public interface Video extends Documents {
+public interface Video extends Document {
 	/**
 	 * Returns the value of the '<em><b>Duree</b></em>' attribute.
 	 * <!-- begin-user-doc -->
