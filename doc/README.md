@@ -1,6 +1,7 @@
 # Glossaire:
 
 **Faculté:** contient un nom pour la designé des autres
+
 **Niveau:** c'est un niveau d'étude avec la mention du niveau ( M1 info, L2 bio...)
 
 **Formation:** c'est la formation de chaque niveau, (Machine Learning, Genie Logiciel...)
