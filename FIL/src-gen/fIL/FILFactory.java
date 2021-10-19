@@ -58,15 +58,6 @@ public interface FILFactory extends EFactory {
 	UE createUE();
 
 	/**
-	 * Returns a new object of class '<em>Document</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Document</em>'.
-	 * @generated
-	 */
-	Document createDocument();
-
-	/**
 	 * Returns a new object of class '<em>Video</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -128,6 +119,24 @@ public interface FILFactory extends EFactory {
 	 * @generated
 	 */
 	Enseignant createEnseignant();
+
+	/**
+	 * Returns a new object of class '<em>S1</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>S1</em>'.
+	 * @generated
+	 */
+	S1 createS1();
+
+	/**
+	 * Returns a new object of class '<em>S2</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>S2</em>'.
+	 * @generated
+	 */
+	S2 createS2();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -2,6 +2,8 @@
  */
 package fIL;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Responsable</b></em>'.
@@ -12,5 +14,5 @@ package fIL;
  * @model
  * @generated
  */
-public interface Responsable extends Intervenant {
+public interface Responsable extends EObject {
 } // Responsable

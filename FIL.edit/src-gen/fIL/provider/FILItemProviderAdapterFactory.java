@@ -165,29 +165,6 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fIL.Document} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DocumentItemProvider documentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fIL.Document}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDocumentAdapter() {
-		if (documentItemProvider == null) {
-			documentItemProvider = new DocumentItemProvider(this);
-		}
-
-		return documentItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link fIL.Video} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -349,6 +326,52 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fIL.S1} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected S1ItemProvider s1ItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fIL.S1}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createS1Adapter() {
+		if (s1ItemProvider == null) {
+			s1ItemProvider = new S1ItemProvider(this);
+		}
+
+		return s1ItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fIL.S2} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected S2ItemProvider s2ItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fIL.S2}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createS2Adapter() {
+		if (s2ItemProvider == null) {
+			s2ItemProvider = new S2ItemProvider(this);
+		}
+
+		return s2ItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -455,8 +478,6 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 			formationItemProvider.dispose();
 		if (ueItemProvider != null)
 			ueItemProvider.dispose();
-		if (documentItemProvider != null)
-			documentItemProvider.dispose();
 		if (videoItemProvider != null)
 			videoItemProvider.dispose();
 		if (fichierItemProvider != null)
@@ -471,6 +492,10 @@ public class FILItemProviderAdapterFactory extends FILAdapterFactory
 			responsableItemProvider.dispose();
 		if (enseignantItemProvider != null)
 			enseignantItemProvider.dispose();
+		if (s1ItemProvider != null)
+			s1ItemProvider.dispose();
+		if (s2ItemProvider != null)
+			s2ItemProvider.dispose();
 	}
 
 }

@@ -11,26 +11,44 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pseudo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="formations" lowerBound="1"
         upperBound="-1" eType="#//Formation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="presentation" eType="#//Presentation"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsables" lowerBound="1"
+        upperBound="-1" eType="#//Intervenant" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Formation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pseudo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="presentation" eType="#//Presentation"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ues" lowerBound="1" upperBound="-1"
-        eType="#//UE" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s1" lowerBound="1" eType="#//S1"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s2" lowerBound="1" eType="#//S2"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intervenant" upperBound="-1"
+        eType="#//Intervenant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsable" lowerBound="1"
+        eType="#//Intervenant" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enseignants" upperBound="-1"
+        eType="#//Intervenant" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UE">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pseudo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="documents" upperBound="-1"
         eType="#//Document" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="presentation" upperBound="-1"
-        eType="#//Presentation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="presentation" eType="#//Presentation"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="intervenants" lowerBound="1"
         upperBound="-1" eType="#//Intervenant" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="obligatoire" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsable" lowerBound="1"
+        eType="#//Intervenant" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enseignants" upperBound="-1"
+        eType="#//Intervenant" derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Document">
+  <eClassifiers xsi:type="ecore:EClass" name="Document" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="taille" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -52,7 +70,24 @@
   <eClassifiers xsi:type="ecore:EClass" name="Intervenant">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prenom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="responsable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Responsable" eSuperTypes="#//Intervenant"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Enseignant" eSuperTypes="#//Intervenant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Responsable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Enseignant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="S1">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ues" lowerBound="1" upperBound="-1"
+        eType="#//UE" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uesoptionnelles" upperBound="-1"
+        eType="#//UE" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uesobligatoires" upperBound="-1"
+        eType="#//UE" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="S2">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ues" lowerBound="1" upperBound="-1"
+        eType="#//UE" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uesoptionnelles" upperBound="-1"
+        eType="#//UE" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uesobligatoires" upperBound="-1"
+        eType="#//UE" derived="true"/>
+  </eClassifiers>
 </ecore:EPackage>

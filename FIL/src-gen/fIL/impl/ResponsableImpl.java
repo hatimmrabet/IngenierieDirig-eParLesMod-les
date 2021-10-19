@@ -6,6 +6,7 @@ import fIL.FILPackage;
 import fIL.Responsable;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class ResponsableImpl extends IntervenantImpl implements Responsable {
+public class ResponsableImpl extends MinimalEObjectImpl.Container implements Responsable {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

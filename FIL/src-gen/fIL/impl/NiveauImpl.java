@@ -4,8 +4,10 @@ package fIL.impl;
 
 import fIL.FILPackage;
 import fIL.Formation;
+import fIL.Intervenant;
 import fIL.Niveau;
 
+import fIL.Presentation;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,6 +36,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fIL.impl.NiveauImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.impl.NiveauImpl#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fIL.impl.NiveauImpl#getFormations <em>Formations</em>}</li>
+ *   <li>{@link fIL.impl.NiveauImpl#getPresentation <em>Presentation</em>}</li>
+ *   <li>{@link fIL.impl.NiveauImpl#getResponsables <em>Responsables</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +92,26 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	 * @ordered
 	 */
 	protected EList<Formation> formations;
+
+	/**
+	 * The cached value of the '{@link #getPresentation() <em>Presentation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPresentation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Presentation presentation;
+
+	/**
+	 * The cached value of the '{@link #getResponsables() <em>Responsables</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResponsables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Intervenant> responsables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,11 +191,76 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Presentation getPresentation() {
+		return presentation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPresentation(Presentation newPresentation, NotificationChain msgs) {
+		Presentation oldPresentation = presentation;
+		presentation = newPresentation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					FILPackage.NIVEAU__PRESENTATION, oldPresentation, newPresentation);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPresentation(Presentation newPresentation) {
+		if (newPresentation != presentation) {
+			NotificationChain msgs = null;
+			if (presentation != null)
+				msgs = ((InternalEObject) presentation).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - FILPackage.NIVEAU__PRESENTATION, null, msgs);
+			if (newPresentation != null)
+				msgs = ((InternalEObject) newPresentation).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - FILPackage.NIVEAU__PRESENTATION, null, msgs);
+			msgs = basicSetPresentation(newPresentation, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.NIVEAU__PRESENTATION, newPresentation,
+					newPresentation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Intervenant> getResponsables() {
+		if (responsables == null) {
+			responsables = new EObjectResolvingEList<Intervenant>(Intervenant.class, this,
+					FILPackage.NIVEAU__RESPONSABLES);
+		}
+		return responsables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case FILPackage.NIVEAU__FORMATIONS:
 			return ((InternalEList<?>) getFormations()).basicRemove(otherEnd, msgs);
+		case FILPackage.NIVEAU__PRESENTATION:
+			return basicSetPresentation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -189,6 +279,10 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 			return getPseudo();
 		case FILPackage.NIVEAU__FORMATIONS:
 			return getFormations();
+		case FILPackage.NIVEAU__PRESENTATION:
+			return getPresentation();
+		case FILPackage.NIVEAU__RESPONSABLES:
+			return getResponsables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,6 +306,13 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 			getFormations().clear();
 			getFormations().addAll((Collection<? extends Formation>) newValue);
 			return;
+		case FILPackage.NIVEAU__PRESENTATION:
+			setPresentation((Presentation) newValue);
+			return;
+		case FILPackage.NIVEAU__RESPONSABLES:
+			getResponsables().clear();
+			getResponsables().addAll((Collection<? extends Intervenant>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -233,6 +334,12 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 		case FILPackage.NIVEAU__FORMATIONS:
 			getFormations().clear();
 			return;
+		case FILPackage.NIVEAU__PRESENTATION:
+			setPresentation((Presentation) null);
+			return;
+		case FILPackage.NIVEAU__RESPONSABLES:
+			getResponsables().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,6 +358,10 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 			return PSEUDO_EDEFAULT == null ? pseudo != null : !PSEUDO_EDEFAULT.equals(pseudo);
 		case FILPackage.NIVEAU__FORMATIONS:
 			return formations != null && !formations.isEmpty();
+		case FILPackage.NIVEAU__PRESENTATION:
+			return presentation != null;
+		case FILPackage.NIVEAU__RESPONSABLES:
+			return responsables != null && !responsables.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

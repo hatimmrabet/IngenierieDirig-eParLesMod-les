@@ -58,6 +58,7 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 
 			addNomPropertyDescriptor(object);
 			addPseudoPropertyDescriptor(object);
+			addResponsablesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,6 +94,21 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
+	 * This adds a property descriptor for the Responsables feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResponsablesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Niveau_responsables_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Niveau_responsables_feature",
+								"_UI_Niveau_type"),
+						FILPackage.Literals.NIVEAU__RESPONSABLES, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -105,6 +121,7 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(FILPackage.Literals.NIVEAU__FORMATIONS);
+			childrenFeatures.add(FILPackage.Literals.NIVEAU__PRESENTATION);
 		}
 		return childrenFeatures;
 	}
@@ -173,6 +190,7 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case FILPackage.NIVEAU__FORMATIONS:
+		case FILPackage.NIVEAU__PRESENTATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -192,6 +210,9 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 
 		newChildDescriptors.add(
 				createChildParameter(FILPackage.Literals.NIVEAU__FORMATIONS, FILFactory.eINSTANCE.createFormation()));
+
+		newChildDescriptors.add(createChildParameter(FILPackage.Literals.NIVEAU__PRESENTATION,
+				FILFactory.eINSTANCE.createPresentation()));
 	}
 
 	/**

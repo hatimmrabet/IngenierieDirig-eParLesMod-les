@@ -63,8 +63,6 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 			return createFormation();
 		case FILPackage.UE:
 			return createUE();
-		case FILPackage.DOCUMENT:
-			return createDocument();
 		case FILPackage.VIDEO:
 			return createVideo();
 		case FILPackage.FICHIER:
@@ -79,6 +77,10 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 			return createResponsable();
 		case FILPackage.ENSEIGNANT:
 			return createEnseignant();
+		case FILPackage.S1:
+			return createS1();
+		case FILPackage.S2:
+			return createS2();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -122,16 +124,6 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 	public UE createUE() {
 		UEImpl ue = new UEImpl();
 		return ue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Document createDocument() {
-		DocumentImpl document = new DocumentImpl();
-		return document;
 	}
 
 	/**
@@ -202,6 +194,26 @@ public class FILFactoryImpl extends EFactoryImpl implements FILFactory {
 	public Enseignant createEnseignant() {
 		EnseignantImpl enseignant = new EnseignantImpl();
 		return enseignant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public S1 createS1() {
+		S1Impl s1 = new S1Impl();
+		return s1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public S2 createS2() {
+		S2Impl s2 = new S2Impl();
+		return s2;
 	}
 
 	/**

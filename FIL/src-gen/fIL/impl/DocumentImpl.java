@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class DocumentImpl extends MinimalEObjectImpl.Container implements Document {
+public abstract class DocumentImpl extends MinimalEObjectImpl.Container implements Document {
 	/**
 	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->

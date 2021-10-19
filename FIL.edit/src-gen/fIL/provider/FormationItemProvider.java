@@ -58,6 +58,8 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 
 			addNomPropertyDescriptor(object);
 			addPseudoPropertyDescriptor(object);
+			addResponsablePropertyDescriptor(object);
+			addEnseignantsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -95,6 +97,36 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 	}
 
 	/**
+	 * This adds a property descriptor for the Responsable feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResponsablePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Formation_responsable_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Formation_responsable_feature",
+								"_UI_Formation_type"),
+						FILPackage.Literals.FORMATION__RESPONSABLE, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Enseignants feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEnseignantsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Formation_enseignants_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Formation_enseignants_feature",
+								"_UI_Formation_type"),
+						FILPackage.Literals.FORMATION__ENSEIGNANTS, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -107,7 +139,9 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(FILPackage.Literals.FORMATION__PRESENTATION);
-			childrenFeatures.add(FILPackage.Literals.FORMATION__UES);
+			childrenFeatures.add(FILPackage.Literals.FORMATION__S1);
+			childrenFeatures.add(FILPackage.Literals.FORMATION__S2);
+			childrenFeatures.add(FILPackage.Literals.FORMATION__INTERVENANT);
 		}
 		return childrenFeatures;
 	}
@@ -176,7 +210,9 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case FILPackage.FORMATION__PRESENTATION:
-		case FILPackage.FORMATION__UES:
+		case FILPackage.FORMATION__S1:
+		case FILPackage.FORMATION__S2:
+		case FILPackage.FORMATION__INTERVENANT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -198,7 +234,13 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 				FILFactory.eINSTANCE.createPresentation()));
 
 		newChildDescriptors
-				.add(createChildParameter(FILPackage.Literals.FORMATION__UES, FILFactory.eINSTANCE.createUE()));
+				.add(createChildParameter(FILPackage.Literals.FORMATION__S1, FILFactory.eINSTANCE.createS1()));
+
+		newChildDescriptors
+				.add(createChildParameter(FILPackage.Literals.FORMATION__S2, FILFactory.eINSTANCE.createS2()));
+
+		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__INTERVENANT,
+				FILFactory.eINSTANCE.createIntervenant()));
 	}
 
 	/**

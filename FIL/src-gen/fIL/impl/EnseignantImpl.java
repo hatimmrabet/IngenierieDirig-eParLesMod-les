@@ -6,6 +6,7 @@ import fIL.Enseignant;
 import fIL.FILPackage;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class EnseignantImpl extends IntervenantImpl implements Enseignant {
+public class EnseignantImpl extends MinimalEObjectImpl.Container implements Enseignant {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

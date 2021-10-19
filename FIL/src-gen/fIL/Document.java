@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see fIL.FILPackage#getDocument()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Document extends EObject {

@@ -146,8 +146,6 @@ public class FILSwitch<T> extends Switch<T> {
 			Responsable responsable = (Responsable) theEObject;
 			T result = caseResponsable(responsable);
 			if (result == null)
-				result = caseIntervenant(responsable);
-			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
@@ -155,7 +153,19 @@ public class FILSwitch<T> extends Switch<T> {
 			Enseignant enseignant = (Enseignant) theEObject;
 			T result = caseEnseignant(enseignant);
 			if (result == null)
-				result = caseIntervenant(enseignant);
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case FILPackage.S1: {
+			S1 s1 = (S1) theEObject;
+			T result = caseS1(s1);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case FILPackage.S2: {
+			S2 s2 = (S2) theEObject;
+			T result = caseS2(s2);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -342,6 +352,36 @@ public class FILSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEnseignant(Enseignant object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>S1</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>S1</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseS1(S1 object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>S2</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>S2</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseS2(S2 object) {
 		return null;
 	}
 

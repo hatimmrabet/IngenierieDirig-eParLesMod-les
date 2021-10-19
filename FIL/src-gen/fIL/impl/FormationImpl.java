@@ -4,23 +4,21 @@ package fIL.impl;
 
 import fIL.FILPackage;
 import fIL.Formation;
+import fIL.Intervenant;
 import fIL.Presentation;
-import fIL.UE;
-
+import fIL.S1;
+import fIL.S2;
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -34,7 +32,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fIL.impl.FormationImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getPresentation <em>Presentation</em>}</li>
- *   <li>{@link fIL.impl.FormationImpl#getUes <em>Ues</em>}</li>
+ *   <li>{@link fIL.impl.FormationImpl#getS1 <em>S1</em>}</li>
+ *   <li>{@link fIL.impl.FormationImpl#getS2 <em>S2</em>}</li>
+ *   <li>{@link fIL.impl.FormationImpl#getIntervenant <em>Intervenant</em>}</li>
+ *   <li>{@link fIL.impl.FormationImpl#getResponsable <em>Responsable</em>}</li>
+ *   <li>{@link fIL.impl.FormationImpl#getEnseignants <em>Enseignants</em>}</li>
  * </ul>
  *
  * @generated
@@ -91,14 +93,54 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	protected Presentation presentation;
 
 	/**
-	 * The cached value of the '{@link #getUes() <em>Ues</em>}' containment reference list.
+	 * The cached value of the '{@link #getS1() <em>S1</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUes()
+	 * @see #getS1()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<UE> ues;
+	protected S1 s1;
+
+	/**
+	 * The cached value of the '{@link #getS2() <em>S2</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getS2()
+	 * @generated
+	 * @ordered
+	 */
+	protected S2 s2;
+
+	/**
+	 * The cached value of the '{@link #getIntervenant() <em>Intervenant</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntervenant()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Intervenant> intervenant;
+
+	/**
+	 * The cached value of the '{@link #getResponsable() <em>Responsable</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResponsable()
+	 * @generated
+	 * @ordered
+	 */
+	protected Intervenant responsable;
+
+	/**
+	 * The cached value of the '{@link #getEnseignants() <em>Enseignants</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnseignants()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Intervenant> enseignants;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,11 +258,163 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<UE> getUes() {
-		if (ues == null) {
-			ues = new EObjectContainmentEList<UE>(UE.class, this, FILPackage.FORMATION__UES);
+	public S1 getS1() {
+		return s1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetS1(S1 newS1, NotificationChain msgs) {
+		S1 oldS1 = s1;
+		s1 = newS1;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__S1,
+					oldS1, newS1);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
-		return ues;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setS1(S1 newS1) {
+		if (newS1 != s1) {
+			NotificationChain msgs = null;
+			if (s1 != null)
+				msgs = ((InternalEObject) s1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FILPackage.FORMATION__S1,
+						null, msgs);
+			if (newS1 != null)
+				msgs = ((InternalEObject) newS1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FILPackage.FORMATION__S1,
+						null, msgs);
+			msgs = basicSetS1(newS1, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__S1, newS1, newS1));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public S2 getS2() {
+		return s2;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetS2(S2 newS2, NotificationChain msgs) {
+		S2 oldS2 = s2;
+		s2 = newS2;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__S2,
+					oldS2, newS2);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setS2(S2 newS2) {
+		if (newS2 != s2) {
+			NotificationChain msgs = null;
+			if (s2 != null)
+				msgs = ((InternalEObject) s2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FILPackage.FORMATION__S2,
+						null, msgs);
+			if (newS2 != null)
+				msgs = ((InternalEObject) newS2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FILPackage.FORMATION__S2,
+						null, msgs);
+			msgs = basicSetS2(newS2, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__S2, newS2, newS2));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Intervenant> getIntervenant() {
+		if (intervenant == null) {
+			intervenant = new EObjectContainmentEList<Intervenant>(Intervenant.class, this,
+					FILPackage.FORMATION__INTERVENANT);
+		}
+		return intervenant;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Intervenant getResponsable() {
+		if (responsable != null && responsable.eIsProxy()) {
+			InternalEObject oldResponsable = (InternalEObject) responsable;
+			responsable = (Intervenant) eResolveProxy(oldResponsable);
+			if (responsable != oldResponsable) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FILPackage.FORMATION__RESPONSABLE,
+							oldResponsable, responsable));
+			}
+		}
+		return responsable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Intervenant basicGetResponsable() {
+		return responsable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResponsable(Intervenant newResponsable) {
+		Intervenant oldResponsable = responsable;
+		responsable = newResponsable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__RESPONSABLE, oldResponsable,
+					responsable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Intervenant> getEnseignants() {
+		if (enseignants == null) {
+			enseignants = new EObjectResolvingEList<Intervenant>(Intervenant.class, this,
+					FILPackage.FORMATION__ENSEIGNANTS);
+		}
+		return enseignants;
 	}
 
 	/**
@@ -233,8 +427,12 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 		switch (featureID) {
 		case FILPackage.FORMATION__PRESENTATION:
 			return basicSetPresentation(null, msgs);
-		case FILPackage.FORMATION__UES:
-			return ((InternalEList<?>) getUes()).basicRemove(otherEnd, msgs);
+		case FILPackage.FORMATION__S1:
+			return basicSetS1(null, msgs);
+		case FILPackage.FORMATION__S2:
+			return basicSetS2(null, msgs);
+		case FILPackage.FORMATION__INTERVENANT:
+			return ((InternalEList<?>) getIntervenant()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -253,8 +451,18 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			return getPseudo();
 		case FILPackage.FORMATION__PRESENTATION:
 			return getPresentation();
-		case FILPackage.FORMATION__UES:
-			return getUes();
+		case FILPackage.FORMATION__S1:
+			return getS1();
+		case FILPackage.FORMATION__S2:
+			return getS2();
+		case FILPackage.FORMATION__INTERVENANT:
+			return getIntervenant();
+		case FILPackage.FORMATION__RESPONSABLE:
+			if (resolve)
+				return getResponsable();
+			return basicGetResponsable();
+		case FILPackage.FORMATION__ENSEIGNANTS:
+			return getEnseignants();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -277,9 +485,22 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 		case FILPackage.FORMATION__PRESENTATION:
 			setPresentation((Presentation) newValue);
 			return;
-		case FILPackage.FORMATION__UES:
-			getUes().clear();
-			getUes().addAll((Collection<? extends UE>) newValue);
+		case FILPackage.FORMATION__S1:
+			setS1((S1) newValue);
+			return;
+		case FILPackage.FORMATION__S2:
+			setS2((S2) newValue);
+			return;
+		case FILPackage.FORMATION__INTERVENANT:
+			getIntervenant().clear();
+			getIntervenant().addAll((Collection<? extends Intervenant>) newValue);
+			return;
+		case FILPackage.FORMATION__RESPONSABLE:
+			setResponsable((Intervenant) newValue);
+			return;
+		case FILPackage.FORMATION__ENSEIGNANTS:
+			getEnseignants().clear();
+			getEnseignants().addAll((Collection<? extends Intervenant>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -302,8 +523,20 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 		case FILPackage.FORMATION__PRESENTATION:
 			setPresentation((Presentation) null);
 			return;
-		case FILPackage.FORMATION__UES:
-			getUes().clear();
+		case FILPackage.FORMATION__S1:
+			setS1((S1) null);
+			return;
+		case FILPackage.FORMATION__S2:
+			setS2((S2) null);
+			return;
+		case FILPackage.FORMATION__INTERVENANT:
+			getIntervenant().clear();
+			return;
+		case FILPackage.FORMATION__RESPONSABLE:
+			setResponsable((Intervenant) null);
+			return;
+		case FILPackage.FORMATION__ENSEIGNANTS:
+			getEnseignants().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -323,8 +556,16 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			return PSEUDO_EDEFAULT == null ? pseudo != null : !PSEUDO_EDEFAULT.equals(pseudo);
 		case FILPackage.FORMATION__PRESENTATION:
 			return presentation != null;
-		case FILPackage.FORMATION__UES:
-			return ues != null && !ues.isEmpty();
+		case FILPackage.FORMATION__S1:
+			return s1 != null;
+		case FILPackage.FORMATION__S2:
+			return s2 != null;
+		case FILPackage.FORMATION__INTERVENANT:
+			return intervenant != null && !intervenant.isEmpty();
+		case FILPackage.FORMATION__RESPONSABLE:
+			return responsable != null;
+		case FILPackage.FORMATION__ENSEIGNANTS:
+			return enseignants != null && !enseignants.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

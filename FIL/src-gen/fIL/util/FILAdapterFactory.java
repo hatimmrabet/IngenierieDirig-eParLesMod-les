@@ -127,6 +127,16 @@ public class FILAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseS1(S1 object) {
+			return createS1Adapter();
+		}
+
+		@Override
+		public Adapter caseS2(S2 object) {
+			return createS2Adapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -310,6 +320,34 @@ public class FILAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEnseignantAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fIL.S1 <em>S1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fIL.S1
+	 * @generated
+	 */
+	public Adapter createS1Adapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fIL.S2 <em>S2</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fIL.S2
+	 * @generated
+	 */
+	public Adapter createS2Adapter() {
 		return null;
 	}
 
