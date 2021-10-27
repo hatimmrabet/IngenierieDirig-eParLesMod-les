@@ -1,0 +1,23 @@
+modeltype filMM "strict" uses "http://www.example.org/fIL";
+modeltype markdownMM "strict" uses "http://www.example.org/simplemarkdown";
+
+
+transformation formation2block(in fil : filMM, out md : markdownMM );
+
+main() {
+	fil.rootObjects().allSubobjectsOfType(Niveau)[Niveau] -> map niveau2Title();
+}
+
+mapping filMM::Niveau::niveau2Title() : markdownMM::Title {
+	level := 1;
+	elements += self -> map nom2Text();
+	elements += self -> map pseudo2Text();
+}
+
+mapping filMM::Niveau::nom2Text() : markdownMM::Text {
+	text := self.nom
+}
+
+mapping filMM::Niveau::pseudo2Text() : markdownMM::StrongEmphasis {
+	text := self.pseudo
+}

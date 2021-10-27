@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simplemarkdown:Title xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simplemarkdown="http://www.example.org/simplemarkdown" level="1">
+  <elements xsi:type="simplemarkdown:Text" text="Master 1 mention informatique"/>
+  <elements xsi:type="simplemarkdown:StrongEmphasis" text="M1INF"/>
+</simplemarkdown:Title>
