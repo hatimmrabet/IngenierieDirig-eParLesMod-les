@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<simplemarkdown:Document xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simplemarkdown="http://www.example.org/simplemarkdown" name="Portail">
+  <contents xsi:type="simplemarkdown:Title" level="1">
+    <elements xsi:type="simplemarkdown:Text" text="Portail"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:Text" text="Portail des formations du FIL."/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables : "/>
+    <elements xsi:type="simplemarkdown:Text" text="JS Varr&#xe9;"/>
+    <elements xsi:type="simplemarkdown:Text" text="autres prof..."/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="code initiale"/>
+    <elements xsi:type="simplemarkdown:Code" text="int somme = 0"/>
+    <elements xsi:type="simplemarkdown:Text" text="fin du code"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Texte :"/>
+    <elements xsi:type="simplemarkdown:Text" text="L&#x2019;objectif de cette UE est d&#x2019;apprendre &#xe0; concevoir des applications orient&#xe9;s objets de fa&#xe7;on syst&#xe9;matique et reproductible. Cette conception se base sur la r&#xe9;alisation de mod&#xe8;les UML repr&#xe9;sentant l&#x2019;application &#xe0; un haut niveau d&#x2019;abstraction. A la fin de cette UE, l&#x2019;&#xe9;tudiant.e sera capable d&#x2019;&#xe9;tablir les fonctionnalit&#xe9;s d&#x2019;une application (poser le probl&#xe8;me), de concevoir l&#x2019;application (proposer et analyser des solutions), et de r&#xe9;aliser l&#x2019;application en suivant la solution propos&#xe9;e."/>
+  </contents>
+</simplemarkdown:Document>
