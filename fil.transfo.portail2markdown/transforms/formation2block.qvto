@@ -5,19 +5,83 @@ modeltype markdownMM "strict" uses "http://www.example.org/simplemarkdown";
 transformation formation2block(in fil : filMM, out md : markdownMM );
 
 main() {
-	fil.rootObjects().allSubobjectsOfType(Niveau)[Niveau] -> map niveau2Title();
+	fil.rootObjects().oclAsType(Faculte) -> map faculte2Title();
+}
+
+mapping filMM::Faculte::faculte2Title() : markdownMM::Document {
+	name := self.nom;
+	contents += self.niveaux->forEach(niveau){
+		niveau -> map niveau2Title();
+	}
 }
 
 mapping filMM::Niveau::niveau2Title() : markdownMM::Title {
 	level := 1;
-	elements += self -> map nom2Text();
-	elements += self -> map pseudo2Text();
+	elements += self -> map niveau2Text();
+}
+mapping filMM::Niveau::niveau2Text() : markdownMM::Text {
+	text := self.nom+' - '+self.pseudo;
+	self.formations -> forEach(formation){ 
+		formation -> map formation2Title(); //affichage du nom de formation
+		formation -> map presentationFormationParagraph(); //affichage du presentation du formation
+		formation.s1 -> map s1FormationBlock(); //affichage du s1
+		formation.s2 -> map s2FormationBlock(); //affichage du s2
+	}
 }
 
-mapping filMM::Niveau::nom2Text() : markdownMM::Text {
-	text := self.nom
+mapping filMM::Formation::formation2Title() : markdownMM::Title {
+	level := 2;
+	elements += self -> map formation2Text();
+}
+mapping filMM::Formation::formation2Text() : markdownMM::Text {
+	text := self.nom+' - '+self.pseudo;
+}
+mapping filMM::Formation::presentationFormationParagraph() : markdownMM::Paragraph {
+	elements += self -> map presentationFormationText();
+}
+mapping filMM::Formation::presentationFormationText() : markdownMM::Text {
+	text := self.presentation.contenue;
 }
 
-mapping filMM::Niveau::pseudo2Text() : markdownMM::StrongEmphasis {
-	text := self.pseudo
+mapping filMM::S1::s1FormationBlock() : markdownMM::Title {
+	level := 3;
+	elements += self -> map s1FormationTitre();
+	self.ues -> forEach(ue){
+		ue -> map ueTitre();  //titre du ue
+		if(ue.presentation->notEmpty()){
+			ue -> map uePresentationParagraph(); //presentation d'ue
+		}
+	}
+}
+mapping filMM::S1::s1FormationTitre() : markdownMM::Text {
+	text := 'S1';
+}
+
+mapping filMM::UE::ueTitre() : markdownMM::Title {
+	level := 4;
+	elements += self -> map ueTitreText();
+}
+mapping filMM::UE::ueTitreText() : markdownMM::Text {
+	text := self.pseudo;
+}
+mapping filMM::UE::uePresentationParagraph() : markdownMM::Paragraph {
+	elements += self -> map uePresentationText();
+}
+mapping filMM::UE::uePresentationText() : markdownMM::Text {
+	//text := self.presentation.contenue; //à corriger dans le model
+	//text := 'contenue du presentation';
+}
+
+mapping filMM::S2::s2FormationBlock() : markdownMM::Title {
+	level := 3;
+	elements += self -> map s2FormationTitre();
+	self.ues -> forEach(ue){
+		ue -> map ueTitre();  //titre du ue
+		if (ue.presentation->notEmpty()){
+			ue -> map uePresentationParagraph(); //presentation d'ue
+		}
+	}
+}
+mapping filMM::S2::s2FormationTitre() : markdownMM::Text {
+	text := 'S2';
 }

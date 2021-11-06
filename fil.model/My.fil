@@ -36,4 +36,7 @@
       </s2>
     </formations>
   </niveaux>
+  <niveaux nom="Master 2 genie logiciel" pseudo="M2GL">
+    <formations nom="test" pseudo="tst"/>
+  </niveaux>
 </fIL:Faculte>

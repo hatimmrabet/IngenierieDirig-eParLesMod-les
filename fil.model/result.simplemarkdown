@@ -1,5 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<simplemarkdown:Title xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simplemarkdown="http://www.example.org/simplemarkdown" level="1">
-  <elements xsi:type="simplemarkdown:Text" text="Master 1 mention informatique"/>
-  <elements xsi:type="simplemarkdown:StrongEmphasis" text="M1INF"/>
-</simplemarkdown:Title>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simplemarkdown="http://www.example.org/simplemarkdown">
+  <simplemarkdown:Document name="Faculté de science"/>
+  <simplemarkdown:Title level="1">
+    <elements xsi:type="simplemarkdown:Text" text="Master 1 mention informatique - M1INF"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="2">
+    <elements xsi:type="simplemarkdown:Text" text="Génie Logiciel - GL"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Paragraph>
+    <elements xsi:type="simplemarkdown:Text" text="Le parcours Génie Logiciel s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."/>
+  </simplemarkdown:Paragraph>
+  <simplemarkdown:Title level="3">
+    <elements xsi:type="simplemarkdown:Text" text="S1"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="ACT"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="PJE"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="IIR"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="IDM"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="ANG"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="3">
+    <elements xsi:type="simplemarkdown:Text" text="S2"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="ASE"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="ISI"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="PJI"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="COA"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="Compil"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="ASA"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="2">
+    <elements xsi:type="simplemarkdown:Text" text="E-Services - ES"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Paragraph>
+    <elements xsi:type="simplemarkdown:Text" text="Le parcours E-Services s’articule autour de la conception et du développement des services numériques, c’est-à-dire des services accessibles au travers des moyens de communication numérique - notamment l’Internet – mais également au travers de tous les équipements liés à l’économie digitale : smartphones, tablettes, interfaces multi-touch, interfaces vocales, etc."/>
+  </simplemarkdown:Paragraph>
+  <simplemarkdown:Title level="3">
+    <elements xsi:type="simplemarkdown:Text" text="S1"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="TAC"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="3">
+    <elements xsi:type="simplemarkdown:Text" text="S2"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="4">
+    <elements xsi:type="simplemarkdown:Text" text="BDR"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="1">
+    <elements xsi:type="simplemarkdown:Text" text="Master 2 genie logiciel - M2GL"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Title level="2">
+    <elements xsi:type="simplemarkdown:Text" text="test - tst"/>
+  </simplemarkdown:Title>
+  <simplemarkdown:Paragraph>
+    <elements xsi:type="simplemarkdown:Text"/>
+  </simplemarkdown:Paragraph>
+</xmi:XMI>

@@ -12,8 +12,9 @@
     <elements xsi:type="simplemarkdown:Text" text="autres prof..."/>
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
-    <elements xsi:type="simplemarkdown:StrongEmphasis" text="code initiale"/>
-    <elements xsi:type="simplemarkdown:Code" text="int somme = 0"/>
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="code initiale">
+      <subtext xsi:type="simplemarkdown:Text" text="int somme = 0"/>
+    </elements>
     <elements xsi:type="simplemarkdown:Text" text="fin du code"/>
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">

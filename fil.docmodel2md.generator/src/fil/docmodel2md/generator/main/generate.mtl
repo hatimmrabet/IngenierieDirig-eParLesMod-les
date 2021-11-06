@@ -1,0 +1,69 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.example.org/simplemarkdown')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param aDocument
+ */]
+
+[template public generateElement(aDocument : Document)]
+[comment @main/]
+[file (aDocument.name +'.md', false, 'UTF-8')]
+# [aDocument.name/]
+	[for (block : Block | aDocument.contents)]
+[generateBlocks(block)/]
+	[/for]
+[/file]
+[/template]
+
+[comment generateBlocks /]
+[template public generateBlocks(block : Block)]
+	ERREUR
+[/template]
+[template public generateBlocks(textCont : TextContainer)]
+[textCont.generateTextContainer()/]
+[/template]
+
+[comment generateTextContainer /]
+[template public generateTextContainer(textCont : TextContainer)]
+	ERREUR
+[/template]
+[template public generateTextContainer(title : Title)]
+['######'.substring(1, title.level)/] [for (textElem : TextElement | title.elements)] [textElem.generateTextElement()/] [/for]
+[/template]
+[template public generateTextContainer(p : Paragraph)]
+	[for (textElem : TextElement | p.elements)]
+[textElem.generateTextElement()/]
+	[/for]
+[/template]
+
+[comment generateTextElement /]
+[template public generateTextElement(textElem : TextElement)]
+	ERREUR
+[/template]
+[template public generateTextElement(text : Text)]
+[text.text/]
+
+[/template]
+[template public generateTextElement(compText : CompositeTextElement)]
+[compText.generateCompositeTextElement()/]
+	[for (textElem : TextElement | compText.subtext)]
+
+[textElem.generateTextElement()/]
+	[/for]
+[/template]
+
+[comment generateCompositeTextElement /]
+[template public generateCompositeTextElement(compText : CompositeTextElement)]
+	ERREUR
+[/template]
+[template public generateCompositeTextElement(compText : Emphasis)]
+*[compText.text/]*
+[/template]
+[template public generateCompositeTextElement(compText : StrongEmphasis)]
+**[compText.text/]**
+[/template]

@@ -13,9 +13,9 @@ autres prof...
 
 **code initiale**
 
-```
-int somme = 0 
-```
+int somme = 0
+
+
 fin du code
 
 
