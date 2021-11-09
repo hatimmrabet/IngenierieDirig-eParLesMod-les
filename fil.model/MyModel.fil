@@ -33,6 +33,7 @@
       <s1 uesoptionnelles="//@niveaux.0/@formations.0/@s1/@ues.3" uesobligatoires="//@niveaux.0/@formations.0/@s1/@ues.0 //@niveaux.0/@formations.0/@s1/@ues.2 //@niveaux.0/@formations.0/@s1/@ues.1 //@niveaux.0/@formations.0/@s1/@ues.4">
         <ues nom="Technologies pour les Applications Connectées" pseudo="TAC" obligatoire="true">
           <intervenants nom="Jean-Claude" prenom="Tarby" responsable="true"/>
+          <presentation contenue="Act est une ue"/>
         </ues>
       </s1>
       <s2 uesobligatoires="//@niveaux.0/@formations.0/@s2/@ues.1 //@niveaux.0/@formations.0/@s2/@ues.2 //@niveaux.0/@formations.0/@s2/@ues.0 //@niveaux.0/@formations.0/@s2/@ues.5">
