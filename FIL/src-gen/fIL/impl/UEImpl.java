@@ -36,11 +36,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fIL.impl.UEImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getDocuments <em>Documents</em>}</li>
- *   <li>{@link fIL.impl.UEImpl#getPresentation <em>Presentation</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getIntervenants <em>Intervenants</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#isObligatoire <em>Obligatoire</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getResponsable <em>Responsable</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getEnseignants <em>Enseignants</em>}</li>
+ *   <li>{@link fIL.impl.UEImpl#getPresentation <em>Presentation</em>}</li>
  * </ul>
  *
  * @generated
@@ -97,16 +97,6 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	protected EList<Document> documents;
 
 	/**
-	 * The cached value of the '{@link #getPresentation() <em>Presentation</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPresentation()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Presentation> presentation;
-
-	/**
 	 * The cached value of the '{@link #getIntervenants() <em>Intervenants</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -155,6 +145,16 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	 * @ordered
 	 */
 	protected EList<Intervenant> enseignants;
+
+	/**
+	 * The cached value of the '{@link #getPresentation() <em>Presentation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPresentation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Presentation presentation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,12 +234,49 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Presentation> getPresentation() {
-		if (presentation == null) {
-			presentation = new EObjectContainmentEList<Presentation>(Presentation.class, this,
-					FILPackage.UE__PRESENTATION);
-		}
+	public Presentation getPresentation() {
 		return presentation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPresentation(Presentation newPresentation, NotificationChain msgs) {
+		Presentation oldPresentation = presentation;
+		presentation = newPresentation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FILPackage.UE__PRESENTATION,
+					oldPresentation, newPresentation);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPresentation(Presentation newPresentation) {
+		if (newPresentation != presentation) {
+			NotificationChain msgs = null;
+			if (presentation != null)
+				msgs = ((InternalEObject) presentation).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - FILPackage.UE__PRESENTATION, null, msgs);
+			if (newPresentation != null)
+				msgs = ((InternalEObject) newPresentation).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - FILPackage.UE__PRESENTATION, null, msgs);
+			msgs = basicSetPresentation(newPresentation, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.UE__PRESENTATION, newPresentation,
+					newPresentation));
 	}
 
 	/**
@@ -339,10 +376,10 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 		switch (featureID) {
 		case FILPackage.UE__DOCUMENTS:
 			return ((InternalEList<?>) getDocuments()).basicRemove(otherEnd, msgs);
-		case FILPackage.UE__PRESENTATION:
-			return ((InternalEList<?>) getPresentation()).basicRemove(otherEnd, msgs);
 		case FILPackage.UE__INTERVENANTS:
 			return ((InternalEList<?>) getIntervenants()).basicRemove(otherEnd, msgs);
+		case FILPackage.UE__PRESENTATION:
+			return basicSetPresentation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -361,8 +398,6 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return getPseudo();
 		case FILPackage.UE__DOCUMENTS:
 			return getDocuments();
-		case FILPackage.UE__PRESENTATION:
-			return getPresentation();
 		case FILPackage.UE__INTERVENANTS:
 			return getIntervenants();
 		case FILPackage.UE__OBLIGATOIRE:
@@ -373,6 +408,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return basicGetResponsable();
 		case FILPackage.UE__ENSEIGNANTS:
 			return getEnseignants();
+		case FILPackage.UE__PRESENTATION:
+			return getPresentation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -396,10 +433,6 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			getDocuments().clear();
 			getDocuments().addAll((Collection<? extends Document>) newValue);
 			return;
-		case FILPackage.UE__PRESENTATION:
-			getPresentation().clear();
-			getPresentation().addAll((Collection<? extends Presentation>) newValue);
-			return;
 		case FILPackage.UE__INTERVENANTS:
 			getIntervenants().clear();
 			getIntervenants().addAll((Collection<? extends Intervenant>) newValue);
@@ -413,6 +446,9 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 		case FILPackage.UE__ENSEIGNANTS:
 			getEnseignants().clear();
 			getEnseignants().addAll((Collection<? extends Intervenant>) newValue);
+			return;
+		case FILPackage.UE__PRESENTATION:
+			setPresentation((Presentation) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -435,9 +471,6 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 		case FILPackage.UE__DOCUMENTS:
 			getDocuments().clear();
 			return;
-		case FILPackage.UE__PRESENTATION:
-			getPresentation().clear();
-			return;
 		case FILPackage.UE__INTERVENANTS:
 			getIntervenants().clear();
 			return;
@@ -449,6 +482,9 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return;
 		case FILPackage.UE__ENSEIGNANTS:
 			getEnseignants().clear();
+			return;
+		case FILPackage.UE__PRESENTATION:
+			setPresentation((Presentation) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -468,8 +504,6 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return PSEUDO_EDEFAULT == null ? pseudo != null : !PSEUDO_EDEFAULT.equals(pseudo);
 		case FILPackage.UE__DOCUMENTS:
 			return documents != null && !documents.isEmpty();
-		case FILPackage.UE__PRESENTATION:
-			return presentation != null && !presentation.isEmpty();
 		case FILPackage.UE__INTERVENANTS:
 			return intervenants != null && !intervenants.isEmpty();
 		case FILPackage.UE__OBLIGATOIRE:
@@ -478,6 +512,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return responsable != null;
 		case FILPackage.UE__ENSEIGNANTS:
 			return enseignants != null && !enseignants.isEmpty();
+		case FILPackage.UE__PRESENTATION:
+			return presentation != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -16,12 +16,18 @@
   <simplemarkdown:Title level="4">
     <elements xsi:type="simplemarkdown:Text" text="ACT"/>
   </simplemarkdown:Title>
+  <simplemarkdown:Paragraph>
+    <elements xsi:type="simplemarkdown:Text" text="présentation de ACT"/>
+  </simplemarkdown:Paragraph>
   <simplemarkdown:Title level="4">
     <elements xsi:type="simplemarkdown:Text" text="PJE"/>
   </simplemarkdown:Title>
   <simplemarkdown:Title level="4">
     <elements xsi:type="simplemarkdown:Text" text="IIR"/>
   </simplemarkdown:Title>
+  <simplemarkdown:Paragraph>
+    <elements xsi:type="simplemarkdown:Text" text="RIC "/>
+  </simplemarkdown:Paragraph>
   <simplemarkdown:Title level="4">
     <elements xsi:type="simplemarkdown:Text" text="IDM"/>
   </simplemarkdown:Title>

@@ -151,8 +151,8 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(FILPackage.Literals.UE__DOCUMENTS);
-			childrenFeatures.add(FILPackage.Literals.UE__PRESENTATION);
 			childrenFeatures.add(FILPackage.Literals.UE__INTERVENANTS);
+			childrenFeatures.add(FILPackage.Literals.UE__PRESENTATION);
 		}
 		return childrenFeatures;
 	}
@@ -221,8 +221,8 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case FILPackage.UE__DOCUMENTS:
-		case FILPackage.UE__PRESENTATION:
 		case FILPackage.UE__INTERVENANTS:
+		case FILPackage.UE__PRESENTATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -250,10 +250,10 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 				.add(createChildParameter(FILPackage.Literals.UE__DOCUMENTS, FILFactory.eINSTANCE.createAudio()));
 
 		newChildDescriptors.add(
-				createChildParameter(FILPackage.Literals.UE__PRESENTATION, FILFactory.eINSTANCE.createPresentation()));
+				createChildParameter(FILPackage.Literals.UE__INTERVENANTS, FILFactory.eINSTANCE.createIntervenant()));
 
 		newChildDescriptors.add(
-				createChildParameter(FILPackage.Literals.UE__INTERVENANTS, FILFactory.eINSTANCE.createIntervenant()));
+				createChildParameter(FILPackage.Literals.UE__PRESENTATION, FILFactory.eINSTANCE.createPresentation()));
 	}
 
 	/**

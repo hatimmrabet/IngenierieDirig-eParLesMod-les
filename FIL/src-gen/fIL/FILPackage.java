@@ -313,22 +313,13 @@ public interface FILPackage extends EPackage {
 	int UE__DOCUMENTS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Presentation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UE__PRESENTATION = 3;
-
-	/**
 	 * The feature id for the '<em><b>Intervenants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UE__INTERVENANTS = 4;
+	int UE__INTERVENANTS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Obligatoire</b></em>' attribute.
@@ -337,7 +328,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UE__OBLIGATOIRE = 5;
+	int UE__OBLIGATOIRE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Responsable</b></em>' reference.
@@ -346,7 +337,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UE__RESPONSABLE = 6;
+	int UE__RESPONSABLE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Enseignants</b></em>' reference list.
@@ -355,7 +346,16 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UE__ENSEIGNANTS = 7;
+	int UE__ENSEIGNANTS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Presentation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UE__PRESENTATION = 7;
 
 	/**
 	 * The number of structural features of the '<em>UE</em>' class.
@@ -642,22 +642,13 @@ public interface FILPackage extends EPackage {
 	int PRESENTATION = 8;
 
 	/**
-	 * The feature id for the '<em><b>Titre</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRESENTATION__TITRE = 0;
-
-	/**
 	 * The feature id for the '<em><b>Contenue</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRESENTATION__CONTENUE = 1;
+	int PRESENTATION__CONTENUE = 0;
 
 	/**
 	 * The number of structural features of the '<em>Presentation</em>' class.
@@ -666,7 +657,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRESENTATION_FEATURE_COUNT = 2;
+	int PRESENTATION_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Presentation</em>' class.
@@ -1137,10 +1128,10 @@ public interface FILPackage extends EPackage {
 	EReference getUE_Documents();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fIL.UE#getPresentation <em>Presentation</em>}'.
+	 * Returns the meta object for the containment reference '{@link fIL.UE#getPresentation <em>Presentation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Presentation</em>'.
+	 * @return the meta object for the containment reference '<em>Presentation</em>'.
 	 * @see fIL.UE#getPresentation()
 	 * @see #getUE()
 	 * @generated
@@ -1317,17 +1308,6 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPresentation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fIL.Presentation#getTitre <em>Titre</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Titre</em>'.
-	 * @see fIL.Presentation#getTitre()
-	 * @see #getPresentation()
-	 * @generated
-	 */
-	EAttribute getPresentation_Titre();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fIL.Presentation#getContenue <em>Contenue</em>}'.
@@ -1697,7 +1677,7 @@ public interface FILPackage extends EPackage {
 		EReference UE__DOCUMENTS = eINSTANCE.getUE_Documents();
 
 		/**
-		 * The meta object literal for the '<em><b>Presentation</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Presentation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1841,14 +1821,6 @@ public interface FILPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PRESENTATION = eINSTANCE.getPresentation();
-
-		/**
-		 * The meta object literal for the '<em><b>Titre</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PRESENTATION__TITRE = eINSTANCE.getPresentation_Titre();
 
 		/**
 		 * The meta object literal for the '<em><b>Contenue</b></em>' attribute feature.

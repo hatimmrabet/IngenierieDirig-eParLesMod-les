@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fIL.Presentation#getTitre <em>Titre</em>}</li>
  *   <li>{@link fIL.Presentation#getContenue <em>Contenue</em>}</li>
  * </ul>
  *
@@ -22,28 +21,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Presentation extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Titre</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Titre</em>' attribute.
-	 * @see #setTitre(String)
-	 * @see fIL.FILPackage#getPresentation_Titre()
-	 * @model
-	 * @generated
-	 */
-	String getTitre();
-
-	/**
-	 * Sets the value of the '{@link fIL.Presentation#getTitre <em>Titre</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Titre</em>' attribute.
-	 * @see #getTitre()
-	 * @generated
-	 */
-	void setTitre(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Contenue</b></em>' attribute.
 	 * <!-- begin-user-doc -->

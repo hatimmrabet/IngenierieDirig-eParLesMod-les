@@ -53,26 +53,9 @@ public class PresentationItemProvider extends ItemProviderAdapter implements IEd
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTitrePropertyDescriptor(object);
 			addContenuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Titre feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTitrePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Presentation_titre_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Presentation_titre_feature",
-								"_UI_Presentation_type"),
-						FILPackage.Literals.PRESENTATION__TITRE, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -120,7 +103,7 @@ public class PresentationItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Presentation) object).getTitre();
+		String label = ((Presentation) object).getContenue();
 		return label == null || label.length() == 0 ? getString("_UI_Presentation_type")
 				: getString("_UI_Presentation_type") + " " + label;
 	}
@@ -137,7 +120,6 @@ public class PresentationItemProvider extends ItemProviderAdapter implements IEd
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Presentation.class)) {
-		case FILPackage.PRESENTATION__TITRE:
 		case FILPackage.PRESENTATION__CONTENUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

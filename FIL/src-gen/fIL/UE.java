@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fIL.UE#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.UE#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fIL.UE#getDocuments <em>Documents</em>}</li>
- *   <li>{@link fIL.UE#getPresentation <em>Presentation</em>}</li>
  *   <li>{@link fIL.UE#getIntervenants <em>Intervenants</em>}</li>
  *   <li>{@link fIL.UE#isObligatoire <em>Obligatoire</em>}</li>
  *   <li>{@link fIL.UE#getResponsable <em>Responsable</em>}</li>
  *   <li>{@link fIL.UE#getEnseignants <em>Enseignants</em>}</li>
+ *   <li>{@link fIL.UE#getPresentation <em>Presentation</em>}</li>
  * </ul>
  *
  * @see fIL.FILPackage#getUE()
@@ -87,16 +87,26 @@ public interface UE extends EObject {
 	EList<Document> getDocuments();
 
 	/**
-	 * Returns the value of the '<em><b>Presentation</b></em>' containment reference list.
-	 * The list contents are of type {@link fIL.Presentation}.
+	 * Returns the value of the '<em><b>Presentation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Presentation</em>' containment reference list.
+	 * @return the value of the '<em>Presentation</em>' containment reference.
+	 * @see #setPresentation(Presentation)
 	 * @see fIL.FILPackage#getUE_Presentation()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Presentation> getPresentation();
+	Presentation getPresentation();
+
+	/**
+	 * Sets the value of the '{@link fIL.UE#getPresentation <em>Presentation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Presentation</em>' containment reference.
+	 * @see #getPresentation()
+	 * @generated
+	 */
+	void setPresentation(Presentation value);
 
 	/**
 	 * Returns the value of the '<em><b>Intervenants</b></em>' containment reference list.

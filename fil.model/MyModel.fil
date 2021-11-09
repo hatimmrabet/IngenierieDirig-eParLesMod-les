@@ -2,11 +2,15 @@
 <fIL:Faculte xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fIL="http://www.example.org/fIL" nom="Faculté de science">
   <niveaux nom="Master 1 mention informatique" pseudo="M1INF">
     <formations nom="Génie Logiciel" pseudo="GL" responsable="//@niveaux.0/@formations.0/@intervenant.0" enseignants="//@niveaux.0/@formations.0/@s1/@ues.3/@intervenants.0 //@niveaux.0/@formations.1/@s1/@ues.0/@intervenants.0">
-      <presentation titre="Parcours Génie Logiciel" contenue="Le parcours Génie Logiciel s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."/>
+      <presentation contenue="Le parcours Génie Logiciel s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."/>
       <s1>
-        <ues nom="Algorithmique et complexité" pseudo="ACT" obligatoire="true"/>
+        <ues nom="Algorithmique et complexité" pseudo="ACT" obligatoire="true">
+          <presentation contenue="présentation de ACT"/>
+        </ues>
         <ues nom="Projet encadré" pseudo="PJE" obligatoire="true"/>
-        <ues nom="Initiation à la recherche" pseudo="IIR" obligatoire="true"/>
+        <ues nom="Initiation à la recherche" pseudo="IIR" obligatoire="true">
+          <presentation contenue="RIC "/>
+        </ues>
         <ues nom="Ingénierie Des Modèles" pseudo="IDM" obligatoire="true">
           <intervenants nom="Dumoulin" prenom="Cedric" responsable="true"/>
           <intervenants nom="Le Pallec" prenom="Xavier "/>
@@ -25,7 +29,7 @@
       <intervenant nom="Quinton" prenom="Clément " responsable="true"/>
     </formations>
     <formations nom="E-Services" pseudo="ES" responsable="//@niveaux.0/@formations.1/@s1/@ues.0/@intervenants.0">
-      <presentation titre="Parcours E-Services" contenue="Le parcours E-Services s’articule autour de la conception et du développement des services numériques, c’est-à-dire des services accessibles au travers des moyens de communication numérique - notamment l’Internet – mais également au travers de tous les équipements liés à l’économie digitale : smartphones, tablettes, interfaces multi-touch, interfaces vocales, etc."/>
+      <presentation contenue="Le parcours E-Services s’articule autour de la conception et du développement des services numériques, c’est-à-dire des services accessibles au travers des moyens de communication numérique - notamment l’Internet – mais également au travers de tous les équipements liés à l’économie digitale : smartphones, tablettes, interfaces multi-touch, interfaces vocales, etc."/>
       <s1 uesoptionnelles="//@niveaux.0/@formations.0/@s1/@ues.3" uesobligatoires="//@niveaux.0/@formations.0/@s1/@ues.0 //@niveaux.0/@formations.0/@s1/@ues.2 //@niveaux.0/@formations.0/@s1/@ues.1 //@niveaux.0/@formations.0/@s1/@ues.4">
         <ues nom="Technologies pour les Applications Connectées" pseudo="TAC" obligatoire="true">
           <intervenants nom="Jean-Claude" prenom="Tarby" responsable="true"/>
