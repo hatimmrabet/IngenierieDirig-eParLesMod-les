@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Generator Module Runtime Plug-in
-Bundle-SymbolicName: fil.docmodel2md.generator
+Bundle-SymbolicName: fil.mdMM2mdFile.generator
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: fil.docmodel2md.generator.Activator
 Bundle-Vendor: Eclipse Modeling Project

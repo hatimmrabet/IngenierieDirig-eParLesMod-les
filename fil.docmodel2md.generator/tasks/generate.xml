@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="generate" name="fil.docmodel2md.generator">
+<project default="generate" name="fil.mdMM2mdFile.generator">
     <property name="ECLIPSE_HOME" value="../../../../../../Programmes/eclipse/modeling-2021-09/eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../../../../runtime-EclipseApplication"/>
 
     <!-- The classpath with only the dependencies used by the project -->
-    <path id="fil.docmodel2md.generator.libraryclasspath">
-        <pathelement location="${ECLIPSE_WORKSPACE}/fil.docmodel2md.generator/bin"/>
+    <path id="fil.mdMM2mdFile.generator.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/fil.mdMM2mdFile.generator/bin"/>
     </path>
 
-    <path id="fil.docmodel2md.generator.classpath">
-        <path refid="fil.docmodel2md.generator.libraryclasspath"/>
+    <path id="fil.mdMM2mdFile.generator.classpath">
+        <path refid="fil.mdMM2mdFile.generator.libraryclasspath"/>
     </path>
 
     <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
-    <path id="fil.docmodel2md.generator.libraryclasspath.alljars">
-        <pathelement location="../fil.docmodel2md.generator/bin"/>
+    <path id="fil.mdMM2mdFile.generator.libraryclasspath.alljars">
+        <pathelement location="../fil.mdMM2mdFile.generator/bin"/>
         <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
     </path>
 
-    <path id="fil.docmodel2md.generator.classpath.alljars">
-        <path refid="fil.docmodel2md.generator.libraryclasspath.alljars"/>
+    <path id="fil.mdMM2mdFile.generator.classpath.alljars">
+        <path refid="fil.mdMM2mdFile.generator.libraryclasspath.alljars"/>
     </path>
 
     <!-- The default task with the jars used by this project -->
     <target name="generate">
-        <java classname="fil.docmodel2md.generator.main.Generate" classpathref="fil.docmodel2md.generator.classpath">
+        <java classname="fil.docmodel2md.generator.main.Generate" classpathref="fil.mdMM2mdFile.generator.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -35,7 +35,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="generate.alljars">
-        <java classname="fil.docmodel2md.generator.main.Generate" classpathref="fil.docmodel2md.generator.classpath">
+        <java classname="fil.docmodel2md.generator.main.Generate" classpathref="fil.mdMM2mdFile.generator.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
