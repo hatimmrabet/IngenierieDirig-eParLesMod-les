@@ -85,13 +85,22 @@ public interface FILPackage extends EPackage {
 	int FACULTE__NIVEAUX = 1;
 
 	/**
+	 * The feature id for the '<em><b>Intervenants</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FACULTE__INTERVENANTS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Faculte</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FACULTE_FEATURE_COUNT = 2;
+	int FACULTE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Faculte</em>' class.
@@ -158,13 +167,22 @@ public interface FILPackage extends EPackage {
 	int NIVEAU__RESPONSABLES = 4;
 
 	/**
+	 * The feature id for the '<em><b>Ues</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NIVEAU__UES = 5;
+
+	/**
 	 * The number of structural features of the '<em>Niveau</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NIVEAU_FEATURE_COUNT = 5;
+	int NIVEAU_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Niveau</em>' class.
@@ -231,22 +249,13 @@ public interface FILPackage extends EPackage {
 	int FORMATION__S2 = 4;
 
 	/**
-	 * The feature id for the '<em><b>Intervenant</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Responsables</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMATION__INTERVENANT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Responsable</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORMATION__RESPONSABLE = 6;
+	int FORMATION__RESPONSABLES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Enseignants</b></em>' reference list.
@@ -255,7 +264,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORMATION__ENSEIGNANTS = 7;
+	int FORMATION__ENSEIGNANTS = 6;
 
 	/**
 	 * The number of structural features of the '<em>Formation</em>' class.
@@ -264,7 +273,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FORMATION_FEATURE_COUNT = 8;
+	int FORMATION_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Formation</em>' class.
@@ -313,31 +322,13 @@ public interface FILPackage extends EPackage {
 	int UE__DOCUMENTS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Intervenants</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Responsables</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UE__INTERVENANTS = 3;
-
-	/**
-	 * The feature id for the '<em><b>Obligatoire</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UE__OBLIGATOIRE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Responsable</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UE__RESPONSABLE = 5;
+	int UE__RESPONSABLES = 3;
 
 	/**
 	 * The feature id for the '<em><b>Enseignants</b></em>' reference list.
@@ -346,7 +337,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UE__ENSEIGNANTS = 6;
+	int UE__ENSEIGNANTS = 4;
 
 	/**
 	 * The feature id for the '<em><b>Presentation</b></em>' containment reference.
@@ -355,7 +346,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UE__PRESENTATION = 7;
+	int UE__PRESENTATION = 5;
 
 	/**
 	 * The number of structural features of the '<em>UE</em>' class.
@@ -364,7 +355,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UE_FEATURE_COUNT = 8;
+	int UE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>UE</em>' class.
@@ -697,22 +688,13 @@ public interface FILPackage extends EPackage {
 	int INTERVENANT__PRENOM = 1;
 
 	/**
-	 * The feature id for the '<em><b>Responsable</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERVENANT__RESPONSABLE = 2;
-
-	/**
 	 * The number of structural features of the '<em>Intervenant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVENANT_FEATURE_COUNT = 3;
+	int INTERVENANT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Intervenant</em>' class.
@@ -780,6 +762,52 @@ public interface FILPackage extends EPackage {
 	int ENSEIGNANT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link fIL.impl.SemestreImpl <em>Semestre</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fIL.impl.SemestreImpl
+	 * @see fIL.impl.FILPackageImpl#getSemestre()
+	 * @generated
+	 */
+	int SEMESTRE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Uesoptionnelles</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTRE__UESOPTIONNELLES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Uesobligatoires</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTRE__UESOBLIGATOIRES = 1;
+
+	/**
+	 * The number of structural features of the '<em>Semestre</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTRE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Semestre</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTRE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link fIL.impl.S1Impl <em>S1</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -790,22 +818,13 @@ public interface FILPackage extends EPackage {
 	int S1 = 12;
 
 	/**
-	 * The feature id for the '<em><b>Ues</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int S1__UES = 0;
-
-	/**
 	 * The feature id for the '<em><b>Uesoptionnelles</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int S1__UESOPTIONNELLES = 1;
+	int S1__UESOPTIONNELLES = SEMESTRE__UESOPTIONNELLES;
 
 	/**
 	 * The feature id for the '<em><b>Uesobligatoires</b></em>' reference list.
@@ -814,7 +833,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int S1__UESOBLIGATOIRES = 2;
+	int S1__UESOBLIGATOIRES = SEMESTRE__UESOBLIGATOIRES;
 
 	/**
 	 * The number of structural features of the '<em>S1</em>' class.
@@ -823,7 +842,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int S1_FEATURE_COUNT = 3;
+	int S1_FEATURE_COUNT = SEMESTRE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>S1</em>' class.
@@ -832,7 +851,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int S1_OPERATION_COUNT = 0;
+	int S1_OPERATION_COUNT = SEMESTRE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fIL.impl.S2Impl <em>S2</em>}' class.
@@ -845,22 +864,13 @@ public interface FILPackage extends EPackage {
 	int S2 = 13;
 
 	/**
-	 * The feature id for the '<em><b>Ues</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int S2__UES = 0;
-
-	/**
 	 * The feature id for the '<em><b>Uesoptionnelles</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int S2__UESOPTIONNELLES = 1;
+	int S2__UESOPTIONNELLES = SEMESTRE__UESOPTIONNELLES;
 
 	/**
 	 * The feature id for the '<em><b>Uesobligatoires</b></em>' reference list.
@@ -869,7 +879,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int S2__UESOBLIGATOIRES = 2;
+	int S2__UESOBLIGATOIRES = SEMESTRE__UESOBLIGATOIRES;
 
 	/**
 	 * The number of structural features of the '<em>S2</em>' class.
@@ -878,7 +888,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int S2_FEATURE_COUNT = 3;
+	int S2_FEATURE_COUNT = SEMESTRE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>S2</em>' class.
@@ -887,7 +897,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int S2_OPERATION_COUNT = 0;
+	int S2_OPERATION_COUNT = SEMESTRE_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link fIL.Faculte <em>Faculte</em>}'.
@@ -920,6 +930,17 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFaculte_Niveaux();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fIL.Faculte#getIntervenants <em>Intervenants</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Intervenants</em>'.
+	 * @see fIL.Faculte#getIntervenants()
+	 * @see #getFaculte()
+	 * @generated
+	 */
+	EReference getFaculte_Intervenants();
 
 	/**
 	 * Returns the meta object for class '{@link fIL.Niveau <em>Niveau</em>}'.
@@ -987,6 +1008,17 @@ public interface FILPackage extends EPackage {
 	EReference getNiveau_Responsables();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link fIL.Niveau#getUes <em>Ues</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ues</em>'.
+	 * @see fIL.Niveau#getUes()
+	 * @see #getNiveau()
+	 * @generated
+	 */
+	EReference getNiveau_Ues();
+
+	/**
 	 * Returns the meta object for class '{@link fIL.Formation <em>Formation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1052,26 +1084,15 @@ public interface FILPackage extends EPackage {
 	EReference getFormation_S2();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fIL.Formation#getIntervenant <em>Intervenant</em>}'.
+	 * Returns the meta object for the reference list '{@link fIL.Formation#getResponsables <em>Responsables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Intervenant</em>'.
-	 * @see fIL.Formation#getIntervenant()
+	 * @return the meta object for the reference list '<em>Responsables</em>'.
+	 * @see fIL.Formation#getResponsables()
 	 * @see #getFormation()
 	 * @generated
 	 */
-	EReference getFormation_Intervenant();
-
-	/**
-	 * Returns the meta object for the reference '{@link fIL.Formation#getResponsable <em>Responsable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Responsable</em>'.
-	 * @see fIL.Formation#getResponsable()
-	 * @see #getFormation()
-	 * @generated
-	 */
-	EReference getFormation_Responsable();
+	EReference getFormation_Responsables();
 
 	/**
 	 * Returns the meta object for the reference list '{@link fIL.Formation#getEnseignants <em>Enseignants</em>}'.
@@ -1139,37 +1160,15 @@ public interface FILPackage extends EPackage {
 	EReference getUE_Presentation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fIL.UE#getIntervenants <em>Intervenants</em>}'.
+	 * Returns the meta object for the reference list '{@link fIL.UE#getResponsables <em>Responsables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Intervenants</em>'.
-	 * @see fIL.UE#getIntervenants()
+	 * @return the meta object for the reference list '<em>Responsables</em>'.
+	 * @see fIL.UE#getResponsables()
 	 * @see #getUE()
 	 * @generated
 	 */
-	EReference getUE_Intervenants();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fIL.UE#isObligatoire <em>Obligatoire</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Obligatoire</em>'.
-	 * @see fIL.UE#isObligatoire()
-	 * @see #getUE()
-	 * @generated
-	 */
-	EAttribute getUE_Obligatoire();
-
-	/**
-	 * Returns the meta object for the reference '{@link fIL.UE#getResponsable <em>Responsable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Responsable</em>'.
-	 * @see fIL.UE#getResponsable()
-	 * @see #getUE()
-	 * @generated
-	 */
-	EReference getUE_Responsable();
+	EReference getUE_Responsables();
 
 	/**
 	 * Returns the meta object for the reference list '{@link fIL.UE#getEnseignants <em>Enseignants</em>}'.
@@ -1353,17 +1352,6 @@ public interface FILPackage extends EPackage {
 	EAttribute getIntervenant_Prenom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Intervenant#isResponsable <em>Responsable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Responsable</em>'.
-	 * @see fIL.Intervenant#isResponsable()
-	 * @see #getIntervenant()
-	 * @generated
-	 */
-	EAttribute getIntervenant_Responsable();
-
-	/**
 	 * Returns the meta object for class '{@link fIL.Responsable <em>Responsable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1394,39 +1382,6 @@ public interface FILPackage extends EPackage {
 	EClass getS1();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fIL.S1#getUes <em>Ues</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ues</em>'.
-	 * @see fIL.S1#getUes()
-	 * @see #getS1()
-	 * @generated
-	 */
-	EReference getS1_Ues();
-
-	/**
-	 * Returns the meta object for the reference list '{@link fIL.S1#getUesoptionnelles <em>Uesoptionnelles</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Uesoptionnelles</em>'.
-	 * @see fIL.S1#getUesoptionnelles()
-	 * @see #getS1()
-	 * @generated
-	 */
-	EReference getS1_Uesoptionnelles();
-
-	/**
-	 * Returns the meta object for the reference list '{@link fIL.S1#getUesobligatoires <em>Uesobligatoires</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Uesobligatoires</em>'.
-	 * @see fIL.S1#getUesobligatoires()
-	 * @see #getS1()
-	 * @generated
-	 */
-	EReference getS1_Uesobligatoires();
-
-	/**
 	 * Returns the meta object for class '{@link fIL.S2 <em>S2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1437,37 +1392,36 @@ public interface FILPackage extends EPackage {
 	EClass getS2();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fIL.S2#getUes <em>Ues</em>}'.
+	 * Returns the meta object for class '{@link fIL.Semestre <em>Semestre</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ues</em>'.
-	 * @see fIL.S2#getUes()
-	 * @see #getS2()
+	 * @return the meta object for class '<em>Semestre</em>'.
+	 * @see fIL.Semestre
 	 * @generated
 	 */
-	EReference getS2_Ues();
+	EClass getSemestre();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fIL.S2#getUesoptionnelles <em>Uesoptionnelles</em>}'.
+	 * Returns the meta object for the reference list '{@link fIL.Semestre#getUesoptionnelles <em>Uesoptionnelles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Uesoptionnelles</em>'.
-	 * @see fIL.S2#getUesoptionnelles()
-	 * @see #getS2()
+	 * @see fIL.Semestre#getUesoptionnelles()
+	 * @see #getSemestre()
 	 * @generated
 	 */
-	EReference getS2_Uesoptionnelles();
+	EReference getSemestre_Uesoptionnelles();
 
 	/**
-	 * Returns the meta object for the reference list '{@link fIL.S2#getUesobligatoires <em>Uesobligatoires</em>}'.
+	 * Returns the meta object for the reference list '{@link fIL.Semestre#getUesobligatoires <em>Uesobligatoires</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Uesobligatoires</em>'.
-	 * @see fIL.S2#getUesobligatoires()
-	 * @see #getS2()
+	 * @see fIL.Semestre#getUesobligatoires()
+	 * @see #getSemestre()
 	 * @generated
 	 */
-	EReference getS2_Uesobligatoires();
+	EReference getSemestre_Uesobligatoires();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1517,6 +1471,14 @@ public interface FILPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FACULTE__NIVEAUX = eINSTANCE.getFaculte_Niveaux();
+
+		/**
+		 * The meta object literal for the '<em><b>Intervenants</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FACULTE__INTERVENANTS = eINSTANCE.getFaculte_Intervenants();
 
 		/**
 		 * The meta object literal for the '{@link fIL.impl.NiveauImpl <em>Niveau</em>}' class.
@@ -1569,6 +1531,14 @@ public interface FILPackage extends EPackage {
 		EReference NIVEAU__RESPONSABLES = eINSTANCE.getNiveau_Responsables();
 
 		/**
+		 * The meta object literal for the '<em><b>Ues</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NIVEAU__UES = eINSTANCE.getNiveau_Ues();
+
+		/**
 		 * The meta object literal for the '{@link fIL.impl.FormationImpl <em>Formation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1619,20 +1589,12 @@ public interface FILPackage extends EPackage {
 		EReference FORMATION__S2 = eINSTANCE.getFormation_S2();
 
 		/**
-		 * The meta object literal for the '<em><b>Intervenant</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Responsables</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FORMATION__INTERVENANT = eINSTANCE.getFormation_Intervenant();
-
-		/**
-		 * The meta object literal for the '<em><b>Responsable</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FORMATION__RESPONSABLE = eINSTANCE.getFormation_Responsable();
+		EReference FORMATION__RESPONSABLES = eINSTANCE.getFormation_Responsables();
 
 		/**
 		 * The meta object literal for the '<em><b>Enseignants</b></em>' reference list feature.
@@ -1685,28 +1647,12 @@ public interface FILPackage extends EPackage {
 		EReference UE__PRESENTATION = eINSTANCE.getUE_Presentation();
 
 		/**
-		 * The meta object literal for the '<em><b>Intervenants</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Responsables</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UE__INTERVENANTS = eINSTANCE.getUE_Intervenants();
-
-		/**
-		 * The meta object literal for the '<em><b>Obligatoire</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UE__OBLIGATOIRE = eINSTANCE.getUE_Obligatoire();
-
-		/**
-		 * The meta object literal for the '<em><b>Responsable</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UE__RESPONSABLE = eINSTANCE.getUE_Responsable();
+		EReference UE__RESPONSABLES = eINSTANCE.getUE_Responsables();
 
 		/**
 		 * The meta object literal for the '<em><b>Enseignants</b></em>' reference list feature.
@@ -1857,14 +1803,6 @@ public interface FILPackage extends EPackage {
 		EAttribute INTERVENANT__PRENOM = eINSTANCE.getIntervenant_Prenom();
 
 		/**
-		 * The meta object literal for the '<em><b>Responsable</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INTERVENANT__RESPONSABLE = eINSTANCE.getIntervenant_Responsable();
-
-		/**
 		 * The meta object literal for the '{@link fIL.impl.ResponsableImpl <em>Responsable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1895,30 +1833,6 @@ public interface FILPackage extends EPackage {
 		EClass S1 = eINSTANCE.getS1();
 
 		/**
-		 * The meta object literal for the '<em><b>Ues</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference S1__UES = eINSTANCE.getS1_Ues();
-
-		/**
-		 * The meta object literal for the '<em><b>Uesoptionnelles</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference S1__UESOPTIONNELLES = eINSTANCE.getS1_Uesoptionnelles();
-
-		/**
-		 * The meta object literal for the '<em><b>Uesobligatoires</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference S1__UESOBLIGATOIRES = eINSTANCE.getS1_Uesobligatoires();
-
-		/**
 		 * The meta object literal for the '{@link fIL.impl.S2Impl <em>S2</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1929,12 +1843,14 @@ public interface FILPackage extends EPackage {
 		EClass S2 = eINSTANCE.getS2();
 
 		/**
-		 * The meta object literal for the '<em><b>Ues</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link fIL.impl.SemestreImpl <em>Semestre</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see fIL.impl.SemestreImpl
+		 * @see fIL.impl.FILPackageImpl#getSemestre()
 		 * @generated
 		 */
-		EReference S2__UES = eINSTANCE.getS2_Ues();
+		EClass SEMESTRE = eINSTANCE.getSemestre();
 
 		/**
 		 * The meta object literal for the '<em><b>Uesoptionnelles</b></em>' reference list feature.
@@ -1942,7 +1858,7 @@ public interface FILPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference S2__UESOPTIONNELLES = eINSTANCE.getS2_Uesoptionnelles();
+		EReference SEMESTRE__UESOPTIONNELLES = eINSTANCE.getSemestre_Uesoptionnelles();
 
 		/**
 		 * The meta object literal for the '<em><b>Uesobligatoires</b></em>' reference list feature.
@@ -1950,7 +1866,7 @@ public interface FILPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference S2__UESOBLIGATOIRES = eINSTANCE.getS2_Uesobligatoires();
+		EReference SEMESTRE__UESOBLIGATOIRES = eINSTANCE.getSemestre_Uesobligatoires();
 
 	}
 

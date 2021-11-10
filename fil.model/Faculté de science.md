@@ -8,53 +8,34 @@ Le parcours Génie Logiciel s’articule autour de la conception et du développ
 
 ###  S1
  
-####  ACT
- 
-présentation de ACT
-
-
-####  PJE
- 
-####  IIR
- 
-RIC 
-
-
-####  IDM
- 
-####  ANG
- 
-###  S2
- 
-####  ASE
- 
-####  ISI
- 
-####  PJI
- 
-####  COA
+###  **UES OBLIGATOIRES :**
  
 ####  Compil
  
-####  ASA
+###  S2
  
+###  **UES OBLIGATOIRES :**
+ 
+####  PJI
+ 
+**Responsables :**
+
+hatimo hjgf
+
+Launay Michael 
+
+
+**Enseignants :**
+
+Quinton Clément 
+
+Jean-Claude Tarby
+
+Dumoulin Cedric
+
+
 ##  E-Services - ES
  
 Le parcours E-Services s’articule autour de la conception et du développement des services numériques, c’est-à-dire des services accessibles au travers des moyens de communication numérique - notamment l’Internet – mais également au travers de tous les équipements liés à l’économie digitale : smartphones, tablettes, interfaces multi-touch, interfaces vocales, etc.
 
 
-###  S1
- 
-####  TAC
- 
-Act est une ue
-
-
-###  S2
- 
-####  BDR
- 
-#  Master 2 genie logiciel - M2GL
- 
-##  test - tst
- 

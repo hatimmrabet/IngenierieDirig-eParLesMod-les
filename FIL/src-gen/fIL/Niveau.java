@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fIL.Niveau#getFormations <em>Formations</em>}</li>
  *   <li>{@link fIL.Niveau#getPresentation <em>Presentation</em>}</li>
  *   <li>{@link fIL.Niveau#getResponsables <em>Responsables</em>}</li>
+ *   <li>{@link fIL.Niveau#getUes <em>Ues</em>}</li>
  * </ul>
  *
  * @see fIL.FILPackage#getNiveau()
@@ -112,9 +113,21 @@ public interface Niveau extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Responsables</em>' reference list.
 	 * @see fIL.FILPackage#getNiveau_Responsables()
-	 * @model required="true" derived="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<Intervenant> getResponsables();
+
+	/**
+	 * Returns the value of the '<em><b>Ues</b></em>' containment reference list.
+	 * The list contents are of type {@link fIL.UE}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ues</em>' containment reference list.
+	 * @see fIL.FILPackage#getNiveau_Ues()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EList<UE> getUes();
 
 } // Niveau

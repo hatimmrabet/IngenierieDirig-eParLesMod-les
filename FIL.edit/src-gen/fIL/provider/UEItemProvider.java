@@ -58,8 +58,7 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 
 			addNomPropertyDescriptor(object);
 			addPseudoPropertyDescriptor(object);
-			addObligatoirePropertyDescriptor(object);
-			addResponsablePropertyDescriptor(object);
+			addResponsablesPropertyDescriptor(object);
 			addEnseignantsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -96,32 +95,17 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 	}
 
 	/**
-	 * This adds a property descriptor for the Obligatoire feature.
+	 * This adds a property descriptor for the Responsables feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addObligatoirePropertyDescriptor(Object object) {
+	protected void addResponsablesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_UE_obligatoire_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_UE_obligatoire_feature", "_UI_UE_type"),
-						FILPackage.Literals.UE__OBLIGATOIRE, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Responsable feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResponsablePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_UE_responsable_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_UE_responsable_feature", "_UI_UE_type"),
-						FILPackage.Literals.UE__RESPONSABLE, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_UE_responsables_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_UE_responsables_feature", "_UI_UE_type"),
+						FILPackage.Literals.UE__RESPONSABLES, true, false, true, null, null, null));
 	}
 
 	/**
@@ -151,7 +135,6 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(FILPackage.Literals.UE__DOCUMENTS);
-			childrenFeatures.add(FILPackage.Literals.UE__INTERVENANTS);
 			childrenFeatures.add(FILPackage.Literals.UE__PRESENTATION);
 		}
 		return childrenFeatures;
@@ -217,11 +200,9 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 		switch (notification.getFeatureID(UE.class)) {
 		case FILPackage.UE__NOM:
 		case FILPackage.UE__PSEUDO:
-		case FILPackage.UE__OBLIGATOIRE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case FILPackage.UE__DOCUMENTS:
-		case FILPackage.UE__INTERVENANTS:
 		case FILPackage.UE__PRESENTATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -248,9 +229,6 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 
 		newChildDescriptors
 				.add(createChildParameter(FILPackage.Literals.UE__DOCUMENTS, FILFactory.eINSTANCE.createAudio()));
-
-		newChildDescriptors.add(
-				createChildParameter(FILPackage.Literals.UE__INTERVENANTS, FILFactory.eINSTANCE.createIntervenant()));
 
 		newChildDescriptors.add(
 				createChildParameter(FILPackage.Literals.UE__PRESENTATION, FILFactory.eINSTANCE.createPresentation()));

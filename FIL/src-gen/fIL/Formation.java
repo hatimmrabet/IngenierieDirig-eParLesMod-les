@@ -19,8 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fIL.Formation#getPresentation <em>Presentation</em>}</li>
  *   <li>{@link fIL.Formation#getS1 <em>S1</em>}</li>
  *   <li>{@link fIL.Formation#getS2 <em>S2</em>}</li>
- *   <li>{@link fIL.Formation#getIntervenant <em>Intervenant</em>}</li>
- *   <li>{@link fIL.Formation#getResponsable <em>Responsable</em>}</li>
+ *   <li>{@link fIL.Formation#getResponsables <em>Responsables</em>}</li>
  *   <li>{@link fIL.Formation#getEnseignants <em>Enseignants</em>}</li>
  * </ul>
  *
@@ -140,38 +139,16 @@ public interface Formation extends EObject {
 	void setS2(S2 value);
 
 	/**
-	 * Returns the value of the '<em><b>Intervenant</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Responsables</b></em>' reference list.
 	 * The list contents are of type {@link fIL.Intervenant}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Intervenant</em>' containment reference list.
-	 * @see fIL.FILPackage#getFormation_Intervenant()
-	 * @model containment="true"
+	 * @return the value of the '<em>Responsables</em>' reference list.
+	 * @see fIL.FILPackage#getFormation_Responsables()
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Intervenant> getIntervenant();
-
-	/**
-	 * Returns the value of the '<em><b>Responsable</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Responsable</em>' reference.
-	 * @see #setResponsable(Intervenant)
-	 * @see fIL.FILPackage#getFormation_Responsable()
-	 * @model required="true" derived="true"
-	 * @generated
-	 */
-	Intervenant getResponsable();
-
-	/**
-	 * Sets the value of the '{@link fIL.Formation#getResponsable <em>Responsable</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Responsable</em>' reference.
-	 * @see #getResponsable()
-	 * @generated
-	 */
-	void setResponsable(Intervenant value);
+	EList<Intervenant> getResponsables();
 
 	/**
 	 * Returns the value of the '<em><b>Enseignants</b></em>' reference list.
@@ -180,7 +157,7 @@ public interface Formation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Enseignants</em>' reference list.
 	 * @see fIL.FILPackage#getFormation_Enseignants()
-	 * @model derived="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Intervenant> getEnseignants();

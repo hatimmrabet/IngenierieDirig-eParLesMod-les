@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link fIL.impl.IntervenantImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.impl.IntervenantImpl#getPrenom <em>Prenom</em>}</li>
- *   <li>{@link fIL.impl.IntervenantImpl#isResponsable <em>Responsable</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,26 +66,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 	 * @ordered
 	 */
 	protected String prenom = PRENOM_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isResponsable() <em>Responsable</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResponsable()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean RESPONSABLE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isResponsable() <em>Responsable</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isResponsable()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean responsable = RESPONSABLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,28 +133,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isResponsable() {
-		return responsable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setResponsable(boolean newResponsable) {
-		boolean oldResponsable = responsable;
-		responsable = newResponsable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.INTERVENANT__RESPONSABLE, oldResponsable,
-					responsable));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -183,8 +140,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 			return getNom();
 		case FILPackage.INTERVENANT__PRENOM:
 			return getPrenom();
-		case FILPackage.INTERVENANT__RESPONSABLE:
-			return isResponsable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,9 +157,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 			return;
 		case FILPackage.INTERVENANT__PRENOM:
 			setPrenom((String) newValue);
-			return;
-		case FILPackage.INTERVENANT__RESPONSABLE:
-			setResponsable((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,9 +176,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 		case FILPackage.INTERVENANT__PRENOM:
 			setPrenom(PRENOM_EDEFAULT);
 			return;
-		case FILPackage.INTERVENANT__RESPONSABLE:
-			setResponsable(RESPONSABLE_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -243,8 +192,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 		case FILPackage.INTERVENANT__PRENOM:
 			return PRENOM_EDEFAULT == null ? prenom != null : !PRENOM_EDEFAULT.equals(prenom);
-		case FILPackage.INTERVENANT__RESPONSABLE:
-			return responsable != RESPONSABLE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -264,8 +211,6 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 		result.append(nom);
 		result.append(", prenom: ");
 		result.append(prenom);
-		result.append(", responsable: ");
-		result.append(responsable);
 		result.append(')');
 		return result.toString();
 	}

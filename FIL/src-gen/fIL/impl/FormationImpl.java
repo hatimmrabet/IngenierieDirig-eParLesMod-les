@@ -17,9 +17,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,8 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fIL.impl.FormationImpl#getPresentation <em>Presentation</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getS1 <em>S1</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getS2 <em>S2</em>}</li>
- *   <li>{@link fIL.impl.FormationImpl#getIntervenant <em>Intervenant</em>}</li>
- *   <li>{@link fIL.impl.FormationImpl#getResponsable <em>Responsable</em>}</li>
+ *   <li>{@link fIL.impl.FormationImpl#getResponsables <em>Responsables</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getEnseignants <em>Enseignants</em>}</li>
  * </ul>
  *
@@ -113,24 +110,14 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	protected S2 s2;
 
 	/**
-	 * The cached value of the '{@link #getIntervenant() <em>Intervenant</em>}' containment reference list.
+	 * The cached value of the '{@link #getResponsables() <em>Responsables</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIntervenant()
+	 * @see #getResponsables()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Intervenant> intervenant;
-
-	/**
-	 * The cached value of the '{@link #getResponsable() <em>Responsable</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResponsable()
-	 * @generated
-	 * @ordered
-	 */
-	protected Intervenant responsable;
+	protected EList<Intervenant> responsables;
 
 	/**
 	 * The cached value of the '{@link #getEnseignants() <em>Enseignants</em>}' reference list.
@@ -356,52 +343,12 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Intervenant> getIntervenant() {
-		if (intervenant == null) {
-			intervenant = new EObjectContainmentEList<Intervenant>(Intervenant.class, this,
-					FILPackage.FORMATION__INTERVENANT);
+	public EList<Intervenant> getResponsables() {
+		if (responsables == null) {
+			responsables = new EObjectResolvingEList<Intervenant>(Intervenant.class, this,
+					FILPackage.FORMATION__RESPONSABLES);
 		}
-		return intervenant;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Intervenant getResponsable() {
-		if (responsable != null && responsable.eIsProxy()) {
-			InternalEObject oldResponsable = (InternalEObject) responsable;
-			responsable = (Intervenant) eResolveProxy(oldResponsable);
-			if (responsable != oldResponsable) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FILPackage.FORMATION__RESPONSABLE,
-							oldResponsable, responsable));
-			}
-		}
-		return responsable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Intervenant basicGetResponsable() {
-		return responsable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setResponsable(Intervenant newResponsable) {
-		Intervenant oldResponsable = responsable;
-		responsable = newResponsable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__RESPONSABLE, oldResponsable,
-					responsable));
+		return responsables;
 	}
 
 	/**
@@ -431,8 +378,6 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			return basicSetS1(null, msgs);
 		case FILPackage.FORMATION__S2:
 			return basicSetS2(null, msgs);
-		case FILPackage.FORMATION__INTERVENANT:
-			return ((InternalEList<?>) getIntervenant()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -455,12 +400,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			return getS1();
 		case FILPackage.FORMATION__S2:
 			return getS2();
-		case FILPackage.FORMATION__INTERVENANT:
-			return getIntervenant();
-		case FILPackage.FORMATION__RESPONSABLE:
-			if (resolve)
-				return getResponsable();
-			return basicGetResponsable();
+		case FILPackage.FORMATION__RESPONSABLES:
+			return getResponsables();
 		case FILPackage.FORMATION__ENSEIGNANTS:
 			return getEnseignants();
 		}
@@ -491,12 +432,9 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 		case FILPackage.FORMATION__S2:
 			setS2((S2) newValue);
 			return;
-		case FILPackage.FORMATION__INTERVENANT:
-			getIntervenant().clear();
-			getIntervenant().addAll((Collection<? extends Intervenant>) newValue);
-			return;
-		case FILPackage.FORMATION__RESPONSABLE:
-			setResponsable((Intervenant) newValue);
+		case FILPackage.FORMATION__RESPONSABLES:
+			getResponsables().clear();
+			getResponsables().addAll((Collection<? extends Intervenant>) newValue);
 			return;
 		case FILPackage.FORMATION__ENSEIGNANTS:
 			getEnseignants().clear();
@@ -529,11 +467,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 		case FILPackage.FORMATION__S2:
 			setS2((S2) null);
 			return;
-		case FILPackage.FORMATION__INTERVENANT:
-			getIntervenant().clear();
-			return;
-		case FILPackage.FORMATION__RESPONSABLE:
-			setResponsable((Intervenant) null);
+		case FILPackage.FORMATION__RESPONSABLES:
+			getResponsables().clear();
 			return;
 		case FILPackage.FORMATION__ENSEIGNANTS:
 			getEnseignants().clear();
@@ -560,10 +495,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			return s1 != null;
 		case FILPackage.FORMATION__S2:
 			return s2 != null;
-		case FILPackage.FORMATION__INTERVENANT:
-			return intervenant != null && !intervenant.isEmpty();
-		case FILPackage.FORMATION__RESPONSABLE:
-			return responsable != null;
+		case FILPackage.FORMATION__RESPONSABLES:
+			return responsables != null && !responsables.isEmpty();
 		case FILPackage.FORMATION__ENSEIGNANTS:
 			return enseignants != null && !enseignants.isEmpty();
 		}

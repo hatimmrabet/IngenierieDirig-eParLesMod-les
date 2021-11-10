@@ -2,10 +2,7 @@
  */
 package fIL.provider;
 
-import fIL.FILFactory;
 import fIL.FILPackage;
-import fIL.Faculte;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -13,9 +10,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -23,17 +17,15 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fIL.Faculte} object.
+ * This is the item provider adapter for a {@link fIL.Semestre} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FaculteItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class SemestreItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -41,7 +33,7 @@ public class FaculteItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FaculteItemProvider(AdapterFactory adapterFactory) {
+	public SemestreItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,66 +48,51 @@ public class FaculteItemProvider extends ItemProviderAdapter implements IEditing
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNomPropertyDescriptor(object);
+			addUesoptionnellesPropertyDescriptor(object);
+			addUesobligatoiresPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Nom feature.
+	 * This adds a property descriptor for the Uesoptionnelles feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNomPropertyDescriptor(Object object) {
+	protected void addUesoptionnellesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Faculte_nom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Faculte_nom_feature", "_UI_Faculte_type"),
-						FILPackage.Literals.FACULTE__NOM, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_Semestre_uesoptionnelles_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Semestre_uesoptionnelles_feature",
+								"_UI_Semestre_type"),
+						FILPackage.Literals.SEMESTRE__UESOPTIONNELLES, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Uesobligatoires feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(FILPackage.Literals.FACULTE__NIVEAUX);
-			childrenFeatures.add(FILPackage.Literals.FACULTE__INTERVENANTS);
-		}
-		return childrenFeatures;
+	protected void addUesobligatoiresPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Semestre_uesobligatoires_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Semestre_uesobligatoires_feature",
+								"_UI_Semestre_type"),
+						FILPackage.Literals.SEMESTRE__UESOBLIGATOIRES, true, false, true, null, null, null));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns Faculte.gif.
+	 * This returns Semestre.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Faculte"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Semestre"));
 	}
 
 	/**
@@ -136,9 +113,7 @@ public class FaculteItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Faculte) object).getNom();
-		return label == null || label.length() == 0 ? getString("_UI_Faculte_type")
-				: getString("_UI_Faculte_type") + " " + label;
+		return getString("_UI_Semestre_type");
 	}
 
 	/**
@@ -151,16 +126,6 @@ public class FaculteItemProvider extends ItemProviderAdapter implements IEditing
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Faculte.class)) {
-		case FILPackage.FACULTE__NOM:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case FILPackage.FACULTE__NIVEAUX:
-		case FILPackage.FACULTE__INTERVENANTS:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -174,12 +139,6 @@ public class FaculteItemProvider extends ItemProviderAdapter implements IEditing
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors
-				.add(createChildParameter(FILPackage.Literals.FACULTE__NIVEAUX, FILFactory.eINSTANCE.createNiveau()));
-
-		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FACULTE__INTERVENANTS,
-				FILFactory.eINSTANCE.createIntervenant()));
 	}
 
 	/**
