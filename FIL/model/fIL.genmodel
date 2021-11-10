@@ -41,13 +41,12 @@
     <genClasses ecoreClass="fIL.ecore#//Document">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Document/nom"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Document/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Document/taille"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Document/lien"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//Video">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Video/duree"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//Fichier">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Fichier/lien"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Fichier/auteur"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//Audio">

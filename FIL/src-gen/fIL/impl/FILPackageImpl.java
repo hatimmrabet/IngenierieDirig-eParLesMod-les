@@ -466,7 +466,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDocument_Taille() {
+	public EAttribute getDocument_Lien() {
 		return (EAttribute) documentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -502,17 +502,8 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFichier_Lien() {
-		return (EAttribute) fichierEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getFichier_Auteur() {
-		return (EAttribute) fichierEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) fichierEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -703,13 +694,12 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		documentEClass = createEClass(DOCUMENT);
 		createEAttribute(documentEClass, DOCUMENT__NOM);
 		createEAttribute(documentEClass, DOCUMENT__DESCRIPTION);
-		createEAttribute(documentEClass, DOCUMENT__TAILLE);
+		createEAttribute(documentEClass, DOCUMENT__LIEN);
 
 		videoEClass = createEClass(VIDEO);
 		createEAttribute(videoEClass, VIDEO__DUREE);
 
 		fichierEClass = createEClass(FICHIER);
-		createEAttribute(fichierEClass, FICHIER__LIEN);
 		createEAttribute(fichierEClass, FICHIER__AUTEUR);
 
 		audioEClass = createEClass(AUDIO);
@@ -844,16 +834,14 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_Description(), ecorePackage.getEString(), "description", null, 0, 1, Document.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDocument_Taille(), ecorePackage.getEString(), "taille", null, 0, 1, Document.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDocument_Lien(), ecorePackage.getEString(), "lien", null, 0, 1, Document.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(videoEClass, Video.class, "Video", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVideo_Duree(), ecorePackage.getEString(), "duree", null, 0, 1, Video.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fichierEClass, Fichier.class, "Fichier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFichier_Lien(), ecorePackage.getEString(), "lien", null, 0, 1, Fichier.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFichier_Auteur(), ecorePackage.getEString(), "auteur", null, 0, 1, Fichier.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

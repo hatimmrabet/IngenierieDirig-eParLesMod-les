@@ -55,7 +55,7 @@ public class DocumentItemProvider extends ItemProviderAdapter implements IEditin
 
 			addNomPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addTaillePropertyDescriptor(object);
+			addLienPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -93,18 +93,18 @@ public class DocumentItemProvider extends ItemProviderAdapter implements IEditin
 	}
 
 	/**
-	 * This adds a property descriptor for the Taille feature.
+	 * This adds a property descriptor for the Lien feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTaillePropertyDescriptor(Object object) {
+	protected void addLienPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Document_taille_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Document_taille_feature",
+						getResourceLocator(), getString("_UI_Document_lien_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Document_lien_feature",
 								"_UI_Document_type"),
-						FILPackage.Literals.DOCUMENT__TAILLE, true, false, false,
+						FILPackage.Literals.DOCUMENT__LIEN, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -156,7 +156,7 @@ public class DocumentItemProvider extends ItemProviderAdapter implements IEditin
 		switch (notification.getFeatureID(Document.class)) {
 		case FILPackage.DOCUMENT__NOM:
 		case FILPackage.DOCUMENT__DESCRIPTION:
-		case FILPackage.DOCUMENT__TAILLE:
+		case FILPackage.DOCUMENT__LIEN:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

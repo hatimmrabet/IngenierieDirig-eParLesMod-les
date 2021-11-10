@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fIL.Document#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.Document#getDescription <em>Description</em>}</li>
- *   <li>{@link fIL.Document#getTaille <em>Taille</em>}</li>
+ *   <li>{@link fIL.Document#getLien <em>Lien</em>}</li>
  * </ul>
  *
  * @see fIL.FILPackage#getDocument()
@@ -68,25 +68,25 @@ public interface Document extends EObject {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Taille</b></em>' attribute.
+	 * Returns the value of the '<em><b>Lien</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Taille</em>' attribute.
-	 * @see #setTaille(String)
-	 * @see fIL.FILPackage#getDocument_Taille()
+	 * @return the value of the '<em>Lien</em>' attribute.
+	 * @see #setLien(String)
+	 * @see fIL.FILPackage#getDocument_Lien()
 	 * @model
 	 * @generated
 	 */
-	String getTaille();
+	String getLien();
 
 	/**
-	 * Sets the value of the '{@link fIL.Document#getTaille <em>Taille</em>}' attribute.
+	 * Sets the value of the '{@link fIL.Document#getLien <em>Lien</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Taille</em>' attribute.
-	 * @see #getTaille()
+	 * @param value the new value of the '<em>Lien</em>' attribute.
+	 * @see #getLien()
 	 * @generated
 	 */
-	void setTaille(String value);
+	void setLien(String value);
 
 } // Document

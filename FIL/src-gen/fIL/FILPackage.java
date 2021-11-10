@@ -395,13 +395,13 @@ public interface FILPackage extends EPackage {
 	int DOCUMENT__DESCRIPTION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Taille</b></em>' attribute.
+	 * The feature id for the '<em><b>Lien</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT__TAILLE = 2;
+	int DOCUMENT__LIEN = 2;
 
 	/**
 	 * The number of structural features of the '<em>Document</em>' class.
@@ -450,13 +450,13 @@ public interface FILPackage extends EPackage {
 	int VIDEO__DESCRIPTION = DOCUMENT__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Taille</b></em>' attribute.
+	 * The feature id for the '<em><b>Lien</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIDEO__TAILLE = DOCUMENT__TAILLE;
+	int VIDEO__LIEN = DOCUMENT__LIEN;
 
 	/**
 	 * The feature id for the '<em><b>Duree</b></em>' attribute.
@@ -514,22 +514,13 @@ public interface FILPackage extends EPackage {
 	int FICHIER__DESCRIPTION = DOCUMENT__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Taille</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FICHIER__TAILLE = DOCUMENT__TAILLE;
-
-	/**
 	 * The feature id for the '<em><b>Lien</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FICHIER__LIEN = DOCUMENT_FEATURE_COUNT + 0;
+	int FICHIER__LIEN = DOCUMENT__LIEN;
 
 	/**
 	 * The feature id for the '<em><b>Auteur</b></em>' attribute.
@@ -538,7 +529,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FICHIER__AUTEUR = DOCUMENT_FEATURE_COUNT + 1;
+	int FICHIER__AUTEUR = DOCUMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Fichier</em>' class.
@@ -547,7 +538,7 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FICHIER_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 2;
+	int FICHIER_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Fichier</em>' class.
@@ -587,13 +578,13 @@ public interface FILPackage extends EPackage {
 	int AUDIO__DESCRIPTION = DOCUMENT__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Taille</b></em>' attribute.
+	 * The feature id for the '<em><b>Lien</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUDIO__TAILLE = DOCUMENT__TAILLE;
+	int AUDIO__LIEN = DOCUMENT__LIEN;
 
 	/**
 	 * The feature id for the '<em><b>Duree</b></em>' attribute.
@@ -1214,15 +1205,15 @@ public interface FILPackage extends EPackage {
 	EAttribute getDocument_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Document#getTaille <em>Taille</em>}'.
+	 * Returns the meta object for the attribute '{@link fIL.Document#getLien <em>Lien</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Taille</em>'.
-	 * @see fIL.Document#getTaille()
+	 * @return the meta object for the attribute '<em>Lien</em>'.
+	 * @see fIL.Document#getLien()
 	 * @see #getDocument()
 	 * @generated
 	 */
-	EAttribute getDocument_Taille();
+	EAttribute getDocument_Lien();
 
 	/**
 	 * Returns the meta object for class '{@link fIL.Video <em>Video</em>}'.
@@ -1254,17 +1245,6 @@ public interface FILPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFichier();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fIL.Fichier#getLien <em>Lien</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Lien</em>'.
-	 * @see fIL.Fichier#getLien()
-	 * @see #getFichier()
-	 * @generated
-	 */
-	EAttribute getFichier_Lien();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fIL.Fichier#getAuteur <em>Auteur</em>}'.
@@ -1689,12 +1669,12 @@ public interface FILPackage extends EPackage {
 		EAttribute DOCUMENT__DESCRIPTION = eINSTANCE.getDocument_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Taille</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Lien</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DOCUMENT__TAILLE = eINSTANCE.getDocument_Taille();
+		EAttribute DOCUMENT__LIEN = eINSTANCE.getDocument_Lien();
 
 		/**
 		 * The meta object literal for the '{@link fIL.impl.VideoImpl <em>Video</em>}' class.
@@ -1723,14 +1703,6 @@ public interface FILPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FICHIER = eINSTANCE.getFichier();
-
-		/**
-		 * The meta object literal for the '<em><b>Lien</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FICHIER__LIEN = eINSTANCE.getFichier_Lien();
 
 		/**
 		 * The meta object literal for the '<em><b>Auteur</b></em>' attribute feature.

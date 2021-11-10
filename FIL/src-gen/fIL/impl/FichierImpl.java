@@ -19,33 +19,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fIL.impl.FichierImpl#getLien <em>Lien</em>}</li>
  *   <li>{@link fIL.impl.FichierImpl#getAuteur <em>Auteur</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FichierImpl extends DocumentImpl implements Fichier {
-	/**
-	 * The default value of the '{@link #getLien() <em>Lien</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLien()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String LIEN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLien() <em>Lien</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLien()
-	 * @generated
-	 * @ordered
-	 */
-	protected String lien = LIEN_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getAuteur() <em>Auteur</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -90,27 +69,6 @@ public class FichierImpl extends DocumentImpl implements Fichier {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLien() {
-		return lien;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLien(String newLien) {
-		String oldLien = lien;
-		lien = newLien;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FICHIER__LIEN, oldLien, lien));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getAuteur() {
 		return auteur;
 	}
@@ -135,8 +93,6 @@ public class FichierImpl extends DocumentImpl implements Fichier {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case FILPackage.FICHIER__LIEN:
-			return getLien();
 		case FILPackage.FICHIER__AUTEUR:
 			return getAuteur();
 		}
@@ -151,9 +107,6 @@ public class FichierImpl extends DocumentImpl implements Fichier {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case FILPackage.FICHIER__LIEN:
-			setLien((String) newValue);
-			return;
 		case FILPackage.FICHIER__AUTEUR:
 			setAuteur((String) newValue);
 			return;
@@ -169,9 +122,6 @@ public class FichierImpl extends DocumentImpl implements Fichier {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case FILPackage.FICHIER__LIEN:
-			setLien(LIEN_EDEFAULT);
-			return;
 		case FILPackage.FICHIER__AUTEUR:
 			setAuteur(AUTEUR_EDEFAULT);
 			return;
@@ -187,8 +137,6 @@ public class FichierImpl extends DocumentImpl implements Fichier {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case FILPackage.FICHIER__LIEN:
-			return LIEN_EDEFAULT == null ? lien != null : !LIEN_EDEFAULT.equals(lien);
 		case FILPackage.FICHIER__AUTEUR:
 			return AUTEUR_EDEFAULT == null ? auteur != null : !AUTEUR_EDEFAULT.equals(auteur);
 		}
@@ -206,9 +154,7 @@ public class FichierImpl extends DocumentImpl implements Fichier {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (lien: ");
-		result.append(lien);
-		result.append(", auteur: ");
+		result.append(" (auteur: ");
 		result.append(auteur);
 		result.append(')');
 		return result.toString();

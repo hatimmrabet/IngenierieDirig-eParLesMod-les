@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link fIL.impl.DocumentImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.impl.DocumentImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link fIL.impl.DocumentImpl#getTaille <em>Taille</em>}</li>
+ *   <li>{@link fIL.impl.DocumentImpl#getLien <em>Lien</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,24 +69,24 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTaille() <em>Taille</em>}' attribute.
+	 * The default value of the '{@link #getLien() <em>Lien</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTaille()
+	 * @see #getLien()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TAILLE_EDEFAULT = null;
+	protected static final String LIEN_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTaille() <em>Taille</em>}' attribute.
+	 * The cached value of the '{@link #getLien() <em>Lien</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTaille()
+	 * @see #getLien()
 	 * @generated
 	 * @ordered
 	 */
-	protected String taille = TAILLE_EDEFAULT;
+	protected String lien = LIEN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,8 +155,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTaille() {
-		return taille;
+	public String getLien() {
+		return lien;
 	}
 
 	/**
@@ -164,11 +164,11 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTaille(String newTaille) {
-		String oldTaille = taille;
-		taille = newTaille;
+	public void setLien(String newLien) {
+		String oldLien = lien;
+		lien = newLien;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.DOCUMENT__TAILLE, oldTaille, taille));
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.DOCUMENT__LIEN, oldLien, lien));
 	}
 
 	/**
@@ -183,8 +183,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 			return getNom();
 		case FILPackage.DOCUMENT__DESCRIPTION:
 			return getDescription();
-		case FILPackage.DOCUMENT__TAILLE:
-			return getTaille();
+		case FILPackage.DOCUMENT__LIEN:
+			return getLien();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,8 +203,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 		case FILPackage.DOCUMENT__DESCRIPTION:
 			setDescription((String) newValue);
 			return;
-		case FILPackage.DOCUMENT__TAILLE:
-			setTaille((String) newValue);
+		case FILPackage.DOCUMENT__LIEN:
+			setLien((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,8 +224,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 		case FILPackage.DOCUMENT__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
 			return;
-		case FILPackage.DOCUMENT__TAILLE:
-			setTaille(TAILLE_EDEFAULT);
+		case FILPackage.DOCUMENT__LIEN:
+			setLien(LIEN_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -243,8 +243,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 		case FILPackage.DOCUMENT__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-		case FILPackage.DOCUMENT__TAILLE:
-			return TAILLE_EDEFAULT == null ? taille != null : !TAILLE_EDEFAULT.equals(taille);
+		case FILPackage.DOCUMENT__LIEN:
+			return LIEN_EDEFAULT == null ? lien != null : !LIEN_EDEFAULT.equals(lien);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -264,8 +264,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 		result.append(nom);
 		result.append(", description: ");
 		result.append(description);
-		result.append(", taille: ");
-		result.append(taille);
+		result.append(", lien: ");
+		result.append(lien);
 		result.append(')');
 		return result.toString();
 	}

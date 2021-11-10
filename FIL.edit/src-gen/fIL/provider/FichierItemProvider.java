@@ -44,25 +44,9 @@ public class FichierItemProvider extends DocumentItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLienPropertyDescriptor(object);
 			addAuteurPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Lien feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLienPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Fichier_lien_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Fichier_lien_feature", "_UI_Fichier_type"),
-						FILPackage.Literals.FICHIER__LIEN, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -127,7 +111,6 @@ public class FichierItemProvider extends DocumentItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Fichier.class)) {
-		case FILPackage.FICHIER__LIEN:
 		case FILPackage.FICHIER__AUTEUR:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
