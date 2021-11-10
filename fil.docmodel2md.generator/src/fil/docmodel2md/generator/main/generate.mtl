@@ -67,3 +67,6 @@
 [template public generateCompositeTextElement(compText : StrongEmphasis)]
 **[compText.text/]**
 [/template]
+[template public generateCompositeTextElement(compText : Link)]
+['['/][compText.title/][']'/]([compText.url/])
+[/template]
