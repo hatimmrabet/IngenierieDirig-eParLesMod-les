@@ -12,47 +12,37 @@
   <contents xsi:type="simplemarkdown:Title" level="3">
     <elements xsi:type="simplemarkdown:Text" text="S1"/>
   </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="ACT"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Paragraph">
-    <elements xsi:type="simplemarkdown:Text" text="présentation de ACT"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="PJE"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="IIR"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Paragraph">
-    <elements xsi:type="simplemarkdown:Text" text="RIC "/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="IDM"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="ANG"/>
-  </contents>
   <contents xsi:type="simplemarkdown:Title" level="3">
-    <elements xsi:type="simplemarkdown:Text" text="S2"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="ASE"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="ISI"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="PJI"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="COA"/>
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OBLIGATOIRES :"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="4">
     <elements xsi:type="simplemarkdown:Text" text="Compil"/>
   </contents>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OPTIONNELLES :"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:Text" text="S2"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OBLIGATOIRES :"/>
+  </contents>
   <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="ASA"/>
+    <elements xsi:type="simplemarkdown:Text" text="PJI"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OPTIONNELLES :"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
+    <elements xsi:type="simplemarkdown:Text" text="hatimo hjgf"/>
+    <elements xsi:type="simplemarkdown:Text" text="Launay Michael "/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Intervenants :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Quinton Clément "/>
+    <elements xsi:type="simplemarkdown:Text" text="Jean-Claude Tarby"/>
+    <elements xsi:type="simplemarkdown:Text" text="Dumoulin Cedric"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="2">
     <elements xsi:type="simplemarkdown:Text" text="E-Services - ES"/>
@@ -61,24 +51,15 @@
     <elements xsi:type="simplemarkdown:Text" text="Le parcours E-Services s’articule autour de la conception et du développement des services numériques, c’est-à-dire des services accessibles au travers des moyens de communication numérique - notamment l’Internet – mais également au travers de tous les équipements liés à l’économie digitale : smartphones, tablettes, interfaces multi-touch, interfaces vocales, etc."/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="3">
-    <elements xsi:type="simplemarkdown:Text" text="S1"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="TAC"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Paragraph">
-    <elements xsi:type="simplemarkdown:Text" text="Act est une ue"/>
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OBLIGATOIRES :"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="3">
-    <elements xsi:type="simplemarkdown:Text" text="S2"/>
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OPTIONNELLES :"/>
   </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="BDR"/>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OBLIGATOIRES :"/>
   </contents>
-  <contents xsi:type="simplemarkdown:Title" level="1">
-    <elements xsi:type="simplemarkdown:Text" text="Master 2 genie logiciel - M2GL"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Title" level="2">
-    <elements xsi:type="simplemarkdown:Text" text="test - tst"/>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OPTIONNELLES :"/>
   </contents>
 </simplemarkdown:Document>

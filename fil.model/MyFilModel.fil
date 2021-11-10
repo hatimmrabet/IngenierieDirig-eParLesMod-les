@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fIL:Faculte xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fIL="http://www.example.org/fIL" nom="Faculté de science">
+  <niveaux nom="Master 1 mention informatique" pseudo="M1INF" responsables="//@intervenants.1 //@intervenants.3">
+    <formations nom="Génie Logiciel" pseudo="GL" responsables="//@intervenants.0 //@intervenants.3" enseignants="//@intervenants.4 //@intervenants.6 //@intervenants.1">
+      <presentation contenue="Le parcours Génie Logiciel s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."/>
+      <s1 uesobligatoires="//@niveaux.0/@ues.5"/>
+      <s2 uesobligatoires="//@niveaux.0/@ues.2"/>
+    </formations>
+    <formations nom="E-Services" pseudo="ES">
+      <presentation contenue="Le parcours E-Services s’articule autour de la conception et du développement des services numériques, c’est-à-dire des services accessibles au travers des moyens de communication numérique - notamment l’Internet – mais également au travers de tous les équipements liés à l’économie digitale : smartphones, tablettes, interfaces multi-touch, interfaces vocales, etc."/>
+    </formations>
+    <presentation contenue="Pacrous informatique, pour Master 1"/>
+    <ues nom="Architecture des systèmes d'exploitation" pseudo="ASE"/>
+    <ues nom="Introduction à la Sécurité Informatique" pseudo="ISI"/>
+    <ues nom="Projet Individuel" pseudo="PJI"/>
+    <ues nom="Conception Objet Avancée" pseudo="COA"/>
+    <ues nom="Ingénierie Des Modèles" pseudo="IDM" responsables="//@intervenants.1" enseignants="//@intervenants.2"/>
+    <ues nom="Compilation des logiciels" pseudo="Compil"/>
+    <ues nom="Architecture des systèmes d'exploitation avancée" pseudo="ASA"/>
+    <ues nom="Technologies pour les Applications Connectées" pseudo="TAC"/>
+    <ues nom="Algorithmique et complexité" pseudo="ACT"/>
+  </niveaux>
+  <intervenants nom="hatimo" prenom="hjgf"/>
+  <intervenants nom="Dumoulin" prenom="Cedric"/>
+  <intervenants nom="Le Pallec" prenom="Xavier "/>
+  <intervenants nom="Launay" prenom="Michael "/>
+  <intervenants nom="Quinton" prenom="Clément "/>
+  <intervenants nom="hatim" prenom="hhg"/>
+  <intervenants nom="Jean-Claude" prenom="Tarby"/>
+</fIL:Faculte>
