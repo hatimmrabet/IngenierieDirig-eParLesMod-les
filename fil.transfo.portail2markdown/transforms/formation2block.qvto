@@ -15,31 +15,45 @@ mapping filMM::Faculte::faculte2Title() : markdownMM::Document {
 		niveau.formations -> forEach(formation){
 			contents += formation -> map formation2Title(); //affichage du nom de formation
 			contents += formation.presentation -> map presentationParagraph(); //affichage du presentation du formation si elle existe
-			contents += formation.s1 -> map s1FormationBlock(); //affichage du s1
-			contents += object Title { level := 3; elements += object StrongEmphasis { text := "UES OBLIGATOIRES :"}};
+			//affichage du s1
+			contents += formation.s1 -> map s1FormationBlock(); 
+			//UEs oblig s1 
+			contents += formation.s1.uesobligatoires -> map ueType("UES OBLIGATOIRES :");
 			formation.s1.uesobligatoires -> forEach(ue){
 				contents += ue -> map ueTitre();
 				contents += ue.presentation -> map presentationParagraph();
+				contents += ue.responsables -> map intervenantsParagraph("Responsables :");
+				contents += ue.enseignants -> map intervenantsParagraph("Enseignants :");
 			};
-			contents += object Title { level := 3; elements += object StrongEmphasis { text := "UES OPTIONNELLES :"}};
+			//UEs optio s1
+			contents += formation.s1.uesoptionnelles -> map ueType("UES OPTIONNELLES :");
 			formation.s1.uesoptionnelles -> forEach(ue){
 				contents += ue -> map ueTitre();
 				contents += ue.presentation -> map presentationParagraph();
+				contents += ue.responsables -> map intervenantsParagraph("Responsables :");
+				contents += ue.enseignants -> map intervenantsParagraph("Enseignants :");
 			};
-			contents += formation.s2 -> map s2FormationBlock(); //affichage du s2
-			contents += object Title { level := 3; elements += object StrongEmphasis { text := "UES OBLIGATOIRES :"}};
+			//affichage du s2
+			contents += formation.s2 -> map s2FormationBlock(); 
+			//UEs oblig s2
+			contents += formation.s2.uesobligatoires -> map ueType("UES OBLIGATOIRES :");
 			formation.s2.uesobligatoires-> forEach(ue){
 				contents += ue -> map ueTitre();
 				contents += ue.presentation -> map presentationParagraph();
+				contents += ue.responsables -> map intervenantsParagraph("Responsables :");
+				contents += ue.enseignants -> map intervenantsParagraph("Enseignants :");
 			};
-			contents += object Title { level := 3; elements += object StrongEmphasis { text := "UES OPTIONNELLES :"}};
+			//UEs optio s2
+			contents += formation.s2.uesoptionnelles -> map ueType("UES OPTIONNELLES :");
 			formation.s2.uesoptionnelles-> forEach(ue){
 				contents += ue -> map ueTitre();
 				contents += ue.presentation -> map presentationParagraph();
-
+				contents += ue.responsables -> map intervenantsParagraph("Responsables :");
+				contents += ue.enseignants -> map intervenantsParagraph("Enseignants :");
 			};
-			contents += formation.responsables -> map responsablesParagraph("Responsables :");
-			contents += formation -> map intervenantsParagraph();
+			// Intervenants formations
+			contents += formation.responsables -> map intervenantsParagraph("Responsables :");
+			contents += formation.enseignants -> map intervenantsParagraph("Enseignants :");
 		}
 	}
 }
@@ -71,16 +85,21 @@ mapping filMM::Presentation::presentationText() : markdownMM::Text {
 }
 
 /** UE **/
+mapping Set(UE)::ueType(titre : String) : markdownMM::Title when{self -> notEmpty() }{
+	level := 3; 
+	elements += object StrongEmphasis { text := titre};
+}
 mapping filMM::UE::ueTitre() : markdownMM::Title {
 	level := 4;
 	elements += self -> map ueTitreText();
 }
 mapping filMM::UE::ueTitreText() : markdownMM::Text {
-	text := self.pseudo;
+	text := self.pseudo +' - '+self.nom;
 }
 mapping filMM::UE::uePresentationParagraph() : markdownMM::Paragraph {
 	elements += self.presentation -> map presentationText();
 }
+
 
 /** S1 **/
 mapping filMM::S1::s1FormationBlock() : markdownMM::Title {
@@ -100,19 +119,13 @@ mapping filMM::S2::s2FormationTitre() : markdownMM::Text {
 	text := 'S2';
 }
 
-mapping filMM::Formation::responsablesParagraph(titre : String) : markdownMM::Paragraph
-	when{self.responsables->notEmpty()}{
-	elements += object StrongEmphasis { text := "Responsables :"};
-	self.responsables -> forEach(int){
+/** Intervenant **/
+mapping Set(Intervenant)::intervenantsParagraph(titre : String) : markdownMM::Paragraph
+	when{self -> notEmpty()}{
+	elements += object StrongEmphasis { text := titre};
+	self -> forEach(int){
 		elements += int -> map intervenantText();
 	}	
-}
-mapping filMM::Formation::intervenantsParagraph() : markdownMM::Paragraph
-	when{self.enseignants->notEmpty()}{
-	elements += object StrongEmphasis { text := "Intervenants :"};
-	self.enseignants -> forEach(int){
-		elements += int -> map intervenantText();
-	}
 }
 mapping filMM::Intervenant::intervenantText() : markdownMM::Text {
 	text := self.nom +' '+self.prenom;
