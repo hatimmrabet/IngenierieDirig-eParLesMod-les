@@ -58,7 +58,7 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 
 			addNomPropertyDescriptor(object);
 			addPseudoPropertyDescriptor(object);
-			addResponsablePropertyDescriptor(object);
+			addResponsablesPropertyDescriptor(object);
 			addEnseignantsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -97,18 +97,18 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 	}
 
 	/**
-	 * This adds a property descriptor for the Responsable feature.
+	 * This adds a property descriptor for the Responsables feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addResponsablePropertyDescriptor(Object object) {
+	protected void addResponsablesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Formation_responsable_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Formation_responsable_feature",
+						getResourceLocator(), getString("_UI_Formation_responsables_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Formation_responsables_feature",
 								"_UI_Formation_type"),
-						FILPackage.Literals.FORMATION__RESPONSABLE, true, false, true, null, null, null));
+						FILPackage.Literals.FORMATION__RESPONSABLES, true, false, true, null, null, null));
 	}
 
 	/**
@@ -141,7 +141,6 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 			childrenFeatures.add(FILPackage.Literals.FORMATION__PRESENTATION);
 			childrenFeatures.add(FILPackage.Literals.FORMATION__S1);
 			childrenFeatures.add(FILPackage.Literals.FORMATION__S2);
-			childrenFeatures.add(FILPackage.Literals.FORMATION__INTERVENANT);
 		}
 		return childrenFeatures;
 	}
@@ -212,7 +211,6 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 		case FILPackage.FORMATION__PRESENTATION:
 		case FILPackage.FORMATION__S1:
 		case FILPackage.FORMATION__S2:
-		case FILPackage.FORMATION__INTERVENANT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -238,9 +236,6 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 
 		newChildDescriptors
 				.add(createChildParameter(FILPackage.Literals.FORMATION__S2, FILFactory.eINSTANCE.createS2()));
-
-		newChildDescriptors.add(createChildParameter(FILPackage.Literals.FORMATION__INTERVENANT,
-				FILFactory.eINSTANCE.createIntervenant()));
 	}
 
 	/**

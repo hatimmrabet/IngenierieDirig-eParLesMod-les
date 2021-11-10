@@ -55,7 +55,6 @@ public class IntervenantItemProvider extends ItemProviderAdapter implements IEdi
 
 			addNomPropertyDescriptor(object);
 			addPrenomPropertyDescriptor(object);
-			addResponsablePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,22 +89,6 @@ public class IntervenantItemProvider extends ItemProviderAdapter implements IEdi
 								"_UI_Intervenant_type"),
 						FILPackage.Literals.INTERVENANT__PRENOM, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Responsable feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResponsablePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Intervenant_responsable_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Intervenant_responsable_feature",
-								"_UI_Intervenant_type"),
-						FILPackage.Literals.INTERVENANT__RESPONSABLE, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -156,7 +139,6 @@ public class IntervenantItemProvider extends ItemProviderAdapter implements IEdi
 		switch (notification.getFeatureID(Intervenant.class)) {
 		case FILPackage.INTERVENANT__NOM:
 		case FILPackage.INTERVENANT__PRENOM:
-		case FILPackage.INTERVENANT__RESPONSABLE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

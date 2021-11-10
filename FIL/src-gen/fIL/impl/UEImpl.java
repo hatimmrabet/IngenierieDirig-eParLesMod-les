@@ -36,9 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fIL.impl.UEImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getDocuments <em>Documents</em>}</li>
- *   <li>{@link fIL.impl.UEImpl#getIntervenants <em>Intervenants</em>}</li>
- *   <li>{@link fIL.impl.UEImpl#isObligatoire <em>Obligatoire</em>}</li>
- *   <li>{@link fIL.impl.UEImpl#getResponsable <em>Responsable</em>}</li>
+ *   <li>{@link fIL.impl.UEImpl#getResponsables <em>Responsables</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getEnseignants <em>Enseignants</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getPresentation <em>Presentation</em>}</li>
  * </ul>
@@ -97,44 +95,14 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	protected EList<Document> documents;
 
 	/**
-	 * The cached value of the '{@link #getIntervenants() <em>Intervenants</em>}' containment reference list.
+	 * The cached value of the '{@link #getResponsables() <em>Responsables</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIntervenants()
+	 * @see #getResponsables()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Intervenant> intervenants;
-
-	/**
-	 * The default value of the '{@link #isObligatoire() <em>Obligatoire</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isObligatoire()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean OBLIGATOIRE_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isObligatoire() <em>Obligatoire</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isObligatoire()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean obligatoire = OBLIGATOIRE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getResponsable() <em>Responsable</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getResponsable()
-	 * @generated
-	 * @ordered
-	 */
-	protected Intervenant responsable;
+	protected EList<Intervenant> responsables;
 
 	/**
 	 * The cached value of the '{@link #getEnseignants() <em>Enseignants</em>}' reference list.
@@ -284,74 +252,11 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Intervenant> getIntervenants() {
-		if (intervenants == null) {
-			intervenants = new EObjectContainmentEList<Intervenant>(Intervenant.class, this,
-					FILPackage.UE__INTERVENANTS);
+	public EList<Intervenant> getResponsables() {
+		if (responsables == null) {
+			responsables = new EObjectResolvingEList<Intervenant>(Intervenant.class, this, FILPackage.UE__RESPONSABLES);
 		}
-		return intervenants;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isObligatoire() {
-		return obligatoire;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setObligatoire(boolean newObligatoire) {
-		boolean oldObligatoire = obligatoire;
-		obligatoire = newObligatoire;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.UE__OBLIGATOIRE, oldObligatoire,
-					obligatoire));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Intervenant getResponsable() {
-		if (responsable != null && responsable.eIsProxy()) {
-			InternalEObject oldResponsable = (InternalEObject) responsable;
-			responsable = (Intervenant) eResolveProxy(oldResponsable);
-			if (responsable != oldResponsable) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FILPackage.UE__RESPONSABLE,
-							oldResponsable, responsable));
-			}
-		}
-		return responsable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Intervenant basicGetResponsable() {
-		return responsable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setResponsable(Intervenant newResponsable) {
-		Intervenant oldResponsable = responsable;
-		responsable = newResponsable;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.UE__RESPONSABLE, oldResponsable,
-					responsable));
+		return responsables;
 	}
 
 	/**
@@ -376,8 +281,6 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 		switch (featureID) {
 		case FILPackage.UE__DOCUMENTS:
 			return ((InternalEList<?>) getDocuments()).basicRemove(otherEnd, msgs);
-		case FILPackage.UE__INTERVENANTS:
-			return ((InternalEList<?>) getIntervenants()).basicRemove(otherEnd, msgs);
 		case FILPackage.UE__PRESENTATION:
 			return basicSetPresentation(null, msgs);
 		}
@@ -398,14 +301,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return getPseudo();
 		case FILPackage.UE__DOCUMENTS:
 			return getDocuments();
-		case FILPackage.UE__INTERVENANTS:
-			return getIntervenants();
-		case FILPackage.UE__OBLIGATOIRE:
-			return isObligatoire();
-		case FILPackage.UE__RESPONSABLE:
-			if (resolve)
-				return getResponsable();
-			return basicGetResponsable();
+		case FILPackage.UE__RESPONSABLES:
+			return getResponsables();
 		case FILPackage.UE__ENSEIGNANTS:
 			return getEnseignants();
 		case FILPackage.UE__PRESENTATION:
@@ -433,15 +330,9 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			getDocuments().clear();
 			getDocuments().addAll((Collection<? extends Document>) newValue);
 			return;
-		case FILPackage.UE__INTERVENANTS:
-			getIntervenants().clear();
-			getIntervenants().addAll((Collection<? extends Intervenant>) newValue);
-			return;
-		case FILPackage.UE__OBLIGATOIRE:
-			setObligatoire((Boolean) newValue);
-			return;
-		case FILPackage.UE__RESPONSABLE:
-			setResponsable((Intervenant) newValue);
+		case FILPackage.UE__RESPONSABLES:
+			getResponsables().clear();
+			getResponsables().addAll((Collection<? extends Intervenant>) newValue);
 			return;
 		case FILPackage.UE__ENSEIGNANTS:
 			getEnseignants().clear();
@@ -471,14 +362,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 		case FILPackage.UE__DOCUMENTS:
 			getDocuments().clear();
 			return;
-		case FILPackage.UE__INTERVENANTS:
-			getIntervenants().clear();
-			return;
-		case FILPackage.UE__OBLIGATOIRE:
-			setObligatoire(OBLIGATOIRE_EDEFAULT);
-			return;
-		case FILPackage.UE__RESPONSABLE:
-			setResponsable((Intervenant) null);
+		case FILPackage.UE__RESPONSABLES:
+			getResponsables().clear();
 			return;
 		case FILPackage.UE__ENSEIGNANTS:
 			getEnseignants().clear();
@@ -504,12 +389,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return PSEUDO_EDEFAULT == null ? pseudo != null : !PSEUDO_EDEFAULT.equals(pseudo);
 		case FILPackage.UE__DOCUMENTS:
 			return documents != null && !documents.isEmpty();
-		case FILPackage.UE__INTERVENANTS:
-			return intervenants != null && !intervenants.isEmpty();
-		case FILPackage.UE__OBLIGATOIRE:
-			return obligatoire != OBLIGATOIRE_EDEFAULT;
-		case FILPackage.UE__RESPONSABLE:
-			return responsable != null;
+		case FILPackage.UE__RESPONSABLES:
+			return responsables != null && !responsables.isEmpty();
 		case FILPackage.UE__ENSEIGNANTS:
 			return enseignants != null && !enseignants.isEmpty();
 		case FILPackage.UE__PRESENTATION:
@@ -533,8 +414,6 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 		result.append(nom);
 		result.append(", pseudo: ");
 		result.append(pseudo);
-		result.append(", obligatoire: ");
-		result.append(obligatoire);
 		result.append(')');
 		return result.toString();
 	}

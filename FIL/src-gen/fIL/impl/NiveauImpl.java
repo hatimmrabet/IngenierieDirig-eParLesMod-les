@@ -8,6 +8,7 @@ import fIL.Intervenant;
 import fIL.Niveau;
 
 import fIL.Presentation;
+import fIL.UE;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -38,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link fIL.impl.NiveauImpl#getFormations <em>Formations</em>}</li>
  *   <li>{@link fIL.impl.NiveauImpl#getPresentation <em>Presentation</em>}</li>
  *   <li>{@link fIL.impl.NiveauImpl#getResponsables <em>Responsables</em>}</li>
+ *   <li>{@link fIL.impl.NiveauImpl#getUes <em>Ues</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,6 +114,16 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	 * @ordered
 	 */
 	protected EList<Intervenant> responsables;
+
+	/**
+	 * The cached value of the '{@link #getUes() <em>Ues</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getUes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<UE> ues;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -254,6 +266,18 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<UE> getUes() {
+		if (ues == null) {
+			ues = new EObjectContainmentEList<UE>(UE.class, this, FILPackage.NIVEAU__UES);
+		}
+		return ues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -261,6 +285,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 			return ((InternalEList<?>) getFormations()).basicRemove(otherEnd, msgs);
 		case FILPackage.NIVEAU__PRESENTATION:
 			return basicSetPresentation(null, msgs);
+		case FILPackage.NIVEAU__UES:
+			return ((InternalEList<?>) getUes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -283,6 +309,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 			return getPresentation();
 		case FILPackage.NIVEAU__RESPONSABLES:
 			return getResponsables();
+		case FILPackage.NIVEAU__UES:
+			return getUes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -313,6 +341,10 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 			getResponsables().clear();
 			getResponsables().addAll((Collection<? extends Intervenant>) newValue);
 			return;
+		case FILPackage.NIVEAU__UES:
+			getUes().clear();
+			getUes().addAll((Collection<? extends UE>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -340,6 +372,9 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 		case FILPackage.NIVEAU__RESPONSABLES:
 			getResponsables().clear();
 			return;
+		case FILPackage.NIVEAU__UES:
+			getUes().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -362,6 +397,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 			return presentation != null;
 		case FILPackage.NIVEAU__RESPONSABLES:
 			return responsables != null && !responsables.isEmpty();
+		case FILPackage.NIVEAU__UES:
+			return ues != null && !ues.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

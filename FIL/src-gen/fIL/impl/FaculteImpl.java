@@ -4,6 +4,7 @@ package fIL.impl;
 
 import fIL.FILPackage;
 import fIL.Faculte;
+import fIL.Intervenant;
 import fIL.Niveau;
 
 import java.util.Collection;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fIL.impl.FaculteImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link fIL.impl.FaculteImpl#getNiveaux <em>Niveaux</em>}</li>
+ *   <li>{@link fIL.impl.FaculteImpl#getIntervenants <em>Intervenants</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,16 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 	 * @ordered
 	 */
 	protected EList<Niveau> niveaux;
+
+	/**
+	 * The cached value of the '{@link #getIntervenants() <em>Intervenants</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntervenants()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Intervenant> intervenants;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,11 +136,26 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Intervenant> getIntervenants() {
+		if (intervenants == null) {
+			intervenants = new EObjectContainmentEList<Intervenant>(Intervenant.class, this,
+					FILPackage.FACULTE__INTERVENANTS);
+		}
+		return intervenants;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case FILPackage.FACULTE__NIVEAUX:
 			return ((InternalEList<?>) getNiveaux()).basicRemove(otherEnd, msgs);
+		case FILPackage.FACULTE__INTERVENANTS:
+			return ((InternalEList<?>) getIntervenants()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -145,6 +172,8 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 			return getNom();
 		case FILPackage.FACULTE__NIVEAUX:
 			return getNiveaux();
+		case FILPackage.FACULTE__INTERVENANTS:
+			return getIntervenants();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +194,10 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 			getNiveaux().clear();
 			getNiveaux().addAll((Collection<? extends Niveau>) newValue);
 			return;
+		case FILPackage.FACULTE__INTERVENANTS:
+			getIntervenants().clear();
+			getIntervenants().addAll((Collection<? extends Intervenant>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +216,9 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 		case FILPackage.FACULTE__NIVEAUX:
 			getNiveaux().clear();
 			return;
+		case FILPackage.FACULTE__INTERVENANTS:
+			getIntervenants().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +235,8 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 		case FILPackage.FACULTE__NIVEAUX:
 			return niveaux != null && !niveaux.isEmpty();
+		case FILPackage.FACULTE__INTERVENANTS:
+			return intervenants != null && !intervenants.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -122,6 +122,7 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(FILPackage.Literals.NIVEAU__FORMATIONS);
 			childrenFeatures.add(FILPackage.Literals.NIVEAU__PRESENTATION);
+			childrenFeatures.add(FILPackage.Literals.NIVEAU__UES);
 		}
 		return childrenFeatures;
 	}
@@ -191,6 +192,7 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 			return;
 		case FILPackage.NIVEAU__FORMATIONS:
 		case FILPackage.NIVEAU__PRESENTATION:
+		case FILPackage.NIVEAU__UES:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -213,6 +215,8 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 
 		newChildDescriptors.add(createChildParameter(FILPackage.Literals.NIVEAU__PRESENTATION,
 				FILFactory.eINSTANCE.createPresentation()));
+
+		newChildDescriptors.add(createChildParameter(FILPackage.Literals.NIVEAU__UES, FILFactory.eINSTANCE.createUE()));
 	}
 
 	/**

@@ -11,6 +11,7 @@
     <genClasses ecoreClass="fIL.ecore#//Faculte">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Faculte/nom"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Faculte/niveaux"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Faculte/intervenants"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//Niveau">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Niveau/nom"/>
@@ -18,6 +19,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Niveau/formations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Niveau/presentation"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//Niveau/responsables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Niveau/ues"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//Formation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Formation/nom"/>
@@ -25,17 +27,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/presentation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/s1"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/s2"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/intervenant"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/responsable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/responsables"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/enseignants"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//UE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//UE/nom"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//UE/pseudo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//UE/documents"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//UE/intervenants"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//UE/obligatoire"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//UE/responsable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//UE/responsables"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//UE/enseignants"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//UE/presentation"/>
     </genClasses>
@@ -60,19 +59,14 @@
     <genClasses ecoreClass="fIL.ecore#//Intervenant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Intervenant/nom"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Intervenant/prenom"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Intervenant/responsable"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//Responsable"/>
     <genClasses ecoreClass="fIL.ecore#//Enseignant"/>
-    <genClasses ecoreClass="fIL.ecore#//S1">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//S1/ues"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//S1/uesoptionnelles"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//S1/uesobligatoires"/>
-    </genClasses>
-    <genClasses ecoreClass="fIL.ecore#//S2">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//S2/ues"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//S2/uesoptionnelles"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//S2/uesobligatoires"/>
+    <genClasses ecoreClass="fIL.ecore#//S1"/>
+    <genClasses ecoreClass="fIL.ecore#//S2"/>
+    <genClasses ecoreClass="fIL.ecore#//Semestre">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//Semestre/uesoptionnelles"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//Semestre/uesobligatoires"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
