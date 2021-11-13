@@ -141,6 +141,7 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 			childrenFeatures.add(FILPackage.Literals.FORMATION__PRESENTATION);
 			childrenFeatures.add(FILPackage.Literals.FORMATION__S1);
 			childrenFeatures.add(FILPackage.Literals.FORMATION__S2);
+			childrenFeatures.add(FILPackage.Literals.FORMATION__DOCUMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -211,6 +212,7 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 		case FILPackage.FORMATION__PRESENTATION:
 		case FILPackage.FORMATION__S1:
 		case FILPackage.FORMATION__S2:
+		case FILPackage.FORMATION__DOCUMENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -236,6 +238,15 @@ public class FormationItemProvider extends ItemProviderAdapter implements IEditi
 
 		newChildDescriptors
 				.add(createChildParameter(FILPackage.Literals.FORMATION__S2, FILFactory.eINSTANCE.createS2()));
+
+		newChildDescriptors.add(
+				createChildParameter(FILPackage.Literals.FORMATION__DOCUMENTS, FILFactory.eINSTANCE.createVideo()));
+
+		newChildDescriptors.add(
+				createChildParameter(FILPackage.Literals.FORMATION__DOCUMENTS, FILFactory.eINSTANCE.createFichier()));
+
+		newChildDescriptors.add(
+				createChildParameter(FILPackage.Literals.FORMATION__DOCUMENTS, FILFactory.eINSTANCE.createAudio()));
 	}
 
 	/**

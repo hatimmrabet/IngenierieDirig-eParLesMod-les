@@ -20,6 +20,13 @@ Jean-Claude Tarby
 Dumoulin Cedric
 
 
+**Documents :**
+
+[Slides de rentrée 2021/2022 M1](https://bit.ly/m1s1-rentree-2021)
+
+[Formulaire d’inscription pédagogique](https://bit.ly/m1s1-inscription-2021)
+
+
 ###  S1
  
 ###  **UES OBLIGATOIRES :**
@@ -103,6 +110,18 @@ Tarby  Jean-Claude
  
 ####  ASE - Architecture des systèmes d'exploitation
  
+**Responsables :**
+
+Gilles Grimaud
+
+
+**Documents :**
+
+[Changement de contexte et ordonnancements](http://www.cristal.univ-lille.fr/~marquet/ens/ctx/)
+
+[TDM Mémoire Virtuelle](https://www.fil.univ-lille1.fr/~marquet/ase/mmu/)
+
+
 ####  ISI - Introduction à la Sécurité Informatique
  
 ####  PJI - Projet Individuel
@@ -206,6 +225,18 @@ Launay Michael
  
 ####  ASE - Architecture des systèmes d'exploitation
  
+**Responsables :**
+
+Gilles Grimaud
+
+
+**Documents :**
+
+[Changement de contexte et ordonnancements](http://www.cristal.univ-lille.fr/~marquet/ens/ctx/)
+
+[TDM Mémoire Virtuelle](https://www.fil.univ-lille1.fr/~marquet/ase/mmu/)
+
+
 ####  ISI - Introduction à la Sécurité Informatique
  
 ####  PJI - Projet Individuel
@@ -216,3 +247,15 @@ Launay Michael
  
 ####  BDR - Bases de données relationnelles
  
+#  Licence mention Informatique - LINFO
+ 
+##  LICENCE  2, parcours INFO - L2INFO
+ 
+L2 informatique, parcours classique
+
+
+**Documents :**
+
+[Emploi du temps jusqu'au 22 octobre](http://www.fil.univ-lille1.fr/~routier/portail/s3/edt_S3_21-22-partie1.pdf)
+
+

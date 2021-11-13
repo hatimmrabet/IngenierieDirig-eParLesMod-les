@@ -267,13 +267,22 @@ public interface FILPackage extends EPackage {
 	int FORMATION__ENSEIGNANTS = 6;
 
 	/**
+	 * The feature id for the '<em><b>Documents</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORMATION__DOCUMENTS = 7;
+
+	/**
 	 * The number of structural features of the '<em>Formation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMATION_FEATURE_COUNT = 7;
+	int FORMATION_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Formation</em>' class.
@@ -1097,6 +1106,17 @@ public interface FILPackage extends EPackage {
 	EReference getFormation_Enseignants();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link fIL.Formation#getDocuments <em>Documents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Documents</em>'.
+	 * @see fIL.Formation#getDocuments()
+	 * @see #getFormation()
+	 * @generated
+	 */
+	EReference getFormation_Documents();
+
+	/**
 	 * Returns the meta object for class '{@link fIL.UE <em>UE</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1583,6 +1603,14 @@ public interface FILPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FORMATION__ENSEIGNANTS = eINSTANCE.getFormation_Enseignants();
+
+		/**
+		 * The meta object literal for the '<em><b>Documents</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FORMATION__DOCUMENTS = eINSTANCE.getFormation_Documents();
 
 		/**
 		 * The meta object literal for the '{@link fIL.impl.UEImpl <em>UE</em>}' class.

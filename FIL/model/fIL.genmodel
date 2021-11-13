@@ -29,6 +29,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/s2"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/responsables"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/enseignants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/documents"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//UE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//UE/nom"/>

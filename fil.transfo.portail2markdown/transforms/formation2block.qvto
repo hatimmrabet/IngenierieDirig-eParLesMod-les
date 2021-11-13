@@ -13,11 +13,14 @@ mapping filMM::Faculte::faculte2Title() : markdownMM::Document {
 	self.niveaux -> forEach(niveau){
 		contents += niveau -> map niveau2Title();
 		niveau.formations -> forEach(formation){
+		
 			contents += formation -> map formation2Title(); //affichage du nom de formation
 			contents += formation.presentation -> map presentationParagraph(); //affichage du presentation du formation si elle existe
 			// Intervenants formations
 			contents += formation -> map responsablesParagraph();
 			contents += formation -> map enseignantsParagraph();
+			contents += formation -> map documentsParagraph();
+			
 			
 			//affichage du s1
 			contents += formation.s1 -> map s1FormationBlock(); 
@@ -151,6 +154,15 @@ mapping filMM::Formation::enseignantsParagraph() : markdownMM::Paragraph when{se
 }
 
 /** Documents **/
+mapping filMM::Formation::documentsParagraph() : markdownMM::Paragraph when {self.documents -> notEmpty()}{
+	elements += object StrongEmphasis { text := "Documents :" };
+	self.documents -> forEach(doc){
+		elements += object Link { 
+						title := doc.nom;
+						url := doc.lien; 
+						};
+	}	
+}
 mapping filMM::UE::documentsParagraph(in owner : Semestre) : markdownMM::Paragraph when {self.documents -> notEmpty()}{
 	elements += object StrongEmphasis { text := "Documents :" };
 	self.documents -> forEach(doc){

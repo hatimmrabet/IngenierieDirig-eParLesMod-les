@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fIL.Formation#getS2 <em>S2</em>}</li>
  *   <li>{@link fIL.Formation#getResponsables <em>Responsables</em>}</li>
  *   <li>{@link fIL.Formation#getEnseignants <em>Enseignants</em>}</li>
+ *   <li>{@link fIL.Formation#getDocuments <em>Documents</em>}</li>
  * </ul>
  *
  * @see fIL.FILPackage#getFormation()
@@ -161,5 +162,17 @@ public interface Formation extends EObject {
 	 * @generated
 	 */
 	EList<Intervenant> getEnseignants();
+
+	/**
+	 * Returns the value of the '<em><b>Documents</b></em>' containment reference list.
+	 * The list contents are of type {@link fIL.Document}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Documents</em>' containment reference list.
+	 * @see fIL.FILPackage#getFormation_Documents()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Document> getDocuments();
 
 } // Formation

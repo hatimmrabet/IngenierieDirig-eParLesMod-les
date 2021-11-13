@@ -376,6 +376,15 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFormation_Documents() {
+		return (EReference) formationEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUE() {
 		return ueEClass;
 	}
@@ -682,6 +691,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		createEReference(formationEClass, FORMATION__S2);
 		createEReference(formationEClass, FORMATION__RESPONSABLES);
 		createEReference(formationEClass, FORMATION__ENSEIGNANTS);
+		createEReference(formationEClass, FORMATION__DOCUMENTS);
 
 		ueEClass = createEClass(UE);
 		createEAttribute(ueEClass, UE__NOM);
@@ -810,6 +820,9 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		initEReference(getFormation_Enseignants(), this.getIntervenant(), null, "enseignants", null, 0, -1,
 				Formation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFormation_Documents(), this.getDocument(), null, "documents", null, 0, -1, Formation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ueEClass, fIL.UE.class, "UE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUE_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, fIL.UE.class, !IS_TRANSIENT,

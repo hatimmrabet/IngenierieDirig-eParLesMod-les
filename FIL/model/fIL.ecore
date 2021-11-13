@@ -33,6 +33,8 @@
         upperBound="-1" eType="#//Intervenant"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enseignants" upperBound="-1"
         eType="#//Intervenant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documents" upperBound="-1"
+        eType="#//Document" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UE">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

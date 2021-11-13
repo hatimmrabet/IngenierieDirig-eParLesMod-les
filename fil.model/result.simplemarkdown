@@ -19,6 +19,11 @@
     <elements xsi:type="simplemarkdown:Text" text="Jean-Claude Tarby"/>
     <elements xsi:type="simplemarkdown:Text" text="Dumoulin Cedric"/>
   </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
+    <elements xsi:type="simplemarkdown:Link" url="https://bit.ly/m1s1-rentree-2021" title="Slides de rentrée 2021/2022 M1"/>
+    <elements xsi:type="simplemarkdown:Link" url="https://bit.ly/m1s1-inscription-2021" title="Formulaire d’inscription pédagogique"/>
+  </contents>
   <contents xsi:type="simplemarkdown:Title" level="3">
     <elements xsi:type="simplemarkdown:Text" text="S1"/>
   </contents>
@@ -97,6 +102,15 @@
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="4">
     <elements xsi:type="simplemarkdown:Text" text="ASE - Architecture des systèmes d'exploitation"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Gilles Grimaud"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
+    <elements xsi:type="simplemarkdown:Link" url="http://www.cristal.univ-lille.fr/~marquet/ens/ctx/" title="Changement de contexte et ordonnancements"/>
+    <elements xsi:type="simplemarkdown:Link" url="https://www.fil.univ-lille1.fr/~marquet/ase/mmu/" title="TDM Mémoire Virtuelle"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="4">
     <elements xsi:type="simplemarkdown:Text" text="ISI - Introduction à la Sécurité Informatique"/>
@@ -202,6 +216,15 @@
   <contents xsi:type="simplemarkdown:Title" level="4">
     <elements xsi:type="simplemarkdown:Text" text="ASE - Architecture des systèmes d'exploitation"/>
   </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Gilles Grimaud"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
+    <elements xsi:type="simplemarkdown:Link" url="http://www.cristal.univ-lille.fr/~marquet/ens/ctx/" title="Changement de contexte et ordonnancements"/>
+    <elements xsi:type="simplemarkdown:Link" url="https://www.fil.univ-lille1.fr/~marquet/ase/mmu/" title="TDM Mémoire Virtuelle"/>
+  </contents>
   <contents xsi:type="simplemarkdown:Title" level="4">
     <elements xsi:type="simplemarkdown:Text" text="ISI - Introduction à la Sécurité Informatique"/>
   </contents>
@@ -216,5 +239,18 @@
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="4">
     <elements xsi:type="simplemarkdown:Text" text="BDR - Bases de données relationnelles"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="1">
+    <elements xsi:type="simplemarkdown:Text" text="Licence mention Informatique - LINFO"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="2">
+    <elements xsi:type="simplemarkdown:Text" text="LICENCE  2, parcours INFO - L2INFO"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:Text" text="L2 informatique, parcours classique"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
+    <elements xsi:type="simplemarkdown:Link" url="http://www.fil.univ-lille1.fr/~routier/portail/s3/edt_S3_21-22-partie1.pdf" title="Emploi du temps jusqu'au 22 octobre"/>
   </contents>
 </simplemarkdown:Document>

@@ -2,6 +2,7 @@
  */
 package fIL.impl;
 
+import fIL.Document;
 import fIL.FILPackage;
 import fIL.Formation;
 import fIL.Intervenant;
@@ -17,7 +18,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,6 +37,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link fIL.impl.FormationImpl#getS2 <em>S2</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getResponsables <em>Responsables</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getEnseignants <em>Enseignants</em>}</li>
+ *   <li>{@link fIL.impl.FormationImpl#getDocuments <em>Documents</em>}</li>
  * </ul>
  *
  * @generated
@@ -128,6 +132,16 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	 * @ordered
 	 */
 	protected EList<Intervenant> enseignants;
+
+	/**
+	 * The cached value of the '{@link #getDocuments() <em>Documents</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocuments()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Document> documents;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -369,6 +383,18 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Document> getDocuments() {
+		if (documents == null) {
+			documents = new EObjectContainmentEList<Document>(Document.class, this, FILPackage.FORMATION__DOCUMENTS);
+		}
+		return documents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -378,6 +404,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			return basicSetS1(null, msgs);
 		case FILPackage.FORMATION__S2:
 			return basicSetS2(null, msgs);
+		case FILPackage.FORMATION__DOCUMENTS:
+			return ((InternalEList<?>) getDocuments()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -404,6 +432,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			return getResponsables();
 		case FILPackage.FORMATION__ENSEIGNANTS:
 			return getEnseignants();
+		case FILPackage.FORMATION__DOCUMENTS:
+			return getDocuments();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -440,6 +470,10 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			getEnseignants().clear();
 			getEnseignants().addAll((Collection<? extends Intervenant>) newValue);
 			return;
+		case FILPackage.FORMATION__DOCUMENTS:
+			getDocuments().clear();
+			getDocuments().addAll((Collection<? extends Document>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -473,6 +507,9 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 		case FILPackage.FORMATION__ENSEIGNANTS:
 			getEnseignants().clear();
 			return;
+		case FILPackage.FORMATION__DOCUMENTS:
+			getDocuments().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -499,6 +536,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			return responsables != null && !responsables.isEmpty();
 		case FILPackage.FORMATION__ENSEIGNANTS:
 			return enseignants != null && !enseignants.isEmpty();
+		case FILPackage.FORMATION__DOCUMENTS:
+			return documents != null && !documents.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
