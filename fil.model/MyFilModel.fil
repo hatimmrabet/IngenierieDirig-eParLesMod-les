@@ -1,30 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fIL:Faculte xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:fIL="http://www.example.org/fIL" nom="Faculté de science">
-  <niveaux nom="Master 1 mention informatique" pseudo="M1INF" responsables="//@intervenants.1 //@intervenants.3">
-    <formations nom="Génie Logiciel" pseudo="GL" responsables="//@intervenants.0 //@intervenants.3" enseignants="//@intervenants.4 //@intervenants.6 //@intervenants.1">
+<fIL:Faculte xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fIL="http://www.example.org/fIL" nom="FIL - Faculté de sciences">
+  <niveaux nom="Master 1 mention informatique" pseudo="M1INF" responsables="//@intervenants.0 //@intervenants.9">
+    <formations nom="Génie Logiciel" pseudo="GL" responsables="//@intervenants.9" enseignants="//@intervenants.10 //@intervenants.11 //@intervenants.0">
       <presentation contenue="Le parcours Génie Logiciel s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."/>
-      <s1 uesobligatoires="//@niveaux.0/@ues.5"/>
-      <s2 uesobligatoires="//@niveaux.0/@ues.2"/>
+      <s1 uesoptionnelles="//@niveaux.0/@ues.12" uesobligatoires="//@niveaux.0/@ues.13 //@niveaux.0/@ues.9 //@niveaux.0/@ues.8 //@niveaux.0/@ues.5 //@niveaux.0/@ues.4"/>
+      <s2 uesobligatoires="//@niveaux.0/@ues.0 //@niveaux.0/@ues.2 //@niveaux.0/@ues.6 //@niveaux.0/@ues.7 //@niveaux.0/@ues.10 //@niveaux.0/@ues.11"/>
     </formations>
-    <formations nom="E-Services" pseudo="ES">
+    <formations nom="E-Services" pseudo="ES" responsables="//@intervenants.4">
       <presentation contenue="Le parcours E-Services s’articule autour de la conception et du développement des services numériques, c’est-à-dire des services accessibles au travers des moyens de communication numérique - notamment l’Internet – mais également au travers de tous les équipements liés à l’économie digitale : smartphones, tablettes, interfaces multi-touch, interfaces vocales, etc."/>
+      <s1 uesoptionnelles="//@niveaux.0/@ues.9" uesobligatoires="//@niveaux.0/@ues.13 //@niveaux.0/@ues.4 //@niveaux.0/@ues.5 //@niveaux.0/@ues.8 //@niveaux.0/@ues.12"/>
+      <s2 uesobligatoires="//@niveaux.0/@ues.0 //@niveaux.0/@ues.2 //@niveaux.0/@ues.6 //@niveaux.0/@ues.11 //@niveaux.0/@ues.3 //@niveaux.0/@ues.1"/>
     </formations>
-    <presentation contenue="Pacrous informatique, pour Master 1"/>
+    <presentation contenue="La mention informatique du master sciences et technologies de l'université de Lille a pour objectifs d'apporter aux étudiants des compétences de haut niveau, à la fois sur le plan théorique et pratique, dans le secteur des sciences de l'information et des technologies des communications."/>
     <ues nom="Architecture des systèmes d'exploitation" pseudo="ASE"/>
+    <ues nom="Bases de données relationnelles" pseudo="BDR"/>
     <ues nom="Introduction à la Sécurité Informatique" pseudo="ISI"/>
+    <ues nom="Introduction aux IHM" pseudo="IIHM"/>
+    <ues nom="Projet encadré" pseudo="PJE"/>
+    <ues nom="Initiation à la recherche" pseudo="IIR"/>
     <ues nom="Projet Individuel" pseudo="PJI"/>
     <ues nom="Conception Objet Avancée" pseudo="COA"/>
-    <ues nom="Ingénierie Des Modèles" pseudo="IDM" responsables="//@intervenants.1" enseignants="//@intervenants.2"/>
+    <ues nom="Anglais" pseudo="ANG"/>
+    <ues nom="Ingénierie Des Modèles" pseudo="IDM" responsables="//@intervenants.0" enseignants="//@intervenants.0 //@intervenants.8 //@intervenants.9">
+      <documents xsi:type="fIL:Video" nom="Générer du code avec Acceleo partie 1- Créer un projet Acceleo (Ville) (2021)" description="" lien="http://www.fil.univ-lille1.fr/~dumoulin/docs/assets/listDesVideos-ac36a387.mp4"/>
+      <presentation contenue="Cette unité se déroule au S1 de la FORMATION. Il s’agit d’une UE optionnelle de cette mention."/>
+    </ues>
     <ues nom="Compilation des logiciels" pseudo="Compil"/>
     <ues nom="Architecture des systèmes d'exploitation avancée" pseudo="ASA"/>
-    <ues nom="Technologies pour les Applications Connectées" pseudo="TAC"/>
-    <ues nom="Algorithmique et complexité" pseudo="ACT"/>
+    <ues nom="Technologies pour les Applications Connectées" pseudo="TAC" responsables="//@intervenants.4">
+      <documents xsi:type="fIL:Fichier" nom="Que va-t-on voir dans cette UE" lien="http://www.fil.univ-lille1.fr/~tarby/portailFIL/ue-M1S1-TAC/documents/2021-2022/cours/1.contenu_UE.pdf" auteur="Tarby"/>
+    </ues>
+    <ues nom="Algorithmique et complexité" pseudo="ACT" responsables="//@intervenants.7 //@intervenants.6 //@intervenants.1" enseignants="//@intervenants.2 //@intervenants.3 //@intervenants.7 //@intervenants.5 //@intervenants.6 //@intervenants.1">
+      <presentation contenue="Le but de l'algorithmique peut être résumé en &quot; trouver un &quot;bon&quot; algorithme &quot; pour un problème donné."/>
+    </ues>
   </niveaux>
-  <intervenants nom="hatimo" prenom="hjgf"/>
   <intervenants nom="Dumoulin" prenom="Cedric"/>
+  <intervenants nom="Voge" prenom="Marie-Émilie"/>
+  <intervenants nom="Berveglieri" prenom="N."/>
+  <intervenants nom="Bilasco" prenom="M."/>
+  <intervenants nom="Tarby " prenom="Jean-Claude "/>
+  <intervenants nom="Fortin" prenom="P."/>
+  <intervenants nom="Tison" prenom="Sophie "/>
+  <intervenants nom="Derbel" prenom="Bilel "/>
   <intervenants nom="Le Pallec" prenom="Xavier "/>
   <intervenants nom="Launay" prenom="Michael "/>
   <intervenants nom="Quinton" prenom="Clément "/>
-  <intervenants nom="hatim" prenom="hhg"/>
   <intervenants nom="Jean-Claude" prenom="Tarby"/>
 </fIL:Faculte>

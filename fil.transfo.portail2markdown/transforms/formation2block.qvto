@@ -15,45 +15,56 @@ mapping filMM::Faculte::faculte2Title() : markdownMM::Document {
 		niveau.formations -> forEach(formation){
 			contents += formation -> map formation2Title(); //affichage du nom de formation
 			contents += formation.presentation -> map presentationParagraph(); //affichage du presentation du formation si elle existe
+			// Intervenants formations
+			contents += formation -> map responsablesParagraph();
+			contents += formation -> map enseignantsParagraph();
+			
 			//affichage du s1
 			contents += formation.s1 -> map s1FormationBlock(); 
+			
 			//UEs oblig s1 
 			contents += formation.s1.uesobligatoires -> map ueType("UES OBLIGATOIRES :");
-			formation.s1.uesobligatoires -> forEach(ue){
-				contents += ue -> map ueTitre();
-				contents += ue.presentation -> map presentationParagraph();
-				contents += ue.responsables -> map intervenantsParagraph("Responsables :");
-				contents += ue.enseignants -> map intervenantsParagraph("Enseignants :");
+			contents += formation.s1.uesobligatoires -> forEach(ue){
+				contents += ue -> map ueTitre(formation.s1);
+				contents += ue.presentation -> map presentationParagraph(formation.s1);
+				contents += ue -> map responsablesParagraph(formation.s1);
+				contents += ue -> map enseignantsParagraph(formation.s1);
+				contents += ue -> map documentsParagraph(formation.s1);				
 			};
+			
 			//UEs optio s1
 			contents += formation.s1.uesoptionnelles -> map ueType("UES OPTIONNELLES :");
-			formation.s1.uesoptionnelles -> forEach(ue){
-				contents += ue -> map ueTitre();
-				contents += ue.presentation -> map presentationParagraph();
-				contents += ue.responsables -> map intervenantsParagraph("Responsables :");
-				contents += ue.enseignants -> map intervenantsParagraph("Enseignants :");
+			contents += formation.s1.uesoptionnelles -> forEach(ue){
+				contents += ue -> map ueTitre(formation.s1);
+				contents += ue.presentation -> map presentationParagraph(formation.s1);
+				contents += ue -> map responsablesParagraph(formation.s1);
+				contents += ue -> map enseignantsParagraph(formation.s1);
+				contents += ue -> map documentsParagraph(formation.s1);								
 			};
+			
 			//affichage du s2
 			contents += formation.s2 -> map s2FormationBlock(); 
+			
 			//UEs oblig s2
 			contents += formation.s2.uesobligatoires -> map ueType("UES OBLIGATOIRES :");
-			formation.s2.uesobligatoires-> forEach(ue){
-				contents += ue -> map ueTitre();
-				contents += ue.presentation -> map presentationParagraph();
-				contents += ue.responsables -> map intervenantsParagraph("Responsables :");
-				contents += ue.enseignants -> map intervenantsParagraph("Enseignants :");
+			contents += formation.s2.uesobligatoires -> forEach(ue){
+				contents += ue -> map ueTitre(formation.s2);
+				contents += ue.presentation -> map presentationParagraph(formation.s1);
+				contents += ue -> map responsablesParagraph(formation.s2);
+				contents += ue -> map enseignantsParagraph(formation.s2);
+				contents += ue -> map documentsParagraph(formation.s2);				
 			};
+			
 			//UEs optio s2
 			contents += formation.s2.uesoptionnelles -> map ueType("UES OPTIONNELLES :");
-			formation.s2.uesoptionnelles-> forEach(ue){
-				contents += ue -> map ueTitre();
-				contents += ue.presentation -> map presentationParagraph();
-				contents += ue.responsables -> map intervenantsParagraph("Responsables :");
-				contents += ue.enseignants -> map intervenantsParagraph("Enseignants :");
+			contents += formation.s2.uesoptionnelles-> forEach(ue){
+				contents += ue -> map ueTitre(formation.s2);
+				contents += ue.presentation -> map presentationParagraph(formation.s1);
+				contents += ue -> map responsablesParagraph(formation.s2);
+				contents += ue -> map enseignantsParagraph(formation.s2);
+				contents += ue -> map documentsParagraph(formation.s2);
 			};
-			// Intervenants formations
-			contents += formation.responsables -> map intervenantsParagraph("Responsables :");
-			contents += formation.enseignants -> map intervenantsParagraph("Enseignants :");
+			
 		}
 	}
 }
@@ -77,11 +88,11 @@ mapping filMM::Formation::formation2Text() : markdownMM::Text {
 }
 
 /** Presentation**/
-mapping filMM::Presentation::presentationParagraph() : markdownMM::Paragraph {
-	elements += self -> map presentationText();
+mapping filMM::Presentation::presentationParagraph(in owner : Semestre) : markdownMM::Paragraph {
+	elements += object Text {text := self.contenue};
 }
-mapping filMM::Presentation::presentationText() : markdownMM::Text {
-	text := self.contenue;
+mapping filMM::Presentation::presentationParagraph() : markdownMM::Paragraph {
+	elements += object Text {text := self.contenue};
 }
 
 /** UE **/
@@ -89,15 +100,9 @@ mapping Set(UE)::ueType(titre : String) : markdownMM::Title when{self -> notEmpt
 	level := 3; 
 	elements += object StrongEmphasis { text := titre};
 }
-mapping filMM::UE::ueTitre() : markdownMM::Title {
+mapping filMM::UE::ueTitre(in owner : Semestre) : markdownMM::Title {
 	level := 4;
-	elements += self -> map ueTitreText();
-}
-mapping filMM::UE::ueTitreText() : markdownMM::Text {
-	text := self.pseudo +' - '+self.nom;
-}
-mapping filMM::UE::uePresentationParagraph() : markdownMM::Paragraph {
-	elements += self.presentation -> map presentationText();
+	elements += object Text {text := self.pseudo +' - '+self.nom};
 }
 
 
@@ -120,13 +125,38 @@ mapping filMM::S2::s2FormationTitre() : markdownMM::Text {
 }
 
 /** Intervenant **/
-mapping Set(Intervenant)::intervenantsParagraph(titre : String) : markdownMM::Paragraph
-	when{self -> notEmpty()}{
-	elements += object StrongEmphasis { text := titre};
-	self -> forEach(int){
-		elements += int -> map intervenantText();
+mapping filMM::UE::responsablesParagraph(in owner : Semestre) : markdownMM::Paragraph when{self.responsables -> notEmpty()}{
+	elements += object StrongEmphasis { text := "Responsables :" };
+	self.responsables -> forEach(int){
+		elements += object Text { text := int.nom +' '+int.prenom};
 	}	
 }
-mapping filMM::Intervenant::intervenantText() : markdownMM::Text {
-	text := self.nom +' '+self.prenom;
+mapping filMM::UE::enseignantsParagraph(in owner : Semestre) : markdownMM::Paragraph when{self.enseignants -> notEmpty()}{
+	elements += object StrongEmphasis { text := "Enseignants :" };
+	self.enseignants -> forEach(int){
+		elements += object Text { text := int.nom +' '+int.prenom};
+	}		
+}
+mapping filMM::Formation::responsablesParagraph() : markdownMM::Paragraph when{self.responsables -> notEmpty()}{
+	elements += object StrongEmphasis { text := "Responsables :" };
+	self.responsables -> forEach(int){
+		elements += object Text { text := int.nom +' '+int.prenom};
+	}	
+}
+mapping filMM::Formation::enseignantsParagraph() : markdownMM::Paragraph when{self.enseignants -> notEmpty()}{
+	elements += object StrongEmphasis { text := "Enseignants :" };
+	self.enseignants -> forEach(int){
+		elements += object Text { text := int.nom +' '+int.prenom};
+	}		
+}
+
+/** Documents **/
+mapping filMM::UE::documentsParagraph(in owner : Semestre) : markdownMM::Paragraph when {self.documents -> notEmpty()}{
+	elements += object StrongEmphasis { text := "Documents :" };
+	self.documents -> forEach(doc){
+		elements += object Link { 
+						title := doc.nom;
+						url := doc.lien; 
+						};
+	}	
 }
