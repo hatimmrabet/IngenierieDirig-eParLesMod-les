@@ -39,8 +39,8 @@
       <presentation contenue="Le but de l'algorithmique peut être résumé en &quot; trouver un &quot;bon&quot; algorithme &quot; pour un problème donné."/>
     </ues>
   </niveaux>
-  <niveaux nom="Licence mention Informatique" pseudo="LINFO">
-    <formations nom="LICENCE  2, parcours INFO" pseudo="L2INFO">
+  <niveaux nom="Licence mention Informatique" pseudo="LINF">
+    <formations nom="LICENCE  2, parcours informatique" pseudo="L2INF">
       <presentation contenue="L2 informatique, parcours classique"/>
       <documents xsi:type="fIL:Fichier" nom="Emploi du temps jusqu'au 22 octobre" lien="http://www.fil.univ-lille1.fr/~routier/portail/s3/edt_S3_21-22-partie1.pdf"/>
     </formations>
