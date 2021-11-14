@@ -1,13 +1,23 @@
 # Glossaire:
 
-**Faculté:** contient un nom pour la designé des autres
+**Faculté:** contient un nom pour la designé des autres Facultés.
 
 **Niveau:** c'est un niveau d'étude avec la mention du niveau ( M1 info, L2 bio...)
 
 **Formation:** c'est la formation de chaque niveau, (Machine Learning, Genie Logiciel...)
 
-Chaque Niveau, Formation, UE a une presentation et des intervenants qui peuvent etre des responsables ou des enseignants, cela depend de l'attribut responsable qu'ils ont.
+Une **Faculté** est conposée de plusieurs Niveaux et d'Intervenants. Chaque Niveau, Formation, UE a une presentation. un Niveau a plusieurs responsabes, et composé de plusieurs Formations et UE.
 
-Chaque formation st composer d'un S1 et S2, et chaque semestre est composer des ues obligatoires et d'autres optionnelles, et pour chaque Ue on a des enseignants et un responsable d'UE. On peut faire la difference entre les UEs avec l'attribut obligatoire (si elle est True donc c'est une UE obligatoire)
+Une formation est composée de deux semestre S1 et S2, et Un semestre a des UEs obligatoires et d'autres optionnelles. En plus, elle est composée des documents.
 
-Et enfin, Chaque UE contient des documents qui peuvent etre soit video, fichier ou audio.
+Un UE a des responsabes et des enseignants qui sont tous des Intervenants de la Faculté. et pour chaque Niveau est composé de plusieurs UEs.
+
+Chaque Formation et UE sont composés des documents qui peuvent etre soit video, fichier ou audio.
+
+# Génération d'un model document 
+
+à partir d'un _model Fil_ qu'on a créé, on génére un _model document_.
+
+# Génération d'un fichier markdown (.md)
+
+à partir d'un _model document_ on génére un fichier de type markdown.
