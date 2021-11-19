@@ -94,7 +94,7 @@ public class FichierItemProvider extends DocumentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Fichier) object).getNom();
+		String label = ((Fichier) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Fichier_type")
 				: getString("_UI_Fichier_type") + " " + label;
 	}

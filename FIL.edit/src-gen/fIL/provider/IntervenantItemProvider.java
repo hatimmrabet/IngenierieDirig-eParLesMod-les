@@ -53,25 +53,25 @@ public class IntervenantItemProvider extends ItemProviderAdapter implements IEdi
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNomPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addPrenomPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Nom feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNomPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Intervenant_nom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Intervenant_nom_feature",
+						getResourceLocator(), getString("_UI_Intervenant_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Intervenant_name_feature",
 								"_UI_Intervenant_type"),
-						FILPackage.Literals.INTERVENANT__NOM, true, false, false,
+						FILPackage.Literals.INTERVENANT__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -120,7 +120,7 @@ public class IntervenantItemProvider extends ItemProviderAdapter implements IEdi
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Intervenant) object).getNom();
+		String label = ((Intervenant) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Intervenant_type")
 				: getString("_UI_Intervenant_type") + " " + label;
 	}
@@ -137,7 +137,7 @@ public class IntervenantItemProvider extends ItemProviderAdapter implements IEdi
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Intervenant.class)) {
-		case FILPackage.INTERVENANT__NOM:
+		case FILPackage.INTERVENANT__NAME:
 		case FILPackage.INTERVENANT__PRENOM:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

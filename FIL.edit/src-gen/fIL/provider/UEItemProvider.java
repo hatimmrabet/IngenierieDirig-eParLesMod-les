@@ -56,7 +56,7 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNomPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addPseudoPropertyDescriptor(object);
 			addResponsablesPropertyDescriptor(object);
 			addEnseignantsPropertyDescriptor(object);
@@ -65,17 +65,17 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 	}
 
 	/**
-	 * This adds a property descriptor for the Nom feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNomPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_UE_nom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_UE_nom_feature", "_UI_UE_type"),
-						FILPackage.Literals.UE__NOM, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						getResourceLocator(), getString("_UI_UE_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_UE_name_feature", "_UI_UE_type"),
+						FILPackage.Literals.UE__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 						null, null));
 	}
 
@@ -182,7 +182,7 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((UE) object).getNom();
+		String label = ((UE) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_UE_type") : getString("_UI_UE_type") + " " + label;
 	}
 
@@ -198,7 +198,7 @@ public class UEItemProvider extends ItemProviderAdapter implements IEditingDomai
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UE.class)) {
-		case FILPackage.UE__NOM:
+		case FILPackage.UE__NAME:
 		case FILPackage.UE__PSEUDO:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

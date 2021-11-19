@@ -56,23 +56,23 @@ public class FaculteItemProvider extends ItemProviderAdapter implements IEditing
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNomPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Nom feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNomPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Faculte_nom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Faculte_nom_feature", "_UI_Faculte_type"),
-						FILPackage.Literals.FACULTE__NOM, true, false, false,
+						getResourceLocator(), getString("_UI_Faculte_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Faculte_name_feature", "_UI_Faculte_type"),
+						FILPackage.Literals.FACULTE__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -136,7 +136,7 @@ public class FaculteItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Faculte) object).getNom();
+		String label = ((Faculte) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Faculte_type")
 				: getString("_UI_Faculte_type") + " " + label;
 	}
@@ -153,7 +153,7 @@ public class FaculteItemProvider extends ItemProviderAdapter implements IEditing
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Faculte.class)) {
-		case FILPackage.FACULTE__NOM:
+		case FILPackage.FACULTE__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case FILPackage.FACULTE__NIVEAUX:

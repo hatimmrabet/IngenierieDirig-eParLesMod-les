@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fIL.impl.IntervenantImpl#getNom <em>Nom</em>}</li>
+ *   <li>{@link fIL.impl.IntervenantImpl#getName <em>Name</em>}</li>
  *   <li>{@link fIL.impl.IntervenantImpl#getPrenom <em>Prenom</em>}</li>
  * </ul>
  *
@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class IntervenantImpl extends MinimalEObjectImpl.Container implements Intervenant {
 	/**
-	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nom = NOM_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPrenom() <em>Prenom</em>}' attribute.
@@ -91,8 +91,8 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNom() {
-		return nom;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -100,11 +100,11 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNom(String newNom) {
-		String oldNom = nom;
-		nom = newNom;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.INTERVENANT__NOM, oldNom, nom));
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.INTERVENANT__NAME, oldName, name));
 	}
 
 	/**
@@ -136,8 +136,8 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case FILPackage.INTERVENANT__NOM:
-			return getNom();
+		case FILPackage.INTERVENANT__NAME:
+			return getName();
 		case FILPackage.INTERVENANT__PRENOM:
 			return getPrenom();
 		}
@@ -152,8 +152,8 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case FILPackage.INTERVENANT__NOM:
-			setNom((String) newValue);
+		case FILPackage.INTERVENANT__NAME:
+			setName((String) newValue);
 			return;
 		case FILPackage.INTERVENANT__PRENOM:
 			setPrenom((String) newValue);
@@ -170,8 +170,8 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case FILPackage.INTERVENANT__NOM:
-			setNom(NOM_EDEFAULT);
+		case FILPackage.INTERVENANT__NAME:
+			setName(NAME_EDEFAULT);
 			return;
 		case FILPackage.INTERVENANT__PRENOM:
 			setPrenom(PRENOM_EDEFAULT);
@@ -188,8 +188,8 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case FILPackage.INTERVENANT__NOM:
-			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
+		case FILPackage.INTERVENANT__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case FILPackage.INTERVENANT__PRENOM:
 			return PRENOM_EDEFAULT == null ? prenom != null : !PRENOM_EDEFAULT.equals(prenom);
 		}
@@ -207,8 +207,8 @@ public class IntervenantImpl extends MinimalEObjectImpl.Container implements Int
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nom: ");
-		result.append(nom);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(", prenom: ");
 		result.append(prenom);
 		result.append(')');

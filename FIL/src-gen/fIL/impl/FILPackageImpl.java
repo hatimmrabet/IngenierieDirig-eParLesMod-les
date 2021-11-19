@@ -214,7 +214,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFaculte_Nom() {
+	public EAttribute getFaculte_Name() {
 		return (EAttribute) faculteEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -250,7 +250,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNiveau_Nom() {
+	public EAttribute getNiveau_Name() {
 		return (EAttribute) niveauEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -313,7 +313,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFormation_Nom() {
+	public EAttribute getFormation_Name() {
 		return (EAttribute) formationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -394,7 +394,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getUE_Nom() {
+	public EAttribute getUE_Name() {
 		return (EAttribute) ueEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -457,7 +457,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDocument_Nom() {
+	public EAttribute getDocument_Name() {
 		return (EAttribute) documentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -565,7 +565,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntervenant_Nom() {
+	public EAttribute getIntervenant_Name() {
 		return (EAttribute) intervenantEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -671,12 +671,12 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 
 		// Create classes and their features
 		faculteEClass = createEClass(FACULTE);
-		createEAttribute(faculteEClass, FACULTE__NOM);
+		createEAttribute(faculteEClass, FACULTE__NAME);
 		createEReference(faculteEClass, FACULTE__NIVEAUX);
 		createEReference(faculteEClass, FACULTE__INTERVENANTS);
 
 		niveauEClass = createEClass(NIVEAU);
-		createEAttribute(niveauEClass, NIVEAU__NOM);
+		createEAttribute(niveauEClass, NIVEAU__NAME);
 		createEAttribute(niveauEClass, NIVEAU__PSEUDO);
 		createEReference(niveauEClass, NIVEAU__FORMATIONS);
 		createEReference(niveauEClass, NIVEAU__PRESENTATION);
@@ -684,7 +684,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		createEReference(niveauEClass, NIVEAU__UES);
 
 		formationEClass = createEClass(FORMATION);
-		createEAttribute(formationEClass, FORMATION__NOM);
+		createEAttribute(formationEClass, FORMATION__NAME);
 		createEAttribute(formationEClass, FORMATION__PSEUDO);
 		createEReference(formationEClass, FORMATION__PRESENTATION);
 		createEReference(formationEClass, FORMATION__S1);
@@ -694,7 +694,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		createEReference(formationEClass, FORMATION__DOCUMENTS);
 
 		ueEClass = createEClass(UE);
-		createEAttribute(ueEClass, UE__NOM);
+		createEAttribute(ueEClass, UE__NAME);
 		createEAttribute(ueEClass, UE__PSEUDO);
 		createEReference(ueEClass, UE__DOCUMENTS);
 		createEReference(ueEClass, UE__RESPONSABLES);
@@ -702,7 +702,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		createEReference(ueEClass, UE__PRESENTATION);
 
 		documentEClass = createEClass(DOCUMENT);
-		createEAttribute(documentEClass, DOCUMENT__NOM);
+		createEAttribute(documentEClass, DOCUMENT__NAME);
 		createEAttribute(documentEClass, DOCUMENT__DESCRIPTION);
 		createEAttribute(documentEClass, DOCUMENT__LIEN);
 
@@ -719,7 +719,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		createEAttribute(presentationEClass, PRESENTATION__CONTENUE);
 
 		intervenantEClass = createEClass(INTERVENANT);
-		createEAttribute(intervenantEClass, INTERVENANT__NOM);
+		createEAttribute(intervenantEClass, INTERVENANT__NAME);
 		createEAttribute(intervenantEClass, INTERVENANT__PRENOM);
 
 		responsableEClass = createEClass(RESPONSABLE);
@@ -772,9 +772,9 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(faculteEClass, Faculte.class, "Faculte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFaculte_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Faculte.class, !IS_TRANSIENT,
+		initEAttribute(getFaculte_Name(), ecorePackage.getEString(), "name", null, 0, 1, Faculte.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFaculte_Niveaux(), this.getNiveau(), null, "niveaux", null, 1, -1, Faculte.class,
+		initEReference(getFaculte_Niveaux(), this.getNiveau(), null, "niveaux", null, 0, -1, Faculte.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFaculte_Intervenants(), this.getIntervenant(), null, "intervenants", null, 0, -1,
@@ -782,27 +782,27 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(niveauEClass, Niveau.class, "Niveau", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNiveau_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Niveau.class, !IS_TRANSIENT,
+		initEAttribute(getNiveau_Name(), ecorePackage.getEString(), "name", null, 0, 1, Niveau.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNiveau_Pseudo(), ecorePackage.getEString(), "pseudo", null, 0, 1, Niveau.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNiveau_Formations(), this.getFormation(), null, "formations", null, 1, -1, Niveau.class,
+		initEReference(getNiveau_Formations(), this.getFormation(), null, "formations", null, 0, -1, Niveau.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNiveau_Presentation(), this.getPresentation(), null, "presentation", null, 0, 1, Niveau.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNiveau_Responsables(), this.getIntervenant(), null, "responsables", null, 1, -1, Niveau.class,
+		initEReference(getNiveau_Responsables(), this.getIntervenant(), null, "responsables", null, 0, -1, Niveau.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNiveau_Ues(), this.getUE(), null, "ues", null, 1, -1, Niveau.class, !IS_TRANSIENT,
+		initEReference(getNiveau_Ues(), this.getUE(), null, "ues", null, 0, -1, Niveau.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
 		initEClass(formationEClass, Formation.class, "Formation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFormation_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Formation.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFormation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Formation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFormation_Pseudo(), ecorePackage.getEString(), "pseudo", null, 0, 1, Formation.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFormation_Presentation(), this.getPresentation(), null, "presentation", null, 0, 1,
@@ -814,7 +814,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 		initEReference(getFormation_S2(), this.getS2(), null, "s2", null, 1, 1, Formation.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getFormation_Responsables(), this.getIntervenant(), null, "responsables", null, 1, -1,
+		initEReference(getFormation_Responsables(), this.getIntervenant(), null, "responsables", null, 0, -1,
 				Formation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFormation_Enseignants(), this.getIntervenant(), null, "enseignants", null, 0, -1,
@@ -825,14 +825,14 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ueEClass, fIL.UE.class, "UE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUE_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, fIL.UE.class, !IS_TRANSIENT,
+		initEAttribute(getUE_Name(), ecorePackage.getEString(), "name", null, 0, 1, fIL.UE.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUE_Pseudo(), ecorePackage.getEString(), "pseudo", null, 0, 1, fIL.UE.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUE_Documents(), this.getDocument(), null, "documents", null, 0, -1, fIL.UE.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUE_Responsables(), this.getIntervenant(), null, "responsables", null, 1, -1, fIL.UE.class,
+		initEReference(getUE_Responsables(), this.getIntervenant(), null, "responsables", null, 0, -1, fIL.UE.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUE_Enseignants(), this.getIntervenant(), null, "enseignants", null, 0, -1, fIL.UE.class,
@@ -843,7 +843,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentEClass, Document.class, "Document", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDocument_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Document.class, !IS_TRANSIENT,
+		initEAttribute(getDocument_Name(), ecorePackage.getEString(), "name", null, 0, 1, Document.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDocument_Description(), ecorePackage.getEString(), "description", null, 0, 1, Document.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -870,7 +870,7 @@ public class FILPackageImpl extends EPackageImpl implements FILPackage {
 
 		initEClass(intervenantEClass, Intervenant.class, "Intervenant", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntervenant_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Intervenant.class,
+		initEAttribute(getIntervenant_Name(), ecorePackage.getEString(), "name", null, 0, 1, Intervenant.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntervenant_Prenom(), ecorePackage.getEString(), "prenom", null, 0, 1, Intervenant.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

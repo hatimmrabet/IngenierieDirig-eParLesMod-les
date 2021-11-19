@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fIL.impl.NiveauImpl#getNom <em>Nom</em>}</li>
+ *   <li>{@link fIL.impl.NiveauImpl#getName <em>Name</em>}</li>
  *   <li>{@link fIL.impl.NiveauImpl#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fIL.impl.NiveauImpl#getFormations <em>Formations</em>}</li>
  *   <li>{@link fIL.impl.NiveauImpl#getPresentation <em>Presentation</em>}</li>
@@ -46,24 +46,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	/**
-	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nom = NOM_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPseudo() <em>Pseudo</em>}' attribute.
@@ -149,8 +149,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNom() {
-		return nom;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -158,11 +158,11 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNom(String newNom) {
-		String oldNom = nom;
-		nom = newNom;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.NIVEAU__NOM, oldNom, nom));
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.NIVEAU__NAME, oldName, name));
 	}
 
 	/**
@@ -299,8 +299,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case FILPackage.NIVEAU__NOM:
-			return getNom();
+		case FILPackage.NIVEAU__NAME:
+			return getName();
 		case FILPackage.NIVEAU__PSEUDO:
 			return getPseudo();
 		case FILPackage.NIVEAU__FORMATIONS:
@@ -324,8 +324,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case FILPackage.NIVEAU__NOM:
-			setNom((String) newValue);
+		case FILPackage.NIVEAU__NAME:
+			setName((String) newValue);
 			return;
 		case FILPackage.NIVEAU__PSEUDO:
 			setPseudo((String) newValue);
@@ -357,8 +357,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case FILPackage.NIVEAU__NOM:
-			setNom(NOM_EDEFAULT);
+		case FILPackage.NIVEAU__NAME:
+			setName(NAME_EDEFAULT);
 			return;
 		case FILPackage.NIVEAU__PSEUDO:
 			setPseudo(PSEUDO_EDEFAULT);
@@ -387,8 +387,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case FILPackage.NIVEAU__NOM:
-			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
+		case FILPackage.NIVEAU__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case FILPackage.NIVEAU__PSEUDO:
 			return PSEUDO_EDEFAULT == null ? pseudo != null : !PSEUDO_EDEFAULT.equals(pseudo);
 		case FILPackage.NIVEAU__FORMATIONS:
@@ -414,8 +414,8 @@ public class NiveauImpl extends MinimalEObjectImpl.Container implements Niveau {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nom: ");
-		result.append(nom);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(", pseudo: ");
 		result.append(pseudo);
 		result.append(')');

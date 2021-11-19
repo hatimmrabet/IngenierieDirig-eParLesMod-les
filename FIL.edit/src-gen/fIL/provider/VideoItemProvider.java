@@ -93,7 +93,7 @@ public class VideoItemProvider extends DocumentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Video) object).getNom();
+		String label = ((Video) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Video_type")
 				: getString("_UI_Video_type") + " " + label;
 	}

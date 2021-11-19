@@ -56,7 +56,7 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNomPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addPseudoPropertyDescriptor(object);
 			addResponsablesPropertyDescriptor(object);
 		}
@@ -64,18 +64,18 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
-	 * This adds a property descriptor for the Nom feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNomPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Niveau_nom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Niveau_nom_feature", "_UI_Niveau_type"),
-						FILPackage.Literals.NIVEAU__NOM, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-						null, null));
+						getResourceLocator(), getString("_UI_Niveau_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Niveau_name_feature", "_UI_Niveau_type"),
+						FILPackage.Literals.NIVEAU__NAME, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -169,7 +169,7 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Niveau) object).getNom();
+		String label = ((Niveau) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Niveau_type")
 				: getString("_UI_Niveau_type") + " " + label;
 	}
@@ -186,7 +186,7 @@ public class NiveauItemProvider extends ItemProviderAdapter implements IEditingD
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Niveau.class)) {
-		case FILPackage.NIVEAU__NOM:
+		case FILPackage.NIVEAU__NAME:
 		case FILPackage.NIVEAU__PSEUDO:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

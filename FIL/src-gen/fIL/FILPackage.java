@@ -67,13 +67,13 @@ public interface FILPackage extends EPackage {
 	int FACULTE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FACULTE__NOM = 0;
+	int FACULTE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Niveaux</b></em>' containment reference list.
@@ -122,13 +122,13 @@ public interface FILPackage extends EPackage {
 	int NIVEAU = 1;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NIVEAU__NOM = 0;
+	int NIVEAU__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
@@ -204,13 +204,13 @@ public interface FILPackage extends EPackage {
 	int FORMATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORMATION__NOM = 0;
+	int FORMATION__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
@@ -304,13 +304,13 @@ public interface FILPackage extends EPackage {
 	int UE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UE__NOM = 0;
+	int UE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Pseudo</b></em>' attribute.
@@ -386,13 +386,13 @@ public interface FILPackage extends EPackage {
 	int DOCUMENT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT__NOM = 0;
+	int DOCUMENT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -441,13 +441,13 @@ public interface FILPackage extends EPackage {
 	int VIDEO = 5;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIDEO__NOM = DOCUMENT__NOM;
+	int VIDEO__NAME = DOCUMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -505,13 +505,13 @@ public interface FILPackage extends EPackage {
 	int FICHIER = 6;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FICHIER__NOM = DOCUMENT__NOM;
+	int FICHIER__NAME = DOCUMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -569,13 +569,13 @@ public interface FILPackage extends EPackage {
 	int AUDIO = 7;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUDIO__NOM = DOCUMENT__NOM;
+	int AUDIO__NAME = DOCUMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -670,13 +670,13 @@ public interface FILPackage extends EPackage {
 	int INTERVENANT = 9;
 
 	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVENANT__NOM = 0;
+	int INTERVENANT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Prenom</b></em>' attribute.
@@ -910,15 +910,15 @@ public interface FILPackage extends EPackage {
 	EClass getFaculte();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Faculte#getNom <em>Nom</em>}'.
+	 * Returns the meta object for the attribute '{@link fIL.Faculte#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see fIL.Faculte#getNom()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fIL.Faculte#getName()
 	 * @see #getFaculte()
 	 * @generated
 	 */
-	EAttribute getFaculte_Nom();
+	EAttribute getFaculte_Name();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link fIL.Faculte#getNiveaux <em>Niveaux</em>}'.
@@ -953,15 +953,15 @@ public interface FILPackage extends EPackage {
 	EClass getNiveau();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Niveau#getNom <em>Nom</em>}'.
+	 * Returns the meta object for the attribute '{@link fIL.Niveau#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see fIL.Niveau#getNom()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fIL.Niveau#getName()
 	 * @see #getNiveau()
 	 * @generated
 	 */
-	EAttribute getNiveau_Nom();
+	EAttribute getNiveau_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fIL.Niveau#getPseudo <em>Pseudo</em>}'.
@@ -1029,15 +1029,15 @@ public interface FILPackage extends EPackage {
 	EClass getFormation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Formation#getNom <em>Nom</em>}'.
+	 * Returns the meta object for the attribute '{@link fIL.Formation#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see fIL.Formation#getNom()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fIL.Formation#getName()
 	 * @see #getFormation()
 	 * @generated
 	 */
-	EAttribute getFormation_Nom();
+	EAttribute getFormation_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fIL.Formation#getPseudo <em>Pseudo</em>}'.
@@ -1127,15 +1127,15 @@ public interface FILPackage extends EPackage {
 	EClass getUE();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.UE#getNom <em>Nom</em>}'.
+	 * Returns the meta object for the attribute '{@link fIL.UE#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see fIL.UE#getNom()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fIL.UE#getName()
 	 * @see #getUE()
 	 * @generated
 	 */
-	EAttribute getUE_Nom();
+	EAttribute getUE_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fIL.UE#getPseudo <em>Pseudo</em>}'.
@@ -1203,15 +1203,15 @@ public interface FILPackage extends EPackage {
 	EClass getDocument();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Document#getNom <em>Nom</em>}'.
+	 * Returns the meta object for the attribute '{@link fIL.Document#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see fIL.Document#getNom()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fIL.Document#getName()
 	 * @see #getDocument()
 	 * @generated
 	 */
-	EAttribute getDocument_Nom();
+	EAttribute getDocument_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fIL.Document#getDescription <em>Description</em>}'.
@@ -1330,15 +1330,15 @@ public interface FILPackage extends EPackage {
 	EClass getIntervenant();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fIL.Intervenant#getNom <em>Nom</em>}'.
+	 * Returns the meta object for the attribute '{@link fIL.Intervenant#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nom</em>'.
-	 * @see fIL.Intervenant#getNom()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fIL.Intervenant#getName()
 	 * @see #getIntervenant()
 	 * @generated
 	 */
-	EAttribute getIntervenant_Nom();
+	EAttribute getIntervenant_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link fIL.Intervenant#getPrenom <em>Prenom</em>}'.
@@ -1457,12 +1457,12 @@ public interface FILPackage extends EPackage {
 		EClass FACULTE = eINSTANCE.getFaculte();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FACULTE__NOM = eINSTANCE.getFaculte_Nom();
+		EAttribute FACULTE__NAME = eINSTANCE.getFaculte_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Niveaux</b></em>' containment reference list feature.
@@ -1491,12 +1491,12 @@ public interface FILPackage extends EPackage {
 		EClass NIVEAU = eINSTANCE.getNiveau();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NIVEAU__NOM = eINSTANCE.getNiveau_Nom();
+		EAttribute NIVEAU__NAME = eINSTANCE.getNiveau_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Pseudo</b></em>' attribute feature.
@@ -1549,12 +1549,12 @@ public interface FILPackage extends EPackage {
 		EClass FORMATION = eINSTANCE.getFormation();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FORMATION__NOM = eINSTANCE.getFormation_Nom();
+		EAttribute FORMATION__NAME = eINSTANCE.getFormation_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Pseudo</b></em>' attribute feature.
@@ -1623,12 +1623,12 @@ public interface FILPackage extends EPackage {
 		EClass UE = eINSTANCE.getUE();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute UE__NOM = eINSTANCE.getUE_Nom();
+		EAttribute UE__NAME = eINSTANCE.getUE_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Pseudo</b></em>' attribute feature.
@@ -1681,12 +1681,12 @@ public interface FILPackage extends EPackage {
 		EClass DOCUMENT = eINSTANCE.getDocument();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DOCUMENT__NOM = eINSTANCE.getDocument_Nom();
+		EAttribute DOCUMENT__NAME = eINSTANCE.getDocument_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -1787,12 +1787,12 @@ public interface FILPackage extends EPackage {
 		EClass INTERVENANT = eINSTANCE.getIntervenant();
 
 		/**
-		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INTERVENANT__NOM = eINSTANCE.getIntervenant_Nom();
+		EAttribute INTERVENANT__NAME = eINSTANCE.getIntervenant_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Prenom</b></em>' attribute feature.

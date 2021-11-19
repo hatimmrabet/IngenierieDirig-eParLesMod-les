@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fIL.impl.UEImpl#getNom <em>Nom</em>}</li>
+ *   <li>{@link fIL.impl.UEImpl#getName <em>Name</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getDocuments <em>Documents</em>}</li>
  *   <li>{@link fIL.impl.UEImpl#getResponsables <em>Responsables</em>}</li>
@@ -45,24 +45,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	/**
-	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nom = NOM_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPseudo() <em>Pseudo</em>}' attribute.
@@ -148,8 +148,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNom() {
-		return nom;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -157,11 +157,11 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNom(String newNom) {
-		String oldNom = nom;
-		nom = newNom;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.UE__NOM, oldNom, nom));
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.UE__NAME, oldName, name));
 	}
 
 	/**
@@ -295,8 +295,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case FILPackage.UE__NOM:
-			return getNom();
+		case FILPackage.UE__NAME:
+			return getName();
 		case FILPackage.UE__PSEUDO:
 			return getPseudo();
 		case FILPackage.UE__DOCUMENTS:
@@ -320,8 +320,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case FILPackage.UE__NOM:
-			setNom((String) newValue);
+		case FILPackage.UE__NAME:
+			setName((String) newValue);
 			return;
 		case FILPackage.UE__PSEUDO:
 			setPseudo((String) newValue);
@@ -353,8 +353,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case FILPackage.UE__NOM:
-			setNom(NOM_EDEFAULT);
+		case FILPackage.UE__NAME:
+			setName(NAME_EDEFAULT);
 			return;
 		case FILPackage.UE__PSEUDO:
 			setPseudo(PSEUDO_EDEFAULT);
@@ -383,8 +383,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case FILPackage.UE__NOM:
-			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
+		case FILPackage.UE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case FILPackage.UE__PSEUDO:
 			return PSEUDO_EDEFAULT == null ? pseudo != null : !PSEUDO_EDEFAULT.equals(pseudo);
 		case FILPackage.UE__DOCUMENTS:
@@ -410,8 +410,8 @@ public class UEImpl extends MinimalEObjectImpl.Container implements UE {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nom: ");
-		result.append(nom);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(", pseudo: ");
 		result.append(pseudo);
 		result.append(')');

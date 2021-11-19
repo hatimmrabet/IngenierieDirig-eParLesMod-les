@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fIL.impl.FormationImpl#getNom <em>Nom</em>}</li>
+ *   <li>{@link fIL.impl.FormationImpl#getName <em>Name</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getPseudo <em>Pseudo</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getPresentation <em>Presentation</em>}</li>
  *   <li>{@link fIL.impl.FormationImpl#getS1 <em>S1</em>}</li>
@@ -44,24 +44,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class FormationImpl extends MinimalEObjectImpl.Container implements Formation {
 	/**
-	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nom = NOM_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPseudo() <em>Pseudo</em>}' attribute.
@@ -167,8 +167,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNom() {
-		return nom;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -176,11 +176,11 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNom(String newNom) {
-		String oldNom = nom;
-		nom = newNom;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__NOM, oldNom, nom));
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FORMATION__NAME, oldName, name));
 	}
 
 	/**
@@ -418,8 +418,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case FILPackage.FORMATION__NOM:
-			return getNom();
+		case FILPackage.FORMATION__NAME:
+			return getName();
 		case FILPackage.FORMATION__PSEUDO:
 			return getPseudo();
 		case FILPackage.FORMATION__PRESENTATION:
@@ -447,8 +447,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case FILPackage.FORMATION__NOM:
-			setNom((String) newValue);
+		case FILPackage.FORMATION__NAME:
+			setName((String) newValue);
 			return;
 		case FILPackage.FORMATION__PSEUDO:
 			setPseudo((String) newValue);
@@ -486,8 +486,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case FILPackage.FORMATION__NOM:
-			setNom(NOM_EDEFAULT);
+		case FILPackage.FORMATION__NAME:
+			setName(NAME_EDEFAULT);
 			return;
 		case FILPackage.FORMATION__PSEUDO:
 			setPseudo(PSEUDO_EDEFAULT);
@@ -522,8 +522,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case FILPackage.FORMATION__NOM:
-			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
+		case FILPackage.FORMATION__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case FILPackage.FORMATION__PSEUDO:
 			return PSEUDO_EDEFAULT == null ? pseudo != null : !PSEUDO_EDEFAULT.equals(pseudo);
 		case FILPackage.FORMATION__PRESENTATION:
@@ -553,8 +553,8 @@ public class FormationImpl extends MinimalEObjectImpl.Container implements Forma
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nom: ");
-		result.append(nom);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(", pseudo: ");
 		result.append(pseudo);
 		result.append(')');

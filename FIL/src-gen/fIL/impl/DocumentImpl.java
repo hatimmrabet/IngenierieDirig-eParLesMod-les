@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fIL.impl.DocumentImpl#getNom <em>Nom</em>}</li>
+ *   <li>{@link fIL.impl.DocumentImpl#getName <em>Name</em>}</li>
  *   <li>{@link fIL.impl.DocumentImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link fIL.impl.DocumentImpl#getLien <em>Lien</em>}</li>
  * </ul>
@@ -29,24 +29,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class DocumentImpl extends MinimalEObjectImpl.Container implements Document {
 	/**
-	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nom = NOM_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
@@ -112,8 +112,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNom() {
-		return nom;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -121,11 +121,11 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNom(String newNom) {
-		String oldNom = nom;
-		nom = newNom;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.DOCUMENT__NOM, oldNom, nom));
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.DOCUMENT__NAME, oldName, name));
 	}
 
 	/**
@@ -179,8 +179,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case FILPackage.DOCUMENT__NOM:
-			return getNom();
+		case FILPackage.DOCUMENT__NAME:
+			return getName();
 		case FILPackage.DOCUMENT__DESCRIPTION:
 			return getDescription();
 		case FILPackage.DOCUMENT__LIEN:
@@ -197,8 +197,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case FILPackage.DOCUMENT__NOM:
-			setNom((String) newValue);
+		case FILPackage.DOCUMENT__NAME:
+			setName((String) newValue);
 			return;
 		case FILPackage.DOCUMENT__DESCRIPTION:
 			setDescription((String) newValue);
@@ -218,8 +218,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case FILPackage.DOCUMENT__NOM:
-			setNom(NOM_EDEFAULT);
+		case FILPackage.DOCUMENT__NAME:
+			setName(NAME_EDEFAULT);
 			return;
 		case FILPackage.DOCUMENT__DESCRIPTION:
 			setDescription(DESCRIPTION_EDEFAULT);
@@ -239,8 +239,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case FILPackage.DOCUMENT__NOM:
-			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
+		case FILPackage.DOCUMENT__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case FILPackage.DOCUMENT__DESCRIPTION:
 			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		case FILPackage.DOCUMENT__LIEN:
@@ -260,8 +260,8 @@ public abstract class DocumentImpl extends MinimalEObjectImpl.Container implemen
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nom: ");
-		result.append(nom);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(", description: ");
 		result.append(description);
 		result.append(", lien: ");

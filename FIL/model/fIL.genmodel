@@ -9,12 +9,12 @@
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="FIL" disposableProviderFactory="true" ecorePackage="fIL.ecore#/">
     <genClasses ecoreClass="fIL.ecore#//Faculte">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Faculte/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Faculte/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Faculte/niveaux"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Faculte/intervenants"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//Niveau">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Niveau/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Niveau/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Niveau/pseudo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Niveau/formations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Niveau/presentation"/>
@@ -22,7 +22,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Niveau/ues"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//Formation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Formation/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Formation/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Formation/pseudo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/presentation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/s1"/>
@@ -32,7 +32,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//Formation/documents"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//UE">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//UE/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//UE/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//UE/pseudo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//UE/documents"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fIL.ecore#//UE/responsables"/>
@@ -40,7 +40,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fIL.ecore#//UE/presentation"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//Document">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Document/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Document/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Document/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Document/lien"/>
     </genClasses>
@@ -57,7 +57,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Presentation/contenue"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//Intervenant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Intervenant/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Intervenant/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fIL.ecore#//Intervenant/prenom"/>
     </genClasses>
     <genClasses ecoreClass="fIL.ecore#//Responsable"/>

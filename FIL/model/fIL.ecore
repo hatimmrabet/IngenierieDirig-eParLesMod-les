@@ -2,26 +2,26 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="fIL" nsURI="http://www.example.org/fIL" nsPrefix="fIL">
   <eClassifiers xsi:type="ecore:EClass" name="Faculte">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="niveaux" lowerBound="1"
-        upperBound="-1" eType="#//Niveau" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="niveaux" upperBound="-1"
+        eType="#//Niveau" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="intervenants" upperBound="-1"
         eType="#//Intervenant" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Niveau">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pseudo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="formations" lowerBound="1"
-        upperBound="-1" eType="#//Formation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formations" upperBound="-1"
+        eType="#//Formation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="presentation" eType="#//Presentation"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="responsables" lowerBound="1"
-        upperBound="-1" eType="#//Intervenant"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ues" lowerBound="1" upperBound="-1"
-        eType="#//UE" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsables" upperBound="-1"
+        eType="#//Intervenant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ues" upperBound="-1" eType="#//UE"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Formation">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pseudo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="presentation" eType="#//Presentation"
         containment="true"/>
@@ -29,27 +29,27 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="s2" lowerBound="1" eType="#//S2"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="responsables" lowerBound="1"
-        upperBound="-1" eType="#//Intervenant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsables" upperBound="-1"
+        eType="#//Intervenant"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enseignants" upperBound="-1"
         eType="#//Intervenant"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="documents" upperBound="-1"
         eType="#//Document" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UE">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pseudo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="documents" upperBound="-1"
         eType="#//Document" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="responsables" lowerBound="1"
-        upperBound="-1" eType="#//Intervenant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsables" upperBound="-1"
+        eType="#//Intervenant"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enseignants" upperBound="-1"
         eType="#//Intervenant"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="presentation" eType="#//Presentation"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Document" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lien" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -66,7 +66,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="contenue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Intervenant">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prenom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Responsable"/>

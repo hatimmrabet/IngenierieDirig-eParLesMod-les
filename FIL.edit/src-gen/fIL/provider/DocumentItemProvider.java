@@ -53,7 +53,7 @@ public class DocumentItemProvider extends ItemProviderAdapter implements IEditin
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNomPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addLienPropertyDescriptor(object);
 		}
@@ -61,18 +61,18 @@ public class DocumentItemProvider extends ItemProviderAdapter implements IEditin
 	}
 
 	/**
-	 * This adds a property descriptor for the Nom feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNomPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Document_nom_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Document_nom_feature",
+						getResourceLocator(), getString("_UI_Document_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Document_name_feature",
 								"_UI_Document_type"),
-						FILPackage.Literals.DOCUMENT__NOM, true, false, false,
+						FILPackage.Literals.DOCUMENT__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -137,7 +137,7 @@ public class DocumentItemProvider extends ItemProviderAdapter implements IEditin
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Document) object).getNom();
+		String label = ((Document) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_Document_type")
 				: getString("_UI_Document_type") + " " + label;
 	}
@@ -154,7 +154,7 @@ public class DocumentItemProvider extends ItemProviderAdapter implements IEditin
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Document.class)) {
-		case FILPackage.DOCUMENT__NOM:
+		case FILPackage.DOCUMENT__NAME:
 		case FILPackage.DOCUMENT__DESCRIPTION:
 		case FILPackage.DOCUMENT__LIEN:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

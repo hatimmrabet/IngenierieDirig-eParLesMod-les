@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fIL.Faculte#getNom <em>Nom</em>}</li>
+ *   <li>{@link fIL.Faculte#getName <em>Name</em>}</li>
  *   <li>{@link fIL.Faculte#getNiveaux <em>Niveaux</em>}</li>
  *   <li>{@link fIL.Faculte#getIntervenants <em>Intervenants</em>}</li>
  * </ul>
@@ -26,26 +26,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Faculte extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nom</em>' attribute.
-	 * @see #setNom(String)
-	 * @see fIL.FILPackage#getFaculte_Nom()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see fIL.FILPackage#getFaculte_Name()
 	 * @model
 	 * @generated
 	 */
-	String getNom();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link fIL.Faculte#getNom <em>Nom</em>}' attribute.
+	 * Sets the value of the '{@link fIL.Faculte#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nom</em>' attribute.
-	 * @see #getNom()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setNom(String value);
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Niveaux</b></em>' containment reference list.
@@ -54,7 +54,7 @@ public interface Faculte extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Niveaux</em>' containment reference list.
 	 * @see fIL.FILPackage#getFaculte_Niveaux()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Niveau> getNiveaux();

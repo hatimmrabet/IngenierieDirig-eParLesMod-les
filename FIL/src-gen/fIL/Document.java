@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fIL.Document#getNom <em>Nom</em>}</li>
+ *   <li>{@link fIL.Document#getName <em>Name</em>}</li>
  *   <li>{@link fIL.Document#getDescription <em>Description</em>}</li>
  *   <li>{@link fIL.Document#getLien <em>Lien</em>}</li>
  * </ul>
@@ -24,26 +24,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Document extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nom</em>' attribute.
-	 * @see #setNom(String)
-	 * @see fIL.FILPackage#getDocument_Nom()
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see fIL.FILPackage#getDocument_Name()
 	 * @model
 	 * @generated
 	 */
-	String getNom();
+	String getName();
 
 	/**
-	 * Sets the value of the '{@link fIL.Document#getNom <em>Nom</em>}' attribute.
+	 * Sets the value of the '{@link fIL.Document#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nom</em>' attribute.
-	 * @see #getNom()
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
 	 * @generated
 	 */
-	void setNom(String value);
+	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

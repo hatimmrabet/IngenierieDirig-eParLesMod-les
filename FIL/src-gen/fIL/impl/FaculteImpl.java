@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fIL.impl.FaculteImpl#getNom <em>Nom</em>}</li>
+ *   <li>{@link fIL.impl.FaculteImpl#getName <em>Name</em>}</li>
  *   <li>{@link fIL.impl.FaculteImpl#getNiveaux <em>Niveaux</em>}</li>
  *   <li>{@link fIL.impl.FaculteImpl#getIntervenants <em>Intervenants</em>}</li>
  * </ul>
@@ -40,24 +40,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte {
 	/**
-	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NOM_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNom()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String nom = NOM_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getNiveaux() <em>Niveaux</em>}' containment reference list.
@@ -103,8 +103,8 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getNom() {
-		return nom;
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -112,11 +112,11 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNom(String newNom) {
-		String oldNom = nom;
-		nom = newNom;
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FACULTE__NOM, oldNom, nom));
+			eNotify(new ENotificationImpl(this, Notification.SET, FILPackage.FACULTE__NAME, oldName, name));
 	}
 
 	/**
@@ -168,8 +168,8 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case FILPackage.FACULTE__NOM:
-			return getNom();
+		case FILPackage.FACULTE__NAME:
+			return getName();
 		case FILPackage.FACULTE__NIVEAUX:
 			return getNiveaux();
 		case FILPackage.FACULTE__INTERVENANTS:
@@ -187,8 +187,8 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case FILPackage.FACULTE__NOM:
-			setNom((String) newValue);
+		case FILPackage.FACULTE__NAME:
+			setName((String) newValue);
 			return;
 		case FILPackage.FACULTE__NIVEAUX:
 			getNiveaux().clear();
@@ -210,8 +210,8 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case FILPackage.FACULTE__NOM:
-			setNom(NOM_EDEFAULT);
+		case FILPackage.FACULTE__NAME:
+			setName(NAME_EDEFAULT);
 			return;
 		case FILPackage.FACULTE__NIVEAUX:
 			getNiveaux().clear();
@@ -231,8 +231,8 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case FILPackage.FACULTE__NOM:
-			return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
+		case FILPackage.FACULTE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case FILPackage.FACULTE__NIVEAUX:
 			return niveaux != null && !niveaux.isEmpty();
 		case FILPackage.FACULTE__INTERVENANTS:
@@ -252,8 +252,8 @@ public class FaculteImpl extends MinimalEObjectImpl.Container implements Faculte
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nom: ");
-		result.append(nom);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
