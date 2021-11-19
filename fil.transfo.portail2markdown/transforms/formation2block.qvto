@@ -9,7 +9,7 @@ main() {
 }
 
 mapping filMM::Faculte::faculte2Title() : markdownMM::Document {
-	name := self.nom;
+	name := self.name;
 	self.niveaux -> forEach(niveau){
 		contents += niveau -> map niveau2Title();
 		niveau.formations -> forEach(formation){
@@ -78,7 +78,7 @@ mapping filMM::Niveau::niveau2Title() : markdownMM::Title {
 	elements += self -> map niveau2Text();
 }
 mapping filMM::Niveau::niveau2Text() : markdownMM::Text {
-	text := self.nom+' - '+self.pseudo;
+	text := self.name+' - '+self.pseudo;
 }
 
 /** Formation **/
@@ -87,7 +87,7 @@ mapping filMM::Formation::formation2Title() : markdownMM::Title {
 	elements += self -> map formation2Text();
 }
 mapping filMM::Formation::formation2Text() : markdownMM::Text {
-	text := self.nom+' - '+self.pseudo;
+	text := self.name+' - '+self.pseudo;
 }
 
 /** Presentation**/
@@ -105,7 +105,7 @@ mapping Set(UE)::ueType(titre : String) : markdownMM::Title when{self -> notEmpt
 }
 mapping filMM::UE::ueTitre(in owner : Semestre) : markdownMM::Title {
 	level := 4;
-	elements += object Text {text := self.pseudo +' - '+self.nom};
+	elements += object Text {text := self.pseudo +' - '+self.name};
 }
 
 
@@ -131,25 +131,25 @@ mapping filMM::S2::s2FormationTitre() : markdownMM::Text {
 mapping filMM::UE::responsablesParagraph(in owner : Semestre) : markdownMM::Paragraph when{self.responsables -> notEmpty()}{
 	elements += object StrongEmphasis { text := "Responsables :" };
 	self.responsables -> forEach(int){
-		elements += object Text { text := int.nom +' '+int.prenom};
+		elements += object Text { text := int.name +' '+int.prenom};
 	}	
 }
 mapping filMM::UE::enseignantsParagraph(in owner : Semestre) : markdownMM::Paragraph when{self.enseignants -> notEmpty()}{
 	elements += object StrongEmphasis { text := "Enseignants :" };
 	self.enseignants -> forEach(int){
-		elements += object Text { text := int.nom +' '+int.prenom};
+		elements += object Text { text := int.name +' '+int.prenom};
 	}		
 }
 mapping filMM::Formation::responsablesParagraph() : markdownMM::Paragraph when{self.responsables -> notEmpty()}{
 	elements += object StrongEmphasis { text := "Responsables :" };
 	self.responsables -> forEach(int){
-		elements += object Text { text := int.nom +' '+int.prenom};
+		elements += object Text { text := int.name +' '+int.prenom};
 	}	
 }
 mapping filMM::Formation::enseignantsParagraph() : markdownMM::Paragraph when{self.enseignants -> notEmpty()}{
 	elements += object StrongEmphasis { text := "Enseignants :" };
 	self.enseignants -> forEach(int){
-		elements += object Text { text := int.nom +' '+int.prenom};
+		elements += object Text { text := int.name +' '+int.prenom};
 	}		
 }
 
@@ -158,7 +158,7 @@ mapping filMM::Formation::documentsParagraph() : markdownMM::Paragraph when {sel
 	elements += object StrongEmphasis { text := "Documents :" };
 	self.documents -> forEach(doc){
 		elements += object Link { 
-						title := doc.nom;
+						title := doc.name;
 						url := doc.lien; 
 						};
 	}	
@@ -167,7 +167,7 @@ mapping filMM::UE::documentsParagraph(in owner : Semestre) : markdownMM::Paragra
 	elements += object StrongEmphasis { text := "Documents :" };
 	self.documents -> forEach(doc){
 		elements += object Link { 
-						title := doc.nom;
+						title := doc.name;
 						url := doc.lien; 
 						};
 	}	
