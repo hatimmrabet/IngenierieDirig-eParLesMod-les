@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: fil.xtext.langFil
+Bundle-ManifestVersion: 2
+Bundle-Name: fil.xtext.langFil
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fil.xtext.langFil; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: FIL,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: fil.xtext,
+ fil.xtext.parser.antlr,
+ fil.xtext.validation,
+ fil.xtext.generator,
+ fil.xtext.services,
+ fil.xtext.scoping,
+ fil.xtext.formatting2,
+ fil.xtext.serializer,
+ fil.xtext.parser.antlr.internal
+Import-Package: org.apache.log4j
