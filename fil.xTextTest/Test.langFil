@@ -1,0 +1,69 @@
+Faculte Lille1
+{
+	niveaux{
+		Niveau M1INFO
+		{
+			formations{
+				Formation GenieLogiciel
+				{
+					pseudo GL
+					enseignants (Derbel, Dumoulin)
+					s1 S1 {
+						uesoptionnelles
+						(
+							SD
+						)
+						uesobligatoires 
+						(
+							IDM
+						)
+					}
+					s2 S2 {
+						
+					}
+					documents{
+						Fichier calendrier
+						{
+							description "calendrier du S1"
+						}
+					}
+				}
+			}
+			ues{
+				UE IDM {
+					responsables (
+						Dumoulin
+					)
+					enseignants (
+						Dumoulin
+					)
+					presentation Presentation {
+						contenue "presentation du IDM"
+					}
+				},
+				UE SD {
+					responsables (
+						Tommasi
+					)
+				}
+			}
+
+		}
+	}
+	
+	intervenants
+	{
+		Intervenant Derbel
+		{
+			prenom Bilel
+		},
+		Intervenant Dumoulin
+		{
+			prenom Cedric
+		},
+		Intervenant Tommasi
+		{
+			prenom Marc
+		}
+	}
+}
