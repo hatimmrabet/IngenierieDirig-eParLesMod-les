@@ -1,69 +1,59 @@
 Faculte Lille1
-{
-	niveaux{
-		Niveau M1INFO
+	Niveau "Master 1 - informatique"
+	{
+		pseudo "M1-INFO"
+		Presentation "presentation"
+		responsables (Derbel)
+		Formation "Genie Logiciel"
 		{
-			formations{
-				Formation GenieLogiciel
-				{
-					pseudo GL
-					enseignants (Derbel, Dumoulin)
-					s1 S1 {
-						uesoptionnelles
-						(
-							SD
-						)
-						uesobligatoires 
-						(
-							IDM
-						)
-					}
-					s2 S2 {
-						
-					}
-					documents{
-						Fichier calendrier
-						{
-							description "calendrier du S1"
-						}
-					}
-				}
+			pseudo GL
+			Presentation "parcours gl"
+			enseignants (Dumoulin)
+			responsables(Tommasi)
+			S1 {
+				uesoptionnelles(SD, IDM)
+				uesobligatoires(IDM)
 			}
-			ues{
-				UE IDM {
-					responsables (
-						Dumoulin
-					)
-					enseignants (
-						Dumoulin
-					)
-					presentation Presentation {
-						contenue "presentation du IDM"
-					}
-				},
-				UE SD {
-					responsables (
-						Tommasi
-					)
-				}
+			S2 {
+				uesobligatoires(IDM)
 			}
-
+			Fichier calendrier
+			{
+				description "calendrier du S1"
+				lien "www"
+			}
+			Audio audio 
+			{
+				lien "www"
+			}
 		}
+		
+		UE IDM {
+			Presentation "yujhygj"
+			pseudo "jkjk"
+			enseignants (Dumoulin, Tommasi)
+			responsables (Dumoulin)
+			Audio fichaud
+			{
+				lien "mmm"
+			}
+		}
+		UE SD {
+			responsables (
+				Tommasi
+			)
+		}
+	}
+	Intervenant Derbel
+	{
+		prenom Bilel
+	}
+	Intervenant Dumoulin
+	{
+		prenom Cedric
+	}
+	Intervenant Tommasi
+	{
+		prenom Marc
 	}
 	
-	intervenants
-	{
-		Intervenant Derbel
-		{
-			prenom Bilel
-		},
-		Intervenant Dumoulin
-		{
-			prenom Cedric
-		},
-		Intervenant Tommasi
-		{
-			prenom Marc
-		}
-	}
-}

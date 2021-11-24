@@ -8,10 +8,8 @@ Faculte returns Faculte:
 	{Faculte}
 	'Faculte'
 	name=EString
-	'{'
-		('niveaux' '{' niveaux+=Niveau ( "," niveaux+=Niveau)* '}' )?
-		('intervenants' '{' intervenants+=Intervenant ( "," intervenants+=Intervenant)* '}' )?
-	'}';
+		(niveaux+=Niveau | intervenants+=Intervenant)*
+	;
 
 Document returns Document:
 	Video | Fichier | Audio;
@@ -24,11 +22,11 @@ Niveau returns Niveau:
 	'Niveau'
 	name=EString
 	'{'
-		('pseudo' pseudo=EString)?
-		('responsables' '(' responsables+=[Intervenant|EString] ( "," responsables+=[Intervenant|EString])* ')' )?
-		('formations' '{' formations+=Formation ( "," formations+=Formation)* '}' )?
-		('presentation' presentation=Presentation)?
-		('ues' '{' ues+=UE ( "," ues+=UE)* '}' )?
+		(('pseudo' pseudo=EString)?
+		& ('responsables' '(' responsables+=[Intervenant|EString] ( "," responsables+=[Intervenant|EString])* ')' )?
+		& (presentation=Presentation)?
+		& (formations+=Formation)* 
+		& (ues+=UE)*)
 	'}';
 
 Intervenant returns Intervenant:
@@ -40,35 +38,34 @@ Intervenant returns Intervenant:
 	'}';
 
 Formation returns Formation:
+	{Formation}
 	'Formation'
 	name=EString
 	'{'
-		('pseudo' pseudo=EString)?
-		('responsables' '(' responsables+=[Intervenant|EString] ( "," responsables+=[Intervenant|EString])* ')' )?
-		('enseignants' '(' enseignants+=[Intervenant|EString] ( "," enseignants+=[Intervenant|EString])* ')' )?
-		('presentation' presentation=Presentation)?
-		's1' s1=S1
-		's2' s2=S2
-		('documents' '{' documents+=Document ( "," documents+=Document)* '}' )?
+		(('pseudo' pseudo=EString)?
+		& ('responsables' '(' responsables+=[Intervenant|EString] ( "," responsables+=[Intervenant|EString])* ')' )?
+		& ('enseignants' '(' enseignants+=[Intervenant|EString] ( "," enseignants+=[Intervenant|EString])* ')' )?
+		& (presentation=Presentation)?
+		& s1=S1
+		& s2=S2
+		& (documents+=Document)*)
 	'}';
 
 Presentation returns Presentation:
 	{Presentation}
-	'Presentation'
-	'{'
-		('contenue' contenue=EString)?
-	'}';
+	'Presentation' contenue=EString
+	;
 
 UE returns UE:
 	{UE}
 	'UE'
 	name=EString
 	'{'
-		('pseudo' pseudo=EString)?
-		('responsables' '(' responsables+=[Intervenant|EString] ( "," responsables+=[Intervenant|EString])* ')' )?
-		('enseignants' '(' enseignants+=[Intervenant|EString] ( "," enseignants+=[Intervenant|EString])* ')' )?
-		('documents' '{' documents+=Document ( "," documents+=Document)* '}' )?
-		('presentation' presentation=Presentation)?
+		(('pseudo' pseudo=EString)?
+		& (presentation=Presentation)?
+		& ('responsables' '(' responsables+=[Intervenant|EString] ( "," responsables+=[Intervenant|EString])* ')' )?
+		& ('enseignants' '(' enseignants+=[Intervenant|EString] ( "," enseignants+=[Intervenant|EString])* ')' )?
+		& (documents+=Document)*)
 	'}';
 
 S1 returns S1:
@@ -93,7 +90,7 @@ Video returns Video:
 	name=EString
 	'{'
 		('description' description=EString)?
-		('lien' lien=EString)?
+		'lien' lien=EString
 		('duree' duree=EString)?
 	'}';
 
@@ -103,7 +100,7 @@ Fichier returns Fichier:
 	name=EString
 	'{'
 		('description' description=EString)?
-		('lien' lien=EString)?
+		'lien' lien=EString
 		('auteur' auteur=EString)?
 	'}';
 
@@ -113,6 +110,6 @@ Audio returns Audio:
 	name=EString
 	'{'
 		('description' description=EString)?
-		('lien' lien=EString)?
+		'lien' lien=EString
 		('duree' duree=EString)?
 	'}';

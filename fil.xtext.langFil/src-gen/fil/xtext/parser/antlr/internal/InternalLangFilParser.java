@@ -21,18 +21,30 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLangFilParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Faculte'", "'{'", "'niveaux'", "','", "'}'", "'intervenants'", "'Niveau'", "'pseudo'", "'responsables'", "'('", "')'", "'formations'", "'presentation'", "'ues'", "'Intervenant'", "'prenom'", "'Formation'", "'enseignants'", "'s1'", "'s2'", "'documents'", "'Presentation'", "'contenue'", "'UE'", "'S1'", "'uesoptionnelles'", "'uesobligatoires'", "'S2'", "'Video'", "'description'", "'lien'", "'duree'", "'Fichier'", "'auteur'", "'Audio'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Faculte'", "'Niveau'", "'{'", "'pseudo'", "'responsables'", "'('", "','", "')'", "'}'", "'Intervenant'", "'prenom'", "'Formation'", "'enseignants'", "'Presentation'", "'UE'", "'S1'", "'uesoptionnelles'", "'uesobligatoires'", "'S2'", "'Video'", "'description'", "'lien'", "'duree'", "'Fichier'", "'auteur'", "'Audio'"
     };
+    public static final int RULE_STRING=4;
+    public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
+    public static final int T__33=33;
     public static final int T__12=12;
+    public static final int T__34=34;
     public static final int T__13=13;
+    public static final int T__35=35;
     public static final int T__14=14;
+    public static final int T__36=36;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_ID=5;
+    public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
@@ -45,27 +57,6 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
     public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int T__33=33;
-    public static final int T__34=34;
-    public static final int T__35=35;
-    public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
-    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -143,41 +134,27 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFaculte"
-    // InternalLangFil.g:71:1: ruleFaculte returns [EObject current=null] : ( () otherlv_1= 'Faculte' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'niveaux' otherlv_5= '{' ( (lv_niveaux_6_0= ruleNiveau ) ) (otherlv_7= ',' ( (lv_niveaux_8_0= ruleNiveau ) ) )* otherlv_9= '}' )? (otherlv_10= 'intervenants' otherlv_11= '{' ( (lv_intervenants_12_0= ruleIntervenant ) ) (otherlv_13= ',' ( (lv_intervenants_14_0= ruleIntervenant ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) ;
+    // InternalLangFil.g:71:1: ruleFaculte returns [EObject current=null] : ( () otherlv_1= 'Faculte' ( (lv_name_2_0= ruleEString ) ) ( ( (lv_niveaux_3_0= ruleNiveau ) ) | ( (lv_intervenants_4_0= ruleIntervenant ) ) )* ) ;
     public final EObject ruleFaculte() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token otherlv_9=null;
-        Token otherlv_10=null;
-        Token otherlv_11=null;
-        Token otherlv_13=null;
-        Token otherlv_15=null;
-        Token otherlv_16=null;
         AntlrDatatypeRuleToken lv_name_2_0 = null;
 
-        EObject lv_niveaux_6_0 = null;
+        EObject lv_niveaux_3_0 = null;
 
-        EObject lv_niveaux_8_0 = null;
-
-        EObject lv_intervenants_12_0 = null;
-
-        EObject lv_intervenants_14_0 = null;
+        EObject lv_intervenants_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLangFil.g:77:2: ( ( () otherlv_1= 'Faculte' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'niveaux' otherlv_5= '{' ( (lv_niveaux_6_0= ruleNiveau ) ) (otherlv_7= ',' ( (lv_niveaux_8_0= ruleNiveau ) ) )* otherlv_9= '}' )? (otherlv_10= 'intervenants' otherlv_11= '{' ( (lv_intervenants_12_0= ruleIntervenant ) ) (otherlv_13= ',' ( (lv_intervenants_14_0= ruleIntervenant ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) )
-            // InternalLangFil.g:78:2: ( () otherlv_1= 'Faculte' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'niveaux' otherlv_5= '{' ( (lv_niveaux_6_0= ruleNiveau ) ) (otherlv_7= ',' ( (lv_niveaux_8_0= ruleNiveau ) ) )* otherlv_9= '}' )? (otherlv_10= 'intervenants' otherlv_11= '{' ( (lv_intervenants_12_0= ruleIntervenant ) ) (otherlv_13= ',' ( (lv_intervenants_14_0= ruleIntervenant ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
+            // InternalLangFil.g:77:2: ( ( () otherlv_1= 'Faculte' ( (lv_name_2_0= ruleEString ) ) ( ( (lv_niveaux_3_0= ruleNiveau ) ) | ( (lv_intervenants_4_0= ruleIntervenant ) ) )* ) )
+            // InternalLangFil.g:78:2: ( () otherlv_1= 'Faculte' ( (lv_name_2_0= ruleEString ) ) ( ( (lv_niveaux_3_0= ruleNiveau ) ) | ( (lv_intervenants_4_0= ruleIntervenant ) ) )* )
             {
-            // InternalLangFil.g:78:2: ( () otherlv_1= 'Faculte' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'niveaux' otherlv_5= '{' ( (lv_niveaux_6_0= ruleNiveau ) ) (otherlv_7= ',' ( (lv_niveaux_8_0= ruleNiveau ) ) )* otherlv_9= '}' )? (otherlv_10= 'intervenants' otherlv_11= '{' ( (lv_intervenants_12_0= ruleIntervenant ) ) (otherlv_13= ',' ( (lv_intervenants_14_0= ruleIntervenant ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
-            // InternalLangFil.g:79:3: () otherlv_1= 'Faculte' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'niveaux' otherlv_5= '{' ( (lv_niveaux_6_0= ruleNiveau ) ) (otherlv_7= ',' ( (lv_niveaux_8_0= ruleNiveau ) ) )* otherlv_9= '}' )? (otherlv_10= 'intervenants' otherlv_11= '{' ( (lv_intervenants_12_0= ruleIntervenant ) ) (otherlv_13= ',' ( (lv_intervenants_14_0= ruleIntervenant ) ) )* otherlv_15= '}' )? otherlv_16= '}'
+            // InternalLangFil.g:78:2: ( () otherlv_1= 'Faculte' ( (lv_name_2_0= ruleEString ) ) ( ( (lv_niveaux_3_0= ruleNiveau ) ) | ( (lv_intervenants_4_0= ruleIntervenant ) ) )* )
+            // InternalLangFil.g:79:3: () otherlv_1= 'Faculte' ( (lv_name_2_0= ruleEString ) ) ( ( (lv_niveaux_3_0= ruleNiveau ) ) | ( (lv_intervenants_4_0= ruleIntervenant ) ) )*
             {
             // InternalLangFil.g:79:3: ()
             // InternalLangFil.g:80:4: 
@@ -225,252 +202,101 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_5); 
+            // InternalLangFil.g:109:3: ( ( (lv_niveaux_3_0= ruleNiveau ) ) | ( (lv_intervenants_4_0= ruleIntervenant ) ) )*
+            loop1:
+            do {
+                int alt1=3;
+                int LA1_0 = input.LA(1);
 
-            			newLeafNode(otherlv_3, grammarAccess.getFaculteAccess().getLeftCurlyBracketKeyword_3());
-            		
-            // InternalLangFil.g:113:3: (otherlv_4= 'niveaux' otherlv_5= '{' ( (lv_niveaux_6_0= ruleNiveau ) ) (otherlv_7= ',' ( (lv_niveaux_8_0= ruleNiveau ) ) )* otherlv_9= '}' )?
-            int alt2=2;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0==13) ) {
-                alt2=1;
-            }
-            switch (alt2) {
-                case 1 :
-                    // InternalLangFil.g:114:4: otherlv_4= 'niveaux' otherlv_5= '{' ( (lv_niveaux_6_0= ruleNiveau ) ) (otherlv_7= ',' ( (lv_niveaux_8_0= ruleNiveau ) ) )* otherlv_9= '}'
-                    {
-                    otherlv_4=(Token)match(input,13,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getFaculteAccess().getNiveauxKeyword_4_0());
-                    			
-                    otherlv_5=(Token)match(input,12,FOLLOW_6); 
-
-                    				newLeafNode(otherlv_5, grammarAccess.getFaculteAccess().getLeftCurlyBracketKeyword_4_1());
-                    			
-                    // InternalLangFil.g:122:4: ( (lv_niveaux_6_0= ruleNiveau ) )
-                    // InternalLangFil.g:123:5: (lv_niveaux_6_0= ruleNiveau )
-                    {
-                    // InternalLangFil.g:123:5: (lv_niveaux_6_0= ruleNiveau )
-                    // InternalLangFil.g:124:6: lv_niveaux_6_0= ruleNiveau
-                    {
-
-                    						newCompositeNode(grammarAccess.getFaculteAccess().getNiveauxNiveauParserRuleCall_4_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    lv_niveaux_6_0=ruleNiveau();
-
-                    state._fsp--;
+                if ( (LA1_0==12) ) {
+                    alt1=1;
+                }
+                else if ( (LA1_0==20) ) {
+                    alt1=2;
+                }
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getFaculteRule());
-                    						}
-                    						add(
-                    							current,
-                    							"niveaux",
-                    							lv_niveaux_6_0,
-                    							"fil.xtext.LangFil.Niveau");
-                    						afterParserOrEnumRuleCall();
-                    					
+                switch (alt1) {
+            	case 1 :
+            	    // InternalLangFil.g:110:4: ( (lv_niveaux_3_0= ruleNiveau ) )
+            	    {
+            	    // InternalLangFil.g:110:4: ( (lv_niveaux_3_0= ruleNiveau ) )
+            	    // InternalLangFil.g:111:5: (lv_niveaux_3_0= ruleNiveau )
+            	    {
+            	    // InternalLangFil.g:111:5: (lv_niveaux_3_0= ruleNiveau )
+            	    // InternalLangFil.g:112:6: lv_niveaux_3_0= ruleNiveau
+            	    {
 
-                    }
+            	    						newCompositeNode(grammarAccess.getFaculteAccess().getNiveauxNiveauParserRuleCall_3_0_0());
+            	    					
+            	    pushFollow(FOLLOW_4);
+            	    lv_niveaux_3_0=ruleNiveau();
 
-
-                    }
-
-                    // InternalLangFil.g:141:4: (otherlv_7= ',' ( (lv_niveaux_8_0= ruleNiveau ) ) )*
-                    loop1:
-                    do {
-                        int alt1=2;
-                        int LA1_0 = input.LA(1);
-
-                        if ( (LA1_0==14) ) {
-                            alt1=1;
-                        }
+            	    state._fsp--;
 
 
-                        switch (alt1) {
-                    	case 1 :
-                    	    // InternalLangFil.g:142:5: otherlv_7= ',' ( (lv_niveaux_8_0= ruleNiveau ) )
-                    	    {
-                    	    otherlv_7=(Token)match(input,14,FOLLOW_6); 
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getFaculteRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"niveaux",
+            	    							lv_niveaux_3_0,
+            	    							"fil.xtext.LangFil.Niveau");
+            	    						afterParserOrEnumRuleCall();
+            	    					
 
-                    	    					newLeafNode(otherlv_7, grammarAccess.getFaculteAccess().getCommaKeyword_4_3_0());
-                    	    				
-                    	    // InternalLangFil.g:146:5: ( (lv_niveaux_8_0= ruleNiveau ) )
-                    	    // InternalLangFil.g:147:6: (lv_niveaux_8_0= ruleNiveau )
-                    	    {
-                    	    // InternalLangFil.g:147:6: (lv_niveaux_8_0= ruleNiveau )
-                    	    // InternalLangFil.g:148:7: lv_niveaux_8_0= ruleNiveau
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getFaculteAccess().getNiveauxNiveauParserRuleCall_4_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    lv_niveaux_8_0=ruleNiveau();
-
-                    	    state._fsp--;
+            	    }
 
 
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getFaculteRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"niveaux",
-                    	    								lv_niveaux_8_0,
-                    	    								"fil.xtext.LangFil.Niveau");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
+            	    }
 
 
-                    	    }
+            	    }
+            	    break;
+            	case 2 :
+            	    // InternalLangFil.g:130:4: ( (lv_intervenants_4_0= ruleIntervenant ) )
+            	    {
+            	    // InternalLangFil.g:130:4: ( (lv_intervenants_4_0= ruleIntervenant ) )
+            	    // InternalLangFil.g:131:5: (lv_intervenants_4_0= ruleIntervenant )
+            	    {
+            	    // InternalLangFil.g:131:5: (lv_intervenants_4_0= ruleIntervenant )
+            	    // InternalLangFil.g:132:6: lv_intervenants_4_0= ruleIntervenant
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getFaculteAccess().getIntervenantsIntervenantParserRuleCall_3_1_0());
+            	    					
+            	    pushFollow(FOLLOW_4);
+            	    lv_intervenants_4_0=ruleIntervenant();
+
+            	    state._fsp--;
 
 
-                    	    }
-                    	    break;
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getFaculteRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"intervenants",
+            	    							lv_intervenants_4_0,
+            	    							"fil.xtext.LangFil.Intervenant");
+            	    						afterParserOrEnumRuleCall();
+            	    					
 
-                    	default :
-                    	    break loop1;
-                        }
-                    } while (true);
-
-                    otherlv_9=(Token)match(input,15,FOLLOW_8); 
-
-                    				newLeafNode(otherlv_9, grammarAccess.getFaculteAccess().getRightCurlyBracketKeyword_4_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalLangFil.g:171:3: (otherlv_10= 'intervenants' otherlv_11= '{' ( (lv_intervenants_12_0= ruleIntervenant ) ) (otherlv_13= ',' ( (lv_intervenants_14_0= ruleIntervenant ) ) )* otherlv_15= '}' )?
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==16) ) {
-                alt4=1;
-            }
-            switch (alt4) {
-                case 1 :
-                    // InternalLangFil.g:172:4: otherlv_10= 'intervenants' otherlv_11= '{' ( (lv_intervenants_12_0= ruleIntervenant ) ) (otherlv_13= ',' ( (lv_intervenants_14_0= ruleIntervenant ) ) )* otherlv_15= '}'
-                    {
-                    otherlv_10=(Token)match(input,16,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getFaculteAccess().getIntervenantsKeyword_5_0());
-                    			
-                    otherlv_11=(Token)match(input,12,FOLLOW_9); 
-
-                    				newLeafNode(otherlv_11, grammarAccess.getFaculteAccess().getLeftCurlyBracketKeyword_5_1());
-                    			
-                    // InternalLangFil.g:180:4: ( (lv_intervenants_12_0= ruleIntervenant ) )
-                    // InternalLangFil.g:181:5: (lv_intervenants_12_0= ruleIntervenant )
-                    {
-                    // InternalLangFil.g:181:5: (lv_intervenants_12_0= ruleIntervenant )
-                    // InternalLangFil.g:182:6: lv_intervenants_12_0= ruleIntervenant
-                    {
-
-                    						newCompositeNode(grammarAccess.getFaculteAccess().getIntervenantsIntervenantParserRuleCall_5_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    lv_intervenants_12_0=ruleIntervenant();
-
-                    state._fsp--;
+            	    }
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getFaculteRule());
-                    						}
-                    						add(
-                    							current,
-                    							"intervenants",
-                    							lv_intervenants_12_0,
-                    							"fil.xtext.LangFil.Intervenant");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
+            	    }
 
 
-                    }
+            	    }
+            	    break;
 
-                    // InternalLangFil.g:199:4: (otherlv_13= ',' ( (lv_intervenants_14_0= ruleIntervenant ) ) )*
-                    loop3:
-                    do {
-                        int alt3=2;
-                        int LA3_0 = input.LA(1);
+            	default :
+            	    break loop1;
+                }
+            } while (true);
 
-                        if ( (LA3_0==14) ) {
-                            alt3=1;
-                        }
-
-
-                        switch (alt3) {
-                    	case 1 :
-                    	    // InternalLangFil.g:200:5: otherlv_13= ',' ( (lv_intervenants_14_0= ruleIntervenant ) )
-                    	    {
-                    	    otherlv_13=(Token)match(input,14,FOLLOW_9); 
-
-                    	    					newLeafNode(otherlv_13, grammarAccess.getFaculteAccess().getCommaKeyword_5_3_0());
-                    	    				
-                    	    // InternalLangFil.g:204:5: ( (lv_intervenants_14_0= ruleIntervenant ) )
-                    	    // InternalLangFil.g:205:6: (lv_intervenants_14_0= ruleIntervenant )
-                    	    {
-                    	    // InternalLangFil.g:205:6: (lv_intervenants_14_0= ruleIntervenant )
-                    	    // InternalLangFil.g:206:7: lv_intervenants_14_0= ruleIntervenant
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getFaculteAccess().getIntervenantsIntervenantParserRuleCall_5_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    lv_intervenants_14_0=ruleIntervenant();
-
-                    	    state._fsp--;
-
-
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getFaculteRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"intervenants",
-                    	    								lv_intervenants_14_0,
-                    	    								"fil.xtext.LangFil.Intervenant");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop3;
-                        }
-                    } while (true);
-
-                    otherlv_15=(Token)match(input,15,FOLLOW_10); 
-
-                    				newLeafNode(otherlv_15, grammarAccess.getFaculteAccess().getRightCurlyBracketKeyword_5_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            otherlv_16=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_16, grammarAccess.getFaculteAccess().getRightCurlyBracketKeyword_6());
-            		
 
             }
 
@@ -494,7 +320,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDocument"
-    // InternalLangFil.g:237:1: entryRuleDocument returns [EObject current=null] : iv_ruleDocument= ruleDocument EOF ;
+    // InternalLangFil.g:154:1: entryRuleDocument returns [EObject current=null] : iv_ruleDocument= ruleDocument EOF ;
     public final EObject entryRuleDocument() throws RecognitionException {
         EObject current = null;
 
@@ -502,8 +328,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:237:49: (iv_ruleDocument= ruleDocument EOF )
-            // InternalLangFil.g:238:2: iv_ruleDocument= ruleDocument EOF
+            // InternalLangFil.g:154:49: (iv_ruleDocument= ruleDocument EOF )
+            // InternalLangFil.g:155:2: iv_ruleDocument= ruleDocument EOF
             {
              newCompositeNode(grammarAccess.getDocumentRule()); 
             pushFollow(FOLLOW_1);
@@ -530,7 +356,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDocument"
-    // InternalLangFil.g:244:1: ruleDocument returns [EObject current=null] : (this_Video_0= ruleVideo | this_Fichier_1= ruleFichier | this_Audio_2= ruleAudio ) ;
+    // InternalLangFil.g:161:1: ruleDocument returns [EObject current=null] : (this_Video_0= ruleVideo | this_Fichier_1= ruleFichier | this_Audio_2= ruleAudio ) ;
     public final EObject ruleDocument() throws RecognitionException {
         EObject current = null;
 
@@ -545,37 +371,37 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLangFil.g:250:2: ( (this_Video_0= ruleVideo | this_Fichier_1= ruleFichier | this_Audio_2= ruleAudio ) )
-            // InternalLangFil.g:251:2: (this_Video_0= ruleVideo | this_Fichier_1= ruleFichier | this_Audio_2= ruleAudio )
+            // InternalLangFil.g:167:2: ( (this_Video_0= ruleVideo | this_Fichier_1= ruleFichier | this_Audio_2= ruleAudio ) )
+            // InternalLangFil.g:168:2: (this_Video_0= ruleVideo | this_Fichier_1= ruleFichier | this_Audio_2= ruleAudio )
             {
-            // InternalLangFil.g:251:2: (this_Video_0= ruleVideo | this_Fichier_1= ruleFichier | this_Audio_2= ruleAudio )
-            int alt5=3;
+            // InternalLangFil.g:168:2: (this_Video_0= ruleVideo | this_Fichier_1= ruleFichier | this_Audio_2= ruleAudio )
+            int alt2=3;
             switch ( input.LA(1) ) {
-            case 39:
+            case 30:
                 {
-                alt5=1;
+                alt2=1;
                 }
                 break;
-            case 43:
+            case 34:
                 {
-                alt5=2;
+                alt2=2;
                 }
                 break;
-            case 45:
+            case 36:
                 {
-                alt5=3;
+                alt2=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt5) {
+            switch (alt2) {
                 case 1 :
-                    // InternalLangFil.g:252:3: this_Video_0= ruleVideo
+                    // InternalLangFil.g:169:3: this_Video_0= ruleVideo
                     {
 
                     			newCompositeNode(grammarAccess.getDocumentAccess().getVideoParserRuleCall_0());
@@ -593,7 +419,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLangFil.g:261:3: this_Fichier_1= ruleFichier
+                    // InternalLangFil.g:178:3: this_Fichier_1= ruleFichier
                     {
 
                     			newCompositeNode(grammarAccess.getDocumentAccess().getFichierParserRuleCall_1());
@@ -611,7 +437,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalLangFil.g:270:3: this_Audio_2= ruleAudio
+                    // InternalLangFil.g:187:3: this_Audio_2= ruleAudio
                     {
 
                     			newCompositeNode(grammarAccess.getDocumentAccess().getAudioParserRuleCall_2());
@@ -651,7 +477,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalLangFil.g:282:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalLangFil.g:199:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -659,8 +485,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:282:47: (iv_ruleEString= ruleEString EOF )
-            // InternalLangFil.g:283:2: iv_ruleEString= ruleEString EOF
+            // InternalLangFil.g:199:47: (iv_ruleEString= ruleEString EOF )
+            // InternalLangFil.g:200:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -687,7 +513,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalLangFil.g:289:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalLangFil.g:206:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -698,28 +524,28 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLangFil.g:295:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalLangFil.g:296:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalLangFil.g:212:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalLangFil.g:213:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalLangFil.g:296:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalLangFil.g:213:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-            if ( (LA6_0==RULE_STRING) ) {
-                alt6=1;
+            if ( (LA3_0==RULE_STRING) ) {
+                alt3=1;
             }
-            else if ( (LA6_0==RULE_ID) ) {
-                alt6=2;
+            else if ( (LA3_0==RULE_ID) ) {
+                alt3=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
-            switch (alt6) {
+            switch (alt3) {
                 case 1 :
-                    // InternalLangFil.g:297:3: this_STRING_0= RULE_STRING
+                    // InternalLangFil.g:214:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -732,7 +558,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLangFil.g:305:3: this_ID_1= RULE_ID
+                    // InternalLangFil.g:222:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -767,7 +593,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNiveau"
-    // InternalLangFil.g:316:1: entryRuleNiveau returns [EObject current=null] : iv_ruleNiveau= ruleNiveau EOF ;
+    // InternalLangFil.g:233:1: entryRuleNiveau returns [EObject current=null] : iv_ruleNiveau= ruleNiveau EOF ;
     public final EObject entryRuleNiveau() throws RecognitionException {
         EObject current = null;
 
@@ -775,8 +601,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:316:47: (iv_ruleNiveau= ruleNiveau EOF )
-            // InternalLangFil.g:317:2: iv_ruleNiveau= ruleNiveau EOF
+            // InternalLangFil.g:233:47: (iv_ruleNiveau= ruleNiveau EOF )
+            // InternalLangFil.g:234:2: iv_ruleNiveau= ruleNiveau EOF
             {
              newCompositeNode(grammarAccess.getNiveauRule()); 
             pushFollow(FOLLOW_1);
@@ -803,54 +629,41 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNiveau"
-    // InternalLangFil.g:323:1: ruleNiveau returns [EObject current=null] : ( () otherlv_1= 'Niveau' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )? (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'formations' otherlv_13= '{' ( (lv_formations_14_0= ruleFormation ) ) (otherlv_15= ',' ( (lv_formations_16_0= ruleFormation ) ) )* otherlv_17= '}' )? (otherlv_18= 'presentation' ( (lv_presentation_19_0= rulePresentation ) ) )? (otherlv_20= 'ues' otherlv_21= '{' ( (lv_ues_22_0= ruleUE ) ) (otherlv_23= ',' ( (lv_ues_24_0= ruleUE ) ) )* otherlv_25= '}' )? otherlv_26= '}' ) ;
+    // InternalLangFil.g:240:1: ruleNiveau returns [EObject current=null] : ( () otherlv_1= 'Niveau' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )* ) ) ) otherlv_16= '}' ) ;
     public final EObject ruleNiveau() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
+        Token otherlv_5=null;
         Token otherlv_7=null;
-        Token otherlv_9=null;
-        Token otherlv_11=null;
+        Token otherlv_8=null;
+        Token otherlv_10=null;
         Token otherlv_12=null;
-        Token otherlv_13=null;
-        Token otherlv_15=null;
-        Token otherlv_17=null;
-        Token otherlv_18=null;
-        Token otherlv_20=null;
-        Token otherlv_21=null;
-        Token otherlv_23=null;
-        Token otherlv_25=null;
-        Token otherlv_26=null;
+        Token otherlv_16=null;
         AntlrDatatypeRuleToken lv_name_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_pseudo_5_0 = null;
+        AntlrDatatypeRuleToken lv_pseudo_6_0 = null;
+
+        EObject lv_presentation_13_0 = null;
 
         EObject lv_formations_14_0 = null;
 
-        EObject lv_formations_16_0 = null;
-
-        EObject lv_presentation_19_0 = null;
-
-        EObject lv_ues_22_0 = null;
-
-        EObject lv_ues_24_0 = null;
+        EObject lv_ues_15_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLangFil.g:329:2: ( ( () otherlv_1= 'Niveau' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )? (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'formations' otherlv_13= '{' ( (lv_formations_14_0= ruleFormation ) ) (otherlv_15= ',' ( (lv_formations_16_0= ruleFormation ) ) )* otherlv_17= '}' )? (otherlv_18= 'presentation' ( (lv_presentation_19_0= rulePresentation ) ) )? (otherlv_20= 'ues' otherlv_21= '{' ( (lv_ues_22_0= ruleUE ) ) (otherlv_23= ',' ( (lv_ues_24_0= ruleUE ) ) )* otherlv_25= '}' )? otherlv_26= '}' ) )
-            // InternalLangFil.g:330:2: ( () otherlv_1= 'Niveau' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )? (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'formations' otherlv_13= '{' ( (lv_formations_14_0= ruleFormation ) ) (otherlv_15= ',' ( (lv_formations_16_0= ruleFormation ) ) )* otherlv_17= '}' )? (otherlv_18= 'presentation' ( (lv_presentation_19_0= rulePresentation ) ) )? (otherlv_20= 'ues' otherlv_21= '{' ( (lv_ues_22_0= ruleUE ) ) (otherlv_23= ',' ( (lv_ues_24_0= ruleUE ) ) )* otherlv_25= '}' )? otherlv_26= '}' )
+            // InternalLangFil.g:246:2: ( ( () otherlv_1= 'Niveau' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )* ) ) ) otherlv_16= '}' ) )
+            // InternalLangFil.g:247:2: ( () otherlv_1= 'Niveau' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )* ) ) ) otherlv_16= '}' )
             {
-            // InternalLangFil.g:330:2: ( () otherlv_1= 'Niveau' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )? (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'formations' otherlv_13= '{' ( (lv_formations_14_0= ruleFormation ) ) (otherlv_15= ',' ( (lv_formations_16_0= ruleFormation ) ) )* otherlv_17= '}' )? (otherlv_18= 'presentation' ( (lv_presentation_19_0= rulePresentation ) ) )? (otherlv_20= 'ues' otherlv_21= '{' ( (lv_ues_22_0= ruleUE ) ) (otherlv_23= ',' ( (lv_ues_24_0= ruleUE ) ) )* otherlv_25= '}' )? otherlv_26= '}' )
-            // InternalLangFil.g:331:3: () otherlv_1= 'Niveau' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )? (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'formations' otherlv_13= '{' ( (lv_formations_14_0= ruleFormation ) ) (otherlv_15= ',' ( (lv_formations_16_0= ruleFormation ) ) )* otherlv_17= '}' )? (otherlv_18= 'presentation' ( (lv_presentation_19_0= rulePresentation ) ) )? (otherlv_20= 'ues' otherlv_21= '{' ( (lv_ues_22_0= ruleUE ) ) (otherlv_23= ',' ( (lv_ues_24_0= ruleUE ) ) )* otherlv_25= '}' )? otherlv_26= '}'
+            // InternalLangFil.g:247:2: ( () otherlv_1= 'Niveau' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )* ) ) ) otherlv_16= '}' )
+            // InternalLangFil.g:248:3: () otherlv_1= 'Niveau' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )* ) ) ) otherlv_16= '}'
             {
-            // InternalLangFil.g:331:3: ()
-            // InternalLangFil.g:332:4: 
+            // InternalLangFil.g:248:3: ()
+            // InternalLangFil.g:249:4: 
             {
 
             				current = forceCreateModelElement(
@@ -860,20 +673,20 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,17,FOLLOW_3); 
+            otherlv_1=(Token)match(input,12,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getNiveauAccess().getNiveauKeyword_1());
             		
-            // InternalLangFil.g:342:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalLangFil.g:343:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:259:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalLangFil.g:260:4: (lv_name_2_0= ruleEString )
             {
-            // InternalLangFil.g:343:4: (lv_name_2_0= ruleEString )
-            // InternalLangFil.g:344:5: lv_name_2_0= ruleEString
+            // InternalLangFil.g:260:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:261:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getNiveauAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -895,468 +708,541 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_11); 
+            otherlv_3=(Token)match(input,13,FOLLOW_6); 
 
             			newLeafNode(otherlv_3, grammarAccess.getNiveauAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalLangFil.g:365:3: (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalLangFil.g:282:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )* ) ) )
+            // InternalLangFil.g:283:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )* ) )
+            {
+            // InternalLangFil.g:283:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )* ) )
+            // InternalLangFil.g:284:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )* )
+            {
+             
+            				  getUnorderedGroupHelper().enter(grammarAccess.getNiveauAccess().getUnorderedGroup_4());
+            				
+            // InternalLangFil.g:287:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )* )
+            // InternalLangFil.g:288:6: ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )*
+            {
+            // InternalLangFil.g:288:6: ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) ) | ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) ) )*
+            loop7:
+            do {
+                int alt7=6;
+                int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==18) ) {
-                alt7=1;
+                if ( LA7_0 == 14 && getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 0) ) {
+                    alt7=1;
+                }
+                else if ( LA7_0 == 15 && getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 1) ) {
+                    alt7=2;
+                }
+                else if ( LA7_0 == 24 && getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 2) ) {
+                    alt7=3;
+                }
+                else if ( LA7_0 == 22 && getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 3) ) {
+                    alt7=4;
+                }
+                else if ( LA7_0 == 25 && getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 4) ) {
+                    alt7=5;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // InternalLangFil.g:289:4: ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) )
+            	    {
+            	    // InternalLangFil.g:289:4: ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) )
+            	    // InternalLangFil.g:290:5: {...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 0) ) {
+            	        throw new FailedPredicateException(input, "ruleNiveau", "getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 0)");
+            	    }
+            	    // InternalLangFil.g:290:103: ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) )
+            	    // InternalLangFil.g:291:6: ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 0);
+            	    					
+            	    // InternalLangFil.g:294:9: ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) )
+            	    // InternalLangFil.g:294:10: {...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleNiveau", "true");
+            	    }
+            	    // InternalLangFil.g:294:19: (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) )
+            	    // InternalLangFil.g:294:20: otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) )
+            	    {
+            	    otherlv_5=(Token)match(input,14,FOLLOW_3); 
+
+            	    									newLeafNode(otherlv_5, grammarAccess.getNiveauAccess().getPseudoKeyword_4_0_0());
+            	    								
+            	    // InternalLangFil.g:298:9: ( (lv_pseudo_6_0= ruleEString ) )
+            	    // InternalLangFil.g:299:10: (lv_pseudo_6_0= ruleEString )
+            	    {
+            	    // InternalLangFil.g:299:10: (lv_pseudo_6_0= ruleEString )
+            	    // InternalLangFil.g:300:11: lv_pseudo_6_0= ruleEString
+            	    {
+
+            	    											newCompositeNode(grammarAccess.getNiveauAccess().getPseudoEStringParserRuleCall_4_0_1_0());
+            	    										
+            	    pushFollow(FOLLOW_6);
+            	    lv_pseudo_6_0=ruleEString();
+
+            	    state._fsp--;
+
+
+            	    											if (current==null) {
+            	    												current = createModelElementForParent(grammarAccess.getNiveauRule());
+            	    											}
+            	    											set(
+            	    												current,
+            	    												"pseudo",
+            	    												lv_pseudo_6_0,
+            	    												"fil.xtext.LangFil.EString");
+            	    											afterParserOrEnumRuleCall();
+            	    										
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNiveauAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 2 :
+            	    // InternalLangFil.g:323:4: ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) )
+            	    {
+            	    // InternalLangFil.g:323:4: ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) )
+            	    // InternalLangFil.g:324:5: {...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 1) ) {
+            	        throw new FailedPredicateException(input, "ruleNiveau", "getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 1)");
+            	    }
+            	    // InternalLangFil.g:324:103: ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) )
+            	    // InternalLangFil.g:325:6: ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 1);
+            	    					
+            	    // InternalLangFil.g:328:9: ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) )
+            	    // InternalLangFil.g:328:10: {...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleNiveau", "true");
+            	    }
+            	    // InternalLangFil.g:328:19: (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )
+            	    // InternalLangFil.g:328:20: otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')'
+            	    {
+            	    otherlv_7=(Token)match(input,15,FOLLOW_7); 
+
+            	    									newLeafNode(otherlv_7, grammarAccess.getNiveauAccess().getResponsablesKeyword_4_1_0());
+            	    								
+            	    otherlv_8=(Token)match(input,16,FOLLOW_3); 
+
+            	    									newLeafNode(otherlv_8, grammarAccess.getNiveauAccess().getLeftParenthesisKeyword_4_1_1());
+            	    								
+            	    // InternalLangFil.g:336:9: ( ( ruleEString ) )
+            	    // InternalLangFil.g:337:10: ( ruleEString )
+            	    {
+            	    // InternalLangFil.g:337:10: ( ruleEString )
+            	    // InternalLangFil.g:338:11: ruleEString
+            	    {
+
+            	    											if (current==null) {
+            	    												current = createModelElement(grammarAccess.getNiveauRule());
+            	    											}
+            	    										
+
+            	    											newCompositeNode(grammarAccess.getNiveauAccess().getResponsablesIntervenantCrossReference_4_1_2_0());
+            	    										
+            	    pushFollow(FOLLOW_8);
+            	    ruleEString();
+
+            	    state._fsp--;
+
+
+            	    											afterParserOrEnumRuleCall();
+            	    										
+
+            	    }
+
+
+            	    }
+
+            	    // InternalLangFil.g:352:9: (otherlv_10= ',' ( ( ruleEString ) ) )*
+            	    loop4:
+            	    do {
+            	        int alt4=2;
+            	        int LA4_0 = input.LA(1);
+
+            	        if ( (LA4_0==17) ) {
+            	            alt4=1;
+            	        }
+
+
+            	        switch (alt4) {
+            	    	case 1 :
+            	    	    // InternalLangFil.g:353:10: otherlv_10= ',' ( ( ruleEString ) )
+            	    	    {
+            	    	    otherlv_10=(Token)match(input,17,FOLLOW_3); 
+
+            	    	    										newLeafNode(otherlv_10, grammarAccess.getNiveauAccess().getCommaKeyword_4_1_3_0());
+            	    	    									
+            	    	    // InternalLangFil.g:357:10: ( ( ruleEString ) )
+            	    	    // InternalLangFil.g:358:11: ( ruleEString )
+            	    	    {
+            	    	    // InternalLangFil.g:358:11: ( ruleEString )
+            	    	    // InternalLangFil.g:359:12: ruleEString
+            	    	    {
+
+            	    	    												if (current==null) {
+            	    	    													current = createModelElement(grammarAccess.getNiveauRule());
+            	    	    												}
+            	    	    											
+
+            	    	    												newCompositeNode(grammarAccess.getNiveauAccess().getResponsablesIntervenantCrossReference_4_1_3_1_0());
+            	    	    											
+            	    	    pushFollow(FOLLOW_8);
+            	    	    ruleEString();
+
+            	    	    state._fsp--;
+
+
+            	    	    												afterParserOrEnumRuleCall();
+            	    	    											
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop4;
+            	        }
+            	    } while (true);
+
+            	    otherlv_12=(Token)match(input,18,FOLLOW_6); 
+
+            	    									newLeafNode(otherlv_12, grammarAccess.getNiveauAccess().getRightParenthesisKeyword_4_1_4());
+            	    								
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNiveauAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 3 :
+            	    // InternalLangFil.g:384:4: ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) )
+            	    {
+            	    // InternalLangFil.g:384:4: ({...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) ) )
+            	    // InternalLangFil.g:385:5: {...}? => ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 2) ) {
+            	        throw new FailedPredicateException(input, "ruleNiveau", "getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 2)");
+            	    }
+            	    // InternalLangFil.g:385:103: ( ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) ) )
+            	    // InternalLangFil.g:386:6: ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 2);
+            	    					
+            	    // InternalLangFil.g:389:9: ({...}? => ( (lv_presentation_13_0= rulePresentation ) ) )
+            	    // InternalLangFil.g:389:10: {...}? => ( (lv_presentation_13_0= rulePresentation ) )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleNiveau", "true");
+            	    }
+            	    // InternalLangFil.g:389:19: ( (lv_presentation_13_0= rulePresentation ) )
+            	    // InternalLangFil.g:389:20: (lv_presentation_13_0= rulePresentation )
+            	    {
+            	    // InternalLangFil.g:389:20: (lv_presentation_13_0= rulePresentation )
+            	    // InternalLangFil.g:390:10: lv_presentation_13_0= rulePresentation
+            	    {
+
+            	    										newCompositeNode(grammarAccess.getNiveauAccess().getPresentationPresentationParserRuleCall_4_2_0());
+            	    									
+            	    pushFollow(FOLLOW_6);
+            	    lv_presentation_13_0=rulePresentation();
+
+            	    state._fsp--;
+
+
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getNiveauRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"presentation",
+            	    											lv_presentation_13_0,
+            	    											"fil.xtext.LangFil.Presentation");
+            	    										afterParserOrEnumRuleCall();
+            	    									
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNiveauAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 4 :
+            	    // InternalLangFil.g:412:4: ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) )
+            	    {
+            	    // InternalLangFil.g:412:4: ({...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ ) )
+            	    // InternalLangFil.g:413:5: {...}? => ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 3) ) {
+            	        throw new FailedPredicateException(input, "ruleNiveau", "getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 3)");
+            	    }
+            	    // InternalLangFil.g:413:103: ( ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+ )
+            	    // InternalLangFil.g:414:6: ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 3);
+            	    					
+            	    // InternalLangFil.g:417:9: ({...}? => ( (lv_formations_14_0= ruleFormation ) ) )+
+            	    int cnt5=0;
+            	    loop5:
+            	    do {
+            	        int alt5=2;
+            	        int LA5_0 = input.LA(1);
+
+            	        if ( (LA5_0==22) ) {
+            	            int LA5_2 = input.LA(2);
+
+            	            if ( ((true)) ) {
+            	                alt5=1;
+            	            }
+
+
+            	        }
+
+
+            	        switch (alt5) {
+            	    	case 1 :
+            	    	    // InternalLangFil.g:417:10: {...}? => ( (lv_formations_14_0= ruleFormation ) )
+            	    	    {
+            	    	    if ( !((true)) ) {
+            	    	        throw new FailedPredicateException(input, "ruleNiveau", "true");
+            	    	    }
+            	    	    // InternalLangFil.g:417:19: ( (lv_formations_14_0= ruleFormation ) )
+            	    	    // InternalLangFil.g:417:20: (lv_formations_14_0= ruleFormation )
+            	    	    {
+            	    	    // InternalLangFil.g:417:20: (lv_formations_14_0= ruleFormation )
+            	    	    // InternalLangFil.g:418:10: lv_formations_14_0= ruleFormation
+            	    	    {
+
+            	    	    										newCompositeNode(grammarAccess.getNiveauAccess().getFormationsFormationParserRuleCall_4_3_0());
+            	    	    									
+            	    	    pushFollow(FOLLOW_6);
+            	    	    lv_formations_14_0=ruleFormation();
+
+            	    	    state._fsp--;
+
+
+            	    	    										if (current==null) {
+            	    	    											current = createModelElementForParent(grammarAccess.getNiveauRule());
+            	    	    										}
+            	    	    										add(
+            	    	    											current,
+            	    	    											"formations",
+            	    	    											lv_formations_14_0,
+            	    	    											"fil.xtext.LangFil.Formation");
+            	    	    										afterParserOrEnumRuleCall();
+            	    	    									
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    if ( cnt5 >= 1 ) break loop5;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(5, input);
+            	                throw eee;
+            	        }
+            	        cnt5++;
+            	    } while (true);
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNiveauAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 5 :
+            	    // InternalLangFil.g:440:4: ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) )
+            	    {
+            	    // InternalLangFil.g:440:4: ({...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ ) )
+            	    // InternalLangFil.g:441:5: {...}? => ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 4) ) {
+            	        throw new FailedPredicateException(input, "ruleNiveau", "getUnorderedGroupHelper().canSelect(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 4)");
+            	    }
+            	    // InternalLangFil.g:441:103: ( ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+ )
+            	    // InternalLangFil.g:442:6: ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), 4);
+            	    					
+            	    // InternalLangFil.g:445:9: ({...}? => ( (lv_ues_15_0= ruleUE ) ) )+
+            	    int cnt6=0;
+            	    loop6:
+            	    do {
+            	        int alt6=2;
+            	        int LA6_0 = input.LA(1);
+
+            	        if ( (LA6_0==25) ) {
+            	            int LA6_2 = input.LA(2);
+
+            	            if ( ((true)) ) {
+            	                alt6=1;
+            	            }
+
+
+            	        }
+
+
+            	        switch (alt6) {
+            	    	case 1 :
+            	    	    // InternalLangFil.g:445:10: {...}? => ( (lv_ues_15_0= ruleUE ) )
+            	    	    {
+            	    	    if ( !((true)) ) {
+            	    	        throw new FailedPredicateException(input, "ruleNiveau", "true");
+            	    	    }
+            	    	    // InternalLangFil.g:445:19: ( (lv_ues_15_0= ruleUE ) )
+            	    	    // InternalLangFil.g:445:20: (lv_ues_15_0= ruleUE )
+            	    	    {
+            	    	    // InternalLangFil.g:445:20: (lv_ues_15_0= ruleUE )
+            	    	    // InternalLangFil.g:446:10: lv_ues_15_0= ruleUE
+            	    	    {
+
+            	    	    										newCompositeNode(grammarAccess.getNiveauAccess().getUesUEParserRuleCall_4_4_0());
+            	    	    									
+            	    	    pushFollow(FOLLOW_6);
+            	    	    lv_ues_15_0=ruleUE();
+
+            	    	    state._fsp--;
+
+
+            	    	    										if (current==null) {
+            	    	    											current = createModelElementForParent(grammarAccess.getNiveauRule());
+            	    	    										}
+            	    	    										add(
+            	    	    											current,
+            	    	    											"ues",
+            	    	    											lv_ues_15_0,
+            	    	    											"fil.xtext.LangFil.UE");
+            	    	    										afterParserOrEnumRuleCall();
+            	    	    									
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    if ( cnt6 >= 1 ) break loop6;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(6, input);
+            	                throw eee;
+            	        }
+            	        cnt6++;
+            	    } while (true);
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getNiveauAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+
             }
-            switch (alt7) {
-                case 1 :
-                    // InternalLangFil.g:366:4: otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) )
-                    {
-                    otherlv_4=(Token)match(input,18,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getNiveauAccess().getPseudoKeyword_4_0());
-                    			
-                    // InternalLangFil.g:370:4: ( (lv_pseudo_5_0= ruleEString ) )
-                    // InternalLangFil.g:371:5: (lv_pseudo_5_0= ruleEString )
-                    {
-                    // InternalLangFil.g:371:5: (lv_pseudo_5_0= ruleEString )
-                    // InternalLangFil.g:372:6: lv_pseudo_5_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getNiveauAccess().getPseudoEStringParserRuleCall_4_1_0());
-                    					
-                    pushFollow(FOLLOW_12);
-                    lv_pseudo_5_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNiveauRule());
-                    						}
-                    						set(
-                    							current,
-                    							"pseudo",
-                    							lv_pseudo_5_0,
-                    							"fil.xtext.LangFil.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
-            // InternalLangFil.g:390:3: (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==19) ) {
-                alt9=1;
-            }
-            switch (alt9) {
-                case 1 :
-                    // InternalLangFil.g:391:4: otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')'
-                    {
-                    otherlv_6=(Token)match(input,19,FOLLOW_13); 
-
-                    				newLeafNode(otherlv_6, grammarAccess.getNiveauAccess().getResponsablesKeyword_5_0());
-                    			
-                    otherlv_7=(Token)match(input,20,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_7, grammarAccess.getNiveauAccess().getLeftParenthesisKeyword_5_1());
-                    			
-                    // InternalLangFil.g:399:4: ( ( ruleEString ) )
-                    // InternalLangFil.g:400:5: ( ruleEString )
-                    {
-                    // InternalLangFil.g:400:5: ( ruleEString )
-                    // InternalLangFil.g:401:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getNiveauRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getNiveauAccess().getResponsablesIntervenantCrossReference_5_2_0());
-                    					
-                    pushFollow(FOLLOW_14);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalLangFil.g:415:4: (otherlv_9= ',' ( ( ruleEString ) ) )*
-                    loop8:
-                    do {
-                        int alt8=2;
-                        int LA8_0 = input.LA(1);
-
-                        if ( (LA8_0==14) ) {
-                            alt8=1;
-                        }
-
-
-                        switch (alt8) {
-                    	case 1 :
-                    	    // InternalLangFil.g:416:5: otherlv_9= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_9=(Token)match(input,14,FOLLOW_3); 
-
-                    	    					newLeafNode(otherlv_9, grammarAccess.getNiveauAccess().getCommaKeyword_5_3_0());
-                    	    				
-                    	    // InternalLangFil.g:420:5: ( ( ruleEString ) )
-                    	    // InternalLangFil.g:421:6: ( ruleEString )
-                    	    {
-                    	    // InternalLangFil.g:421:6: ( ruleEString )
-                    	    // InternalLangFil.g:422:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getNiveauRule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getNiveauAccess().getResponsablesIntervenantCrossReference_5_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_14);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop8;
-                        }
-                    } while (true);
-
-                    otherlv_11=(Token)match(input,21,FOLLOW_15); 
-
-                    				newLeafNode(otherlv_11, grammarAccess.getNiveauAccess().getRightParenthesisKeyword_5_4());
-                    			
-
-                    }
-                    break;
+             
+            				  getUnorderedGroupHelper().leave(grammarAccess.getNiveauAccess().getUnorderedGroup_4());
+            				
 
             }
 
-            // InternalLangFil.g:442:3: (otherlv_12= 'formations' otherlv_13= '{' ( (lv_formations_14_0= ruleFormation ) ) (otherlv_15= ',' ( (lv_formations_16_0= ruleFormation ) ) )* otherlv_17= '}' )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            otherlv_16=(Token)match(input,19,FOLLOW_2); 
 
-            if ( (LA11_0==22) ) {
-                alt11=1;
-            }
-            switch (alt11) {
-                case 1 :
-                    // InternalLangFil.g:443:4: otherlv_12= 'formations' otherlv_13= '{' ( (lv_formations_14_0= ruleFormation ) ) (otherlv_15= ',' ( (lv_formations_16_0= ruleFormation ) ) )* otherlv_17= '}'
-                    {
-                    otherlv_12=(Token)match(input,22,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_12, grammarAccess.getNiveauAccess().getFormationsKeyword_6_0());
-                    			
-                    otherlv_13=(Token)match(input,12,FOLLOW_16); 
-
-                    				newLeafNode(otherlv_13, grammarAccess.getNiveauAccess().getLeftCurlyBracketKeyword_6_1());
-                    			
-                    // InternalLangFil.g:451:4: ( (lv_formations_14_0= ruleFormation ) )
-                    // InternalLangFil.g:452:5: (lv_formations_14_0= ruleFormation )
-                    {
-                    // InternalLangFil.g:452:5: (lv_formations_14_0= ruleFormation )
-                    // InternalLangFil.g:453:6: lv_formations_14_0= ruleFormation
-                    {
-
-                    						newCompositeNode(grammarAccess.getNiveauAccess().getFormationsFormationParserRuleCall_6_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    lv_formations_14_0=ruleFormation();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNiveauRule());
-                    						}
-                    						add(
-                    							current,
-                    							"formations",
-                    							lv_formations_14_0,
-                    							"fil.xtext.LangFil.Formation");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalLangFil.g:470:4: (otherlv_15= ',' ( (lv_formations_16_0= ruleFormation ) ) )*
-                    loop10:
-                    do {
-                        int alt10=2;
-                        int LA10_0 = input.LA(1);
-
-                        if ( (LA10_0==14) ) {
-                            alt10=1;
-                        }
-
-
-                        switch (alt10) {
-                    	case 1 :
-                    	    // InternalLangFil.g:471:5: otherlv_15= ',' ( (lv_formations_16_0= ruleFormation ) )
-                    	    {
-                    	    otherlv_15=(Token)match(input,14,FOLLOW_16); 
-
-                    	    					newLeafNode(otherlv_15, grammarAccess.getNiveauAccess().getCommaKeyword_6_3_0());
-                    	    				
-                    	    // InternalLangFil.g:475:5: ( (lv_formations_16_0= ruleFormation ) )
-                    	    // InternalLangFil.g:476:6: (lv_formations_16_0= ruleFormation )
-                    	    {
-                    	    // InternalLangFil.g:476:6: (lv_formations_16_0= ruleFormation )
-                    	    // InternalLangFil.g:477:7: lv_formations_16_0= ruleFormation
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getNiveauAccess().getFormationsFormationParserRuleCall_6_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    lv_formations_16_0=ruleFormation();
-
-                    	    state._fsp--;
-
-
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getNiveauRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"formations",
-                    	    								lv_formations_16_0,
-                    	    								"fil.xtext.LangFil.Formation");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop10;
-                        }
-                    } while (true);
-
-                    otherlv_17=(Token)match(input,15,FOLLOW_17); 
-
-                    				newLeafNode(otherlv_17, grammarAccess.getNiveauAccess().getRightCurlyBracketKeyword_6_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalLangFil.g:500:3: (otherlv_18= 'presentation' ( (lv_presentation_19_0= rulePresentation ) ) )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0==23) ) {
-                alt12=1;
-            }
-            switch (alt12) {
-                case 1 :
-                    // InternalLangFil.g:501:4: otherlv_18= 'presentation' ( (lv_presentation_19_0= rulePresentation ) )
-                    {
-                    otherlv_18=(Token)match(input,23,FOLLOW_18); 
-
-                    				newLeafNode(otherlv_18, grammarAccess.getNiveauAccess().getPresentationKeyword_7_0());
-                    			
-                    // InternalLangFil.g:505:4: ( (lv_presentation_19_0= rulePresentation ) )
-                    // InternalLangFil.g:506:5: (lv_presentation_19_0= rulePresentation )
-                    {
-                    // InternalLangFil.g:506:5: (lv_presentation_19_0= rulePresentation )
-                    // InternalLangFil.g:507:6: lv_presentation_19_0= rulePresentation
-                    {
-
-                    						newCompositeNode(grammarAccess.getNiveauAccess().getPresentationPresentationParserRuleCall_7_1_0());
-                    					
-                    pushFollow(FOLLOW_19);
-                    lv_presentation_19_0=rulePresentation();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNiveauRule());
-                    						}
-                    						set(
-                    							current,
-                    							"presentation",
-                    							lv_presentation_19_0,
-                    							"fil.xtext.LangFil.Presentation");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalLangFil.g:525:3: (otherlv_20= 'ues' otherlv_21= '{' ( (lv_ues_22_0= ruleUE ) ) (otherlv_23= ',' ( (lv_ues_24_0= ruleUE ) ) )* otherlv_25= '}' )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
-
-            if ( (LA14_0==24) ) {
-                alt14=1;
-            }
-            switch (alt14) {
-                case 1 :
-                    // InternalLangFil.g:526:4: otherlv_20= 'ues' otherlv_21= '{' ( (lv_ues_22_0= ruleUE ) ) (otherlv_23= ',' ( (lv_ues_24_0= ruleUE ) ) )* otherlv_25= '}'
-                    {
-                    otherlv_20=(Token)match(input,24,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_20, grammarAccess.getNiveauAccess().getUesKeyword_8_0());
-                    			
-                    otherlv_21=(Token)match(input,12,FOLLOW_20); 
-
-                    				newLeafNode(otherlv_21, grammarAccess.getNiveauAccess().getLeftCurlyBracketKeyword_8_1());
-                    			
-                    // InternalLangFil.g:534:4: ( (lv_ues_22_0= ruleUE ) )
-                    // InternalLangFil.g:535:5: (lv_ues_22_0= ruleUE )
-                    {
-                    // InternalLangFil.g:535:5: (lv_ues_22_0= ruleUE )
-                    // InternalLangFil.g:536:6: lv_ues_22_0= ruleUE
-                    {
-
-                    						newCompositeNode(grammarAccess.getNiveauAccess().getUesUEParserRuleCall_8_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    lv_ues_22_0=ruleUE();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getNiveauRule());
-                    						}
-                    						add(
-                    							current,
-                    							"ues",
-                    							lv_ues_22_0,
-                    							"fil.xtext.LangFil.UE");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalLangFil.g:553:4: (otherlv_23= ',' ( (lv_ues_24_0= ruleUE ) ) )*
-                    loop13:
-                    do {
-                        int alt13=2;
-                        int LA13_0 = input.LA(1);
-
-                        if ( (LA13_0==14) ) {
-                            alt13=1;
-                        }
-
-
-                        switch (alt13) {
-                    	case 1 :
-                    	    // InternalLangFil.g:554:5: otherlv_23= ',' ( (lv_ues_24_0= ruleUE ) )
-                    	    {
-                    	    otherlv_23=(Token)match(input,14,FOLLOW_20); 
-
-                    	    					newLeafNode(otherlv_23, grammarAccess.getNiveauAccess().getCommaKeyword_8_3_0());
-                    	    				
-                    	    // InternalLangFil.g:558:5: ( (lv_ues_24_0= ruleUE ) )
-                    	    // InternalLangFil.g:559:6: (lv_ues_24_0= ruleUE )
-                    	    {
-                    	    // InternalLangFil.g:559:6: (lv_ues_24_0= ruleUE )
-                    	    // InternalLangFil.g:560:7: lv_ues_24_0= ruleUE
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getNiveauAccess().getUesUEParserRuleCall_8_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    lv_ues_24_0=ruleUE();
-
-                    	    state._fsp--;
-
-
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getNiveauRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"ues",
-                    	    								lv_ues_24_0,
-                    	    								"fil.xtext.LangFil.UE");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop13;
-                        }
-                    } while (true);
-
-                    otherlv_25=(Token)match(input,15,FOLLOW_10); 
-
-                    				newLeafNode(otherlv_25, grammarAccess.getNiveauAccess().getRightCurlyBracketKeyword_8_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            otherlv_26=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_26, grammarAccess.getNiveauAccess().getRightCurlyBracketKeyword_9());
+            			newLeafNode(otherlv_16, grammarAccess.getNiveauAccess().getRightCurlyBracketKeyword_5());
             		
 
             }
@@ -1381,7 +1267,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIntervenant"
-    // InternalLangFil.g:591:1: entryRuleIntervenant returns [EObject current=null] : iv_ruleIntervenant= ruleIntervenant EOF ;
+    // InternalLangFil.g:483:1: entryRuleIntervenant returns [EObject current=null] : iv_ruleIntervenant= ruleIntervenant EOF ;
     public final EObject entryRuleIntervenant() throws RecognitionException {
         EObject current = null;
 
@@ -1389,8 +1275,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:591:52: (iv_ruleIntervenant= ruleIntervenant EOF )
-            // InternalLangFil.g:592:2: iv_ruleIntervenant= ruleIntervenant EOF
+            // InternalLangFil.g:483:52: (iv_ruleIntervenant= ruleIntervenant EOF )
+            // InternalLangFil.g:484:2: iv_ruleIntervenant= ruleIntervenant EOF
             {
              newCompositeNode(grammarAccess.getIntervenantRule()); 
             pushFollow(FOLLOW_1);
@@ -1417,7 +1303,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIntervenant"
-    // InternalLangFil.g:598:1: ruleIntervenant returns [EObject current=null] : ( () otherlv_1= 'Intervenant' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )? otherlv_6= '}' ) ;
+    // InternalLangFil.g:490:1: ruleIntervenant returns [EObject current=null] : ( () otherlv_1= 'Intervenant' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )? otherlv_6= '}' ) ;
     public final EObject ruleIntervenant() throws RecognitionException {
         EObject current = null;
 
@@ -1434,14 +1320,14 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLangFil.g:604:2: ( ( () otherlv_1= 'Intervenant' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )? otherlv_6= '}' ) )
-            // InternalLangFil.g:605:2: ( () otherlv_1= 'Intervenant' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )? otherlv_6= '}' )
+            // InternalLangFil.g:496:2: ( ( () otherlv_1= 'Intervenant' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )? otherlv_6= '}' ) )
+            // InternalLangFil.g:497:2: ( () otherlv_1= 'Intervenant' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )? otherlv_6= '}' )
             {
-            // InternalLangFil.g:605:2: ( () otherlv_1= 'Intervenant' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )? otherlv_6= '}' )
-            // InternalLangFil.g:606:3: () otherlv_1= 'Intervenant' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )? otherlv_6= '}'
+            // InternalLangFil.g:497:2: ( () otherlv_1= 'Intervenant' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )? otherlv_6= '}' )
+            // InternalLangFil.g:498:3: () otherlv_1= 'Intervenant' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )? otherlv_6= '}'
             {
-            // InternalLangFil.g:606:3: ()
-            // InternalLangFil.g:607:4: 
+            // InternalLangFil.g:498:3: ()
+            // InternalLangFil.g:499:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1451,20 +1337,20 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,25,FOLLOW_3); 
+            otherlv_1=(Token)match(input,20,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getIntervenantAccess().getIntervenantKeyword_1());
             		
-            // InternalLangFil.g:617:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalLangFil.g:618:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:509:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalLangFil.g:510:4: (lv_name_2_0= ruleEString )
             {
-            // InternalLangFil.g:618:4: (lv_name_2_0= ruleEString )
-            // InternalLangFil.g:619:5: lv_name_2_0= ruleEString
+            // InternalLangFil.g:510:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:511:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getIntervenantAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -1486,30 +1372,30 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_21); 
+            otherlv_3=(Token)match(input,13,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getIntervenantAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalLangFil.g:640:3: (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // InternalLangFil.g:532:3: (otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) ) )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA15_0==26) ) {
-                alt15=1;
+            if ( (LA8_0==21) ) {
+                alt8=1;
             }
-            switch (alt15) {
+            switch (alt8) {
                 case 1 :
-                    // InternalLangFil.g:641:4: otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) )
+                    // InternalLangFil.g:533:4: otherlv_4= 'prenom' ( (lv_prenom_5_0= ruleEString ) )
                     {
-                    otherlv_4=(Token)match(input,26,FOLLOW_3); 
+                    otherlv_4=(Token)match(input,21,FOLLOW_3); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getIntervenantAccess().getPrenomKeyword_4_0());
                     			
-                    // InternalLangFil.g:645:4: ( (lv_prenom_5_0= ruleEString ) )
-                    // InternalLangFil.g:646:5: (lv_prenom_5_0= ruleEString )
+                    // InternalLangFil.g:537:4: ( (lv_prenom_5_0= ruleEString ) )
+                    // InternalLangFil.g:538:5: (lv_prenom_5_0= ruleEString )
                     {
-                    // InternalLangFil.g:646:5: (lv_prenom_5_0= ruleEString )
-                    // InternalLangFil.g:647:6: lv_prenom_5_0= ruleEString
+                    // InternalLangFil.g:538:5: (lv_prenom_5_0= ruleEString )
+                    // InternalLangFil.g:539:6: lv_prenom_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getIntervenantAccess().getPrenomEStringParserRuleCall_4_1_0());
@@ -1542,7 +1428,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,15,FOLLOW_2); 
+            otherlv_6=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_6, grammarAccess.getIntervenantAccess().getRightCurlyBracketKeyword_5());
             		
@@ -1569,7 +1455,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFormation"
-    // InternalLangFil.g:673:1: entryRuleFormation returns [EObject current=null] : iv_ruleFormation= ruleFormation EOF ;
+    // InternalLangFil.g:565:1: entryRuleFormation returns [EObject current=null] : iv_ruleFormation= ruleFormation EOF ;
     public final EObject entryRuleFormation() throws RecognitionException {
         EObject current = null;
 
@@ -1577,8 +1463,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:673:50: (iv_ruleFormation= ruleFormation EOF )
-            // InternalLangFil.g:674:2: iv_ruleFormation= ruleFormation EOF
+            // InternalLangFil.g:565:50: (iv_ruleFormation= ruleFormation EOF )
+            // InternalLangFil.g:566:2: iv_ruleFormation= ruleFormation EOF
             {
              newCompositeNode(grammarAccess.getFormationRule()); 
             pushFollow(FOLLOW_1);
@@ -1605,69 +1491,71 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFormation"
-    // InternalLangFil.g:680:1: ruleFormation returns [EObject current=null] : (otherlv_0= 'Formation' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'pseudo' ( (lv_pseudo_4_0= ruleEString ) ) )? (otherlv_5= 'responsables' otherlv_6= '(' ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* otherlv_10= ')' )? (otherlv_11= 'enseignants' otherlv_12= '(' ( ( ruleEString ) ) (otherlv_14= ',' ( ( ruleEString ) ) )* otherlv_16= ')' )? (otherlv_17= 'presentation' ( (lv_presentation_18_0= rulePresentation ) ) )? otherlv_19= 's1' ( (lv_s1_20_0= ruleS1 ) ) otherlv_21= 's2' ( (lv_s2_22_0= ruleS2 ) ) (otherlv_23= 'documents' otherlv_24= '{' ( (lv_documents_25_0= ruleDocument ) ) (otherlv_26= ',' ( (lv_documents_27_0= ruleDocument ) ) )* otherlv_28= '}' )? otherlv_29= '}' ) ;
+    // InternalLangFil.g:572:1: ruleFormation returns [EObject current=null] : ( () otherlv_1= 'Formation' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+ {...}?) ) ) otherlv_23= '}' ) ;
     public final EObject ruleFormation() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token otherlv_2=null;
+        Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
-        Token otherlv_6=null;
+        Token otherlv_7=null;
         Token otherlv_8=null;
         Token otherlv_10=null;
-        Token otherlv_11=null;
         Token otherlv_12=null;
+        Token otherlv_13=null;
         Token otherlv_14=null;
         Token otherlv_16=null;
-        Token otherlv_17=null;
-        Token otherlv_19=null;
-        Token otherlv_21=null;
+        Token otherlv_18=null;
         Token otherlv_23=null;
-        Token otherlv_24=null;
-        Token otherlv_26=null;
-        Token otherlv_28=null;
-        Token otherlv_29=null;
-        AntlrDatatypeRuleToken lv_name_1_0 = null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_pseudo_4_0 = null;
+        AntlrDatatypeRuleToken lv_pseudo_6_0 = null;
 
-        EObject lv_presentation_18_0 = null;
+        EObject lv_presentation_19_0 = null;
 
         EObject lv_s1_20_0 = null;
 
-        EObject lv_s2_22_0 = null;
+        EObject lv_s2_21_0 = null;
 
-        EObject lv_documents_25_0 = null;
-
-        EObject lv_documents_27_0 = null;
+        EObject lv_documents_22_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLangFil.g:686:2: ( (otherlv_0= 'Formation' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'pseudo' ( (lv_pseudo_4_0= ruleEString ) ) )? (otherlv_5= 'responsables' otherlv_6= '(' ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* otherlv_10= ')' )? (otherlv_11= 'enseignants' otherlv_12= '(' ( ( ruleEString ) ) (otherlv_14= ',' ( ( ruleEString ) ) )* otherlv_16= ')' )? (otherlv_17= 'presentation' ( (lv_presentation_18_0= rulePresentation ) ) )? otherlv_19= 's1' ( (lv_s1_20_0= ruleS1 ) ) otherlv_21= 's2' ( (lv_s2_22_0= ruleS2 ) ) (otherlv_23= 'documents' otherlv_24= '{' ( (lv_documents_25_0= ruleDocument ) ) (otherlv_26= ',' ( (lv_documents_27_0= ruleDocument ) ) )* otherlv_28= '}' )? otherlv_29= '}' ) )
-            // InternalLangFil.g:687:2: (otherlv_0= 'Formation' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'pseudo' ( (lv_pseudo_4_0= ruleEString ) ) )? (otherlv_5= 'responsables' otherlv_6= '(' ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* otherlv_10= ')' )? (otherlv_11= 'enseignants' otherlv_12= '(' ( ( ruleEString ) ) (otherlv_14= ',' ( ( ruleEString ) ) )* otherlv_16= ')' )? (otherlv_17= 'presentation' ( (lv_presentation_18_0= rulePresentation ) ) )? otherlv_19= 's1' ( (lv_s1_20_0= ruleS1 ) ) otherlv_21= 's2' ( (lv_s2_22_0= ruleS2 ) ) (otherlv_23= 'documents' otherlv_24= '{' ( (lv_documents_25_0= ruleDocument ) ) (otherlv_26= ',' ( (lv_documents_27_0= ruleDocument ) ) )* otherlv_28= '}' )? otherlv_29= '}' )
+            // InternalLangFil.g:578:2: ( ( () otherlv_1= 'Formation' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+ {...}?) ) ) otherlv_23= '}' ) )
+            // InternalLangFil.g:579:2: ( () otherlv_1= 'Formation' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+ {...}?) ) ) otherlv_23= '}' )
             {
-            // InternalLangFil.g:687:2: (otherlv_0= 'Formation' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'pseudo' ( (lv_pseudo_4_0= ruleEString ) ) )? (otherlv_5= 'responsables' otherlv_6= '(' ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* otherlv_10= ')' )? (otherlv_11= 'enseignants' otherlv_12= '(' ( ( ruleEString ) ) (otherlv_14= ',' ( ( ruleEString ) ) )* otherlv_16= ')' )? (otherlv_17= 'presentation' ( (lv_presentation_18_0= rulePresentation ) ) )? otherlv_19= 's1' ( (lv_s1_20_0= ruleS1 ) ) otherlv_21= 's2' ( (lv_s2_22_0= ruleS2 ) ) (otherlv_23= 'documents' otherlv_24= '{' ( (lv_documents_25_0= ruleDocument ) ) (otherlv_26= ',' ( (lv_documents_27_0= ruleDocument ) ) )* otherlv_28= '}' )? otherlv_29= '}' )
-            // InternalLangFil.g:688:3: otherlv_0= 'Formation' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' (otherlv_3= 'pseudo' ( (lv_pseudo_4_0= ruleEString ) ) )? (otherlv_5= 'responsables' otherlv_6= '(' ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* otherlv_10= ')' )? (otherlv_11= 'enseignants' otherlv_12= '(' ( ( ruleEString ) ) (otherlv_14= ',' ( ( ruleEString ) ) )* otherlv_16= ')' )? (otherlv_17= 'presentation' ( (lv_presentation_18_0= rulePresentation ) ) )? otherlv_19= 's1' ( (lv_s1_20_0= ruleS1 ) ) otherlv_21= 's2' ( (lv_s2_22_0= ruleS2 ) ) (otherlv_23= 'documents' otherlv_24= '{' ( (lv_documents_25_0= ruleDocument ) ) (otherlv_26= ',' ( (lv_documents_27_0= ruleDocument ) ) )* otherlv_28= '}' )? otherlv_29= '}'
+            // InternalLangFil.g:579:2: ( () otherlv_1= 'Formation' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+ {...}?) ) ) otherlv_23= '}' )
+            // InternalLangFil.g:580:3: () otherlv_1= 'Formation' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+ {...}?) ) ) otherlv_23= '}'
             {
-            otherlv_0=(Token)match(input,27,FOLLOW_3); 
+            // InternalLangFil.g:580:3: ()
+            // InternalLangFil.g:581:4: 
+            {
 
-            			newLeafNode(otherlv_0, grammarAccess.getFormationAccess().getFormationKeyword_0());
+            				current = forceCreateModelElement(
+            					grammarAccess.getFormationAccess().getFormationAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,22,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getFormationAccess().getFormationKeyword_1());
             		
-            // InternalLangFil.g:692:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalLangFil.g:693:4: (lv_name_1_0= ruleEString )
+            // InternalLangFil.g:591:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalLangFil.g:592:4: (lv_name_2_0= ruleEString )
             {
-            // InternalLangFil.g:693:4: (lv_name_1_0= ruleEString )
-            // InternalLangFil.g:694:5: lv_name_1_0= ruleEString
+            // InternalLangFil.g:592:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:593:5: lv_name_2_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getFormationAccess().getNameEStringParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getFormationAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_4);
-            lv_name_1_0=ruleEString();
+            pushFollow(FOLLOW_5);
+            lv_name_2_0=ruleEString();
 
             state._fsp--;
 
@@ -1678,7 +1566,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"name",
-            						lv_name_1_0,
+            						lv_name_2_0,
             						"fil.xtext.LangFil.EString");
             					afterParserOrEnumRuleCall();
             				
@@ -1688,532 +1576,755 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_22); 
+            otherlv_3=(Token)match(input,13,FOLLOW_11); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getFormationAccess().getLeftCurlyBracketKeyword_2());
+            			newLeafNode(otherlv_3, grammarAccess.getFormationAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalLangFil.g:715:3: (otherlv_3= 'pseudo' ( (lv_pseudo_4_0= ruleEString ) ) )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
-
-            if ( (LA16_0==18) ) {
-                alt16=1;
-            }
-            switch (alt16) {
-                case 1 :
-                    // InternalLangFil.g:716:4: otherlv_3= 'pseudo' ( (lv_pseudo_4_0= ruleEString ) )
-                    {
-                    otherlv_3=(Token)match(input,18,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_3, grammarAccess.getFormationAccess().getPseudoKeyword_3_0());
-                    			
-                    // InternalLangFil.g:720:4: ( (lv_pseudo_4_0= ruleEString ) )
-                    // InternalLangFil.g:721:5: (lv_pseudo_4_0= ruleEString )
-                    {
-                    // InternalLangFil.g:721:5: (lv_pseudo_4_0= ruleEString )
-                    // InternalLangFil.g:722:6: lv_pseudo_4_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getFormationAccess().getPseudoEStringParserRuleCall_3_1_0());
-                    					
-                    pushFollow(FOLLOW_23);
-                    lv_pseudo_4_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getFormationRule());
-                    						}
-                    						set(
-                    							current,
-                    							"pseudo",
-                    							lv_pseudo_4_0,
-                    							"fil.xtext.LangFil.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalLangFil.g:740:3: (otherlv_5= 'responsables' otherlv_6= '(' ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* otherlv_10= ')' )?
-            int alt18=2;
-            int LA18_0 = input.LA(1);
-
-            if ( (LA18_0==19) ) {
-                alt18=1;
-            }
-            switch (alt18) {
-                case 1 :
-                    // InternalLangFil.g:741:4: otherlv_5= 'responsables' otherlv_6= '(' ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* otherlv_10= ')'
-                    {
-                    otherlv_5=(Token)match(input,19,FOLLOW_13); 
-
-                    				newLeafNode(otherlv_5, grammarAccess.getFormationAccess().getResponsablesKeyword_4_0());
-                    			
-                    otherlv_6=(Token)match(input,20,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_6, grammarAccess.getFormationAccess().getLeftParenthesisKeyword_4_1());
-                    			
-                    // InternalLangFil.g:749:4: ( ( ruleEString ) )
-                    // InternalLangFil.g:750:5: ( ruleEString )
-                    {
-                    // InternalLangFil.g:750:5: ( ruleEString )
-                    // InternalLangFil.g:751:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getFormationRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getFormationAccess().getResponsablesIntervenantCrossReference_4_2_0());
-                    					
-                    pushFollow(FOLLOW_14);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalLangFil.g:765:4: (otherlv_8= ',' ( ( ruleEString ) ) )*
-                    loop17:
-                    do {
-                        int alt17=2;
-                        int LA17_0 = input.LA(1);
-
-                        if ( (LA17_0==14) ) {
-                            alt17=1;
-                        }
-
-
-                        switch (alt17) {
-                    	case 1 :
-                    	    // InternalLangFil.g:766:5: otherlv_8= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_8=(Token)match(input,14,FOLLOW_3); 
-
-                    	    					newLeafNode(otherlv_8, grammarAccess.getFormationAccess().getCommaKeyword_4_3_0());
-                    	    				
-                    	    // InternalLangFil.g:770:5: ( ( ruleEString ) )
-                    	    // InternalLangFil.g:771:6: ( ruleEString )
-                    	    {
-                    	    // InternalLangFil.g:771:6: ( ruleEString )
-                    	    // InternalLangFil.g:772:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getFormationRule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getFormationAccess().getResponsablesIntervenantCrossReference_4_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_14);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop17;
-                        }
-                    } while (true);
-
-                    otherlv_10=(Token)match(input,21,FOLLOW_24); 
-
-                    				newLeafNode(otherlv_10, grammarAccess.getFormationAccess().getRightParenthesisKeyword_4_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalLangFil.g:792:3: (otherlv_11= 'enseignants' otherlv_12= '(' ( ( ruleEString ) ) (otherlv_14= ',' ( ( ruleEString ) ) )* otherlv_16= ')' )?
-            int alt20=2;
-            int LA20_0 = input.LA(1);
-
-            if ( (LA20_0==28) ) {
-                alt20=1;
-            }
-            switch (alt20) {
-                case 1 :
-                    // InternalLangFil.g:793:4: otherlv_11= 'enseignants' otherlv_12= '(' ( ( ruleEString ) ) (otherlv_14= ',' ( ( ruleEString ) ) )* otherlv_16= ')'
-                    {
-                    otherlv_11=(Token)match(input,28,FOLLOW_13); 
-
-                    				newLeafNode(otherlv_11, grammarAccess.getFormationAccess().getEnseignantsKeyword_5_0());
-                    			
-                    otherlv_12=(Token)match(input,20,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_12, grammarAccess.getFormationAccess().getLeftParenthesisKeyword_5_1());
-                    			
-                    // InternalLangFil.g:801:4: ( ( ruleEString ) )
-                    // InternalLangFil.g:802:5: ( ruleEString )
-                    {
-                    // InternalLangFil.g:802:5: ( ruleEString )
-                    // InternalLangFil.g:803:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getFormationRule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getFormationAccess().getEnseignantsIntervenantCrossReference_5_2_0());
-                    					
-                    pushFollow(FOLLOW_14);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalLangFil.g:817:4: (otherlv_14= ',' ( ( ruleEString ) ) )*
-                    loop19:
-                    do {
-                        int alt19=2;
-                        int LA19_0 = input.LA(1);
-
-                        if ( (LA19_0==14) ) {
-                            alt19=1;
-                        }
-
-
-                        switch (alt19) {
-                    	case 1 :
-                    	    // InternalLangFil.g:818:5: otherlv_14= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_14=(Token)match(input,14,FOLLOW_3); 
-
-                    	    					newLeafNode(otherlv_14, grammarAccess.getFormationAccess().getCommaKeyword_5_3_0());
-                    	    				
-                    	    // InternalLangFil.g:822:5: ( ( ruleEString ) )
-                    	    // InternalLangFil.g:823:6: ( ruleEString )
-                    	    {
-                    	    // InternalLangFil.g:823:6: ( ruleEString )
-                    	    // InternalLangFil.g:824:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getFormationRule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getFormationAccess().getEnseignantsIntervenantCrossReference_5_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_14);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop19;
-                        }
-                    } while (true);
-
-                    otherlv_16=(Token)match(input,21,FOLLOW_25); 
-
-                    				newLeafNode(otherlv_16, grammarAccess.getFormationAccess().getRightParenthesisKeyword_5_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalLangFil.g:844:3: (otherlv_17= 'presentation' ( (lv_presentation_18_0= rulePresentation ) ) )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
-
-            if ( (LA21_0==23) ) {
-                alt21=1;
-            }
-            switch (alt21) {
-                case 1 :
-                    // InternalLangFil.g:845:4: otherlv_17= 'presentation' ( (lv_presentation_18_0= rulePresentation ) )
-                    {
-                    otherlv_17=(Token)match(input,23,FOLLOW_18); 
-
-                    				newLeafNode(otherlv_17, grammarAccess.getFormationAccess().getPresentationKeyword_6_0());
-                    			
-                    // InternalLangFil.g:849:4: ( (lv_presentation_18_0= rulePresentation ) )
-                    // InternalLangFil.g:850:5: (lv_presentation_18_0= rulePresentation )
-                    {
-                    // InternalLangFil.g:850:5: (lv_presentation_18_0= rulePresentation )
-                    // InternalLangFil.g:851:6: lv_presentation_18_0= rulePresentation
-                    {
-
-                    						newCompositeNode(grammarAccess.getFormationAccess().getPresentationPresentationParserRuleCall_6_1_0());
-                    					
-                    pushFollow(FOLLOW_26);
-                    lv_presentation_18_0=rulePresentation();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getFormationRule());
-                    						}
-                    						set(
-                    							current,
-                    							"presentation",
-                    							lv_presentation_18_0,
-                    							"fil.xtext.LangFil.Presentation");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            otherlv_19=(Token)match(input,29,FOLLOW_27); 
-
-            			newLeafNode(otherlv_19, grammarAccess.getFormationAccess().getS1Keyword_7());
-            		
-            // InternalLangFil.g:873:3: ( (lv_s1_20_0= ruleS1 ) )
-            // InternalLangFil.g:874:4: (lv_s1_20_0= ruleS1 )
+            // InternalLangFil.g:614:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+ {...}?) ) )
+            // InternalLangFil.g:615:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+ {...}?) )
             {
-            // InternalLangFil.g:874:4: (lv_s1_20_0= ruleS1 )
-            // InternalLangFil.g:875:5: lv_s1_20_0= ruleS1
+            // InternalLangFil.g:615:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+ {...}?) )
+            // InternalLangFil.g:616:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+ {...}?)
             {
-
-            					newCompositeNode(grammarAccess.getFormationAccess().getS1S1ParserRuleCall_8_0());
+             
+            				  getUnorderedGroupHelper().enter(grammarAccess.getFormationAccess().getUnorderedGroup_4());
             				
-            pushFollow(FOLLOW_28);
-            lv_s1_20_0=ruleS1();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getFormationRule());
-            					}
-            					set(
-            						current,
-            						"s1",
-            						lv_s1_20_0,
-            						"fil.xtext.LangFil.S1");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_21=(Token)match(input,30,FOLLOW_29); 
-
-            			newLeafNode(otherlv_21, grammarAccess.getFormationAccess().getS2Keyword_9());
-            		
-            // InternalLangFil.g:896:3: ( (lv_s2_22_0= ruleS2 ) )
-            // InternalLangFil.g:897:4: (lv_s2_22_0= ruleS2 )
+            // InternalLangFil.g:619:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+ {...}?)
+            // InternalLangFil.g:620:6: ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+ {...}?
             {
-            // InternalLangFil.g:897:4: (lv_s2_22_0= ruleS2 )
-            // InternalLangFil.g:898:5: lv_s2_22_0= ruleS2
-            {
+            // InternalLangFil.g:620:6: ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) ) )+
+            int cnt12=0;
+            loop12:
+            do {
+                int alt12=8;
+                int LA12_0 = input.LA(1);
 
-            					newCompositeNode(grammarAccess.getFormationAccess().getS2S2ParserRuleCall_10_0());
+                if ( LA12_0 == 14 && getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 0) ) {
+                    alt12=1;
+                }
+                else if ( LA12_0 == 15 && getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 1) ) {
+                    alt12=2;
+                }
+                else if ( LA12_0 == 23 && getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 2) ) {
+                    alt12=3;
+                }
+                else if ( LA12_0 == 24 && getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 3) ) {
+                    alt12=4;
+                }
+                else if ( LA12_0 == 26 && getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 4) ) {
+                    alt12=5;
+                }
+                else if ( LA12_0 == 29 && getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 5) ) {
+                    alt12=6;
+                }
+                else if ( ( LA12_0 == 30 || LA12_0 == 34 || LA12_0 == 36 ) && getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 6) ) {
+                    alt12=7;
+                }
+
+
+                switch (alt12) {
+            	case 1 :
+            	    // InternalLangFil.g:621:4: ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) )
+            	    {
+            	    // InternalLangFil.g:621:4: ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) )
+            	    // InternalLangFil.g:622:5: {...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 0) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 0)");
+            	    }
+            	    // InternalLangFil.g:622:106: ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) )
+            	    // InternalLangFil.g:623:6: ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 0);
+            	    					
+            	    // InternalLangFil.g:626:9: ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) )
+            	    // InternalLangFil.g:626:10: {...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "true");
+            	    }
+            	    // InternalLangFil.g:626:19: (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) )
+            	    // InternalLangFil.g:626:20: otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) )
+            	    {
+            	    otherlv_5=(Token)match(input,14,FOLLOW_3); 
+
+            	    									newLeafNode(otherlv_5, grammarAccess.getFormationAccess().getPseudoKeyword_4_0_0());
+            	    								
+            	    // InternalLangFil.g:630:9: ( (lv_pseudo_6_0= ruleEString ) )
+            	    // InternalLangFil.g:631:10: (lv_pseudo_6_0= ruleEString )
+            	    {
+            	    // InternalLangFil.g:631:10: (lv_pseudo_6_0= ruleEString )
+            	    // InternalLangFil.g:632:11: lv_pseudo_6_0= ruleEString
+            	    {
+
+            	    											newCompositeNode(grammarAccess.getFormationAccess().getPseudoEStringParserRuleCall_4_0_1_0());
+            	    										
+            	    pushFollow(FOLLOW_12);
+            	    lv_pseudo_6_0=ruleEString();
+
+            	    state._fsp--;
+
+
+            	    											if (current==null) {
+            	    												current = createModelElementForParent(grammarAccess.getFormationRule());
+            	    											}
+            	    											set(
+            	    												current,
+            	    												"pseudo",
+            	    												lv_pseudo_6_0,
+            	    												"fil.xtext.LangFil.EString");
+            	    											afterParserOrEnumRuleCall();
+            	    										
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getFormationAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 2 :
+            	    // InternalLangFil.g:655:4: ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) )
+            	    {
+            	    // InternalLangFil.g:655:4: ({...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) ) )
+            	    // InternalLangFil.g:656:5: {...}? => ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 1) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 1)");
+            	    }
+            	    // InternalLangFil.g:656:106: ( ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) ) )
+            	    // InternalLangFil.g:657:6: ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 1);
+            	    					
+            	    // InternalLangFil.g:660:9: ({...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' ) )
+            	    // InternalLangFil.g:660:10: {...}? => (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "true");
+            	    }
+            	    // InternalLangFil.g:660:19: (otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )
+            	    // InternalLangFil.g:660:20: otherlv_7= 'responsables' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')'
+            	    {
+            	    otherlv_7=(Token)match(input,15,FOLLOW_7); 
+
+            	    									newLeafNode(otherlv_7, grammarAccess.getFormationAccess().getResponsablesKeyword_4_1_0());
+            	    								
+            	    otherlv_8=(Token)match(input,16,FOLLOW_3); 
+
+            	    									newLeafNode(otherlv_8, grammarAccess.getFormationAccess().getLeftParenthesisKeyword_4_1_1());
+            	    								
+            	    // InternalLangFil.g:668:9: ( ( ruleEString ) )
+            	    // InternalLangFil.g:669:10: ( ruleEString )
+            	    {
+            	    // InternalLangFil.g:669:10: ( ruleEString )
+            	    // InternalLangFil.g:670:11: ruleEString
+            	    {
+
+            	    											if (current==null) {
+            	    												current = createModelElement(grammarAccess.getFormationRule());
+            	    											}
+            	    										
+
+            	    											newCompositeNode(grammarAccess.getFormationAccess().getResponsablesIntervenantCrossReference_4_1_2_0());
+            	    										
+            	    pushFollow(FOLLOW_8);
+            	    ruleEString();
+
+            	    state._fsp--;
+
+
+            	    											afterParserOrEnumRuleCall();
+            	    										
+
+            	    }
+
+
+            	    }
+
+            	    // InternalLangFil.g:684:9: (otherlv_10= ',' ( ( ruleEString ) ) )*
+            	    loop9:
+            	    do {
+            	        int alt9=2;
+            	        int LA9_0 = input.LA(1);
+
+            	        if ( (LA9_0==17) ) {
+            	            alt9=1;
+            	        }
+
+
+            	        switch (alt9) {
+            	    	case 1 :
+            	    	    // InternalLangFil.g:685:10: otherlv_10= ',' ( ( ruleEString ) )
+            	    	    {
+            	    	    otherlv_10=(Token)match(input,17,FOLLOW_3); 
+
+            	    	    										newLeafNode(otherlv_10, grammarAccess.getFormationAccess().getCommaKeyword_4_1_3_0());
+            	    	    									
+            	    	    // InternalLangFil.g:689:10: ( ( ruleEString ) )
+            	    	    // InternalLangFil.g:690:11: ( ruleEString )
+            	    	    {
+            	    	    // InternalLangFil.g:690:11: ( ruleEString )
+            	    	    // InternalLangFil.g:691:12: ruleEString
+            	    	    {
+
+            	    	    												if (current==null) {
+            	    	    													current = createModelElement(grammarAccess.getFormationRule());
+            	    	    												}
+            	    	    											
+
+            	    	    												newCompositeNode(grammarAccess.getFormationAccess().getResponsablesIntervenantCrossReference_4_1_3_1_0());
+            	    	    											
+            	    	    pushFollow(FOLLOW_8);
+            	    	    ruleEString();
+
+            	    	    state._fsp--;
+
+
+            	    	    												afterParserOrEnumRuleCall();
+            	    	    											
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop9;
+            	        }
+            	    } while (true);
+
+            	    otherlv_12=(Token)match(input,18,FOLLOW_12); 
+
+            	    									newLeafNode(otherlv_12, grammarAccess.getFormationAccess().getRightParenthesisKeyword_4_1_4());
+            	    								
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getFormationAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 3 :
+            	    // InternalLangFil.g:716:4: ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) )
+            	    {
+            	    // InternalLangFil.g:716:4: ({...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) ) )
+            	    // InternalLangFil.g:717:5: {...}? => ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 2) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 2)");
+            	    }
+            	    // InternalLangFil.g:717:106: ( ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) ) )
+            	    // InternalLangFil.g:718:6: ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 2);
+            	    					
+            	    // InternalLangFil.g:721:9: ({...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' ) )
+            	    // InternalLangFil.g:721:10: {...}? => (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "true");
+            	    }
+            	    // InternalLangFil.g:721:19: (otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')' )
+            	    // InternalLangFil.g:721:20: otherlv_13= 'enseignants' otherlv_14= '(' ( ( ruleEString ) ) (otherlv_16= ',' ( ( ruleEString ) ) )* otherlv_18= ')'
+            	    {
+            	    otherlv_13=(Token)match(input,23,FOLLOW_7); 
+
+            	    									newLeafNode(otherlv_13, grammarAccess.getFormationAccess().getEnseignantsKeyword_4_2_0());
+            	    								
+            	    otherlv_14=(Token)match(input,16,FOLLOW_3); 
+
+            	    									newLeafNode(otherlv_14, grammarAccess.getFormationAccess().getLeftParenthesisKeyword_4_2_1());
+            	    								
+            	    // InternalLangFil.g:729:9: ( ( ruleEString ) )
+            	    // InternalLangFil.g:730:10: ( ruleEString )
+            	    {
+            	    // InternalLangFil.g:730:10: ( ruleEString )
+            	    // InternalLangFil.g:731:11: ruleEString
+            	    {
+
+            	    											if (current==null) {
+            	    												current = createModelElement(grammarAccess.getFormationRule());
+            	    											}
+            	    										
+
+            	    											newCompositeNode(grammarAccess.getFormationAccess().getEnseignantsIntervenantCrossReference_4_2_2_0());
+            	    										
+            	    pushFollow(FOLLOW_8);
+            	    ruleEString();
+
+            	    state._fsp--;
+
+
+            	    											afterParserOrEnumRuleCall();
+            	    										
+
+            	    }
+
+
+            	    }
+
+            	    // InternalLangFil.g:745:9: (otherlv_16= ',' ( ( ruleEString ) ) )*
+            	    loop10:
+            	    do {
+            	        int alt10=2;
+            	        int LA10_0 = input.LA(1);
+
+            	        if ( (LA10_0==17) ) {
+            	            alt10=1;
+            	        }
+
+
+            	        switch (alt10) {
+            	    	case 1 :
+            	    	    // InternalLangFil.g:746:10: otherlv_16= ',' ( ( ruleEString ) )
+            	    	    {
+            	    	    otherlv_16=(Token)match(input,17,FOLLOW_3); 
+
+            	    	    										newLeafNode(otherlv_16, grammarAccess.getFormationAccess().getCommaKeyword_4_2_3_0());
+            	    	    									
+            	    	    // InternalLangFil.g:750:10: ( ( ruleEString ) )
+            	    	    // InternalLangFil.g:751:11: ( ruleEString )
+            	    	    {
+            	    	    // InternalLangFil.g:751:11: ( ruleEString )
+            	    	    // InternalLangFil.g:752:12: ruleEString
+            	    	    {
+
+            	    	    												if (current==null) {
+            	    	    													current = createModelElement(grammarAccess.getFormationRule());
+            	    	    												}
+            	    	    											
+
+            	    	    												newCompositeNode(grammarAccess.getFormationAccess().getEnseignantsIntervenantCrossReference_4_2_3_1_0());
+            	    	    											
+            	    	    pushFollow(FOLLOW_8);
+            	    	    ruleEString();
+
+            	    	    state._fsp--;
+
+
+            	    	    												afterParserOrEnumRuleCall();
+            	    	    											
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop10;
+            	        }
+            	    } while (true);
+
+            	    otherlv_18=(Token)match(input,18,FOLLOW_12); 
+
+            	    									newLeafNode(otherlv_18, grammarAccess.getFormationAccess().getRightParenthesisKeyword_4_2_4());
+            	    								
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getFormationAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 4 :
+            	    // InternalLangFil.g:777:4: ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) )
+            	    {
+            	    // InternalLangFil.g:777:4: ({...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) ) )
+            	    // InternalLangFil.g:778:5: {...}? => ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 3) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 3)");
+            	    }
+            	    // InternalLangFil.g:778:106: ( ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) ) )
+            	    // InternalLangFil.g:779:6: ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 3);
+            	    					
+            	    // InternalLangFil.g:782:9: ({...}? => ( (lv_presentation_19_0= rulePresentation ) ) )
+            	    // InternalLangFil.g:782:10: {...}? => ( (lv_presentation_19_0= rulePresentation ) )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "true");
+            	    }
+            	    // InternalLangFil.g:782:19: ( (lv_presentation_19_0= rulePresentation ) )
+            	    // InternalLangFil.g:782:20: (lv_presentation_19_0= rulePresentation )
+            	    {
+            	    // InternalLangFil.g:782:20: (lv_presentation_19_0= rulePresentation )
+            	    // InternalLangFil.g:783:10: lv_presentation_19_0= rulePresentation
+            	    {
+
+            	    										newCompositeNode(grammarAccess.getFormationAccess().getPresentationPresentationParserRuleCall_4_3_0());
+            	    									
+            	    pushFollow(FOLLOW_12);
+            	    lv_presentation_19_0=rulePresentation();
+
+            	    state._fsp--;
+
+
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getFormationRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"presentation",
+            	    											lv_presentation_19_0,
+            	    											"fil.xtext.LangFil.Presentation");
+            	    										afterParserOrEnumRuleCall();
+            	    									
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getFormationAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 5 :
+            	    // InternalLangFil.g:805:4: ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) )
+            	    {
+            	    // InternalLangFil.g:805:4: ({...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) ) )
+            	    // InternalLangFil.g:806:5: {...}? => ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 4) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 4)");
+            	    }
+            	    // InternalLangFil.g:806:106: ( ({...}? => ( (lv_s1_20_0= ruleS1 ) ) ) )
+            	    // InternalLangFil.g:807:6: ({...}? => ( (lv_s1_20_0= ruleS1 ) ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 4);
+            	    					
+            	    // InternalLangFil.g:810:9: ({...}? => ( (lv_s1_20_0= ruleS1 ) ) )
+            	    // InternalLangFil.g:810:10: {...}? => ( (lv_s1_20_0= ruleS1 ) )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "true");
+            	    }
+            	    // InternalLangFil.g:810:19: ( (lv_s1_20_0= ruleS1 ) )
+            	    // InternalLangFil.g:810:20: (lv_s1_20_0= ruleS1 )
+            	    {
+            	    // InternalLangFil.g:810:20: (lv_s1_20_0= ruleS1 )
+            	    // InternalLangFil.g:811:10: lv_s1_20_0= ruleS1
+            	    {
+
+            	    										newCompositeNode(grammarAccess.getFormationAccess().getS1S1ParserRuleCall_4_4_0());
+            	    									
+            	    pushFollow(FOLLOW_12);
+            	    lv_s1_20_0=ruleS1();
+
+            	    state._fsp--;
+
+
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getFormationRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"s1",
+            	    											lv_s1_20_0,
+            	    											"fil.xtext.LangFil.S1");
+            	    										afterParserOrEnumRuleCall();
+            	    									
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getFormationAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 6 :
+            	    // InternalLangFil.g:833:4: ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) )
+            	    {
+            	    // InternalLangFil.g:833:4: ({...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) ) )
+            	    // InternalLangFil.g:834:5: {...}? => ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 5) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 5)");
+            	    }
+            	    // InternalLangFil.g:834:106: ( ({...}? => ( (lv_s2_21_0= ruleS2 ) ) ) )
+            	    // InternalLangFil.g:835:6: ({...}? => ( (lv_s2_21_0= ruleS2 ) ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 5);
+            	    					
+            	    // InternalLangFil.g:838:9: ({...}? => ( (lv_s2_21_0= ruleS2 ) ) )
+            	    // InternalLangFil.g:838:10: {...}? => ( (lv_s2_21_0= ruleS2 ) )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "true");
+            	    }
+            	    // InternalLangFil.g:838:19: ( (lv_s2_21_0= ruleS2 ) )
+            	    // InternalLangFil.g:838:20: (lv_s2_21_0= ruleS2 )
+            	    {
+            	    // InternalLangFil.g:838:20: (lv_s2_21_0= ruleS2 )
+            	    // InternalLangFil.g:839:10: lv_s2_21_0= ruleS2
+            	    {
+
+            	    										newCompositeNode(grammarAccess.getFormationAccess().getS2S2ParserRuleCall_4_5_0());
+            	    									
+            	    pushFollow(FOLLOW_12);
+            	    lv_s2_21_0=ruleS2();
+
+            	    state._fsp--;
+
+
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getFormationRule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"s2",
+            	    											lv_s2_21_0,
+            	    											"fil.xtext.LangFil.S2");
+            	    										afterParserOrEnumRuleCall();
+            	    									
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getFormationAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 7 :
+            	    // InternalLangFil.g:861:4: ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) )
+            	    {
+            	    // InternalLangFil.g:861:4: ({...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ ) )
+            	    // InternalLangFil.g:862:5: {...}? => ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 6) ) {
+            	        throw new FailedPredicateException(input, "ruleFormation", "getUnorderedGroupHelper().canSelect(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 6)");
+            	    }
+            	    // InternalLangFil.g:862:106: ( ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+ )
+            	    // InternalLangFil.g:863:6: ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getFormationAccess().getUnorderedGroup_4(), 6);
+            	    					
+            	    // InternalLangFil.g:866:9: ({...}? => ( (lv_documents_22_0= ruleDocument ) ) )+
+            	    int cnt11=0;
+            	    loop11:
+            	    do {
+            	        int alt11=2;
+            	        switch ( input.LA(1) ) {
+            	        case 30:
+            	            {
+            	            int LA11_2 = input.LA(2);
+
+            	            if ( ((true)) ) {
+            	                alt11=1;
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 34:
+            	            {
+            	            int LA11_3 = input.LA(2);
+
+            	            if ( ((true)) ) {
+            	                alt11=1;
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 36:
+            	            {
+            	            int LA11_4 = input.LA(2);
+
+            	            if ( ((true)) ) {
+            	                alt11=1;
+            	            }
+
+
+            	            }
+            	            break;
+
+            	        }
+
+            	        switch (alt11) {
+            	    	case 1 :
+            	    	    // InternalLangFil.g:866:10: {...}? => ( (lv_documents_22_0= ruleDocument ) )
+            	    	    {
+            	    	    if ( !((true)) ) {
+            	    	        throw new FailedPredicateException(input, "ruleFormation", "true");
+            	    	    }
+            	    	    // InternalLangFil.g:866:19: ( (lv_documents_22_0= ruleDocument ) )
+            	    	    // InternalLangFil.g:866:20: (lv_documents_22_0= ruleDocument )
+            	    	    {
+            	    	    // InternalLangFil.g:866:20: (lv_documents_22_0= ruleDocument )
+            	    	    // InternalLangFil.g:867:10: lv_documents_22_0= ruleDocument
+            	    	    {
+
+            	    	    										newCompositeNode(grammarAccess.getFormationAccess().getDocumentsDocumentParserRuleCall_4_6_0());
+            	    	    									
+            	    	    pushFollow(FOLLOW_12);
+            	    	    lv_documents_22_0=ruleDocument();
+
+            	    	    state._fsp--;
+
+
+            	    	    										if (current==null) {
+            	    	    											current = createModelElementForParent(grammarAccess.getFormationRule());
+            	    	    										}
+            	    	    										add(
+            	    	    											current,
+            	    	    											"documents",
+            	    	    											lv_documents_22_0,
+            	    	    											"fil.xtext.LangFil.Document");
+            	    	    										afterParserOrEnumRuleCall();
+            	    	    									
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    if ( cnt11 >= 1 ) break loop11;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(11, input);
+            	                throw eee;
+            	        }
+            	        cnt11++;
+            	    } while (true);
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getFormationAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt12 >= 1 ) break loop12;
+                        EarlyExitException eee =
+                            new EarlyExitException(12, input);
+                        throw eee;
+                }
+                cnt12++;
+            } while (true);
+
+            if ( ! getUnorderedGroupHelper().canLeave(grammarAccess.getFormationAccess().getUnorderedGroup_4()) ) {
+                throw new FailedPredicateException(input, "ruleFormation", "getUnorderedGroupHelper().canLeave(grammarAccess.getFormationAccess().getUnorderedGroup_4())");
+            }
+
+            }
+
+
+            }
+
+             
+            				  getUnorderedGroupHelper().leave(grammarAccess.getFormationAccess().getUnorderedGroup_4());
             				
-            pushFollow(FOLLOW_30);
-            lv_s2_22_0=ruleS2();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getFormationRule());
-            					}
-            					set(
-            						current,
-            						"s2",
-            						lv_s2_22_0,
-            						"fil.xtext.LangFil.S2");
-            					afterParserOrEnumRuleCall();
-            				
 
             }
 
+            otherlv_23=(Token)match(input,19,FOLLOW_2); 
 
-            }
-
-            // InternalLangFil.g:915:3: (otherlv_23= 'documents' otherlv_24= '{' ( (lv_documents_25_0= ruleDocument ) ) (otherlv_26= ',' ( (lv_documents_27_0= ruleDocument ) ) )* otherlv_28= '}' )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
-
-            if ( (LA23_0==31) ) {
-                alt23=1;
-            }
-            switch (alt23) {
-                case 1 :
-                    // InternalLangFil.g:916:4: otherlv_23= 'documents' otherlv_24= '{' ( (lv_documents_25_0= ruleDocument ) ) (otherlv_26= ',' ( (lv_documents_27_0= ruleDocument ) ) )* otherlv_28= '}'
-                    {
-                    otherlv_23=(Token)match(input,31,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_23, grammarAccess.getFormationAccess().getDocumentsKeyword_11_0());
-                    			
-                    otherlv_24=(Token)match(input,12,FOLLOW_31); 
-
-                    				newLeafNode(otherlv_24, grammarAccess.getFormationAccess().getLeftCurlyBracketKeyword_11_1());
-                    			
-                    // InternalLangFil.g:924:4: ( (lv_documents_25_0= ruleDocument ) )
-                    // InternalLangFil.g:925:5: (lv_documents_25_0= ruleDocument )
-                    {
-                    // InternalLangFil.g:925:5: (lv_documents_25_0= ruleDocument )
-                    // InternalLangFil.g:926:6: lv_documents_25_0= ruleDocument
-                    {
-
-                    						newCompositeNode(grammarAccess.getFormationAccess().getDocumentsDocumentParserRuleCall_11_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    lv_documents_25_0=ruleDocument();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getFormationRule());
-                    						}
-                    						add(
-                    							current,
-                    							"documents",
-                    							lv_documents_25_0,
-                    							"fil.xtext.LangFil.Document");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalLangFil.g:943:4: (otherlv_26= ',' ( (lv_documents_27_0= ruleDocument ) ) )*
-                    loop22:
-                    do {
-                        int alt22=2;
-                        int LA22_0 = input.LA(1);
-
-                        if ( (LA22_0==14) ) {
-                            alt22=1;
-                        }
-
-
-                        switch (alt22) {
-                    	case 1 :
-                    	    // InternalLangFil.g:944:5: otherlv_26= ',' ( (lv_documents_27_0= ruleDocument ) )
-                    	    {
-                    	    otherlv_26=(Token)match(input,14,FOLLOW_31); 
-
-                    	    					newLeafNode(otherlv_26, grammarAccess.getFormationAccess().getCommaKeyword_11_3_0());
-                    	    				
-                    	    // InternalLangFil.g:948:5: ( (lv_documents_27_0= ruleDocument ) )
-                    	    // InternalLangFil.g:949:6: (lv_documents_27_0= ruleDocument )
-                    	    {
-                    	    // InternalLangFil.g:949:6: (lv_documents_27_0= ruleDocument )
-                    	    // InternalLangFil.g:950:7: lv_documents_27_0= ruleDocument
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getFormationAccess().getDocumentsDocumentParserRuleCall_11_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    lv_documents_27_0=ruleDocument();
-
-                    	    state._fsp--;
-
-
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getFormationRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"documents",
-                    	    								lv_documents_27_0,
-                    	    								"fil.xtext.LangFil.Document");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop22;
-                        }
-                    } while (true);
-
-                    otherlv_28=(Token)match(input,15,FOLLOW_10); 
-
-                    				newLeafNode(otherlv_28, grammarAccess.getFormationAccess().getRightCurlyBracketKeyword_11_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            otherlv_29=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_29, grammarAccess.getFormationAccess().getRightCurlyBracketKeyword_12());
+            			newLeafNode(otherlv_23, grammarAccess.getFormationAccess().getRightCurlyBracketKeyword_5());
             		
 
             }
@@ -2238,7 +2349,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePresentation"
-    // InternalLangFil.g:981:1: entryRulePresentation returns [EObject current=null] : iv_rulePresentation= rulePresentation EOF ;
+    // InternalLangFil.g:905:1: entryRulePresentation returns [EObject current=null] : iv_rulePresentation= rulePresentation EOF ;
     public final EObject entryRulePresentation() throws RecognitionException {
         EObject current = null;
 
@@ -2246,8 +2357,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:981:53: (iv_rulePresentation= rulePresentation EOF )
-            // InternalLangFil.g:982:2: iv_rulePresentation= rulePresentation EOF
+            // InternalLangFil.g:905:53: (iv_rulePresentation= rulePresentation EOF )
+            // InternalLangFil.g:906:2: iv_rulePresentation= rulePresentation EOF
             {
              newCompositeNode(grammarAccess.getPresentationRule()); 
             pushFollow(FOLLOW_1);
@@ -2274,29 +2385,26 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePresentation"
-    // InternalLangFil.g:988:1: rulePresentation returns [EObject current=null] : ( () otherlv_1= 'Presentation' otherlv_2= '{' (otherlv_3= 'contenue' ( (lv_contenue_4_0= ruleEString ) ) )? otherlv_5= '}' ) ;
+    // InternalLangFil.g:912:1: rulePresentation returns [EObject current=null] : ( () otherlv_1= 'Presentation' ( (lv_contenue_2_0= ruleEString ) ) ) ;
     public final EObject rulePresentation() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
-        AntlrDatatypeRuleToken lv_contenue_4_0 = null;
+        AntlrDatatypeRuleToken lv_contenue_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLangFil.g:994:2: ( ( () otherlv_1= 'Presentation' otherlv_2= '{' (otherlv_3= 'contenue' ( (lv_contenue_4_0= ruleEString ) ) )? otherlv_5= '}' ) )
-            // InternalLangFil.g:995:2: ( () otherlv_1= 'Presentation' otherlv_2= '{' (otherlv_3= 'contenue' ( (lv_contenue_4_0= ruleEString ) ) )? otherlv_5= '}' )
+            // InternalLangFil.g:918:2: ( ( () otherlv_1= 'Presentation' ( (lv_contenue_2_0= ruleEString ) ) ) )
+            // InternalLangFil.g:919:2: ( () otherlv_1= 'Presentation' ( (lv_contenue_2_0= ruleEString ) ) )
             {
-            // InternalLangFil.g:995:2: ( () otherlv_1= 'Presentation' otherlv_2= '{' (otherlv_3= 'contenue' ( (lv_contenue_4_0= ruleEString ) ) )? otherlv_5= '}' )
-            // InternalLangFil.g:996:3: () otherlv_1= 'Presentation' otherlv_2= '{' (otherlv_3= 'contenue' ( (lv_contenue_4_0= ruleEString ) ) )? otherlv_5= '}'
+            // InternalLangFil.g:919:2: ( () otherlv_1= 'Presentation' ( (lv_contenue_2_0= ruleEString ) ) )
+            // InternalLangFil.g:920:3: () otherlv_1= 'Presentation' ( (lv_contenue_2_0= ruleEString ) )
             {
-            // InternalLangFil.g:996:3: ()
-            // InternalLangFil.g:997:4: 
+            // InternalLangFil.g:920:3: ()
+            // InternalLangFil.g:921:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2306,70 +2414,41 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,32,FOLLOW_4); 
+            otherlv_1=(Token)match(input,24,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPresentationAccess().getPresentationKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_32); 
+            // InternalLangFil.g:931:3: ( (lv_contenue_2_0= ruleEString ) )
+            // InternalLangFil.g:932:4: (lv_contenue_2_0= ruleEString )
+            {
+            // InternalLangFil.g:932:4: (lv_contenue_2_0= ruleEString )
+            // InternalLangFil.g:933:5: lv_contenue_2_0= ruleEString
+            {
 
-            			newLeafNode(otherlv_2, grammarAccess.getPresentationAccess().getLeftCurlyBracketKeyword_2());
-            		
-            // InternalLangFil.g:1011:3: (otherlv_3= 'contenue' ( (lv_contenue_4_0= ruleEString ) ) )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            					newCompositeNode(grammarAccess.getPresentationAccess().getContenueEStringParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_contenue_2_0=ruleEString();
 
-            if ( (LA24_0==33) ) {
-                alt24=1;
-            }
-            switch (alt24) {
-                case 1 :
-                    // InternalLangFil.g:1012:4: otherlv_3= 'contenue' ( (lv_contenue_4_0= ruleEString ) )
-                    {
-                    otherlv_3=(Token)match(input,33,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_3, grammarAccess.getPresentationAccess().getContenueKeyword_3_0());
-                    			
-                    // InternalLangFil.g:1016:4: ( (lv_contenue_4_0= ruleEString ) )
-                    // InternalLangFil.g:1017:5: (lv_contenue_4_0= ruleEString )
-                    {
-                    // InternalLangFil.g:1017:5: (lv_contenue_4_0= ruleEString )
-                    // InternalLangFil.g:1018:6: lv_contenue_4_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getPresentationAccess().getContenueEStringParserRuleCall_3_1_0());
-                    					
-                    pushFollow(FOLLOW_10);
-                    lv_contenue_4_0=ruleEString();
-
-                    state._fsp--;
+            state._fsp--;
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getPresentationRule());
-                    						}
-                    						set(
-                    							current,
-                    							"contenue",
-                    							lv_contenue_4_0,
-                    							"fil.xtext.LangFil.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getPresentationRule());
+            					}
+            					set(
+            						current,
+            						"contenue",
+            						lv_contenue_2_0,
+            						"fil.xtext.LangFil.EString");
+            					afterParserOrEnumRuleCall();
+            				
 
             }
 
-            otherlv_5=(Token)match(input,15,FOLLOW_2); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getPresentationAccess().getRightCurlyBracketKeyword_4());
-            		
+            }
+
 
             }
 
@@ -2393,7 +2472,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUE"
-    // InternalLangFil.g:1044:1: entryRuleUE returns [EObject current=null] : iv_ruleUE= ruleUE EOF ;
+    // InternalLangFil.g:954:1: entryRuleUE returns [EObject current=null] : iv_ruleUE= ruleUE EOF ;
     public final EObject entryRuleUE() throws RecognitionException {
         EObject current = null;
 
@@ -2401,8 +2480,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:1044:43: (iv_ruleUE= ruleUE EOF )
-            // InternalLangFil.g:1045:2: iv_ruleUE= ruleUE EOF
+            // InternalLangFil.g:954:43: (iv_ruleUE= ruleUE EOF )
+            // InternalLangFil.g:955:2: iv_ruleUE= ruleUE EOF
             {
              newCompositeNode(grammarAccess.getUERule()); 
             pushFollow(FOLLOW_1);
@@ -2429,50 +2508,43 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUE"
-    // InternalLangFil.g:1051:1: ruleUE returns [EObject current=null] : ( () otherlv_1= 'UE' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )? (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'enseignants' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? (otherlv_18= 'documents' otherlv_19= '{' ( (lv_documents_20_0= ruleDocument ) ) (otherlv_21= ',' ( (lv_documents_22_0= ruleDocument ) ) )* otherlv_23= '}' )? (otherlv_24= 'presentation' ( (lv_presentation_25_0= rulePresentation ) ) )? otherlv_26= '}' ) ;
+    // InternalLangFil.g:961:1: ruleUE returns [EObject current=null] : ( () otherlv_1= 'UE' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )* ) ) ) otherlv_21= '}' ) ;
     public final EObject ruleUE() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_7=null;
+        Token otherlv_5=null;
+        Token otherlv_8=null;
         Token otherlv_9=null;
         Token otherlv_11=null;
-        Token otherlv_12=null;
         Token otherlv_13=null;
+        Token otherlv_14=null;
         Token otherlv_15=null;
         Token otherlv_17=null;
-        Token otherlv_18=null;
         Token otherlv_19=null;
         Token otherlv_21=null;
-        Token otherlv_23=null;
-        Token otherlv_24=null;
-        Token otherlv_26=null;
         AntlrDatatypeRuleToken lv_name_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_pseudo_5_0 = null;
+        AntlrDatatypeRuleToken lv_pseudo_6_0 = null;
+
+        EObject lv_presentation_7_0 = null;
 
         EObject lv_documents_20_0 = null;
-
-        EObject lv_documents_22_0 = null;
-
-        EObject lv_presentation_25_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLangFil.g:1057:2: ( ( () otherlv_1= 'UE' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )? (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'enseignants' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? (otherlv_18= 'documents' otherlv_19= '{' ( (lv_documents_20_0= ruleDocument ) ) (otherlv_21= ',' ( (lv_documents_22_0= ruleDocument ) ) )* otherlv_23= '}' )? (otherlv_24= 'presentation' ( (lv_presentation_25_0= rulePresentation ) ) )? otherlv_26= '}' ) )
-            // InternalLangFil.g:1058:2: ( () otherlv_1= 'UE' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )? (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'enseignants' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? (otherlv_18= 'documents' otherlv_19= '{' ( (lv_documents_20_0= ruleDocument ) ) (otherlv_21= ',' ( (lv_documents_22_0= ruleDocument ) ) )* otherlv_23= '}' )? (otherlv_24= 'presentation' ( (lv_presentation_25_0= rulePresentation ) ) )? otherlv_26= '}' )
+            // InternalLangFil.g:967:2: ( ( () otherlv_1= 'UE' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )* ) ) ) otherlv_21= '}' ) )
+            // InternalLangFil.g:968:2: ( () otherlv_1= 'UE' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )* ) ) ) otherlv_21= '}' )
             {
-            // InternalLangFil.g:1058:2: ( () otherlv_1= 'UE' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )? (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'enseignants' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? (otherlv_18= 'documents' otherlv_19= '{' ( (lv_documents_20_0= ruleDocument ) ) (otherlv_21= ',' ( (lv_documents_22_0= ruleDocument ) ) )* otherlv_23= '}' )? (otherlv_24= 'presentation' ( (lv_presentation_25_0= rulePresentation ) ) )? otherlv_26= '}' )
-            // InternalLangFil.g:1059:3: () otherlv_1= 'UE' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )? (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'enseignants' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? (otherlv_18= 'documents' otherlv_19= '{' ( (lv_documents_20_0= ruleDocument ) ) (otherlv_21= ',' ( (lv_documents_22_0= ruleDocument ) ) )* otherlv_23= '}' )? (otherlv_24= 'presentation' ( (lv_presentation_25_0= rulePresentation ) ) )? otherlv_26= '}'
+            // InternalLangFil.g:968:2: ( () otherlv_1= 'UE' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )* ) ) ) otherlv_21= '}' )
+            // InternalLangFil.g:969:3: () otherlv_1= 'UE' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )* ) ) ) otherlv_21= '}'
             {
-            // InternalLangFil.g:1059:3: ()
-            // InternalLangFil.g:1060:4: 
+            // InternalLangFil.g:969:3: ()
+            // InternalLangFil.g:970:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2482,20 +2554,20 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,34,FOLLOW_3); 
+            otherlv_1=(Token)match(input,25,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getUEAccess().getUEKeyword_1());
             		
-            // InternalLangFil.g:1070:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalLangFil.g:1071:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:980:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalLangFil.g:981:4: (lv_name_2_0= ruleEString )
             {
-            // InternalLangFil.g:1071:4: (lv_name_2_0= ruleEString )
-            // InternalLangFil.g:1072:5: lv_name_2_0= ruleEString
+            // InternalLangFil.g:981:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:982:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getUEAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -2517,462 +2589,607 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_33); 
+            otherlv_3=(Token)match(input,13,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getUEAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalLangFil.g:1093:3: (otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) ) )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalLangFil.g:1003:3: ( ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )* ) ) )
+            // InternalLangFil.g:1004:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )* ) )
+            {
+            // InternalLangFil.g:1004:4: ( ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )* ) )
+            // InternalLangFil.g:1005:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )* )
+            {
+             
+            				  getUnorderedGroupHelper().enter(grammarAccess.getUEAccess().getUnorderedGroup_4());
+            				
+            // InternalLangFil.g:1008:5: ( ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )* )
+            // InternalLangFil.g:1009:6: ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )*
+            {
+            // InternalLangFil.g:1009:6: ( ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) ) | ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) ) | ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) ) | ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) ) | ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) ) )*
+            loop16:
+            do {
+                int alt16=6;
+                int LA16_0 = input.LA(1);
 
-            if ( (LA25_0==18) ) {
-                alt25=1;
+                if ( LA16_0 == 14 && getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 0) ) {
+                    alt16=1;
+                }
+                else if ( LA16_0 == 24 && getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 1) ) {
+                    alt16=2;
+                }
+                else if ( LA16_0 == 15 && getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 2) ) {
+                    alt16=3;
+                }
+                else if ( LA16_0 == 23 && getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 3) ) {
+                    alt16=4;
+                }
+                else if ( ( LA16_0 == 30 || LA16_0 == 34 || LA16_0 == 36 ) && getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 4) ) {
+                    alt16=5;
+                }
+
+
+                switch (alt16) {
+            	case 1 :
+            	    // InternalLangFil.g:1010:4: ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) )
+            	    {
+            	    // InternalLangFil.g:1010:4: ({...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) ) )
+            	    // InternalLangFil.g:1011:5: {...}? => ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 0) ) {
+            	        throw new FailedPredicateException(input, "ruleUE", "getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 0)");
+            	    }
+            	    // InternalLangFil.g:1011:99: ( ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) ) )
+            	    // InternalLangFil.g:1012:6: ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getUEAccess().getUnorderedGroup_4(), 0);
+            	    					
+            	    // InternalLangFil.g:1015:9: ({...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) ) )
+            	    // InternalLangFil.g:1015:10: {...}? => (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleUE", "true");
+            	    }
+            	    // InternalLangFil.g:1015:19: (otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) ) )
+            	    // InternalLangFil.g:1015:20: otherlv_5= 'pseudo' ( (lv_pseudo_6_0= ruleEString ) )
+            	    {
+            	    otherlv_5=(Token)match(input,14,FOLLOW_3); 
+
+            	    									newLeafNode(otherlv_5, grammarAccess.getUEAccess().getPseudoKeyword_4_0_0());
+            	    								
+            	    // InternalLangFil.g:1019:9: ( (lv_pseudo_6_0= ruleEString ) )
+            	    // InternalLangFil.g:1020:10: (lv_pseudo_6_0= ruleEString )
+            	    {
+            	    // InternalLangFil.g:1020:10: (lv_pseudo_6_0= ruleEString )
+            	    // InternalLangFil.g:1021:11: lv_pseudo_6_0= ruleEString
+            	    {
+
+            	    											newCompositeNode(grammarAccess.getUEAccess().getPseudoEStringParserRuleCall_4_0_1_0());
+            	    										
+            	    pushFollow(FOLLOW_12);
+            	    lv_pseudo_6_0=ruleEString();
+
+            	    state._fsp--;
+
+
+            	    											if (current==null) {
+            	    												current = createModelElementForParent(grammarAccess.getUERule());
+            	    											}
+            	    											set(
+            	    												current,
+            	    												"pseudo",
+            	    												lv_pseudo_6_0,
+            	    												"fil.xtext.LangFil.EString");
+            	    											afterParserOrEnumRuleCall();
+            	    										
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getUEAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 2 :
+            	    // InternalLangFil.g:1044:4: ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) )
+            	    {
+            	    // InternalLangFil.g:1044:4: ({...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) ) )
+            	    // InternalLangFil.g:1045:5: {...}? => ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 1) ) {
+            	        throw new FailedPredicateException(input, "ruleUE", "getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 1)");
+            	    }
+            	    // InternalLangFil.g:1045:99: ( ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) ) )
+            	    // InternalLangFil.g:1046:6: ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getUEAccess().getUnorderedGroup_4(), 1);
+            	    					
+            	    // InternalLangFil.g:1049:9: ({...}? => ( (lv_presentation_7_0= rulePresentation ) ) )
+            	    // InternalLangFil.g:1049:10: {...}? => ( (lv_presentation_7_0= rulePresentation ) )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleUE", "true");
+            	    }
+            	    // InternalLangFil.g:1049:19: ( (lv_presentation_7_0= rulePresentation ) )
+            	    // InternalLangFil.g:1049:20: (lv_presentation_7_0= rulePresentation )
+            	    {
+            	    // InternalLangFil.g:1049:20: (lv_presentation_7_0= rulePresentation )
+            	    // InternalLangFil.g:1050:10: lv_presentation_7_0= rulePresentation
+            	    {
+
+            	    										newCompositeNode(grammarAccess.getUEAccess().getPresentationPresentationParserRuleCall_4_1_0());
+            	    									
+            	    pushFollow(FOLLOW_12);
+            	    lv_presentation_7_0=rulePresentation();
+
+            	    state._fsp--;
+
+
+            	    										if (current==null) {
+            	    											current = createModelElementForParent(grammarAccess.getUERule());
+            	    										}
+            	    										set(
+            	    											current,
+            	    											"presentation",
+            	    											lv_presentation_7_0,
+            	    											"fil.xtext.LangFil.Presentation");
+            	    										afterParserOrEnumRuleCall();
+            	    									
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getUEAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 3 :
+            	    // InternalLangFil.g:1072:4: ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) )
+            	    {
+            	    // InternalLangFil.g:1072:4: ({...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) ) )
+            	    // InternalLangFil.g:1073:5: {...}? => ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 2) ) {
+            	        throw new FailedPredicateException(input, "ruleUE", "getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 2)");
+            	    }
+            	    // InternalLangFil.g:1073:99: ( ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) ) )
+            	    // InternalLangFil.g:1074:6: ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getUEAccess().getUnorderedGroup_4(), 2);
+            	    					
+            	    // InternalLangFil.g:1077:9: ({...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' ) )
+            	    // InternalLangFil.g:1077:10: {...}? => (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleUE", "true");
+            	    }
+            	    // InternalLangFil.g:1077:19: (otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')' )
+            	    // InternalLangFil.g:1077:20: otherlv_8= 'responsables' otherlv_9= '(' ( ( ruleEString ) ) (otherlv_11= ',' ( ( ruleEString ) ) )* otherlv_13= ')'
+            	    {
+            	    otherlv_8=(Token)match(input,15,FOLLOW_7); 
+
+            	    									newLeafNode(otherlv_8, grammarAccess.getUEAccess().getResponsablesKeyword_4_2_0());
+            	    								
+            	    otherlv_9=(Token)match(input,16,FOLLOW_3); 
+
+            	    									newLeafNode(otherlv_9, grammarAccess.getUEAccess().getLeftParenthesisKeyword_4_2_1());
+            	    								
+            	    // InternalLangFil.g:1085:9: ( ( ruleEString ) )
+            	    // InternalLangFil.g:1086:10: ( ruleEString )
+            	    {
+            	    // InternalLangFil.g:1086:10: ( ruleEString )
+            	    // InternalLangFil.g:1087:11: ruleEString
+            	    {
+
+            	    											if (current==null) {
+            	    												current = createModelElement(grammarAccess.getUERule());
+            	    											}
+            	    										
+
+            	    											newCompositeNode(grammarAccess.getUEAccess().getResponsablesIntervenantCrossReference_4_2_2_0());
+            	    										
+            	    pushFollow(FOLLOW_8);
+            	    ruleEString();
+
+            	    state._fsp--;
+
+
+            	    											afterParserOrEnumRuleCall();
+            	    										
+
+            	    }
+
+
+            	    }
+
+            	    // InternalLangFil.g:1101:9: (otherlv_11= ',' ( ( ruleEString ) ) )*
+            	    loop13:
+            	    do {
+            	        int alt13=2;
+            	        int LA13_0 = input.LA(1);
+
+            	        if ( (LA13_0==17) ) {
+            	            alt13=1;
+            	        }
+
+
+            	        switch (alt13) {
+            	    	case 1 :
+            	    	    // InternalLangFil.g:1102:10: otherlv_11= ',' ( ( ruleEString ) )
+            	    	    {
+            	    	    otherlv_11=(Token)match(input,17,FOLLOW_3); 
+
+            	    	    										newLeafNode(otherlv_11, grammarAccess.getUEAccess().getCommaKeyword_4_2_3_0());
+            	    	    									
+            	    	    // InternalLangFil.g:1106:10: ( ( ruleEString ) )
+            	    	    // InternalLangFil.g:1107:11: ( ruleEString )
+            	    	    {
+            	    	    // InternalLangFil.g:1107:11: ( ruleEString )
+            	    	    // InternalLangFil.g:1108:12: ruleEString
+            	    	    {
+
+            	    	    												if (current==null) {
+            	    	    													current = createModelElement(grammarAccess.getUERule());
+            	    	    												}
+            	    	    											
+
+            	    	    												newCompositeNode(grammarAccess.getUEAccess().getResponsablesIntervenantCrossReference_4_2_3_1_0());
+            	    	    											
+            	    	    pushFollow(FOLLOW_8);
+            	    	    ruleEString();
+
+            	    	    state._fsp--;
+
+
+            	    	    												afterParserOrEnumRuleCall();
+            	    	    											
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop13;
+            	        }
+            	    } while (true);
+
+            	    otherlv_13=(Token)match(input,18,FOLLOW_12); 
+
+            	    									newLeafNode(otherlv_13, grammarAccess.getUEAccess().getRightParenthesisKeyword_4_2_4());
+            	    								
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getUEAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 4 :
+            	    // InternalLangFil.g:1133:4: ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) )
+            	    {
+            	    // InternalLangFil.g:1133:4: ({...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) ) )
+            	    // InternalLangFil.g:1134:5: {...}? => ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 3) ) {
+            	        throw new FailedPredicateException(input, "ruleUE", "getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 3)");
+            	    }
+            	    // InternalLangFil.g:1134:99: ( ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) ) )
+            	    // InternalLangFil.g:1135:6: ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) )
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getUEAccess().getUnorderedGroup_4(), 3);
+            	    					
+            	    // InternalLangFil.g:1138:9: ({...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' ) )
+            	    // InternalLangFil.g:1138:10: {...}? => (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' )
+            	    {
+            	    if ( !((true)) ) {
+            	        throw new FailedPredicateException(input, "ruleUE", "true");
+            	    }
+            	    // InternalLangFil.g:1138:19: (otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')' )
+            	    // InternalLangFil.g:1138:20: otherlv_14= 'enseignants' otherlv_15= '(' ( ( ruleEString ) ) (otherlv_17= ',' ( ( ruleEString ) ) )* otherlv_19= ')'
+            	    {
+            	    otherlv_14=(Token)match(input,23,FOLLOW_7); 
+
+            	    									newLeafNode(otherlv_14, grammarAccess.getUEAccess().getEnseignantsKeyword_4_3_0());
+            	    								
+            	    otherlv_15=(Token)match(input,16,FOLLOW_3); 
+
+            	    									newLeafNode(otherlv_15, grammarAccess.getUEAccess().getLeftParenthesisKeyword_4_3_1());
+            	    								
+            	    // InternalLangFil.g:1146:9: ( ( ruleEString ) )
+            	    // InternalLangFil.g:1147:10: ( ruleEString )
+            	    {
+            	    // InternalLangFil.g:1147:10: ( ruleEString )
+            	    // InternalLangFil.g:1148:11: ruleEString
+            	    {
+
+            	    											if (current==null) {
+            	    												current = createModelElement(grammarAccess.getUERule());
+            	    											}
+            	    										
+
+            	    											newCompositeNode(grammarAccess.getUEAccess().getEnseignantsIntervenantCrossReference_4_3_2_0());
+            	    										
+            	    pushFollow(FOLLOW_8);
+            	    ruleEString();
+
+            	    state._fsp--;
+
+
+            	    											afterParserOrEnumRuleCall();
+            	    										
+
+            	    }
+
+
+            	    }
+
+            	    // InternalLangFil.g:1162:9: (otherlv_17= ',' ( ( ruleEString ) ) )*
+            	    loop14:
+            	    do {
+            	        int alt14=2;
+            	        int LA14_0 = input.LA(1);
+
+            	        if ( (LA14_0==17) ) {
+            	            alt14=1;
+            	        }
+
+
+            	        switch (alt14) {
+            	    	case 1 :
+            	    	    // InternalLangFil.g:1163:10: otherlv_17= ',' ( ( ruleEString ) )
+            	    	    {
+            	    	    otherlv_17=(Token)match(input,17,FOLLOW_3); 
+
+            	    	    										newLeafNode(otherlv_17, grammarAccess.getUEAccess().getCommaKeyword_4_3_3_0());
+            	    	    									
+            	    	    // InternalLangFil.g:1167:10: ( ( ruleEString ) )
+            	    	    // InternalLangFil.g:1168:11: ( ruleEString )
+            	    	    {
+            	    	    // InternalLangFil.g:1168:11: ( ruleEString )
+            	    	    // InternalLangFil.g:1169:12: ruleEString
+            	    	    {
+
+            	    	    												if (current==null) {
+            	    	    													current = createModelElement(grammarAccess.getUERule());
+            	    	    												}
+            	    	    											
+
+            	    	    												newCompositeNode(grammarAccess.getUEAccess().getEnseignantsIntervenantCrossReference_4_3_3_1_0());
+            	    	    											
+            	    	    pushFollow(FOLLOW_8);
+            	    	    ruleEString();
+
+            	    	    state._fsp--;
+
+
+            	    	    												afterParserOrEnumRuleCall();
+            	    	    											
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    break loop14;
+            	        }
+            	    } while (true);
+
+            	    otherlv_19=(Token)match(input,18,FOLLOW_12); 
+
+            	    									newLeafNode(otherlv_19, grammarAccess.getUEAccess().getRightParenthesisKeyword_4_3_4());
+            	    								
+
+            	    }
+
+
+            	    }
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getUEAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+            	case 5 :
+            	    // InternalLangFil.g:1194:4: ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) )
+            	    {
+            	    // InternalLangFil.g:1194:4: ({...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ ) )
+            	    // InternalLangFil.g:1195:5: {...}? => ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ )
+            	    {
+            	    if ( ! getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 4) ) {
+            	        throw new FailedPredicateException(input, "ruleUE", "getUnorderedGroupHelper().canSelect(grammarAccess.getUEAccess().getUnorderedGroup_4(), 4)");
+            	    }
+            	    // InternalLangFil.g:1195:99: ( ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+ )
+            	    // InternalLangFil.g:1196:6: ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+
+            	    {
+
+            	    						getUnorderedGroupHelper().select(grammarAccess.getUEAccess().getUnorderedGroup_4(), 4);
+            	    					
+            	    // InternalLangFil.g:1199:9: ({...}? => ( (lv_documents_20_0= ruleDocument ) ) )+
+            	    int cnt15=0;
+            	    loop15:
+            	    do {
+            	        int alt15=2;
+            	        switch ( input.LA(1) ) {
+            	        case 30:
+            	            {
+            	            int LA15_2 = input.LA(2);
+
+            	            if ( ((true)) ) {
+            	                alt15=1;
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 34:
+            	            {
+            	            int LA15_3 = input.LA(2);
+
+            	            if ( ((true)) ) {
+            	                alt15=1;
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 36:
+            	            {
+            	            int LA15_4 = input.LA(2);
+
+            	            if ( ((true)) ) {
+            	                alt15=1;
+            	            }
+
+
+            	            }
+            	            break;
+
+            	        }
+
+            	        switch (alt15) {
+            	    	case 1 :
+            	    	    // InternalLangFil.g:1199:10: {...}? => ( (lv_documents_20_0= ruleDocument ) )
+            	    	    {
+            	    	    if ( !((true)) ) {
+            	    	        throw new FailedPredicateException(input, "ruleUE", "true");
+            	    	    }
+            	    	    // InternalLangFil.g:1199:19: ( (lv_documents_20_0= ruleDocument ) )
+            	    	    // InternalLangFil.g:1199:20: (lv_documents_20_0= ruleDocument )
+            	    	    {
+            	    	    // InternalLangFil.g:1199:20: (lv_documents_20_0= ruleDocument )
+            	    	    // InternalLangFil.g:1200:10: lv_documents_20_0= ruleDocument
+            	    	    {
+
+            	    	    										newCompositeNode(grammarAccess.getUEAccess().getDocumentsDocumentParserRuleCall_4_4_0());
+            	    	    									
+            	    	    pushFollow(FOLLOW_12);
+            	    	    lv_documents_20_0=ruleDocument();
+
+            	    	    state._fsp--;
+
+
+            	    	    										if (current==null) {
+            	    	    											current = createModelElementForParent(grammarAccess.getUERule());
+            	    	    										}
+            	    	    										add(
+            	    	    											current,
+            	    	    											"documents",
+            	    	    											lv_documents_20_0,
+            	    	    											"fil.xtext.LangFil.Document");
+            	    	    										afterParserOrEnumRuleCall();
+            	    	    									
+
+            	    	    }
+
+
+            	    	    }
+
+
+            	    	    }
+            	    	    break;
+
+            	    	default :
+            	    	    if ( cnt15 >= 1 ) break loop15;
+            	                EarlyExitException eee =
+            	                    new EarlyExitException(15, input);
+            	                throw eee;
+            	        }
+            	        cnt15++;
+            	    } while (true);
+
+            	     
+            	    						getUnorderedGroupHelper().returnFromSelection(grammarAccess.getUEAccess().getUnorderedGroup_4());
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop16;
+                }
+            } while (true);
+
+
             }
-            switch (alt25) {
-                case 1 :
-                    // InternalLangFil.g:1094:4: otherlv_4= 'pseudo' ( (lv_pseudo_5_0= ruleEString ) )
-                    {
-                    otherlv_4=(Token)match(input,18,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getUEAccess().getPseudoKeyword_4_0());
-                    			
-                    // InternalLangFil.g:1098:4: ( (lv_pseudo_5_0= ruleEString ) )
-                    // InternalLangFil.g:1099:5: (lv_pseudo_5_0= ruleEString )
-                    {
-                    // InternalLangFil.g:1099:5: (lv_pseudo_5_0= ruleEString )
-                    // InternalLangFil.g:1100:6: lv_pseudo_5_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getUEAccess().getPseudoEStringParserRuleCall_4_1_0());
-                    					
-                    pushFollow(FOLLOW_34);
-                    lv_pseudo_5_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getUERule());
-                    						}
-                    						set(
-                    							current,
-                    							"pseudo",
-                    							lv_pseudo_5_0,
-                    							"fil.xtext.LangFil.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
 
             }
 
-            // InternalLangFil.g:1118:3: (otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
-
-            if ( (LA27_0==19) ) {
-                alt27=1;
-            }
-            switch (alt27) {
-                case 1 :
-                    // InternalLangFil.g:1119:4: otherlv_6= 'responsables' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')'
-                    {
-                    otherlv_6=(Token)match(input,19,FOLLOW_13); 
-
-                    				newLeafNode(otherlv_6, grammarAccess.getUEAccess().getResponsablesKeyword_5_0());
-                    			
-                    otherlv_7=(Token)match(input,20,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_7, grammarAccess.getUEAccess().getLeftParenthesisKeyword_5_1());
-                    			
-                    // InternalLangFil.g:1127:4: ( ( ruleEString ) )
-                    // InternalLangFil.g:1128:5: ( ruleEString )
-                    {
-                    // InternalLangFil.g:1128:5: ( ruleEString )
-                    // InternalLangFil.g:1129:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getUERule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getUEAccess().getResponsablesIntervenantCrossReference_5_2_0());
-                    					
-                    pushFollow(FOLLOW_14);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalLangFil.g:1143:4: (otherlv_9= ',' ( ( ruleEString ) ) )*
-                    loop26:
-                    do {
-                        int alt26=2;
-                        int LA26_0 = input.LA(1);
-
-                        if ( (LA26_0==14) ) {
-                            alt26=1;
-                        }
-
-
-                        switch (alt26) {
-                    	case 1 :
-                    	    // InternalLangFil.g:1144:5: otherlv_9= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_9=(Token)match(input,14,FOLLOW_3); 
-
-                    	    					newLeafNode(otherlv_9, grammarAccess.getUEAccess().getCommaKeyword_5_3_0());
-                    	    				
-                    	    // InternalLangFil.g:1148:5: ( ( ruleEString ) )
-                    	    // InternalLangFil.g:1149:6: ( ruleEString )
-                    	    {
-                    	    // InternalLangFil.g:1149:6: ( ruleEString )
-                    	    // InternalLangFil.g:1150:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getUERule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getUEAccess().getResponsablesIntervenantCrossReference_5_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_14);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop26;
-                        }
-                    } while (true);
-
-                    otherlv_11=(Token)match(input,21,FOLLOW_35); 
-
-                    				newLeafNode(otherlv_11, grammarAccess.getUEAccess().getRightParenthesisKeyword_5_4());
-                    			
-
-                    }
-                    break;
+             
+            				  getUnorderedGroupHelper().leave(grammarAccess.getUEAccess().getUnorderedGroup_4());
+            				
 
             }
 
-            // InternalLangFil.g:1170:3: (otherlv_12= 'enseignants' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            otherlv_21=(Token)match(input,19,FOLLOW_2); 
 
-            if ( (LA29_0==28) ) {
-                alt29=1;
-            }
-            switch (alt29) {
-                case 1 :
-                    // InternalLangFil.g:1171:4: otherlv_12= 'enseignants' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')'
-                    {
-                    otherlv_12=(Token)match(input,28,FOLLOW_13); 
-
-                    				newLeafNode(otherlv_12, grammarAccess.getUEAccess().getEnseignantsKeyword_6_0());
-                    			
-                    otherlv_13=(Token)match(input,20,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_13, grammarAccess.getUEAccess().getLeftParenthesisKeyword_6_1());
-                    			
-                    // InternalLangFil.g:1179:4: ( ( ruleEString ) )
-                    // InternalLangFil.g:1180:5: ( ruleEString )
-                    {
-                    // InternalLangFil.g:1180:5: ( ruleEString )
-                    // InternalLangFil.g:1181:6: ruleEString
-                    {
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getUERule());
-                    						}
-                    					
-
-                    						newCompositeNode(grammarAccess.getUEAccess().getEnseignantsIntervenantCrossReference_6_2_0());
-                    					
-                    pushFollow(FOLLOW_14);
-                    ruleEString();
-
-                    state._fsp--;
-
-
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalLangFil.g:1195:4: (otherlv_15= ',' ( ( ruleEString ) ) )*
-                    loop28:
-                    do {
-                        int alt28=2;
-                        int LA28_0 = input.LA(1);
-
-                        if ( (LA28_0==14) ) {
-                            alt28=1;
-                        }
-
-
-                        switch (alt28) {
-                    	case 1 :
-                    	    // InternalLangFil.g:1196:5: otherlv_15= ',' ( ( ruleEString ) )
-                    	    {
-                    	    otherlv_15=(Token)match(input,14,FOLLOW_3); 
-
-                    	    					newLeafNode(otherlv_15, grammarAccess.getUEAccess().getCommaKeyword_6_3_0());
-                    	    				
-                    	    // InternalLangFil.g:1200:5: ( ( ruleEString ) )
-                    	    // InternalLangFil.g:1201:6: ( ruleEString )
-                    	    {
-                    	    // InternalLangFil.g:1201:6: ( ruleEString )
-                    	    // InternalLangFil.g:1202:7: ruleEString
-                    	    {
-
-                    	    							if (current==null) {
-                    	    								current = createModelElement(grammarAccess.getUERule());
-                    	    							}
-                    	    						
-
-                    	    							newCompositeNode(grammarAccess.getUEAccess().getEnseignantsIntervenantCrossReference_6_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_14);
-                    	    ruleEString();
-
-                    	    state._fsp--;
-
-
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop28;
-                        }
-                    } while (true);
-
-                    otherlv_17=(Token)match(input,21,FOLLOW_36); 
-
-                    				newLeafNode(otherlv_17, grammarAccess.getUEAccess().getRightParenthesisKeyword_6_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalLangFil.g:1222:3: (otherlv_18= 'documents' otherlv_19= '{' ( (lv_documents_20_0= ruleDocument ) ) (otherlv_21= ',' ( (lv_documents_22_0= ruleDocument ) ) )* otherlv_23= '}' )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
-
-            if ( (LA31_0==31) ) {
-                alt31=1;
-            }
-            switch (alt31) {
-                case 1 :
-                    // InternalLangFil.g:1223:4: otherlv_18= 'documents' otherlv_19= '{' ( (lv_documents_20_0= ruleDocument ) ) (otherlv_21= ',' ( (lv_documents_22_0= ruleDocument ) ) )* otherlv_23= '}'
-                    {
-                    otherlv_18=(Token)match(input,31,FOLLOW_4); 
-
-                    				newLeafNode(otherlv_18, grammarAccess.getUEAccess().getDocumentsKeyword_7_0());
-                    			
-                    otherlv_19=(Token)match(input,12,FOLLOW_31); 
-
-                    				newLeafNode(otherlv_19, grammarAccess.getUEAccess().getLeftCurlyBracketKeyword_7_1());
-                    			
-                    // InternalLangFil.g:1231:4: ( (lv_documents_20_0= ruleDocument ) )
-                    // InternalLangFil.g:1232:5: (lv_documents_20_0= ruleDocument )
-                    {
-                    // InternalLangFil.g:1232:5: (lv_documents_20_0= ruleDocument )
-                    // InternalLangFil.g:1233:6: lv_documents_20_0= ruleDocument
-                    {
-
-                    						newCompositeNode(grammarAccess.getUEAccess().getDocumentsDocumentParserRuleCall_7_2_0());
-                    					
-                    pushFollow(FOLLOW_7);
-                    lv_documents_20_0=ruleDocument();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getUERule());
-                    						}
-                    						add(
-                    							current,
-                    							"documents",
-                    							lv_documents_20_0,
-                    							"fil.xtext.LangFil.Document");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-                    // InternalLangFil.g:1250:4: (otherlv_21= ',' ( (lv_documents_22_0= ruleDocument ) ) )*
-                    loop30:
-                    do {
-                        int alt30=2;
-                        int LA30_0 = input.LA(1);
-
-                        if ( (LA30_0==14) ) {
-                            alt30=1;
-                        }
-
-
-                        switch (alt30) {
-                    	case 1 :
-                    	    // InternalLangFil.g:1251:5: otherlv_21= ',' ( (lv_documents_22_0= ruleDocument ) )
-                    	    {
-                    	    otherlv_21=(Token)match(input,14,FOLLOW_31); 
-
-                    	    					newLeafNode(otherlv_21, grammarAccess.getUEAccess().getCommaKeyword_7_3_0());
-                    	    				
-                    	    // InternalLangFil.g:1255:5: ( (lv_documents_22_0= ruleDocument ) )
-                    	    // InternalLangFil.g:1256:6: (lv_documents_22_0= ruleDocument )
-                    	    {
-                    	    // InternalLangFil.g:1256:6: (lv_documents_22_0= ruleDocument )
-                    	    // InternalLangFil.g:1257:7: lv_documents_22_0= ruleDocument
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getUEAccess().getDocumentsDocumentParserRuleCall_7_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_7);
-                    	    lv_documents_22_0=ruleDocument();
-
-                    	    state._fsp--;
-
-
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getUERule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"documents",
-                    	    								lv_documents_22_0,
-                    	    								"fil.xtext.LangFil.Document");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop30;
-                        }
-                    } while (true);
-
-                    otherlv_23=(Token)match(input,15,FOLLOW_37); 
-
-                    				newLeafNode(otherlv_23, grammarAccess.getUEAccess().getRightCurlyBracketKeyword_7_4());
-                    			
-
-                    }
-                    break;
-
-            }
-
-            // InternalLangFil.g:1280:3: (otherlv_24= 'presentation' ( (lv_presentation_25_0= rulePresentation ) ) )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
-
-            if ( (LA32_0==23) ) {
-                alt32=1;
-            }
-            switch (alt32) {
-                case 1 :
-                    // InternalLangFil.g:1281:4: otherlv_24= 'presentation' ( (lv_presentation_25_0= rulePresentation ) )
-                    {
-                    otherlv_24=(Token)match(input,23,FOLLOW_18); 
-
-                    				newLeafNode(otherlv_24, grammarAccess.getUEAccess().getPresentationKeyword_8_0());
-                    			
-                    // InternalLangFil.g:1285:4: ( (lv_presentation_25_0= rulePresentation ) )
-                    // InternalLangFil.g:1286:5: (lv_presentation_25_0= rulePresentation )
-                    {
-                    // InternalLangFil.g:1286:5: (lv_presentation_25_0= rulePresentation )
-                    // InternalLangFil.g:1287:6: lv_presentation_25_0= rulePresentation
-                    {
-
-                    						newCompositeNode(grammarAccess.getUEAccess().getPresentationPresentationParserRuleCall_8_1_0());
-                    					
-                    pushFollow(FOLLOW_10);
-                    lv_presentation_25_0=rulePresentation();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getUERule());
-                    						}
-                    						set(
-                    							current,
-                    							"presentation",
-                    							lv_presentation_25_0,
-                    							"fil.xtext.LangFil.Presentation");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            otherlv_26=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_26, grammarAccess.getUEAccess().getRightCurlyBracketKeyword_9());
+            			newLeafNode(otherlv_21, grammarAccess.getUEAccess().getRightCurlyBracketKeyword_5());
             		
 
             }
@@ -2997,7 +3214,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleS1"
-    // InternalLangFil.g:1313:1: entryRuleS1 returns [EObject current=null] : iv_ruleS1= ruleS1 EOF ;
+    // InternalLangFil.g:1237:1: entryRuleS1 returns [EObject current=null] : iv_ruleS1= ruleS1 EOF ;
     public final EObject entryRuleS1() throws RecognitionException {
         EObject current = null;
 
@@ -3005,8 +3222,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:1313:43: (iv_ruleS1= ruleS1 EOF )
-            // InternalLangFil.g:1314:2: iv_ruleS1= ruleS1 EOF
+            // InternalLangFil.g:1237:43: (iv_ruleS1= ruleS1 EOF )
+            // InternalLangFil.g:1238:2: iv_ruleS1= ruleS1 EOF
             {
              newCompositeNode(grammarAccess.getS1Rule()); 
             pushFollow(FOLLOW_1);
@@ -3033,7 +3250,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleS1"
-    // InternalLangFil.g:1320:1: ruleS1 returns [EObject current=null] : ( () otherlv_1= 'S1' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' ) ;
+    // InternalLangFil.g:1244:1: ruleS1 returns [EObject current=null] : ( () otherlv_1= 'S1' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' ) ;
     public final EObject ruleS1() throws RecognitionException {
         EObject current = null;
 
@@ -3053,14 +3270,14 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLangFil.g:1326:2: ( ( () otherlv_1= 'S1' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' ) )
-            // InternalLangFil.g:1327:2: ( () otherlv_1= 'S1' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' )
+            // InternalLangFil.g:1250:2: ( ( () otherlv_1= 'S1' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' ) )
+            // InternalLangFil.g:1251:2: ( () otherlv_1= 'S1' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' )
             {
-            // InternalLangFil.g:1327:2: ( () otherlv_1= 'S1' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' )
-            // InternalLangFil.g:1328:3: () otherlv_1= 'S1' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}'
+            // InternalLangFil.g:1251:2: ( () otherlv_1= 'S1' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' )
+            // InternalLangFil.g:1252:3: () otherlv_1= 'S1' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}'
             {
-            // InternalLangFil.g:1328:3: ()
-            // InternalLangFil.g:1329:4: 
+            // InternalLangFil.g:1252:3: ()
+            // InternalLangFil.g:1253:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3070,38 +3287,38 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,35,FOLLOW_4); 
+            otherlv_1=(Token)match(input,26,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getS1Access().getS1Keyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_38); 
+            otherlv_2=(Token)match(input,13,FOLLOW_13); 
 
             			newLeafNode(otherlv_2, grammarAccess.getS1Access().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLangFil.g:1343:3: (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // InternalLangFil.g:1267:3: (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )?
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( (LA34_0==36) ) {
-                alt34=1;
+            if ( (LA18_0==27) ) {
+                alt18=1;
             }
-            switch (alt34) {
+            switch (alt18) {
                 case 1 :
-                    // InternalLangFil.g:1344:4: otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')'
+                    // InternalLangFil.g:1268:4: otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')'
                     {
-                    otherlv_3=(Token)match(input,36,FOLLOW_13); 
+                    otherlv_3=(Token)match(input,27,FOLLOW_7); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getS1Access().getUesoptionnellesKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,20,FOLLOW_3); 
+                    otherlv_4=(Token)match(input,16,FOLLOW_3); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getS1Access().getLeftParenthesisKeyword_3_1());
                     			
-                    // InternalLangFil.g:1352:4: ( ( ruleEString ) )
-                    // InternalLangFil.g:1353:5: ( ruleEString )
+                    // InternalLangFil.g:1276:4: ( ( ruleEString ) )
+                    // InternalLangFil.g:1277:5: ( ruleEString )
                     {
-                    // InternalLangFil.g:1353:5: ( ruleEString )
-                    // InternalLangFil.g:1354:6: ruleEString
+                    // InternalLangFil.g:1277:5: ( ruleEString )
+                    // InternalLangFil.g:1278:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -3111,7 +3328,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getS1Access().getUesoptionnellesUECrossReference_3_2_0());
                     					
-                    pushFollow(FOLLOW_14);
+                    pushFollow(FOLLOW_8);
                     ruleEString();
 
                     state._fsp--;
@@ -3125,30 +3342,30 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalLangFil.g:1368:4: (otherlv_6= ',' ( ( ruleEString ) ) )*
-                    loop33:
+                    // InternalLangFil.g:1292:4: (otherlv_6= ',' ( ( ruleEString ) ) )*
+                    loop17:
                     do {
-                        int alt33=2;
-                        int LA33_0 = input.LA(1);
+                        int alt17=2;
+                        int LA17_0 = input.LA(1);
 
-                        if ( (LA33_0==14) ) {
-                            alt33=1;
+                        if ( (LA17_0==17) ) {
+                            alt17=1;
                         }
 
 
-                        switch (alt33) {
+                        switch (alt17) {
                     	case 1 :
-                    	    // InternalLangFil.g:1369:5: otherlv_6= ',' ( ( ruleEString ) )
+                    	    // InternalLangFil.g:1293:5: otherlv_6= ',' ( ( ruleEString ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,14,FOLLOW_3); 
+                    	    otherlv_6=(Token)match(input,17,FOLLOW_3); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getS1Access().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalLangFil.g:1373:5: ( ( ruleEString ) )
-                    	    // InternalLangFil.g:1374:6: ( ruleEString )
+                    	    // InternalLangFil.g:1297:5: ( ( ruleEString ) )
+                    	    // InternalLangFil.g:1298:6: ( ruleEString )
                     	    {
-                    	    // InternalLangFil.g:1374:6: ( ruleEString )
-                    	    // InternalLangFil.g:1375:7: ruleEString
+                    	    // InternalLangFil.g:1298:6: ( ruleEString )
+                    	    // InternalLangFil.g:1299:7: ruleEString
                     	    {
 
                     	    							if (current==null) {
@@ -3158,7 +3375,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     	    							newCompositeNode(grammarAccess.getS1Access().getUesoptionnellesUECrossReference_3_3_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_14);
+                    	    pushFollow(FOLLOW_8);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -3177,11 +3394,11 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop33;
+                    	    break loop17;
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,21,FOLLOW_39); 
+                    otherlv_8=(Token)match(input,18,FOLLOW_14); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getS1Access().getRightParenthesisKeyword_3_4());
                     			
@@ -3191,30 +3408,30 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLangFil.g:1395:3: (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )?
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            // InternalLangFil.g:1319:3: (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA36_0==37) ) {
-                alt36=1;
+            if ( (LA20_0==28) ) {
+                alt20=1;
             }
-            switch (alt36) {
+            switch (alt20) {
                 case 1 :
-                    // InternalLangFil.g:1396:4: otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')'
+                    // InternalLangFil.g:1320:4: otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')'
                     {
-                    otherlv_9=(Token)match(input,37,FOLLOW_13); 
+                    otherlv_9=(Token)match(input,28,FOLLOW_7); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getS1Access().getUesobligatoiresKeyword_4_0());
                     			
-                    otherlv_10=(Token)match(input,20,FOLLOW_3); 
+                    otherlv_10=(Token)match(input,16,FOLLOW_3); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getS1Access().getLeftParenthesisKeyword_4_1());
                     			
-                    // InternalLangFil.g:1404:4: ( ( ruleEString ) )
-                    // InternalLangFil.g:1405:5: ( ruleEString )
+                    // InternalLangFil.g:1328:4: ( ( ruleEString ) )
+                    // InternalLangFil.g:1329:5: ( ruleEString )
                     {
-                    // InternalLangFil.g:1405:5: ( ruleEString )
-                    // InternalLangFil.g:1406:6: ruleEString
+                    // InternalLangFil.g:1329:5: ( ruleEString )
+                    // InternalLangFil.g:1330:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -3224,7 +3441,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getS1Access().getUesobligatoiresUECrossReference_4_2_0());
                     					
-                    pushFollow(FOLLOW_14);
+                    pushFollow(FOLLOW_8);
                     ruleEString();
 
                     state._fsp--;
@@ -3238,30 +3455,30 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalLangFil.g:1420:4: (otherlv_12= ',' ( ( ruleEString ) ) )*
-                    loop35:
+                    // InternalLangFil.g:1344:4: (otherlv_12= ',' ( ( ruleEString ) ) )*
+                    loop19:
                     do {
-                        int alt35=2;
-                        int LA35_0 = input.LA(1);
+                        int alt19=2;
+                        int LA19_0 = input.LA(1);
 
-                        if ( (LA35_0==14) ) {
-                            alt35=1;
+                        if ( (LA19_0==17) ) {
+                            alt19=1;
                         }
 
 
-                        switch (alt35) {
+                        switch (alt19) {
                     	case 1 :
-                    	    // InternalLangFil.g:1421:5: otherlv_12= ',' ( ( ruleEString ) )
+                    	    // InternalLangFil.g:1345:5: otherlv_12= ',' ( ( ruleEString ) )
                     	    {
-                    	    otherlv_12=(Token)match(input,14,FOLLOW_3); 
+                    	    otherlv_12=(Token)match(input,17,FOLLOW_3); 
 
                     	    					newLeafNode(otherlv_12, grammarAccess.getS1Access().getCommaKeyword_4_3_0());
                     	    				
-                    	    // InternalLangFil.g:1425:5: ( ( ruleEString ) )
-                    	    // InternalLangFil.g:1426:6: ( ruleEString )
+                    	    // InternalLangFil.g:1349:5: ( ( ruleEString ) )
+                    	    // InternalLangFil.g:1350:6: ( ruleEString )
                     	    {
-                    	    // InternalLangFil.g:1426:6: ( ruleEString )
-                    	    // InternalLangFil.g:1427:7: ruleEString
+                    	    // InternalLangFil.g:1350:6: ( ruleEString )
+                    	    // InternalLangFil.g:1351:7: ruleEString
                     	    {
 
                     	    							if (current==null) {
@@ -3271,7 +3488,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     	    							newCompositeNode(grammarAccess.getS1Access().getUesobligatoiresUECrossReference_4_3_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_14);
+                    	    pushFollow(FOLLOW_8);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -3290,11 +3507,11 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop35;
+                    	    break loop19;
                         }
                     } while (true);
 
-                    otherlv_14=(Token)match(input,21,FOLLOW_10); 
+                    otherlv_14=(Token)match(input,18,FOLLOW_10); 
 
                     				newLeafNode(otherlv_14, grammarAccess.getS1Access().getRightParenthesisKeyword_4_4());
                     			
@@ -3304,7 +3521,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_15=(Token)match(input,15,FOLLOW_2); 
+            otherlv_15=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_15, grammarAccess.getS1Access().getRightCurlyBracketKeyword_5());
             		
@@ -3331,7 +3548,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleS2"
-    // InternalLangFil.g:1455:1: entryRuleS2 returns [EObject current=null] : iv_ruleS2= ruleS2 EOF ;
+    // InternalLangFil.g:1379:1: entryRuleS2 returns [EObject current=null] : iv_ruleS2= ruleS2 EOF ;
     public final EObject entryRuleS2() throws RecognitionException {
         EObject current = null;
 
@@ -3339,8 +3556,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:1455:43: (iv_ruleS2= ruleS2 EOF )
-            // InternalLangFil.g:1456:2: iv_ruleS2= ruleS2 EOF
+            // InternalLangFil.g:1379:43: (iv_ruleS2= ruleS2 EOF )
+            // InternalLangFil.g:1380:2: iv_ruleS2= ruleS2 EOF
             {
              newCompositeNode(grammarAccess.getS2Rule()); 
             pushFollow(FOLLOW_1);
@@ -3367,7 +3584,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleS2"
-    // InternalLangFil.g:1462:1: ruleS2 returns [EObject current=null] : ( () otherlv_1= 'S2' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' ) ;
+    // InternalLangFil.g:1386:1: ruleS2 returns [EObject current=null] : ( () otherlv_1= 'S2' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' ) ;
     public final EObject ruleS2() throws RecognitionException {
         EObject current = null;
 
@@ -3387,14 +3604,14 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLangFil.g:1468:2: ( ( () otherlv_1= 'S2' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' ) )
-            // InternalLangFil.g:1469:2: ( () otherlv_1= 'S2' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' )
+            // InternalLangFil.g:1392:2: ( ( () otherlv_1= 'S2' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' ) )
+            // InternalLangFil.g:1393:2: ( () otherlv_1= 'S2' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' )
             {
-            // InternalLangFil.g:1469:2: ( () otherlv_1= 'S2' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' )
-            // InternalLangFil.g:1470:3: () otherlv_1= 'S2' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}'
+            // InternalLangFil.g:1393:2: ( () otherlv_1= 'S2' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}' )
+            // InternalLangFil.g:1394:3: () otherlv_1= 'S2' otherlv_2= '{' (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )? otherlv_15= '}'
             {
-            // InternalLangFil.g:1470:3: ()
-            // InternalLangFil.g:1471:4: 
+            // InternalLangFil.g:1394:3: ()
+            // InternalLangFil.g:1395:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3404,38 +3621,38 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,38,FOLLOW_4); 
+            otherlv_1=(Token)match(input,29,FOLLOW_5); 
 
             			newLeafNode(otherlv_1, grammarAccess.getS2Access().getS2Keyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_38); 
+            otherlv_2=(Token)match(input,13,FOLLOW_13); 
 
             			newLeafNode(otherlv_2, grammarAccess.getS2Access().getLeftCurlyBracketKeyword_2());
             		
-            // InternalLangFil.g:1485:3: (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // InternalLangFil.g:1409:3: (otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA38_0==36) ) {
-                alt38=1;
+            if ( (LA22_0==27) ) {
+                alt22=1;
             }
-            switch (alt38) {
+            switch (alt22) {
                 case 1 :
-                    // InternalLangFil.g:1486:4: otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')'
+                    // InternalLangFil.g:1410:4: otherlv_3= 'uesoptionnelles' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')'
                     {
-                    otherlv_3=(Token)match(input,36,FOLLOW_13); 
+                    otherlv_3=(Token)match(input,27,FOLLOW_7); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getS2Access().getUesoptionnellesKeyword_3_0());
                     			
-                    otherlv_4=(Token)match(input,20,FOLLOW_3); 
+                    otherlv_4=(Token)match(input,16,FOLLOW_3); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getS2Access().getLeftParenthesisKeyword_3_1());
                     			
-                    // InternalLangFil.g:1494:4: ( ( ruleEString ) )
-                    // InternalLangFil.g:1495:5: ( ruleEString )
+                    // InternalLangFil.g:1418:4: ( ( ruleEString ) )
+                    // InternalLangFil.g:1419:5: ( ruleEString )
                     {
-                    // InternalLangFil.g:1495:5: ( ruleEString )
-                    // InternalLangFil.g:1496:6: ruleEString
+                    // InternalLangFil.g:1419:5: ( ruleEString )
+                    // InternalLangFil.g:1420:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -3445,7 +3662,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getS2Access().getUesoptionnellesUECrossReference_3_2_0());
                     					
-                    pushFollow(FOLLOW_14);
+                    pushFollow(FOLLOW_8);
                     ruleEString();
 
                     state._fsp--;
@@ -3459,30 +3676,30 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalLangFil.g:1510:4: (otherlv_6= ',' ( ( ruleEString ) ) )*
-                    loop37:
+                    // InternalLangFil.g:1434:4: (otherlv_6= ',' ( ( ruleEString ) ) )*
+                    loop21:
                     do {
-                        int alt37=2;
-                        int LA37_0 = input.LA(1);
+                        int alt21=2;
+                        int LA21_0 = input.LA(1);
 
-                        if ( (LA37_0==14) ) {
-                            alt37=1;
+                        if ( (LA21_0==17) ) {
+                            alt21=1;
                         }
 
 
-                        switch (alt37) {
+                        switch (alt21) {
                     	case 1 :
-                    	    // InternalLangFil.g:1511:5: otherlv_6= ',' ( ( ruleEString ) )
+                    	    // InternalLangFil.g:1435:5: otherlv_6= ',' ( ( ruleEString ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,14,FOLLOW_3); 
+                    	    otherlv_6=(Token)match(input,17,FOLLOW_3); 
 
                     	    					newLeafNode(otherlv_6, grammarAccess.getS2Access().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalLangFil.g:1515:5: ( ( ruleEString ) )
-                    	    // InternalLangFil.g:1516:6: ( ruleEString )
+                    	    // InternalLangFil.g:1439:5: ( ( ruleEString ) )
+                    	    // InternalLangFil.g:1440:6: ( ruleEString )
                     	    {
-                    	    // InternalLangFil.g:1516:6: ( ruleEString )
-                    	    // InternalLangFil.g:1517:7: ruleEString
+                    	    // InternalLangFil.g:1440:6: ( ruleEString )
+                    	    // InternalLangFil.g:1441:7: ruleEString
                     	    {
 
                     	    							if (current==null) {
@@ -3492,7 +3709,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     	    							newCompositeNode(grammarAccess.getS2Access().getUesoptionnellesUECrossReference_3_3_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_14);
+                    	    pushFollow(FOLLOW_8);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -3511,11 +3728,11 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop37;
+                    	    break loop21;
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,21,FOLLOW_39); 
+                    otherlv_8=(Token)match(input,18,FOLLOW_14); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getS2Access().getRightParenthesisKeyword_3_4());
                     			
@@ -3525,30 +3742,30 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLangFil.g:1537:3: (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // InternalLangFil.g:1461:3: (otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')' )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA40_0==37) ) {
-                alt40=1;
+            if ( (LA24_0==28) ) {
+                alt24=1;
             }
-            switch (alt40) {
+            switch (alt24) {
                 case 1 :
-                    // InternalLangFil.g:1538:4: otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')'
+                    // InternalLangFil.g:1462:4: otherlv_9= 'uesobligatoires' otherlv_10= '(' ( ( ruleEString ) ) (otherlv_12= ',' ( ( ruleEString ) ) )* otherlv_14= ')'
                     {
-                    otherlv_9=(Token)match(input,37,FOLLOW_13); 
+                    otherlv_9=(Token)match(input,28,FOLLOW_7); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getS2Access().getUesobligatoiresKeyword_4_0());
                     			
-                    otherlv_10=(Token)match(input,20,FOLLOW_3); 
+                    otherlv_10=(Token)match(input,16,FOLLOW_3); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getS2Access().getLeftParenthesisKeyword_4_1());
                     			
-                    // InternalLangFil.g:1546:4: ( ( ruleEString ) )
-                    // InternalLangFil.g:1547:5: ( ruleEString )
+                    // InternalLangFil.g:1470:4: ( ( ruleEString ) )
+                    // InternalLangFil.g:1471:5: ( ruleEString )
                     {
-                    // InternalLangFil.g:1547:5: ( ruleEString )
-                    // InternalLangFil.g:1548:6: ruleEString
+                    // InternalLangFil.g:1471:5: ( ruleEString )
+                    // InternalLangFil.g:1472:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -3558,7 +3775,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getS2Access().getUesobligatoiresUECrossReference_4_2_0());
                     					
-                    pushFollow(FOLLOW_14);
+                    pushFollow(FOLLOW_8);
                     ruleEString();
 
                     state._fsp--;
@@ -3572,30 +3789,30 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalLangFil.g:1562:4: (otherlv_12= ',' ( ( ruleEString ) ) )*
-                    loop39:
+                    // InternalLangFil.g:1486:4: (otherlv_12= ',' ( ( ruleEString ) ) )*
+                    loop23:
                     do {
-                        int alt39=2;
-                        int LA39_0 = input.LA(1);
+                        int alt23=2;
+                        int LA23_0 = input.LA(1);
 
-                        if ( (LA39_0==14) ) {
-                            alt39=1;
+                        if ( (LA23_0==17) ) {
+                            alt23=1;
                         }
 
 
-                        switch (alt39) {
+                        switch (alt23) {
                     	case 1 :
-                    	    // InternalLangFil.g:1563:5: otherlv_12= ',' ( ( ruleEString ) )
+                    	    // InternalLangFil.g:1487:5: otherlv_12= ',' ( ( ruleEString ) )
                     	    {
-                    	    otherlv_12=(Token)match(input,14,FOLLOW_3); 
+                    	    otherlv_12=(Token)match(input,17,FOLLOW_3); 
 
                     	    					newLeafNode(otherlv_12, grammarAccess.getS2Access().getCommaKeyword_4_3_0());
                     	    				
-                    	    // InternalLangFil.g:1567:5: ( ( ruleEString ) )
-                    	    // InternalLangFil.g:1568:6: ( ruleEString )
+                    	    // InternalLangFil.g:1491:5: ( ( ruleEString ) )
+                    	    // InternalLangFil.g:1492:6: ( ruleEString )
                     	    {
-                    	    // InternalLangFil.g:1568:6: ( ruleEString )
-                    	    // InternalLangFil.g:1569:7: ruleEString
+                    	    // InternalLangFil.g:1492:6: ( ruleEString )
+                    	    // InternalLangFil.g:1493:7: ruleEString
                     	    {
 
                     	    							if (current==null) {
@@ -3605,7 +3822,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
                     	    							newCompositeNode(grammarAccess.getS2Access().getUesobligatoiresUECrossReference_4_3_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_14);
+                    	    pushFollow(FOLLOW_8);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -3624,11 +3841,11 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop39;
+                    	    break loop23;
                         }
                     } while (true);
 
-                    otherlv_14=(Token)match(input,21,FOLLOW_10); 
+                    otherlv_14=(Token)match(input,18,FOLLOW_10); 
 
                     				newLeafNode(otherlv_14, grammarAccess.getS2Access().getRightParenthesisKeyword_4_4());
                     			
@@ -3638,7 +3855,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_15=(Token)match(input,15,FOLLOW_2); 
+            otherlv_15=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_15, grammarAccess.getS2Access().getRightCurlyBracketKeyword_5());
             		
@@ -3665,7 +3882,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVideo"
-    // InternalLangFil.g:1597:1: entryRuleVideo returns [EObject current=null] : iv_ruleVideo= ruleVideo EOF ;
+    // InternalLangFil.g:1521:1: entryRuleVideo returns [EObject current=null] : iv_ruleVideo= ruleVideo EOF ;
     public final EObject entryRuleVideo() throws RecognitionException {
         EObject current = null;
 
@@ -3673,8 +3890,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:1597:46: (iv_ruleVideo= ruleVideo EOF )
-            // InternalLangFil.g:1598:2: iv_ruleVideo= ruleVideo EOF
+            // InternalLangFil.g:1521:46: (iv_ruleVideo= ruleVideo EOF )
+            // InternalLangFil.g:1522:2: iv_ruleVideo= ruleVideo EOF
             {
              newCompositeNode(grammarAccess.getVideoRule()); 
             pushFollow(FOLLOW_1);
@@ -3701,7 +3918,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVideo"
-    // InternalLangFil.g:1604:1: ruleVideo returns [EObject current=null] : ( () otherlv_1= 'Video' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' ) ;
+    // InternalLangFil.g:1528:1: ruleVideo returns [EObject current=null] : ( () otherlv_1= 'Video' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' ) ;
     public final EObject ruleVideo() throws RecognitionException {
         EObject current = null;
 
@@ -3724,14 +3941,14 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLangFil.g:1610:2: ( ( () otherlv_1= 'Video' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' ) )
-            // InternalLangFil.g:1611:2: ( () otherlv_1= 'Video' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' )
+            // InternalLangFil.g:1534:2: ( ( () otherlv_1= 'Video' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' ) )
+            // InternalLangFil.g:1535:2: ( () otherlv_1= 'Video' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' )
             {
-            // InternalLangFil.g:1611:2: ( () otherlv_1= 'Video' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' )
-            // InternalLangFil.g:1612:3: () otherlv_1= 'Video' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}'
+            // InternalLangFil.g:1535:2: ( () otherlv_1= 'Video' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' )
+            // InternalLangFil.g:1536:3: () otherlv_1= 'Video' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}'
             {
-            // InternalLangFil.g:1612:3: ()
-            // InternalLangFil.g:1613:4: 
+            // InternalLangFil.g:1536:3: ()
+            // InternalLangFil.g:1537:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3741,20 +3958,20 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,39,FOLLOW_3); 
+            otherlv_1=(Token)match(input,30,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getVideoAccess().getVideoKeyword_1());
             		
-            // InternalLangFil.g:1623:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalLangFil.g:1624:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:1547:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalLangFil.g:1548:4: (lv_name_2_0= ruleEString )
             {
-            // InternalLangFil.g:1624:4: (lv_name_2_0= ruleEString )
-            // InternalLangFil.g:1625:5: lv_name_2_0= ruleEString
+            // InternalLangFil.g:1548:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:1549:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getVideoAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -3776,35 +3993,35 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_40); 
+            otherlv_3=(Token)match(input,13,FOLLOW_15); 
 
             			newLeafNode(otherlv_3, grammarAccess.getVideoAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalLangFil.g:1646:3: (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // InternalLangFil.g:1570:3: (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA41_0==40) ) {
-                alt41=1;
+            if ( (LA25_0==31) ) {
+                alt25=1;
             }
-            switch (alt41) {
+            switch (alt25) {
                 case 1 :
-                    // InternalLangFil.g:1647:4: otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) )
+                    // InternalLangFil.g:1571:4: otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) )
                     {
-                    otherlv_4=(Token)match(input,40,FOLLOW_3); 
+                    otherlv_4=(Token)match(input,31,FOLLOW_3); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getVideoAccess().getDescriptionKeyword_4_0());
                     			
-                    // InternalLangFil.g:1651:4: ( (lv_description_5_0= ruleEString ) )
-                    // InternalLangFil.g:1652:5: (lv_description_5_0= ruleEString )
+                    // InternalLangFil.g:1575:4: ( (lv_description_5_0= ruleEString ) )
+                    // InternalLangFil.g:1576:5: (lv_description_5_0= ruleEString )
                     {
-                    // InternalLangFil.g:1652:5: (lv_description_5_0= ruleEString )
-                    // InternalLangFil.g:1653:6: lv_description_5_0= ruleEString
+                    // InternalLangFil.g:1576:5: (lv_description_5_0= ruleEString )
+                    // InternalLangFil.g:1577:6: lv_description_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getVideoAccess().getDescriptionEStringParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_41);
+                    pushFollow(FOLLOW_16);
                     lv_description_5_0=ruleEString();
 
                     state._fsp--;
@@ -3832,81 +4049,64 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLangFil.g:1671:3: (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )?
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            otherlv_6=(Token)match(input,32,FOLLOW_3); 
 
-            if ( (LA42_0==41) ) {
-                alt42=1;
+            			newLeafNode(otherlv_6, grammarAccess.getVideoAccess().getLienKeyword_5());
+            		
+            // InternalLangFil.g:1599:3: ( (lv_lien_7_0= ruleEString ) )
+            // InternalLangFil.g:1600:4: (lv_lien_7_0= ruleEString )
+            {
+            // InternalLangFil.g:1600:4: (lv_lien_7_0= ruleEString )
+            // InternalLangFil.g:1601:5: lv_lien_7_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getVideoAccess().getLienEStringParserRuleCall_6_0());
+            				
+            pushFollow(FOLLOW_17);
+            lv_lien_7_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getVideoRule());
+            					}
+            					set(
+            						current,
+            						"lien",
+            						lv_lien_7_0,
+            						"fil.xtext.LangFil.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
             }
-            switch (alt42) {
+
+
+            }
+
+            // InternalLangFil.g:1618:3: (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
+
+            if ( (LA26_0==33) ) {
+                alt26=1;
+            }
+            switch (alt26) {
                 case 1 :
-                    // InternalLangFil.g:1672:4: otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) )
+                    // InternalLangFil.g:1619:4: otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) )
                     {
-                    otherlv_6=(Token)match(input,41,FOLLOW_3); 
+                    otherlv_8=(Token)match(input,33,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_6, grammarAccess.getVideoAccess().getLienKeyword_5_0());
+                    				newLeafNode(otherlv_8, grammarAccess.getVideoAccess().getDureeKeyword_7_0());
                     			
-                    // InternalLangFil.g:1676:4: ( (lv_lien_7_0= ruleEString ) )
-                    // InternalLangFil.g:1677:5: (lv_lien_7_0= ruleEString )
+                    // InternalLangFil.g:1623:4: ( (lv_duree_9_0= ruleEString ) )
+                    // InternalLangFil.g:1624:5: (lv_duree_9_0= ruleEString )
                     {
-                    // InternalLangFil.g:1677:5: (lv_lien_7_0= ruleEString )
-                    // InternalLangFil.g:1678:6: lv_lien_7_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getVideoAccess().getLienEStringParserRuleCall_5_1_0());
-                    					
-                    pushFollow(FOLLOW_42);
-                    lv_lien_7_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getVideoRule());
-                    						}
-                    						set(
-                    							current,
-                    							"lien",
-                    							lv_lien_7_0,
-                    							"fil.xtext.LangFil.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalLangFil.g:1696:3: (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
-
-            if ( (LA43_0==42) ) {
-                alt43=1;
-            }
-            switch (alt43) {
-                case 1 :
-                    // InternalLangFil.g:1697:4: otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) )
-                    {
-                    otherlv_8=(Token)match(input,42,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_8, grammarAccess.getVideoAccess().getDureeKeyword_6_0());
-                    			
-                    // InternalLangFil.g:1701:4: ( (lv_duree_9_0= ruleEString ) )
-                    // InternalLangFil.g:1702:5: (lv_duree_9_0= ruleEString )
-                    {
-                    // InternalLangFil.g:1702:5: (lv_duree_9_0= ruleEString )
-                    // InternalLangFil.g:1703:6: lv_duree_9_0= ruleEString
+                    // InternalLangFil.g:1624:5: (lv_duree_9_0= ruleEString )
+                    // InternalLangFil.g:1625:6: lv_duree_9_0= ruleEString
                     {
 
-                    						newCompositeNode(grammarAccess.getVideoAccess().getDureeEStringParserRuleCall_6_1_0());
+                    						newCompositeNode(grammarAccess.getVideoAccess().getDureeEStringParserRuleCall_7_1_0());
                     					
                     pushFollow(FOLLOW_10);
                     lv_duree_9_0=ruleEString();
@@ -3936,9 +4136,9 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,15,FOLLOW_2); 
+            otherlv_10=(Token)match(input,19,FOLLOW_2); 
 
-            			newLeafNode(otherlv_10, grammarAccess.getVideoAccess().getRightCurlyBracketKeyword_7());
+            			newLeafNode(otherlv_10, grammarAccess.getVideoAccess().getRightCurlyBracketKeyword_8());
             		
 
             }
@@ -3963,7 +4163,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFichier"
-    // InternalLangFil.g:1729:1: entryRuleFichier returns [EObject current=null] : iv_ruleFichier= ruleFichier EOF ;
+    // InternalLangFil.g:1651:1: entryRuleFichier returns [EObject current=null] : iv_ruleFichier= ruleFichier EOF ;
     public final EObject entryRuleFichier() throws RecognitionException {
         EObject current = null;
 
@@ -3971,8 +4171,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:1729:48: (iv_ruleFichier= ruleFichier EOF )
-            // InternalLangFil.g:1730:2: iv_ruleFichier= ruleFichier EOF
+            // InternalLangFil.g:1651:48: (iv_ruleFichier= ruleFichier EOF )
+            // InternalLangFil.g:1652:2: iv_ruleFichier= ruleFichier EOF
             {
              newCompositeNode(grammarAccess.getFichierRule()); 
             pushFollow(FOLLOW_1);
@@ -3999,7 +4199,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFichier"
-    // InternalLangFil.g:1736:1: ruleFichier returns [EObject current=null] : ( () otherlv_1= 'Fichier' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )? otherlv_10= '}' ) ;
+    // InternalLangFil.g:1658:1: ruleFichier returns [EObject current=null] : ( () otherlv_1= 'Fichier' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )? otherlv_10= '}' ) ;
     public final EObject ruleFichier() throws RecognitionException {
         EObject current = null;
 
@@ -4022,14 +4222,14 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLangFil.g:1742:2: ( ( () otherlv_1= 'Fichier' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )? otherlv_10= '}' ) )
-            // InternalLangFil.g:1743:2: ( () otherlv_1= 'Fichier' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )? otherlv_10= '}' )
+            // InternalLangFil.g:1664:2: ( ( () otherlv_1= 'Fichier' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )? otherlv_10= '}' ) )
+            // InternalLangFil.g:1665:2: ( () otherlv_1= 'Fichier' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )? otherlv_10= '}' )
             {
-            // InternalLangFil.g:1743:2: ( () otherlv_1= 'Fichier' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )? otherlv_10= '}' )
-            // InternalLangFil.g:1744:3: () otherlv_1= 'Fichier' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )? otherlv_10= '}'
+            // InternalLangFil.g:1665:2: ( () otherlv_1= 'Fichier' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )? otherlv_10= '}' )
+            // InternalLangFil.g:1666:3: () otherlv_1= 'Fichier' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )? otherlv_10= '}'
             {
-            // InternalLangFil.g:1744:3: ()
-            // InternalLangFil.g:1745:4: 
+            // InternalLangFil.g:1666:3: ()
+            // InternalLangFil.g:1667:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4039,20 +4239,20 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,43,FOLLOW_3); 
+            otherlv_1=(Token)match(input,34,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getFichierAccess().getFichierKeyword_1());
             		
-            // InternalLangFil.g:1755:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalLangFil.g:1756:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:1677:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalLangFil.g:1678:4: (lv_name_2_0= ruleEString )
             {
-            // InternalLangFil.g:1756:4: (lv_name_2_0= ruleEString )
-            // InternalLangFil.g:1757:5: lv_name_2_0= ruleEString
+            // InternalLangFil.g:1678:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:1679:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getFichierAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -4074,35 +4274,35 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_43); 
+            otherlv_3=(Token)match(input,13,FOLLOW_15); 
 
             			newLeafNode(otherlv_3, grammarAccess.getFichierAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalLangFil.g:1778:3: (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // InternalLangFil.g:1700:3: (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA44_0==40) ) {
-                alt44=1;
+            if ( (LA27_0==31) ) {
+                alt27=1;
             }
-            switch (alt44) {
+            switch (alt27) {
                 case 1 :
-                    // InternalLangFil.g:1779:4: otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) )
+                    // InternalLangFil.g:1701:4: otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) )
                     {
-                    otherlv_4=(Token)match(input,40,FOLLOW_3); 
+                    otherlv_4=(Token)match(input,31,FOLLOW_3); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getFichierAccess().getDescriptionKeyword_4_0());
                     			
-                    // InternalLangFil.g:1783:4: ( (lv_description_5_0= ruleEString ) )
-                    // InternalLangFil.g:1784:5: (lv_description_5_0= ruleEString )
+                    // InternalLangFil.g:1705:4: ( (lv_description_5_0= ruleEString ) )
+                    // InternalLangFil.g:1706:5: (lv_description_5_0= ruleEString )
                     {
-                    // InternalLangFil.g:1784:5: (lv_description_5_0= ruleEString )
-                    // InternalLangFil.g:1785:6: lv_description_5_0= ruleEString
+                    // InternalLangFil.g:1706:5: (lv_description_5_0= ruleEString )
+                    // InternalLangFil.g:1707:6: lv_description_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getFichierAccess().getDescriptionEStringParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_44);
+                    pushFollow(FOLLOW_16);
                     lv_description_5_0=ruleEString();
 
                     state._fsp--;
@@ -4130,81 +4330,64 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLangFil.g:1803:3: (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )?
-            int alt45=2;
-            int LA45_0 = input.LA(1);
+            otherlv_6=(Token)match(input,32,FOLLOW_3); 
 
-            if ( (LA45_0==41) ) {
-                alt45=1;
+            			newLeafNode(otherlv_6, grammarAccess.getFichierAccess().getLienKeyword_5());
+            		
+            // InternalLangFil.g:1729:3: ( (lv_lien_7_0= ruleEString ) )
+            // InternalLangFil.g:1730:4: (lv_lien_7_0= ruleEString )
+            {
+            // InternalLangFil.g:1730:4: (lv_lien_7_0= ruleEString )
+            // InternalLangFil.g:1731:5: lv_lien_7_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getFichierAccess().getLienEStringParserRuleCall_6_0());
+            				
+            pushFollow(FOLLOW_18);
+            lv_lien_7_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getFichierRule());
+            					}
+            					set(
+            						current,
+            						"lien",
+            						lv_lien_7_0,
+            						"fil.xtext.LangFil.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
             }
-            switch (alt45) {
+
+
+            }
+
+            // InternalLangFil.g:1748:3: (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
+
+            if ( (LA28_0==35) ) {
+                alt28=1;
+            }
+            switch (alt28) {
                 case 1 :
-                    // InternalLangFil.g:1804:4: otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) )
+                    // InternalLangFil.g:1749:4: otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) )
                     {
-                    otherlv_6=(Token)match(input,41,FOLLOW_3); 
+                    otherlv_8=(Token)match(input,35,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_6, grammarAccess.getFichierAccess().getLienKeyword_5_0());
+                    				newLeafNode(otherlv_8, grammarAccess.getFichierAccess().getAuteurKeyword_7_0());
                     			
-                    // InternalLangFil.g:1808:4: ( (lv_lien_7_0= ruleEString ) )
-                    // InternalLangFil.g:1809:5: (lv_lien_7_0= ruleEString )
+                    // InternalLangFil.g:1753:4: ( (lv_auteur_9_0= ruleEString ) )
+                    // InternalLangFil.g:1754:5: (lv_auteur_9_0= ruleEString )
                     {
-                    // InternalLangFil.g:1809:5: (lv_lien_7_0= ruleEString )
-                    // InternalLangFil.g:1810:6: lv_lien_7_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getFichierAccess().getLienEStringParserRuleCall_5_1_0());
-                    					
-                    pushFollow(FOLLOW_45);
-                    lv_lien_7_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getFichierRule());
-                    						}
-                    						set(
-                    							current,
-                    							"lien",
-                    							lv_lien_7_0,
-                    							"fil.xtext.LangFil.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalLangFil.g:1828:3: (otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) ) )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
-
-            if ( (LA46_0==44) ) {
-                alt46=1;
-            }
-            switch (alt46) {
-                case 1 :
-                    // InternalLangFil.g:1829:4: otherlv_8= 'auteur' ( (lv_auteur_9_0= ruleEString ) )
-                    {
-                    otherlv_8=(Token)match(input,44,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_8, grammarAccess.getFichierAccess().getAuteurKeyword_6_0());
-                    			
-                    // InternalLangFil.g:1833:4: ( (lv_auteur_9_0= ruleEString ) )
-                    // InternalLangFil.g:1834:5: (lv_auteur_9_0= ruleEString )
-                    {
-                    // InternalLangFil.g:1834:5: (lv_auteur_9_0= ruleEString )
-                    // InternalLangFil.g:1835:6: lv_auteur_9_0= ruleEString
+                    // InternalLangFil.g:1754:5: (lv_auteur_9_0= ruleEString )
+                    // InternalLangFil.g:1755:6: lv_auteur_9_0= ruleEString
                     {
 
-                    						newCompositeNode(grammarAccess.getFichierAccess().getAuteurEStringParserRuleCall_6_1_0());
+                    						newCompositeNode(grammarAccess.getFichierAccess().getAuteurEStringParserRuleCall_7_1_0());
                     					
                     pushFollow(FOLLOW_10);
                     lv_auteur_9_0=ruleEString();
@@ -4234,9 +4417,9 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,15,FOLLOW_2); 
+            otherlv_10=(Token)match(input,19,FOLLOW_2); 
 
-            			newLeafNode(otherlv_10, grammarAccess.getFichierAccess().getRightCurlyBracketKeyword_7());
+            			newLeafNode(otherlv_10, grammarAccess.getFichierAccess().getRightCurlyBracketKeyword_8());
             		
 
             }
@@ -4261,7 +4444,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAudio"
-    // InternalLangFil.g:1861:1: entryRuleAudio returns [EObject current=null] : iv_ruleAudio= ruleAudio EOF ;
+    // InternalLangFil.g:1781:1: entryRuleAudio returns [EObject current=null] : iv_ruleAudio= ruleAudio EOF ;
     public final EObject entryRuleAudio() throws RecognitionException {
         EObject current = null;
 
@@ -4269,8 +4452,8 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLangFil.g:1861:46: (iv_ruleAudio= ruleAudio EOF )
-            // InternalLangFil.g:1862:2: iv_ruleAudio= ruleAudio EOF
+            // InternalLangFil.g:1781:46: (iv_ruleAudio= ruleAudio EOF )
+            // InternalLangFil.g:1782:2: iv_ruleAudio= ruleAudio EOF
             {
              newCompositeNode(grammarAccess.getAudioRule()); 
             pushFollow(FOLLOW_1);
@@ -4297,7 +4480,7 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAudio"
-    // InternalLangFil.g:1868:1: ruleAudio returns [EObject current=null] : ( () otherlv_1= 'Audio' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' ) ;
+    // InternalLangFil.g:1788:1: ruleAudio returns [EObject current=null] : ( () otherlv_1= 'Audio' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' ) ;
     public final EObject ruleAudio() throws RecognitionException {
         EObject current = null;
 
@@ -4320,14 +4503,14 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLangFil.g:1874:2: ( ( () otherlv_1= 'Audio' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' ) )
-            // InternalLangFil.g:1875:2: ( () otherlv_1= 'Audio' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' )
+            // InternalLangFil.g:1794:2: ( ( () otherlv_1= 'Audio' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' ) )
+            // InternalLangFil.g:1795:2: ( () otherlv_1= 'Audio' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' )
             {
-            // InternalLangFil.g:1875:2: ( () otherlv_1= 'Audio' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' )
-            // InternalLangFil.g:1876:3: () otherlv_1= 'Audio' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )? (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}'
+            // InternalLangFil.g:1795:2: ( () otherlv_1= 'Audio' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}' )
+            // InternalLangFil.g:1796:3: () otherlv_1= 'Audio' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )? otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )? otherlv_10= '}'
             {
-            // InternalLangFil.g:1876:3: ()
-            // InternalLangFil.g:1877:4: 
+            // InternalLangFil.g:1796:3: ()
+            // InternalLangFil.g:1797:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4337,20 +4520,20 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,45,FOLLOW_3); 
+            otherlv_1=(Token)match(input,36,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getAudioAccess().getAudioKeyword_1());
             		
-            // InternalLangFil.g:1887:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalLangFil.g:1888:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:1807:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalLangFil.g:1808:4: (lv_name_2_0= ruleEString )
             {
-            // InternalLangFil.g:1888:4: (lv_name_2_0= ruleEString )
-            // InternalLangFil.g:1889:5: lv_name_2_0= ruleEString
+            // InternalLangFil.g:1808:4: (lv_name_2_0= ruleEString )
+            // InternalLangFil.g:1809:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getAudioAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_5);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -4372,35 +4555,35 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_40); 
+            otherlv_3=(Token)match(input,13,FOLLOW_15); 
 
             			newLeafNode(otherlv_3, grammarAccess.getAudioAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalLangFil.g:1910:3: (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            // InternalLangFil.g:1830:3: (otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) ) )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA47_0==40) ) {
-                alt47=1;
+            if ( (LA29_0==31) ) {
+                alt29=1;
             }
-            switch (alt47) {
+            switch (alt29) {
                 case 1 :
-                    // InternalLangFil.g:1911:4: otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) )
+                    // InternalLangFil.g:1831:4: otherlv_4= 'description' ( (lv_description_5_0= ruleEString ) )
                     {
-                    otherlv_4=(Token)match(input,40,FOLLOW_3); 
+                    otherlv_4=(Token)match(input,31,FOLLOW_3); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getAudioAccess().getDescriptionKeyword_4_0());
                     			
-                    // InternalLangFil.g:1915:4: ( (lv_description_5_0= ruleEString ) )
-                    // InternalLangFil.g:1916:5: (lv_description_5_0= ruleEString )
+                    // InternalLangFil.g:1835:4: ( (lv_description_5_0= ruleEString ) )
+                    // InternalLangFil.g:1836:5: (lv_description_5_0= ruleEString )
                     {
-                    // InternalLangFil.g:1916:5: (lv_description_5_0= ruleEString )
-                    // InternalLangFil.g:1917:6: lv_description_5_0= ruleEString
+                    // InternalLangFil.g:1836:5: (lv_description_5_0= ruleEString )
+                    // InternalLangFil.g:1837:6: lv_description_5_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getAudioAccess().getDescriptionEStringParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_41);
+                    pushFollow(FOLLOW_16);
                     lv_description_5_0=ruleEString();
 
                     state._fsp--;
@@ -4428,81 +4611,64 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalLangFil.g:1935:3: (otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) ) )?
-            int alt48=2;
-            int LA48_0 = input.LA(1);
+            otherlv_6=(Token)match(input,32,FOLLOW_3); 
 
-            if ( (LA48_0==41) ) {
-                alt48=1;
+            			newLeafNode(otherlv_6, grammarAccess.getAudioAccess().getLienKeyword_5());
+            		
+            // InternalLangFil.g:1859:3: ( (lv_lien_7_0= ruleEString ) )
+            // InternalLangFil.g:1860:4: (lv_lien_7_0= ruleEString )
+            {
+            // InternalLangFil.g:1860:4: (lv_lien_7_0= ruleEString )
+            // InternalLangFil.g:1861:5: lv_lien_7_0= ruleEString
+            {
+
+            					newCompositeNode(grammarAccess.getAudioAccess().getLienEStringParserRuleCall_6_0());
+            				
+            pushFollow(FOLLOW_17);
+            lv_lien_7_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getAudioRule());
+            					}
+            					set(
+            						current,
+            						"lien",
+            						lv_lien_7_0,
+            						"fil.xtext.LangFil.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
             }
-            switch (alt48) {
+
+
+            }
+
+            // InternalLangFil.g:1878:3: (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
+
+            if ( (LA30_0==33) ) {
+                alt30=1;
+            }
+            switch (alt30) {
                 case 1 :
-                    // InternalLangFil.g:1936:4: otherlv_6= 'lien' ( (lv_lien_7_0= ruleEString ) )
+                    // InternalLangFil.g:1879:4: otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) )
                     {
-                    otherlv_6=(Token)match(input,41,FOLLOW_3); 
+                    otherlv_8=(Token)match(input,33,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_6, grammarAccess.getAudioAccess().getLienKeyword_5_0());
+                    				newLeafNode(otherlv_8, grammarAccess.getAudioAccess().getDureeKeyword_7_0());
                     			
-                    // InternalLangFil.g:1940:4: ( (lv_lien_7_0= ruleEString ) )
-                    // InternalLangFil.g:1941:5: (lv_lien_7_0= ruleEString )
+                    // InternalLangFil.g:1883:4: ( (lv_duree_9_0= ruleEString ) )
+                    // InternalLangFil.g:1884:5: (lv_duree_9_0= ruleEString )
                     {
-                    // InternalLangFil.g:1941:5: (lv_lien_7_0= ruleEString )
-                    // InternalLangFil.g:1942:6: lv_lien_7_0= ruleEString
-                    {
-
-                    						newCompositeNode(grammarAccess.getAudioAccess().getLienEStringParserRuleCall_5_1_0());
-                    					
-                    pushFollow(FOLLOW_42);
-                    lv_lien_7_0=ruleEString();
-
-                    state._fsp--;
-
-
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getAudioRule());
-                    						}
-                    						set(
-                    							current,
-                    							"lien",
-                    							lv_lien_7_0,
-                    							"fil.xtext.LangFil.EString");
-                    						afterParserOrEnumRuleCall();
-                    					
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // InternalLangFil.g:1960:3: (otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) ) )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
-
-            if ( (LA49_0==42) ) {
-                alt49=1;
-            }
-            switch (alt49) {
-                case 1 :
-                    // InternalLangFil.g:1961:4: otherlv_8= 'duree' ( (lv_duree_9_0= ruleEString ) )
-                    {
-                    otherlv_8=(Token)match(input,42,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_8, grammarAccess.getAudioAccess().getDureeKeyword_6_0());
-                    			
-                    // InternalLangFil.g:1965:4: ( (lv_duree_9_0= ruleEString ) )
-                    // InternalLangFil.g:1966:5: (lv_duree_9_0= ruleEString )
-                    {
-                    // InternalLangFil.g:1966:5: (lv_duree_9_0= ruleEString )
-                    // InternalLangFil.g:1967:6: lv_duree_9_0= ruleEString
+                    // InternalLangFil.g:1884:5: (lv_duree_9_0= ruleEString )
+                    // InternalLangFil.g:1885:6: lv_duree_9_0= ruleEString
                     {
 
-                    						newCompositeNode(grammarAccess.getAudioAccess().getDureeEStringParserRuleCall_6_1_0());
+                    						newCompositeNode(grammarAccess.getAudioAccess().getDureeEStringParserRuleCall_7_1_0());
                     					
                     pushFollow(FOLLOW_10);
                     lv_duree_9_0=ruleEString();
@@ -4532,9 +4698,9 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,15,FOLLOW_2); 
+            otherlv_10=(Token)match(input,19,FOLLOW_2); 
 
-            			newLeafNode(otherlv_10, grammarAccess.getAudioAccess().getRightCurlyBracketKeyword_7());
+            			newLeafNode(otherlv_10, grammarAccess.getAudioAccess().getRightCurlyBracketKeyword_8());
             		
 
             }
@@ -4565,47 +4731,20 @@ public class InternalLangFilParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000000001A000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000000C000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000001CC8000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000001C88000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000204000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001C08000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001808000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000001008000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004008000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000000308C0000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000030880000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000030800000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000020800000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000080008000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000288000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000200008000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x00000000908C8000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000090888000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000090808000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000080808000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000808000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000003000008000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000002000008000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000070000008000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000060000008000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000040000008000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000130000008000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000120000008000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000100000008000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000101002L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000000348C000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000060000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000280000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000146580C000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x000000146588C000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000018080000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000010080000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000180000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000200080000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000800080000L});
 
 }

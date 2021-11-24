@@ -24,7 +24,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class LangFilSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -84,7 +86,7 @@ public class LangFilSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Audio returns Audio
 	 *
 	 * Constraint:
-	 *     (name=EString description=EString? lien=EString? duree=EString?)
+	 *     (name=EString description=EString? lien=EString duree=EString?)
 	 */
 	protected void sequence_Audio(ISerializationContext context, Audio semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -96,7 +98,7 @@ public class LangFilSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Faculte returns Faculte
 	 *
 	 * Constraint:
-	 *     (name=EString (niveaux+=Niveau niveaux+=Niveau*)? (intervenants+=Intervenant intervenants+=Intervenant*)?)
+	 *     (name=EString (niveaux+=Niveau | intervenants+=Intervenant)*)
 	 */
 	protected void sequence_Faculte(ISerializationContext context, Faculte semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -109,7 +111,7 @@ public class LangFilSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Fichier returns Fichier
 	 *
 	 * Constraint:
-	 *     (name=EString description=EString? lien=EString? auteur=EString?)
+	 *     (name=EString description=EString? lien=EString auteur=EString?)
 	 */
 	protected void sequence_Fichier(ISerializationContext context, Fichier semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -123,13 +125,11 @@ public class LangFilSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         pseudo=EString? 
-	 *         (responsables+=[Intervenant|EString] responsables+=[Intervenant|EString]*)? 
-	 *         (enseignants+=[Intervenant|EString] enseignants+=[Intervenant|EString]*)? 
-	 *         presentation=Presentation? 
-	 *         s1=S1 
-	 *         s2=S2 
-	 *         (documents+=Document documents+=Document*)?
+	 *         (
+	 *             (pseudo=EString | presentation=Presentation | s1=S1 | s2=S2 | documents+=Document)? 
+	 *             (responsables+=[Intervenant|EString] responsables+=[Intervenant|EString]*)? 
+	 *             (enseignants+=[Intervenant|EString] enseignants+=[Intervenant|EString]*)?
+	 *         )+
 	 *     )
 	 */
 	protected void sequence_Formation(ISerializationContext context, Formation semanticObject) {
@@ -156,11 +156,10 @@ public class LangFilSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         pseudo=EString? 
-	 *         (responsables+=[Intervenant|EString] responsables+=[Intervenant|EString]*)? 
-	 *         (formations+=Formation formations+=Formation*)? 
-	 *         presentation=Presentation? 
-	 *         (ues+=UE ues+=UE*)?
+	 *         (
+	 *             (pseudo=EString | presentation=Presentation | formations+=Formation | ues+=UE)? 
+	 *             (responsables+=[Intervenant|EString] responsables+=[Intervenant|EString]*)?
+	 *         )+
 	 *     )
 	 */
 	protected void sequence_Niveau(ISerializationContext context, Niveau semanticObject) {
@@ -173,10 +172,16 @@ public class LangFilSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Presentation returns Presentation
 	 *
 	 * Constraint:
-	 *     contenue=EString?
+	 *     contenue=EString
 	 */
 	protected void sequence_Presentation(ISerializationContext context, Presentation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, FILPackage.Literals.PRESENTATION__CONTENUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FILPackage.Literals.PRESENTATION__CONTENUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPresentationAccess().getContenueEStringParserRuleCall_2_0(), semanticObject.getContenue());
+		feeder.finish();
 	}
 	
 	
@@ -211,11 +216,11 @@ public class LangFilSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         pseudo=EString? 
-	 *         (responsables+=[Intervenant|EString] responsables+=[Intervenant|EString]*)? 
-	 *         (enseignants+=[Intervenant|EString] enseignants+=[Intervenant|EString]*)? 
-	 *         (documents+=Document documents+=Document*)? 
-	 *         presentation=Presentation?
+	 *         (
+	 *             (pseudo=EString | presentation=Presentation | documents+=Document)? 
+	 *             (responsables+=[Intervenant|EString] responsables+=[Intervenant|EString]*)? 
+	 *             (enseignants+=[Intervenant|EString] enseignants+=[Intervenant|EString]*)?
+	 *         )+
 	 *     )
 	 */
 	protected void sequence_UE(ISerializationContext context, UE semanticObject) {
@@ -229,7 +234,7 @@ public class LangFilSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Video returns Video
 	 *
 	 * Constraint:
-	 *     (name=EString description=EString? lien=EString? duree=EString?)
+	 *     (name=EString description=EString? lien=EString duree=EString?)
 	 */
 	protected void sequence_Video(ISerializationContext context, Video semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
