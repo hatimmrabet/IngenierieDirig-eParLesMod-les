@@ -13,7 +13,6 @@ Faculte returns Faculte:
 		('intervenants' '{' intervenants+=Intervenant ( "," intervenants+=Intervenant)* '}' )?
 	'}';
 
-
 Document returns Document:
 	Video | Fichier | Audio;
 
