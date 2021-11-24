@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Generator Module Runtime Plug-in
 Bundle-SymbolicName: fil.mdMM2mdFile.generator
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: fil.docmodel2md.generator.Activator
+Bundle-Activator: fil.mdMM2mdFile.generator.Activator
 Bundle-Vendor: Eclipse Modeling Project
 Require-Bundle: org.eclipse.core.runtime, 
  idm.simplemarkdown.mm, 
@@ -19,5 +19,5 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-16
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: fil.docmodel2md.generator.main
+Export-Package: fil.mdMM2mdFile.generator.main
 

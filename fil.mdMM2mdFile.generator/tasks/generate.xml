@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="fil.mdMM2mdFile.generator">
-    <property name="ECLIPSE_HOME" value="../../../../../../Programmes/eclipse/modeling-2021-09/eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../runtime-EclipseApplication"/>
+    <property name="ECLIPSE_HOME" value="../../../../../Programmes/eclipse/modeling-2021-09/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../.."/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="fil.mdMM2mdFile.generator.libraryclasspath">
@@ -24,7 +24,7 @@
 
     <!-- The default task with the jars used by this project -->
     <target name="generate">
-        <java classname="fil.docmodel2md.generator.main.Generate" classpathref="fil.mdMM2mdFile.generator.classpath">
+        <java classname="fil.mdMM2mdFile.generator.main.Generate" classpathref="fil.mdMM2mdFile.generator.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -35,7 +35,7 @@
         Keep in mind that having two versions of the same jar can create problems
     -->
     <target name="generate.alljars">
-        <java classname="fil.docmodel2md.generator.main.Generate" classpathref="fil.mdMM2mdFile.generator.classpath">
+        <java classname="fil.mdMM2mdFile.generator.main.Generate" classpathref="fil.mdMM2mdFile.generator.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>

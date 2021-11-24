@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package fil.docmodel2md.generator;
+package fil.mdMM2mdFile.generator;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
@@ -21,7 +21,7 @@ public class Activator extends Plugin {
     /**
      * The plug-in ID.
      */
-    public static final String PLUGIN_ID = "fil.docmodel2md.generator";
+    public static final String PLUGIN_ID = "fil.mdMM2mdFile.generator";
 
     /**
      * The shared instance.

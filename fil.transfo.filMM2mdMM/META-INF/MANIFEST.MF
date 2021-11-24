@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Portail2markdown Plug-in
+Bundle-Name: FilMM2mdMM Plug-in
 Bundle-SymbolicName: fil.transfo.filMM2mdMM;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Require-Bundle: org.eclipse.core.runtime;bundle-version="0.0.0"

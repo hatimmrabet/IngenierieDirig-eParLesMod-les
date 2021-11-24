@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package fil.docmodel2md.generator.main;
+package fil.mdMM2mdFile.generator.main;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class Generate extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/fil/docmodel2md/generator/main/generate";
+    public static final String MODULE_FILE_NAME = "/fil/mdMM2mdFile/generator/main/generate";
     
     /**
      * The name of the templates that are to be generated.
