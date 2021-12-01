@@ -22,11 +22,10 @@ Niveau returns Niveau:
 	'Niveau'
 	name=EString
 	'{'
-		(('pseudo' pseudo=EString)?
+		(('pseudo' pseudo=EString)
 		& ('responsables' '(' responsables+=[Intervenant|EString] ( "," responsables+=[Intervenant|EString])* ')' )?
 		& (presentation=Presentation)?
-		& (formations+=Formation)* 
-		& (ues+=UE)*)
+		& (formations+=Formation | ues+=UE )*)
 	'}';
 
 Intervenant returns Intervenant:
@@ -42,7 +41,7 @@ Formation returns Formation:
 	'Formation'
 	name=EString
 	'{'
-		(('pseudo' pseudo=EString)?
+		(('pseudo' pseudo=EString)
 		& ('responsables' '(' responsables+=[Intervenant|EString] ( "," responsables+=[Intervenant|EString])* ')' )?
 		& ('enseignants' '(' enseignants+=[Intervenant|EString] ( "," enseignants+=[Intervenant|EString])* ')' )?
 		& (presentation=Presentation)?
@@ -61,7 +60,7 @@ UE returns UE:
 	'UE'
 	name=EString
 	'{'
-		(('pseudo' pseudo=EString)?
+		(('pseudo' pseudo=EString)
 		& (presentation=Presentation)?
 		& ('responsables' '(' responsables+=[Intervenant|EString] ( "," responsables+=[Intervenant|EString])* ')' )?
 		& ('enseignants' '(' enseignants+=[Intervenant|EString] ( "," enseignants+=[Intervenant|EString])* ')' )?
@@ -72,16 +71,16 @@ S1 returns S1:
 	{S1}
 	'S1'
 	'{'
-		('uesoptionnelles' '(' uesoptionnelles+=[UE|EString] ( "," uesoptionnelles+=[UE|EString])* ')' )?
-		('uesobligatoires' '(' uesobligatoires+=[UE|EString] ( "," uesobligatoires+=[UE|EString])* ')' )?
+		(('uesoptionnelles' '(' uesoptionnelles+=[UE|EString] ( "," uesoptionnelles+=[UE|EString])* ')' )?
+		& ('uesobligatoires' '(' uesobligatoires+=[UE|EString] ( "," uesobligatoires+=[UE|EString])* ')' )?)
 	'}';
 
 S2 returns S2:
 	{S2}
 	'S2'
 	'{'
-		('uesoptionnelles' '(' uesoptionnelles+=[UE|EString] ( "," uesoptionnelles+=[UE|EString])* ')' )?
-		('uesobligatoires' '(' uesobligatoires+=[UE|EString] ( "," uesobligatoires+=[UE|EString])* ')' )?
+		(('uesoptionnelles' '(' uesoptionnelles+=[UE|EString] ( "," uesoptionnelles+=[UE|EString])* ')' )?
+		& ('uesobligatoires' '(' uesobligatoires+=[UE|EString] ( "," uesobligatoires+=[UE|EString])* ')' )?)
 	'}';
 
 Video returns Video:

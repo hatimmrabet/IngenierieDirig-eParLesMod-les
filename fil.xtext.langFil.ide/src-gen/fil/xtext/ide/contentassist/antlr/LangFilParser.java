@@ -34,6 +34,7 @@ public class LangFilParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFaculteAccess().getAlternatives_3(), "rule__Faculte__Alternatives_3");
 			builder.put(grammarAccess.getDocumentAccess().getAlternatives(), "rule__Document__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
+			builder.put(grammarAccess.getNiveauAccess().getAlternatives_4_3(), "rule__Niveau__Alternatives_4_3");
 			builder.put(grammarAccess.getFaculteAccess().getGroup(), "rule__Faculte__Group__0");
 			builder.put(grammarAccess.getNiveauAccess().getGroup(), "rule__Niveau__Group__0");
 			builder.put(grammarAccess.getNiveauAccess().getGroup_4_0(), "rule__Niveau__Group_4_0__0");
@@ -55,15 +56,15 @@ public class LangFilParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getUEAccess().getGroup_4_3(), "rule__UE__Group_4_3__0");
 			builder.put(grammarAccess.getUEAccess().getGroup_4_3_3(), "rule__UE__Group_4_3_3__0");
 			builder.put(grammarAccess.getS1Access().getGroup(), "rule__S1__Group__0");
-			builder.put(grammarAccess.getS1Access().getGroup_3(), "rule__S1__Group_3__0");
-			builder.put(grammarAccess.getS1Access().getGroup_3_3(), "rule__S1__Group_3_3__0");
-			builder.put(grammarAccess.getS1Access().getGroup_4(), "rule__S1__Group_4__0");
-			builder.put(grammarAccess.getS1Access().getGroup_4_3(), "rule__S1__Group_4_3__0");
+			builder.put(grammarAccess.getS1Access().getGroup_3_0(), "rule__S1__Group_3_0__0");
+			builder.put(grammarAccess.getS1Access().getGroup_3_0_3(), "rule__S1__Group_3_0_3__0");
+			builder.put(grammarAccess.getS1Access().getGroup_3_1(), "rule__S1__Group_3_1__0");
+			builder.put(grammarAccess.getS1Access().getGroup_3_1_3(), "rule__S1__Group_3_1_3__0");
 			builder.put(grammarAccess.getS2Access().getGroup(), "rule__S2__Group__0");
-			builder.put(grammarAccess.getS2Access().getGroup_3(), "rule__S2__Group_3__0");
-			builder.put(grammarAccess.getS2Access().getGroup_3_3(), "rule__S2__Group_3_3__0");
-			builder.put(grammarAccess.getS2Access().getGroup_4(), "rule__S2__Group_4__0");
-			builder.put(grammarAccess.getS2Access().getGroup_4_3(), "rule__S2__Group_4_3__0");
+			builder.put(grammarAccess.getS2Access().getGroup_3_0(), "rule__S2__Group_3_0__0");
+			builder.put(grammarAccess.getS2Access().getGroup_3_0_3(), "rule__S2__Group_3_0_3__0");
+			builder.put(grammarAccess.getS2Access().getGroup_3_1(), "rule__S2__Group_3_1__0");
+			builder.put(grammarAccess.getS2Access().getGroup_3_1_3(), "rule__S2__Group_3_1_3__0");
 			builder.put(grammarAccess.getVideoAccess().getGroup(), "rule__Video__Group__0");
 			builder.put(grammarAccess.getVideoAccess().getGroup_4(), "rule__Video__Group_4__0");
 			builder.put(grammarAccess.getVideoAccess().getGroup_7(), "rule__Video__Group_7__0");
@@ -81,8 +82,8 @@ public class LangFilParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNiveauAccess().getResponsablesAssignment_4_1_2(), "rule__Niveau__ResponsablesAssignment_4_1_2");
 			builder.put(grammarAccess.getNiveauAccess().getResponsablesAssignment_4_1_3_1(), "rule__Niveau__ResponsablesAssignment_4_1_3_1");
 			builder.put(grammarAccess.getNiveauAccess().getPresentationAssignment_4_2(), "rule__Niveau__PresentationAssignment_4_2");
-			builder.put(grammarAccess.getNiveauAccess().getFormationsAssignment_4_3(), "rule__Niveau__FormationsAssignment_4_3");
-			builder.put(grammarAccess.getNiveauAccess().getUesAssignment_4_4(), "rule__Niveau__UesAssignment_4_4");
+			builder.put(grammarAccess.getNiveauAccess().getFormationsAssignment_4_3_0(), "rule__Niveau__FormationsAssignment_4_3_0");
+			builder.put(grammarAccess.getNiveauAccess().getUesAssignment_4_3_1(), "rule__Niveau__UesAssignment_4_3_1");
 			builder.put(grammarAccess.getIntervenantAccess().getNameAssignment_2(), "rule__Intervenant__NameAssignment_2");
 			builder.put(grammarAccess.getIntervenantAccess().getPrenomAssignment_4_1(), "rule__Intervenant__PrenomAssignment_4_1");
 			builder.put(grammarAccess.getFormationAccess().getNameAssignment_2(), "rule__Formation__NameAssignment_2");
@@ -104,14 +105,14 @@ public class LangFilParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getUEAccess().getEnseignantsAssignment_4_3_2(), "rule__UE__EnseignantsAssignment_4_3_2");
 			builder.put(grammarAccess.getUEAccess().getEnseignantsAssignment_4_3_3_1(), "rule__UE__EnseignantsAssignment_4_3_3_1");
 			builder.put(grammarAccess.getUEAccess().getDocumentsAssignment_4_4(), "rule__UE__DocumentsAssignment_4_4");
-			builder.put(grammarAccess.getS1Access().getUesoptionnellesAssignment_3_2(), "rule__S1__UesoptionnellesAssignment_3_2");
-			builder.put(grammarAccess.getS1Access().getUesoptionnellesAssignment_3_3_1(), "rule__S1__UesoptionnellesAssignment_3_3_1");
-			builder.put(grammarAccess.getS1Access().getUesobligatoiresAssignment_4_2(), "rule__S1__UesobligatoiresAssignment_4_2");
-			builder.put(grammarAccess.getS1Access().getUesobligatoiresAssignment_4_3_1(), "rule__S1__UesobligatoiresAssignment_4_3_1");
-			builder.put(grammarAccess.getS2Access().getUesoptionnellesAssignment_3_2(), "rule__S2__UesoptionnellesAssignment_3_2");
-			builder.put(grammarAccess.getS2Access().getUesoptionnellesAssignment_3_3_1(), "rule__S2__UesoptionnellesAssignment_3_3_1");
-			builder.put(grammarAccess.getS2Access().getUesobligatoiresAssignment_4_2(), "rule__S2__UesobligatoiresAssignment_4_2");
-			builder.put(grammarAccess.getS2Access().getUesobligatoiresAssignment_4_3_1(), "rule__S2__UesobligatoiresAssignment_4_3_1");
+			builder.put(grammarAccess.getS1Access().getUesoptionnellesAssignment_3_0_2(), "rule__S1__UesoptionnellesAssignment_3_0_2");
+			builder.put(grammarAccess.getS1Access().getUesoptionnellesAssignment_3_0_3_1(), "rule__S1__UesoptionnellesAssignment_3_0_3_1");
+			builder.put(grammarAccess.getS1Access().getUesobligatoiresAssignment_3_1_2(), "rule__S1__UesobligatoiresAssignment_3_1_2");
+			builder.put(grammarAccess.getS1Access().getUesobligatoiresAssignment_3_1_3_1(), "rule__S1__UesobligatoiresAssignment_3_1_3_1");
+			builder.put(grammarAccess.getS2Access().getUesoptionnellesAssignment_3_0_2(), "rule__S2__UesoptionnellesAssignment_3_0_2");
+			builder.put(grammarAccess.getS2Access().getUesoptionnellesAssignment_3_0_3_1(), "rule__S2__UesoptionnellesAssignment_3_0_3_1");
+			builder.put(grammarAccess.getS2Access().getUesobligatoiresAssignment_3_1_2(), "rule__S2__UesobligatoiresAssignment_3_1_2");
+			builder.put(grammarAccess.getS2Access().getUesobligatoiresAssignment_3_1_3_1(), "rule__S2__UesobligatoiresAssignment_3_1_3_1");
 			builder.put(grammarAccess.getVideoAccess().getNameAssignment_2(), "rule__Video__NameAssignment_2");
 			builder.put(grammarAccess.getVideoAccess().getDescriptionAssignment_4_1(), "rule__Video__DescriptionAssignment_4_1");
 			builder.put(grammarAccess.getVideoAccess().getLienAssignment_6(), "rule__Video__LienAssignment_6");
@@ -127,6 +128,8 @@ public class LangFilParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNiveauAccess().getUnorderedGroup_4(), "rule__Niveau__UnorderedGroup_4");
 			builder.put(grammarAccess.getFormationAccess().getUnorderedGroup_4(), "rule__Formation__UnorderedGroup_4");
 			builder.put(grammarAccess.getUEAccess().getUnorderedGroup_4(), "rule__UE__UnorderedGroup_4");
+			builder.put(grammarAccess.getS1Access().getUnorderedGroup_3(), "rule__S1__UnorderedGroup_3");
+			builder.put(grammarAccess.getS2Access().getUnorderedGroup_3(), "rule__S2__UnorderedGroup_3");
 		}
 	}
 	

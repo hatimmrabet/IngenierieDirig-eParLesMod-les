@@ -190,7 +190,7 @@ public class LangFilSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     S1 returns S1
 	 *
 	 * Constraint:
-	 *     ((uesoptionnelles+=[UE|EString] uesoptionnelles+=[UE|EString]*)? (uesobligatoires+=[UE|EString] uesobligatoires+=[UE|EString]*)?)
+	 *     ((uesoptionnelles+=[UE|EString] uesoptionnelles+=[UE|EString]*) | (uesobligatoires+=[UE|EString] uesobligatoires+=[UE|EString]*))*
 	 */
 	protected void sequence_S1(ISerializationContext context, S1 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -202,7 +202,7 @@ public class LangFilSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     S2 returns S2
 	 *
 	 * Constraint:
-	 *     ((uesoptionnelles+=[UE|EString] uesoptionnelles+=[UE|EString]*)? (uesobligatoires+=[UE|EString] uesobligatoires+=[UE|EString]*)?)
+	 *     ((uesoptionnelles+=[UE|EString] uesoptionnelles+=[UE|EString]*) | (uesobligatoires+=[UE|EString] uesobligatoires+=[UE|EString]*))*
 	 */
 	protected void sequence_S2(ISerializationContext context, S2 semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

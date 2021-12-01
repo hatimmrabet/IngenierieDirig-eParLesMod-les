@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simplemarkdown:Document xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simplemarkdown="http://www.example.org/simplemarkdown" name="Lille1">
   <contents xsi:type="simplemarkdown:Title" level="1">
-    <elements xsi:type="simplemarkdown:Text" text="Master 1 - informatique - M1-INFO"/>
+    <elements xsi:type="simplemarkdown:Text" text="Master 1 mention informatique - M1-INFO"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="2">
     <elements xsi:type="simplemarkdown:Text" text="Genie Logiciel - GL"/>
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
-    <elements xsi:type="simplemarkdown:Text" text="parcours gl"/>
+    <elements xsi:type="simplemarkdown:Text" text="Le parcours Génie Logiciel s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."/>
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
     <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
-    <elements xsi:type="simplemarkdown:Text" text="Tommasi Marc"/>
+    <elements xsi:type="simplemarkdown:Text" text="Clément Quinton"/>
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
     <elements xsi:type="simplemarkdown:StrongEmphasis" text="Enseignants :"/>
     <elements xsi:type="simplemarkdown:Text" text="Dumoulin Cedric"/>
+    <elements xsi:type="simplemarkdown:Text" text="Tarby Jean-Claude"/>
+    <elements xsi:type="simplemarkdown:Text" text="Clément Quinton"/>
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
     <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
-    <elements xsi:type="simplemarkdown:Link" url="www" title="calendrier"/>
-    <elements xsi:type="simplemarkdown:Link" url="www" title="audio"/>
+    <elements xsi:type="simplemarkdown:Link" url="https://bit.ly/m1s1-rentree-2021" title="Slides de rentrée 2021/2022 M1"/>
+    <elements xsi:type="simplemarkdown:Link" url="https://bit.ly/m1s1-inscription-2021" title="Formulaire d’inscription pédagogique"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="3">
     <elements xsi:type="simplemarkdown:Text" text="S1"/>
@@ -29,10 +31,26 @@
     <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OBLIGATOIRES :"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="jkjk - IDM"/>
+    <elements xsi:type="simplemarkdown:Text" text="ACT - Algorithmique et complexité"/>
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
-    <elements xsi:type="simplemarkdown:Text" text="yujhygj"/>
+    <elements xsi:type="simplemarkdown:Text" text="Le but de l'algorithmique peut être résumé en trouver un bon algorithme  pour un problème donné."/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Voge Marie-Émilie"/>
+    <elements xsi:type="simplemarkdown:Text" text="Derbel Bilel"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Enseignants :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Derbel Bilel"/>
+    <elements xsi:type="simplemarkdown:Text" text="Voge Marie-Émilie"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="4">
+    <elements xsi:type="simplemarkdown:Text" text="IDM - Ingénierie des Modèles"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:Text" text="Cette unité se déroule au S1 de la FORMATION. Il s’agit d’une UE optionnelle de cette mention."/>
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
     <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
@@ -45,13 +63,13 @@
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
     <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
-    <elements xsi:type="simplemarkdown:Link" url="mmm" title="fichaud"/>
+    <elements xsi:type="simplemarkdown:Link" url="mmm" title="fichier vide"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="3">
     <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OPTIONNELLES :"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text"/>
+    <elements xsi:type="simplemarkdown:Text" text="SD - Data science"/>
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
     <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
@@ -60,8 +78,11 @@
   <contents xsi:type="simplemarkdown:Title" level="3">
     <elements xsi:type="simplemarkdown:Text" text="S2"/>
   </contents>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OBLIGATOIRES :"/>
+  </contents>
   <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="jkjk - IDM"/>
+    <elements xsi:type="simplemarkdown:Text" text="IDM - Ingénierie des Modèles"/>
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
     <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
@@ -74,6 +95,96 @@
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
     <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
-    <elements xsi:type="simplemarkdown:Link" url="mmm" title="fichaud"/>
+    <elements xsi:type="simplemarkdown:Link" url="mmm" title="fichier vide"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="2">
+    <elements xsi:type="simplemarkdown:Text" text="Machine Learning - ML"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:Text" text="Le parcours Macchine learning s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Tommasi Marc"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Enseignants :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Tommasi Marc"/>
+    <elements xsi:type="simplemarkdown:Text" text="Derbel Bilel"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
+    <elements xsi:type="simplemarkdown:Link" url="https://bit.ly/m1s1-rentree-2021" title="Slides de rentrée 2021/2022 M1"/>
+    <elements xsi:type="simplemarkdown:Link" url="https://bit.ly/m1s1-inscription-2021" title="Formulaire d’inscription pédagogique"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:Text" text="S1"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OBLIGATOIRES :"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="4">
+    <elements xsi:type="simplemarkdown:Text" text="ACT - Algorithmique et complexité"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:Text" text="Le but de l'algorithmique peut être résumé en trouver un bon algorithme  pour un problème donné."/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Voge Marie-Émilie"/>
+    <elements xsi:type="simplemarkdown:Text" text="Derbel Bilel"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Enseignants :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Derbel Bilel"/>
+    <elements xsi:type="simplemarkdown:Text" text="Voge Marie-Émilie"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="4">
+    <elements xsi:type="simplemarkdown:Text" text="SD - Data science"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Tommasi Marc"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OPTIONNELLES :"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="4">
+    <elements xsi:type="simplemarkdown:Text" text="IDM - Ingénierie des Modèles"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:Text" text="Cette unité se déroule au S1 de la FORMATION. Il s’agit d’une UE optionnelle de cette mention."/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Dumoulin Cedric"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Enseignants :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Dumoulin Cedric"/>
+    <elements xsi:type="simplemarkdown:Text" text="Tommasi Marc"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
+    <elements xsi:type="simplemarkdown:Link" url="mmm" title="fichier vide"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:Text" text="S2"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="4">
+    <elements xsi:type="simplemarkdown:Text" text="IDM - Ingénierie des Modèles"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Dumoulin Cedric"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Enseignants :"/>
+    <elements xsi:type="simplemarkdown:Text" text="Dumoulin Cedric"/>
+    <elements xsi:type="simplemarkdown:Text" text="Tommasi Marc"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Paragraph">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
+    <elements xsi:type="simplemarkdown:Link" url="mmm" title="fichier vide"/>
   </contents>
 </simplemarkdown:Document>

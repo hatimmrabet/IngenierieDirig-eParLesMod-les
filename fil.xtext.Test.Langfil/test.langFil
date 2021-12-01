@@ -1,47 +1,77 @@
 Faculte Lille1
-	Niveau "Master 1 - informatique"
+	Niveau "Master 1 mention informatique"
 	{
 		pseudo "M1-INFO"
-		Presentation "presentation"
+		Presentation "Cette mention informatique est la poursuite d'études naturelle des étudiants ayant obtenu la licence mention informatique de 
+		l'université de Lille ou une licence à forte dominante informatique dans un autre établissement (ou tout autre diplôme de même niveau, sous réserve de la validation des études)."
 		responsables (Derbel)
 		Formation "Genie Logiciel"
 		{
 			pseudo GL
-			Presentation "parcours gl"
-			enseignants (Dumoulin)
-			responsables(Tommasi)
+			Presentation "Le parcours Génie Logiciel s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."
+			enseignants (Dumoulin,Tarby,"Clément")
+			responsables("Clément")
 			S1 {
-				uesoptionnelles(SD, IDM)
-				uesobligatoires(IDM)
+				uesobligatoires("Algorithmique et complexité","Ingénierie des Modèles")
+				uesoptionnelles("Data science", "Ingénierie des Modèles")
 			}
 			S2 {
-				uesobligatoires(IDM)
+				uesobligatoires("Ingénierie des Modèles")
 			}
-			Fichier calendrier
+			Fichier "Slides de rentrée 2021/2022 M1"
 			{
 				description "calendrier du S1"
-				lien "www"
+				lien "https://bit.ly/m1s1-rentree-2021"
 			}
-			Audio audio 
+			Fichier "Formulaire d’inscription pédagogique" 
 			{
-				lien "www"
+				lien "https://bit.ly/m1s1-inscription-2021"
 			}
 		}
-		
-		UE IDM {
-			Presentation "yujhygj"
-			pseudo "jkjk"
+		Formation "Machine Learning"
+		{
+			pseudo ML
+			Presentation "Le parcours Macchine learning s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."
+			enseignants (Tommasi,Derbel)
+			responsables(Tommasi)
+			S1 {
+				uesobligatoires("Algorithmique et complexité","Data science")
+				uesoptionnelles("Ingénierie des Modèles")
+			}
+			S2 {
+				uesobligatoires("Ingénierie des Modèles")
+			}
+			Fichier "Slides de rentrée 2021/2022 M1"
+			{
+				description "calendrier du S1"
+				lien "https://bit.ly/m1s1-rentree-2021"
+			}
+			Fichier "Formulaire d’inscription pédagogique" 
+			{
+				lien "https://bit.ly/m1s1-inscription-2021"
+			}
+		}
+		UE "Ingénierie des Modèles" {
+			Presentation "Cette unité se déroule au S1 de la FORMATION. Il s’agit d’une UE optionnelle de cette mention."
+			pseudo "IDM"
 			enseignants (Dumoulin, Tommasi)
 			responsables (Dumoulin)
-			Audio fichaud
+			Audio "fichier vide"
 			{
 				lien "mmm"
 			}
 		}
-		UE SD {
+		UE "Data science" {
+			pseudo SD
 			responsables (
 				Tommasi
 			)
+		}
+		UE "Algorithmique et complexité" {
+			Presentation "Le but de l'algorithmique peut être résumé en trouver un bon algorithme  pour un problème donné."
+			pseudo "ACT"
+			enseignants (Derbel, Voge)
+			responsables (Voge,Derbel)
 		}
 	}
 	Intervenant Derbel
@@ -55,5 +85,21 @@ Faculte Lille1
 	Intervenant Tommasi
 	{
 		prenom Marc
+	}
+	Intervenant "Clément"
+	{
+		prenom Quinton
+	}
+	Intervenant "Tarby"
+	{
+		prenom "Jean-Claude"
+	}
+	Intervenant "Launay"
+	{
+		prenom "Michael"
+	}
+	Intervenant "Voge"
+	{
+		prenom "Marie-Émilie"
 	}
 	
