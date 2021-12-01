@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/htmlbsMM/src-gen" creationIcons="false" editDirectory="/htmlbsMM.edit/src-gen"
+    editorDirectory="/htmlbsMM.editor/src-gen" modelPluginID="htmlbsMM" modelName="HtmlbsMM"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>htmlbsMM.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="HtmlbsMM" disposableProviderFactory="true" ecorePackage="htmlbsMM.ecore#/">
+    <genClasses ecoreClass="htmlbsMM.ecore#//Page">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//Page/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference htmlbsMM.ecore#//Page/blocks"/>
+    </genClasses>
+    <genClasses ecoreClass="htmlbsMM.ecore#//Content">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//Content/name"/>
+    </genClasses>
+    <genClasses ecoreClass="htmlbsMM.ecore#//Paragraph"/>
+    <genClasses ecoreClass="htmlbsMM.ecore#//Title">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//Title/level"/>
+    </genClasses>
+    <genClasses ecoreClass="htmlbsMM.ecore#//RedirectionURL"/>
+    <genClasses ecoreClass="htmlbsMM.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//Link/lien"/>
+    </genClasses>
+    <genClasses ecoreClass="htmlbsMM.ecore#//Button">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference htmlbsMM.ecore#//Button/page"/>
+    </genClasses>
+    <genClasses ecoreClass="htmlbsMM.ecore#//Site">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//Site/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference htmlbsMM.ecore#//Site/pages"/>
+    </genClasses>
+    <genClasses ecoreClass="htmlbsMM.ecore#//Block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference htmlbsMM.ecore#//Block/contents"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

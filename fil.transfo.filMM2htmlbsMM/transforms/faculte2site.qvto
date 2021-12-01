@@ -1,0 +1,15 @@
+modeltype filMM "strict" uses "http://www.example.org/fIL";
+modeltype htmlbsMM "strict" uses "http://www.example.org/htmlbsMM";
+
+transformation faculte2site(in fil : filMM, out html : htmlbsMM );
+
+main() {
+	fil.rootObjects().oclAsType(Faculte) -> map faculte2Site();
+}
+
+mapping filMM::Faculte::faculte2Site() : htmlbsMM::Site {
+	name := self.name;
+	self.niveaux -> forEach(niv) {
+		//ages += 
+	}
+}

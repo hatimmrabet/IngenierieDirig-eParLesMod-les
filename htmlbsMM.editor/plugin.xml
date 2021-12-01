@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated htmlbsMM -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="htmlbsMM.presentation.HtmlbsMMModelWizardID"
+            name="%_UI_HtmlbsMMModelWizard_label"
+            class="htmlbsMM.presentation.HtmlbsMMModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/HtmlbsMMModelFile.gif">
+         <description>%_UI_HtmlbsMMModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated htmlbsMM -->
+      <editor
+            id="htmlbsMM.presentation.HtmlbsMMEditorID"
+            name="%_UI_HtmlbsMMEditor_label"
+            icon="icons/full/obj16/HtmlbsMMModelFile.gif"
+            extensions="htmlbsmm"
+            class="htmlbsMM.presentation.HtmlbsMMEditor"
+            contributorClass="htmlbsMM.presentation.HtmlbsMMActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
