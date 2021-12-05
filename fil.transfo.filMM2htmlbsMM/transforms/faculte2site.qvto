@@ -11,6 +11,7 @@ mapping filMM::Faculte::faculte2Site() : htmlbsMM::Site {
 	name := self.name;
 	self.niveaux -> forEach(niveau) {
 		pages += niveau -> map niveau2Page();
+		//redirections += object Button{text:=niveau.name};
 		
 		niveau.formations -> forEach(formation) {
 			pages += formation -> map formation2Page();

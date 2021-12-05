@@ -1,0 +1,58 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generate.
+ */]
+[module generate('http://www.example.org/htmlbsMM')]
+
+
+[**
+ * The documentation of the template generateElement.
+ * @param aSite
+ */]
+[template public generateElement(aSite : Site)]
+[comment @main/]
+[file (aSite.name +'.html', false, 'UTF-8')]
+	['<h1>'/][aSite.name/]['</h1>'/]
+	[for (page: Page | aSite.redirections)]
+		['<a href="./pages/'/][page.name/]['.html"><button>'/][page.name/]['</button></a>'/]
+	[/for]
+	[for (page: Page | aSite.pages)]
+		[generatePage(page)/]
+	[/for]
+[/file]
+[/template]
+
+
+[template public generatePage(page : Page)]
+[file ('./pages/'+page.name +'.html', false, 'UTF-8')]
+	['<h1>'/][page.name/]['</h1>'/]
+	[for (block: Block | page.blocks)]
+		[generateBlock(block)/]
+	[/for]
+[/file]
+[/template]
+
+
+[template public generateBlock(block : Block)]
+ERREUR
+[/template]
+
+[template public generateBlock(block : Title)]
+	['<h'/][block.level/]['>'/][block.text/]['</h'/][block.level/]['>'/]
+	[for (elem : TextElement| block.elements)]
+		[generateTextElement(elem)/]
+	[/for]
+[/template]
+
+[template public generateTextElement(text : TextElement)]
+	Erreur
+[/template]
+[template public generateTextElement(text : Text)]
+	['<p>'/][text.text/]['</p>'/]
+[/template]
+[template public generateTextElement(lien : Link)]
+	['<a href="'/][lien.text/]['.html">'/][lien.text/]['</a>'/]
+[/template]
+[template public generateTextElement(bouton : Button)]
+	['<a href="./pages/'/][bouton.page.name/]['.html"><button>'/][bouton.text/]['</button></a>'/]
+[/template]

@@ -352,13 +352,22 @@ public interface HtmlbsMMPackage extends EPackage {
 	int SITE__PAGES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Redirections</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SITE__REDIRECTIONS = 2;
+
+	/**
 	 * The number of structural features of the '<em>Site</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SITE_FEATURE_COUNT = 2;
+	int SITE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Site</em>' class.
@@ -566,6 +575,17 @@ public interface HtmlbsMMPackage extends EPackage {
 	EReference getSite_Pages();
 
 	/**
+	 * Returns the meta object for the reference list '{@link htmlbsMM.Site#getRedirections <em>Redirections</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Redirections</em>'.
+	 * @see htmlbsMM.Site#getRedirections()
+	 * @see #getSite()
+	 * @generated
+	 */
+	EReference getSite_Redirections();
+
+	/**
 	 * Returns the meta object for class '{@link htmlbsMM.Block <em>Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -750,6 +770,14 @@ public interface HtmlbsMMPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SITE__PAGES = eINSTANCE.getSite_Pages();
+
+		/**
+		 * The meta object literal for the '<em><b>Redirections</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SITE__REDIRECTIONS = eINSTANCE.getSite_Redirections();
 
 		/**
 		 * The meta object literal for the '{@link htmlbsMM.impl.BlockImpl <em>Block</em>}' class.

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<htmlbsMM:Site xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:htmlbsMM="http://www.example.org/htmlbsMM" name="FIL - Faculté de sciences">
+<htmlbsMM:Site xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:htmlbsMM="http://www.example.org/htmlbsMM" name="FIL - Faculté de sciences" redirections="//@pages.17 //@pages.0">
   <pages name="Master 1 mention informatique">
     <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
       <elements xsi:type="htmlbsMM:Text" text="La mention informatique du master sciences et technologies de l'université de Lille a pour objectifs d'apporter aux étudiants des compétences de haut niveau, à la fois sur le plan théorique et pratique, dans le secteur des sciences de l'information et des technologies des communications."/>

@@ -287,6 +287,15 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSite_Redirections() {
+		return (EReference) siteEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBlock() {
 		return blockEClass;
 	}
@@ -358,6 +367,7 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 		siteEClass = createEClass(SITE);
 		createEAttribute(siteEClass, SITE__NAME);
 		createEReference(siteEClass, SITE__PAGES);
+		createEReference(siteEClass, SITE__REDIRECTIONS);
 
 		blockEClass = createEClass(BLOCK);
 		createEReference(blockEClass, BLOCK__ELEMENTS);
@@ -433,6 +443,9 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 		initEReference(getSite_Pages(), this.getPage(), null, "pages", null, 0, -1, Site.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+		initEReference(getSite_Redirections(), this.getPage(), null, "redirections", null, 0, -1, Site.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(blockEClass, Block.class, "Block", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBlock_Elements(), this.getTextElement(), null, "elements", null, 0, -1, Block.class,

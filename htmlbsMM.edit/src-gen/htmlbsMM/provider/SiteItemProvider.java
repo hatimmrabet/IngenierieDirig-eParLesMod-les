@@ -57,6 +57,7 @@ public class SiteItemProvider extends ItemProviderAdapter implements IEditingDom
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addRedirectionsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,6 +75,21 @@ public class SiteItemProvider extends ItemProviderAdapter implements IEditingDom
 						getString("_UI_PropertyDescriptor_description", "_UI_Site_name_feature", "_UI_Site_type"),
 						HtmlbsMMPackage.Literals.SITE__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Redirections feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRedirectionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Site_redirections_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Site_redirections_feature",
+								"_UI_Site_type"),
+						HtmlbsMMPackage.Literals.SITE__REDIRECTIONS, true, false, true, null, null, null));
 	}
 
 	/**

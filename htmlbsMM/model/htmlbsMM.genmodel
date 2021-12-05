@@ -29,6 +29,7 @@
     <genClasses ecoreClass="htmlbsMM.ecore#//Site">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//Site/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference htmlbsMM.ecore#//Site/pages"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference htmlbsMM.ecore#//Site/redirections"/>
     </genClasses>
     <genClasses ecoreClass="htmlbsMM.ecore#//Block">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference htmlbsMM.ecore#//Block/elements"/>

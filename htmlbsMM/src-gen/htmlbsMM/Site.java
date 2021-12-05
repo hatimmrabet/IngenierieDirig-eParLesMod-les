@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link htmlbsMM.Site#getName <em>Name</em>}</li>
  *   <li>{@link htmlbsMM.Site#getPages <em>Pages</em>}</li>
+ *   <li>{@link htmlbsMM.Site#getRedirections <em>Redirections</em>}</li>
  * </ul>
  *
  * @see htmlbsMM.HtmlbsMMPackage#getSite()
@@ -57,5 +58,17 @@ public interface Site extends EObject {
 	 * @generated
 	 */
 	EList<Page> getPages();
+
+	/**
+	 * Returns the value of the '<em><b>Redirections</b></em>' reference list.
+	 * The list contents are of type {@link htmlbsMM.Page}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Redirections</em>' reference list.
+	 * @see htmlbsMM.HtmlbsMMPackage#getSite_Redirections()
+	 * @model
+	 * @generated
+	 */
+	EList<Page> getRedirections();
 
 } // Site

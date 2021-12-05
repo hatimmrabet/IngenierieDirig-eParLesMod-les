@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link htmlbsMM.impl.SiteImpl#getName <em>Name</em>}</li>
  *   <li>{@link htmlbsMM.impl.SiteImpl#getPages <em>Pages</em>}</li>
+ *   <li>{@link htmlbsMM.impl.SiteImpl#getRedirections <em>Redirections</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,16 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 	 * @ordered
 	 */
 	protected EList<Page> pages;
+
+	/**
+	 * The cached value of the '{@link #getRedirections() <em>Redirections</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRedirections()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Page> redirections;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,6 +136,18 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Page> getRedirections() {
+		if (redirections == null) {
+			redirections = new EObjectResolvingEList<Page>(Page.class, this, HtmlbsMMPackage.SITE__REDIRECTIONS);
+		}
+		return redirections;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -145,6 +169,8 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 			return getName();
 		case HtmlbsMMPackage.SITE__PAGES:
 			return getPages();
+		case HtmlbsMMPackage.SITE__REDIRECTIONS:
+			return getRedirections();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -165,6 +191,10 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 			getPages().clear();
 			getPages().addAll((Collection<? extends Page>) newValue);
 			return;
+		case HtmlbsMMPackage.SITE__REDIRECTIONS:
+			getRedirections().clear();
+			getRedirections().addAll((Collection<? extends Page>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,6 +213,9 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 		case HtmlbsMMPackage.SITE__PAGES:
 			getPages().clear();
 			return;
+		case HtmlbsMMPackage.SITE__REDIRECTIONS:
+			getRedirections().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -199,6 +232,8 @@ public class SiteImpl extends MinimalEObjectImpl.Container implements Site {
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case HtmlbsMMPackage.SITE__PAGES:
 			return pages != null && !pages.isEmpty();
+		case HtmlbsMMPackage.SITE__REDIRECTIONS:
+			return redirections != null && !redirections.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
