@@ -29,6 +29,7 @@
 	[for (block: Block | page.blocks)]
 		[generateBlock(block)/]
 	[/for]
+	['<button onclick="javascript:window.history.back();">Retourner</button>'/]
 [/file]
 [/template]
 
@@ -54,5 +55,5 @@ ERREUR
 	['<a href="'/][lien.text/]['.html">'/][lien.text/]['</a>'/]
 [/template]
 [template public generateTextElement(bouton : Button)]
-	['<a href="./pages/'/][bouton.page.name/]['.html"><button>'/][bouton.text/]['</button></a>'/]
+	['<a href="'/][bouton.page.name/]['.html"><button>'/][bouton.text/]['</button></a>'/]
 [/template]

@@ -10,18 +10,15 @@ main() {
 mapping filMM::Faculte::faculte2Site() : htmlbsMM::Site {
 	name := self.name;
 	self.niveaux -> forEach(niveau) {
-		pages += niveau -> map niveau2Page();
-		//redirections += object Button{text:=niveau.name};
-		
-		niveau.formations -> forEach(formation) {
-			pages += formation -> map formation2Page();
-		};
-		
 		niveau.ues -> forEach(ue) {
 			pages += ue -> map ue2Page();
 		};
-		
-	}
+		niveau.formations -> forEach(formation) {
+			pages += formation -> map formation2Page();
+		};
+		pages += niveau -> map niveau2Page();
+		redirections += pages->select(p: Page | p.name = niveau.name);
+	};
 }
 
 
@@ -54,7 +51,7 @@ mapping filMM::Niveau::formations2Block() : htmlbsMM::Title when {self.formation
 	level := 4;
 	text := "Formations :";
 	self.formations -> forEach(formation) {
-		elements += object Button {text := formation.pseudo;}
+		elements += object Button {text := formation.name; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = formation.name)};
 	}
 }
 
@@ -104,7 +101,7 @@ mapping filMM::Semestre::ueObligatoires2Block() : htmlbsMM::Title when {self.ues
 	level := 4;
 	text := "UE OBLIGATOIRES :";
 	self.uesobligatoires -> forEach(ue) {
-		elements += object Button {text := ue.pseudo}
+		elements += object Button {text := ue.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = ue.name)}
 	}
 }
 
@@ -112,7 +109,7 @@ mapping filMM::Semestre::ueOptionnelles2Block() : htmlbsMM::Title when {self.ues
 	level := 4;
 	text := "UE OPTIONNELLES :";
 	self.uesoptionnelles -> forEach(ue) {
-		elements += object Button {text := ue.pseudo}
+		elements += object Button {text := ue.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = ue.name)}
 	}
 }
 
