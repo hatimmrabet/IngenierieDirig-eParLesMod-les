@@ -9,7 +9,142 @@ main() {
 
 mapping filMM::Faculte::faculte2Site() : htmlbsMM::Site {
 	name := self.name;
-	self.niveaux -> forEach(niv) {
-		//ages += 
+	self.niveaux -> forEach(niveau) {
+		pages += niveau -> map niveau2Page();
+		
+		niveau.formations -> forEach(formation) {
+			pages += formation -> map formation2Page();
+		};
+		
+		niveau.ues -> forEach(ue) {
+			pages += ue -> map ue2Page();
+		};
+		
+	}
+}
+
+
+/** Presentation **/
+
+mapping filMM::Presentation::presentation2Block() : htmlbsMM::Title {
+	level := 3;
+	text := "Presentation :";
+	elements += object Text {text := self.contenue }
+}
+
+/** Niveau **/
+
+mapping filMM::Niveau::niveau2Page() : htmlbsMM::Page {
+	name := self.name;
+	blocks += self.presentation -> map presentation2Block();
+	blocks += self -> map responsables2Block();
+	blocks += self -> map formations2Block();
+}
+
+mapping filMM::Niveau::responsables2Block() : htmlbsMM::Title {
+	level := 4;
+	text := "Responsables :";
+	self.responsables -> forEach(responsable) {
+		elements += object Text {text := responsable.name +" "+responsable.prenom }
+	}
+}
+
+mapping filMM::Niveau::formations2Block() : htmlbsMM::Title when {self.formations -> notEmpty()} {
+	level := 4;
+	text := "Formations :";
+	self.formations -> forEach(formation) {
+		elements += object Button {text := formation.pseudo;}
+	}
+}
+
+/** Formation **/
+
+mapping filMM::Formation::formation2Page() : htmlbsMM::Page {
+	name := self.name;
+	blocks += self.presentation -> map presentation2Block();
+	blocks += self -> map responsables2Block();
+	blocks += self -> map enseignants2Block();
+	blocks += self -> map documents2Block();
+	blocks += object Title {level := 5; text := "S1"};
+	blocks += self.s1 -> map ueObligatoires2Block();
+	blocks += self.s1 -> map ueOptionnelles2Block();
+	blocks += object Title {level := 5; text := "S2"};
+	blocks += self.s2 -> map ueObligatoires2Block();
+	blocks += self.s2 -> map ueOptionnelles2Block();
+}
+
+mapping filMM::Formation::responsables2Block() : htmlbsMM::Title when {self.responsables -> notEmpty()} {
+	level := 4;
+	text := "Responsables :";
+	self.responsables -> forEach(responsable) {
+		elements += object Text {text := responsable.name +" "+responsable.prenom }
+	}
+}
+
+mapping filMM::Formation::enseignants2Block() : htmlbsMM::Title when {self.enseignants -> notEmpty()} {
+	level := 4;
+	text := "Enseignants :";
+	self.responsables -> forEach(responsable) {
+		elements += object Text {text := responsable.name +" "+responsable.prenom }
+	}
+}
+
+mapping filMM::Formation::documents2Block() : htmlbsMM::Title when {self.documents -> notEmpty()} {
+	level := 4;
+	text := "Documents :";
+	self.documents -> forEach(doc) {
+		elements += object Link {text := doc.name; lien := doc.lien}
+	}
+}
+
+/** SEMESTRE **/
+
+mapping filMM::Semestre::ueObligatoires2Block() : htmlbsMM::Title when {self.uesobligatoires -> notEmpty()} {
+	level := 4;
+	text := "UE OBLIGATOIRES :";
+	self.uesobligatoires -> forEach(ue) {
+		elements += object Button {text := ue.pseudo}
+	}
+}
+
+mapping filMM::Semestre::ueOptionnelles2Block() : htmlbsMM::Title when {self.uesoptionnelles -> notEmpty()} {
+	level := 4;
+	text := "UE OPTIONNELLES :";
+	self.uesoptionnelles -> forEach(ue) {
+		elements += object Button {text := ue.pseudo}
+	}
+}
+
+/** UE **/
+
+mapping filMM::UE::ue2Page() : htmlbsMM::Page {
+	name := self.name;
+	blocks += self.presentation -> map presentation2Block();
+	blocks += self -> map responsables2Block();
+	blocks += self -> map enseignants2Block();
+	blocks += self -> map documents2Block();
+}
+
+mapping filMM::UE::responsables2Block() : htmlbsMM::Title when {self.responsables -> notEmpty()} {
+	level := 4;
+	text := "Responsables :";
+	self.responsables -> forEach(responsable) {
+		elements += object Text {text := responsable.name +" "+responsable.prenom }
+	}
+}
+
+mapping filMM::UE::enseignants2Block() : htmlbsMM::Title when {self.enseignants -> notEmpty()} {
+	level := 4;
+	text := "Enseignants :";
+	self.responsables -> forEach(responsable) {
+		elements += object Text {text := responsable.name +" "+responsable.prenom }
+	}
+}
+
+mapping filMM::UE::documents2Block() : htmlbsMM::Title when {self.documents -> notEmpty()} {
+	level := 4;
+	text := "Documents :";
+	self.documents -> forEach(doc) {
+		elements += object Link {text := doc.name; lien := doc.lien}
 	}
 }

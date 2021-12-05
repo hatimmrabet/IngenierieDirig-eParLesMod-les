@@ -18,8 +18,7 @@ package htmlbsMM;
  * @model
  * @generated
  */
-public interface Button extends RedirectionURL {
-
+public interface Button extends TextElement {
 	/**
 	 * Returns the value of the '<em><b>Page</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -41,4 +40,5 @@ public interface Button extends RedirectionURL {
 	 * @generated
 	 */
 	void setPage(Page value);
+
 } // Button

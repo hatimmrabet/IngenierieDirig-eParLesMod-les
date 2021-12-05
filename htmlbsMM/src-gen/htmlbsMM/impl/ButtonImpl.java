@@ -4,11 +4,13 @@ package htmlbsMM.impl;
 
 import htmlbsMM.Button;
 import htmlbsMM.HtmlbsMMPackage;
-
 import htmlbsMM.Page;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -24,7 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ButtonImpl extends RedirectionURLImpl implements Button {
+public class ButtonImpl extends TextElementImpl implements Button {
 	/**
 	 * The cached value of the '{@link #getPage() <em>Page</em>}' reference.
 	 * <!-- begin-user-doc -->

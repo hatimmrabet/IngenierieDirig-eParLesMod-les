@@ -70,7 +70,7 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(HtmlbsMMPackage.Literals.BLOCK__CONTENTS);
+			childrenFeatures.add(HtmlbsMMPackage.Literals.BLOCK__ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -132,7 +132,7 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Block.class)) {
-		case HtmlbsMMPackage.BLOCK__CONTENTS:
+		case HtmlbsMMPackage.BLOCK__ELEMENTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -150,17 +150,14 @@ public class BlockItemProvider extends ItemProviderAdapter implements IEditingDo
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(HtmlbsMMPackage.Literals.BLOCK__CONTENTS,
-				HtmlbsMMFactory.eINSTANCE.createParagraph()));
+		newChildDescriptors.add(
+				createChildParameter(HtmlbsMMPackage.Literals.BLOCK__ELEMENTS, HtmlbsMMFactory.eINSTANCE.createLink()));
 
-		newChildDescriptors.add(createChildParameter(HtmlbsMMPackage.Literals.BLOCK__CONTENTS,
-				HtmlbsMMFactory.eINSTANCE.createTitle()));
+		newChildDescriptors.add(createChildParameter(HtmlbsMMPackage.Literals.BLOCK__ELEMENTS,
+				HtmlbsMMFactory.eINSTANCE.createButton()));
 
 		newChildDescriptors.add(
-				createChildParameter(HtmlbsMMPackage.Literals.BLOCK__CONTENTS, HtmlbsMMFactory.eINSTANCE.createLink()));
-
-		newChildDescriptors.add(createChildParameter(HtmlbsMMPackage.Literals.BLOCK__CONTENTS,
-				HtmlbsMMFactory.eINSTANCE.createButton()));
+				createChildParameter(HtmlbsMMPackage.Literals.BLOCK__ELEMENTS, HtmlbsMMFactory.eINSTANCE.createText()));
 	}
 
 	/**

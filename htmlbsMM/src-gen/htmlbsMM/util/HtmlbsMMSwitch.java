@@ -73,18 +73,9 @@ public class HtmlbsMMSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case HtmlbsMMPackage.CONTENT: {
-			Content content = (Content) theEObject;
-			T result = caseContent(content);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case HtmlbsMMPackage.PARAGRAPH: {
-			Paragraph paragraph = (Paragraph) theEObject;
-			T result = caseParagraph(paragraph);
-			if (result == null)
-				result = caseContent(paragraph);
+		case HtmlbsMMPackage.TEXT_ELEMENT: {
+			TextElement textElement = (TextElement) theEObject;
+			T result = caseTextElement(textElement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -93,16 +84,7 @@ public class HtmlbsMMSwitch<T> extends Switch<T> {
 			Title title = (Title) theEObject;
 			T result = caseTitle(title);
 			if (result == null)
-				result = caseContent(title);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case HtmlbsMMPackage.REDIRECTION_URL: {
-			RedirectionURL redirectionURL = (RedirectionURL) theEObject;
-			T result = caseRedirectionURL(redirectionURL);
-			if (result == null)
-				result = caseContent(redirectionURL);
+				result = caseBlock(title);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -111,9 +93,7 @@ public class HtmlbsMMSwitch<T> extends Switch<T> {
 			Link link = (Link) theEObject;
 			T result = caseLink(link);
 			if (result == null)
-				result = caseRedirectionURL(link);
-			if (result == null)
-				result = caseContent(link);
+				result = caseTextElement(link);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -122,9 +102,7 @@ public class HtmlbsMMSwitch<T> extends Switch<T> {
 			Button button = (Button) theEObject;
 			T result = caseButton(button);
 			if (result == null)
-				result = caseRedirectionURL(button);
-			if (result == null)
-				result = caseContent(button);
+				result = caseTextElement(button);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -139,6 +117,15 @@ public class HtmlbsMMSwitch<T> extends Switch<T> {
 		case HtmlbsMMPackage.BLOCK: {
 			Block block = (Block) theEObject;
 			T result = caseBlock(block);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case HtmlbsMMPackage.TEXT: {
+			Text text = (Text) theEObject;
+			T result = caseText(text);
+			if (result == null)
+				result = caseTextElement(text);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -164,32 +151,17 @@ public class HtmlbsMMSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Content</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Text Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Content</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Text Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseContent(Content object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Paragraph</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Paragraph</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseParagraph(Paragraph object) {
+	public T caseTextElement(TextElement object) {
 		return null;
 	}
 
@@ -205,21 +177,6 @@ public class HtmlbsMMSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTitle(Title object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Redirection URL</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Redirection URL</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRedirectionURL(RedirectionURL object) {
 		return null;
 	}
 
@@ -280,6 +237,21 @@ public class HtmlbsMMSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBlock(Block object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Text</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Text</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseText(Text object) {
 		return null;
 	}
 

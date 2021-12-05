@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <htmlbsMM:Site xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:htmlbsMM="http://www.example.org/htmlbsMM" name="Lille1">
   <pages name="master info">
-    <blocks>
-      <contents xsi:type="htmlbsMM:Title" name="presentation"/>
-      <contents xsi:type="htmlbsMM:Paragraph" name="la presentation"/>
+    <blocks xsi:type="htmlbsMM:Title" text="presentaion">
+      <elements xsi:type="htmlbsMM:Text" text="la presentaion est une ..."/>
     </blocks>
-    <blocks>
-      <contents xsi:type="htmlbsMM:Title" name="responsables" level="3"/>
+    <blocks xsi:type="htmlbsMM:Title" text="enseignats">
+      <elements xsi:type="htmlbsMM:Text" text="ossama"/>
+      <elements xsi:type="htmlbsMM:Text" text="hatim"/>
     </blocks>
-    <blocks>
-      <contents xsi:type="htmlbsMM:Title" name="enseignants:"/>
-      <contents xsi:type="htmlbsMM:Paragraph" name="hatim"/>
-      <contents xsi:type="htmlbsMM:Paragraph" name="prtof"/>
-    </blocks>
-    <blocks>
-      <contents xsi:type="htmlbsMM:Title" name="documents"/>
-      <contents xsi:type="htmlbsMM:Link" name="doc1" lien="www"/>
-    </blocks>
-    <blocks>
-      <contents xsi:type="htmlbsMM:Button" name="GL" page="//@pages.1"/>
+    <blocks xsi:type="htmlbsMM:Title" text="parcours">
+      <elements xsi:type="htmlbsMM:Button" text="gl"/>
     </blocks>
   </pages>
-  <pages name="GL">
-    <blocks>
-      <contents xsi:type="htmlbsMM:Title" name="genie logiciel"/>
+  <pages name="genie logiciel">
+    <blocks xsi:type="htmlbsMM:Title" text="presentation">
+      <elements xsi:type="htmlbsMM:Text" text="la present"/>
     </blocks>
   </pages>
 </htmlbsMM:Site>

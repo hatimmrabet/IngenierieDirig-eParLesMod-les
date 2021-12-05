@@ -1,2 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<htmlbsMM:Site xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:htmlbsMM="http://www.example.org/htmlbsMM" name="FIL - Faculté de sciences"/>
+<htmlbsMM:Site xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:htmlbsMM="http://www.example.org/htmlbsMM" name="FIL - Faculté de sciences">
+  <pages name="Master 1 mention informatique">
+    <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
+      <elements xsi:type="htmlbsMM:Text" text="La mention informatique du master sciences et technologies de l'université de Lille a pour objectifs d'apporter aux étudiants des compétences de haut niveau, à la fois sur le plan théorique et pratique, dans le secteur des sciences de l'information et des technologies des communications."/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :">
+      <elements xsi:type="htmlbsMM:Text" text="Dumoulin Cedric"/>
+      <elements xsi:type="htmlbsMM:Text" text="Launay Michael "/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Formations :">
+      <elements xsi:type="htmlbsMM:Button" text="GL"/>
+      <elements xsi:type="htmlbsMM:Button" text="ES"/>
+    </blocks>
+  </pages>
+  <pages name="Génie Logiciel">
+    <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
+      <elements xsi:type="htmlbsMM:Text" text="Le parcours Génie Logiciel s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :">
+      <elements xsi:type="htmlbsMM:Text" text="Launay Michael "/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Enseignants :">
+      <elements xsi:type="htmlbsMM:Text" text="Launay Michael "/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Documents :">
+      <elements xsi:type="htmlbsMM:Link" text="Slides de rentrée 2021/2022 M1" lien="https://bit.ly/m1s1-rentree-2021"/>
+      <elements xsi:type="htmlbsMM:Link" text="Formulaire d’inscription pédagogique" lien="https://bit.ly/m1s1-inscription-2021"/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="5" text="S1"/>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="UE OBLIGATOIRES :">
+      <elements xsi:type="htmlbsMM:Button" text="ACT"/>
+      <elements xsi:type="htmlbsMM:Button" text="IDM"/>
+      <elements xsi:type="htmlbsMM:Button" text="ANG"/>
+      <elements xsi:type="htmlbsMM:Button" text="IIR"/>
+      <elements xsi:type="htmlbsMM:Button" text="PJE"/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="UE OPTIONNELLES :">
+      <elements xsi:type="htmlbsMM:Button" text="TAC"/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="5" text="S2"/>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="UE OBLIGATOIRES :">
+      <elements xsi:type="htmlbsMM:Button" text="ASE"/>
+      <elements xsi:type="htmlbsMM:Button" text="ISI"/>
+      <elements xsi:type="htmlbsMM:Button" text="PJI"/>
+      <elements xsi:type="htmlbsMM:Button" text="COA"/>
+      <elements xsi:type="htmlbsMM:Button" text="Compil"/>
+      <elements xsi:type="htmlbsMM:Button" text="ASA"/>
+    </blocks>
+  </pages>
+  <pages name="E-Services">
+    <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
+      <elements xsi:type="htmlbsMM:Text" text="Le parcours E-Services s’articule autour de la conception et du développement des services numériques, c’est-à-dire des services accessibles au travers des moyens de communication numérique - notamment l’Internet – mais également au travers de tous les équipements liés à l’économie digitale : smartphones, tablettes, interfaces multi-touch, interfaces vocales, etc."/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :">
+      <elements xsi:type="htmlbsMM:Text" text="Tarby  Jean-Claude "/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="5" text="S1"/>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="UE OBLIGATOIRES :">
+      <elements xsi:type="htmlbsMM:Button" text="ACT"/>
+      <elements xsi:type="htmlbsMM:Button" text="PJE"/>
+      <elements xsi:type="htmlbsMM:Button" text="IIR"/>
+      <elements xsi:type="htmlbsMM:Button" text="ANG"/>
+      <elements xsi:type="htmlbsMM:Button" text="TAC"/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="UE OPTIONNELLES :">
+      <elements xsi:type="htmlbsMM:Button" text="IDM"/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="5" text="S2"/>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="UE OBLIGATOIRES :">
+      <elements xsi:type="htmlbsMM:Button" text="ASE"/>
+      <elements xsi:type="htmlbsMM:Button" text="ISI"/>
+      <elements xsi:type="htmlbsMM:Button" text="PJI"/>
+      <elements xsi:type="htmlbsMM:Button" text="ASA"/>
+      <elements xsi:type="htmlbsMM:Button" text="IIHM"/>
+      <elements xsi:type="htmlbsMM:Button" text="BDR"/>
+    </blocks>
+  </pages>
+  <pages name="Architecture des systèmes d'exploitation">
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :">
+      <elements xsi:type="htmlbsMM:Text" text="Gilles Grimaud"/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Documents :">
+      <elements xsi:type="htmlbsMM:Link" text="Changement de contexte et ordonnancements" lien="http://www.cristal.univ-lille.fr/~marquet/ens/ctx/"/>
+      <elements xsi:type="htmlbsMM:Link" text="TDM Mémoire Virtuelle" lien="https://www.fil.univ-lille1.fr/~marquet/ase/mmu/"/>
+    </blocks>
+  </pages>
+  <pages name="Bases de données relationnelles"/>
+  <pages name="Introduction à la Sécurité Informatique"/>
+  <pages name="Introduction aux IHM"/>
+  <pages name="Projet encadré"/>
+  <pages name="Initiation à la recherche"/>
+  <pages name="Projet Individuel"/>
+  <pages name="Conception Objet Avancée"/>
+  <pages name="Anglais"/>
+  <pages name="Ingénierie Des Modèles">
+    <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
+      <elements xsi:type="htmlbsMM:Text" text="Cette unité se déroule au S1 de la FORMATION. Il s’agit d’une UE optionnelle de cette mention."/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :">
+      <elements xsi:type="htmlbsMM:Text" text="Dumoulin Cedric"/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Enseignants :">
+      <elements xsi:type="htmlbsMM:Text" text="Dumoulin Cedric"/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Documents :">
+      <elements xsi:type="htmlbsMM:Link" text="Générer du code avec Acceleo partie 1- Créer un projet Acceleo (Ville) (2021)" lien="http://www.fil.univ-lille1.fr/~dumoulin/docs/assets/listDesVideos-ac36a387.mp4"/>
+    </blocks>
+  </pages>
+  <pages name="Compilation des logiciels"/>
+  <pages name="Architecture des systèmes d'exploitation avancée"/>
+  <pages name="Technologies pour les Applications Connectées">
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :">
+      <elements xsi:type="htmlbsMM:Text" text="Tarby  Jean-Claude "/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Documents :">
+      <elements xsi:type="htmlbsMM:Link" text="Que va-t-on voir dans cette UE" lien="http://www.fil.univ-lille1.fr/~tarby/portailFIL/ue-M1S1-TAC/documents/2021-2022/cours/1.contenu_UE.pdf"/>
+    </blocks>
+  </pages>
+  <pages name="Algorithmique et complexité">
+    <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
+      <elements xsi:type="htmlbsMM:Text" text="Le but de l'algorithmique peut être résumé en &quot; trouver un &quot;bon&quot; algorithme &quot; pour un problème donné."/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :">
+      <elements xsi:type="htmlbsMM:Text" text="Derbel Bilel "/>
+      <elements xsi:type="htmlbsMM:Text" text="Tison Sophie "/>
+      <elements xsi:type="htmlbsMM:Text" text="Voge Marie-Émilie"/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Enseignants :">
+      <elements xsi:type="htmlbsMM:Text" text="Derbel Bilel "/>
+      <elements xsi:type="htmlbsMM:Text" text="Tison Sophie "/>
+      <elements xsi:type="htmlbsMM:Text" text="Voge Marie-Émilie"/>
+    </blocks>
+  </pages>
+  <pages name="Licence mention Informatique">
+    <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
+      <elements xsi:type="htmlbsMM:Text" text="La formation proposée par la licence d'informatique de l'Université Lille1 permet l'apprentissage des aspects tant théoriques qu'appliqués de l'informatique. Les titulaires de cette licence disposent de solides connaissances qui couvrent un large spectre de la discipline : divers paradigmes de programmation, bases de données, algorithmique, réseaux, etc."/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :"/>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Formations :">
+      <elements xsi:type="htmlbsMM:Button" text="L2INF"/>
+    </blocks>
+  </pages>
+  <pages name="LICENCE  2, parcours informatique">
+    <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
+      <elements xsi:type="htmlbsMM:Text" text="L2 informatique, parcours classique"/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Documents :">
+      <elements xsi:type="htmlbsMM:Link" text="Emploi du temps jusqu'au 22 octobre" lien="http://www.fil.univ-lille1.fr/~routier/portail/s3/edt_S3_21-22-partie1.pdf"/>
+    </blocks>
+    <blocks xsi:type="htmlbsMM:Title" level="5" text="S1"/>
+    <blocks xsi:type="htmlbsMM:Title" level="5" text="S2"/>
+  </pages>
+</htmlbsMM:Site>

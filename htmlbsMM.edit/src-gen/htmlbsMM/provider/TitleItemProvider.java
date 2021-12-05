@@ -22,7 +22,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TitleItemProvider extends ContentItemProvider {
+public class TitleItemProvider extends BlockItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,6 +45,7 @@ public class TitleItemProvider extends ContentItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addLevelPropertyDescriptor(object);
+			addTextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -62,6 +63,21 @@ public class TitleItemProvider extends ContentItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Title_level_feature", "_UI_Title_type"),
 						HtmlbsMMPackage.Literals.TITLE__LEVEL, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Text feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTextPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Title_text_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Title_text_feature", "_UI_Title_type"),
+						HtmlbsMMPackage.Literals.TITLE__TEXT, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -93,9 +109,8 @@ public class TitleItemProvider extends ContentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Title) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Title_type")
-				: getString("_UI_Title_type") + " " + label;
+		Title title = (Title) object;
+		return getString("_UI_Title_type") + " " + title.getLevel();
 	}
 
 	/**
@@ -111,6 +126,7 @@ public class TitleItemProvider extends ContentItemProvider {
 
 		switch (notification.getFeatureID(Title.class)) {
 		case HtmlbsMMPackage.TITLE__LEVEL:
+		case HtmlbsMMPackage.TITLE__TEXT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

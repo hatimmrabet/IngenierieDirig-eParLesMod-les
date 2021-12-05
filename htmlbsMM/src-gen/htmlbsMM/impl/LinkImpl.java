@@ -6,7 +6,9 @@ import htmlbsMM.HtmlbsMMPackage;
 import htmlbsMM.Link;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -22,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class LinkImpl extends RedirectionURLImpl implements Link {
+public class LinkImpl extends TextElementImpl implements Link {
 	/**
 	 * The default value of the '{@link #getLien() <em>Lien</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -32,6 +34,7 @@ public class LinkImpl extends RedirectionURLImpl implements Link {
 	 * @ordered
 	 */
 	protected static final String LIEN_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getLien() <em>Lien</em>}' attribute.
 	 * <!-- begin-user-doc -->

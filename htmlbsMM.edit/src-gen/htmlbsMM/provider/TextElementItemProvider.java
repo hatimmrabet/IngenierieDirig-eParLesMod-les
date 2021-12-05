@@ -2,8 +2,8 @@
  */
 package htmlbsMM.provider;
 
-import htmlbsMM.Content;
 import htmlbsMM.HtmlbsMMPackage;
+import htmlbsMM.TextElement;
 
 import java.util.Collection;
 import java.util.List;
@@ -25,12 +25,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link htmlbsMM.Content} object.
+ * This is the item provider adapter for a {@link htmlbsMM.TextElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContentItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class TextElementItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -38,7 +38,7 @@ public class ContentItemProvider extends ItemProviderAdapter implements IEditing
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContentItemProvider(AdapterFactory adapterFactory) {
+	public TextElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -53,35 +53,36 @@ public class ContentItemProvider extends ItemProviderAdapter implements IEditing
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addTextPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Text feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addTextPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Content_name_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Content_name_feature", "_UI_Content_type"),
-						HtmlbsMMPackage.Literals.CONTENT__NAME, true, false, false,
+						getResourceLocator(), getString("_UI_TextElement_text_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_TextElement_text_feature",
+								"_UI_TextElement_type"),
+						HtmlbsMMPackage.Literals.TEXT_ELEMENT__TEXT, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns Content.gif.
+	 * This returns TextElement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Content"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TextElement"));
 	}
 
 	/**
@@ -102,9 +103,9 @@ public class ContentItemProvider extends ItemProviderAdapter implements IEditing
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Content) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Content_type")
-				: getString("_UI_Content_type") + " " + label;
+		String label = ((TextElement) object).getText();
+		return label == null || label.length() == 0 ? getString("_UI_TextElement_type")
+				: getString("_UI_TextElement_type") + " " + label;
 	}
 
 	/**
@@ -118,8 +119,8 @@ public class ContentItemProvider extends ItemProviderAdapter implements IEditing
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Content.class)) {
-		case HtmlbsMMPackage.CONTENT__NAME:
+		switch (notification.getFeatureID(TextElement.class)) {
+		case HtmlbsMMPackage.TEXT_ELEMENT__TEXT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

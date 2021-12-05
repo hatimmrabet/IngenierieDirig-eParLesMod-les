@@ -22,7 +22,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LinkItemProvider extends RedirectionURLItemProvider {
+public class LinkItemProvider extends TextElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -93,7 +93,7 @@ public class LinkItemProvider extends RedirectionURLItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Link) object).getName();
+		String label = ((Link) object).getText();
 		return label == null || label.length() == 0 ? getString("_UI_Link_type")
 				: getString("_UI_Link_type") + " " + label;
 	}

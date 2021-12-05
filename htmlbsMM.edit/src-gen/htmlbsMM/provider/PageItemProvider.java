@@ -174,7 +174,7 @@ public class PageItemProvider extends ItemProviderAdapter implements IEditingDom
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(
-				createChildParameter(HtmlbsMMPackage.Literals.PAGE__BLOCKS, HtmlbsMMFactory.eINSTANCE.createBlock()));
+				createChildParameter(HtmlbsMMPackage.Literals.PAGE__BLOCKS, HtmlbsMMFactory.eINSTANCE.createTitle()));
 	}
 
 	/**

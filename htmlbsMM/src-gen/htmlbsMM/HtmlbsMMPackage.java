@@ -103,78 +103,78 @@ public interface HtmlbsMMPackage extends EPackage {
 	int PAGE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link htmlbsMM.impl.ContentImpl <em>Content</em>}' class.
+	 * The meta object id for the '{@link htmlbsMM.impl.TextElementImpl <em>Text Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see htmlbsMM.impl.ContentImpl
-	 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getContent()
+	 * @see htmlbsMM.impl.TextElementImpl
+	 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getTextElement()
 	 * @generated
 	 */
-	int CONTENT = 1;
+	int TEXT_ELEMENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__NAME = 0;
+	int TEXT_ELEMENT__TEXT = 0;
 
 	/**
-	 * The number of structural features of the '<em>Content</em>' class.
+	 * The number of structural features of the '<em>Text Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_FEATURE_COUNT = 1;
+	int TEXT_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Content</em>' class.
+	 * The number of operations of the '<em>Text Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_OPERATION_COUNT = 0;
+	int TEXT_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link htmlbsMM.impl.ParagraphImpl <em>Paragraph</em>}' class.
+	 * The meta object id for the '{@link htmlbsMM.impl.BlockImpl <em>Block</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see htmlbsMM.impl.ParagraphImpl
-	 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getParagraph()
+	 * @see htmlbsMM.impl.BlockImpl
+	 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getBlock()
 	 * @generated
 	 */
-	int PARAGRAPH = 2;
+	int BLOCK = 6;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAGRAPH__NAME = CONTENT__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Paragraph</em>' class.
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAGRAPH_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
+	int BLOCK__ELEMENTS = 0;
 
 	/**
-	 * The number of operations of the '<em>Paragraph</em>' class.
+	 * The number of structural features of the '<em>Block</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAGRAPH_OPERATION_COUNT = CONTENT_OPERATION_COUNT + 0;
+	int BLOCK_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCK_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link htmlbsMM.impl.TitleImpl <em>Title</em>}' class.
@@ -184,16 +184,16 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getTitle()
 	 * @generated
 	 */
-	int TITLE = 3;
+	int TITLE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TITLE__NAME = CONTENT__NAME;
+	int TITLE__ELEMENTS = BLOCK__ELEMENTS;
 
 	/**
 	 * The feature id for the '<em><b>Level</b></em>' attribute.
@@ -202,7 +202,16 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TITLE__LEVEL = CONTENT_FEATURE_COUNT + 0;
+	int TITLE__LEVEL = BLOCK_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TITLE__TEXT = BLOCK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Title</em>' class.
@@ -211,7 +220,7 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TITLE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
+	int TITLE_FEATURE_COUNT = BLOCK_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Title</em>' class.
@@ -220,44 +229,7 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TITLE_OPERATION_COUNT = CONTENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link htmlbsMM.impl.RedirectionURLImpl <em>Redirection URL</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see htmlbsMM.impl.RedirectionURLImpl
-	 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getRedirectionURL()
-	 * @generated
-	 */
-	int REDIRECTION_URL = 4;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REDIRECTION_URL__NAME = CONTENT__NAME;
-
-	/**
-	 * The number of structural features of the '<em>Redirection URL</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REDIRECTION_URL_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Redirection URL</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REDIRECTION_URL_OPERATION_COUNT = CONTENT_OPERATION_COUNT + 0;
+	int TITLE_OPERATION_COUNT = BLOCK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link htmlbsMM.impl.LinkImpl <em>Link</em>}' class.
@@ -267,16 +239,16 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getLink()
 	 * @generated
 	 */
-	int LINK = 5;
+	int LINK = 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__NAME = REDIRECTION_URL__NAME;
+	int LINK__TEXT = TEXT_ELEMENT__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Lien</b></em>' attribute.
@@ -285,7 +257,7 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__LIEN = REDIRECTION_URL_FEATURE_COUNT + 0;
+	int LINK__LIEN = TEXT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Link</em>' class.
@@ -294,7 +266,7 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_FEATURE_COUNT = REDIRECTION_URL_FEATURE_COUNT + 1;
+	int LINK_FEATURE_COUNT = TEXT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Link</em>' class.
@@ -303,7 +275,7 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_OPERATION_COUNT = REDIRECTION_URL_OPERATION_COUNT + 0;
+	int LINK_OPERATION_COUNT = TEXT_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link htmlbsMM.impl.ButtonImpl <em>Button</em>}' class.
@@ -313,16 +285,16 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getButton()
 	 * @generated
 	 */
-	int BUTTON = 6;
+	int BUTTON = 4;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON__NAME = REDIRECTION_URL__NAME;
+	int BUTTON__TEXT = TEXT_ELEMENT__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Page</b></em>' reference.
@@ -331,7 +303,7 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON__PAGE = REDIRECTION_URL_FEATURE_COUNT + 0;
+	int BUTTON__PAGE = TEXT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Button</em>' class.
@@ -340,7 +312,7 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON_FEATURE_COUNT = REDIRECTION_URL_FEATURE_COUNT + 1;
+	int BUTTON_FEATURE_COUNT = TEXT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Button</em>' class.
@@ -349,7 +321,7 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BUTTON_OPERATION_COUNT = REDIRECTION_URL_OPERATION_COUNT + 0;
+	int BUTTON_OPERATION_COUNT = TEXT_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link htmlbsMM.impl.SiteImpl <em>Site</em>}' class.
@@ -359,7 +331,7 @@ public interface HtmlbsMMPackage extends EPackage {
 	 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getSite()
 	 * @generated
 	 */
-	int SITE = 7;
+	int SITE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -398,41 +370,41 @@ public interface HtmlbsMMPackage extends EPackage {
 	int SITE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link htmlbsMM.impl.BlockImpl <em>Block</em>}' class.
+	 * The meta object id for the '{@link htmlbsMM.impl.TextImpl <em>Text</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see htmlbsMM.impl.BlockImpl
-	 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getBlock()
+	 * @see htmlbsMM.impl.TextImpl
+	 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getText()
 	 * @generated
 	 */
-	int BLOCK = 8;
+	int TEXT = 7;
 
 	/**
-	 * The feature id for the '<em><b>Contents</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__CONTENTS = 0;
+	int TEXT__TEXT = TEXT_ELEMENT__TEXT;
 
 	/**
-	 * The number of structural features of the '<em>Block</em>' class.
+	 * The number of structural features of the '<em>Text</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK_FEATURE_COUNT = 1;
+	int TEXT_FEATURE_COUNT = TEXT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Block</em>' class.
+	 * The number of operations of the '<em>Text</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK_OPERATION_COUNT = 0;
+	int TEXT_OPERATION_COUNT = TEXT_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link htmlbsMM.Page <em>Page</em>}'.
@@ -467,35 +439,25 @@ public interface HtmlbsMMPackage extends EPackage {
 	EReference getPage_Blocks();
 
 	/**
-	 * Returns the meta object for class '{@link htmlbsMM.Content <em>Content</em>}'.
+	 * Returns the meta object for class '{@link htmlbsMM.TextElement <em>Text Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Content</em>'.
-	 * @see htmlbsMM.Content
+	 * @return the meta object for class '<em>Text Element</em>'.
+	 * @see htmlbsMM.TextElement
 	 * @generated
 	 */
-	EClass getContent();
+	EClass getTextElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link htmlbsMM.Content#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link htmlbsMM.TextElement#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see htmlbsMM.Content#getName()
-	 * @see #getContent()
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see htmlbsMM.TextElement#getText()
+	 * @see #getTextElement()
 	 * @generated
 	 */
-	EAttribute getContent_Name();
-
-	/**
-	 * Returns the meta object for class '{@link htmlbsMM.Paragraph <em>Paragraph</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Paragraph</em>'.
-	 * @see htmlbsMM.Paragraph
-	 * @generated
-	 */
-	EClass getParagraph();
+	EAttribute getTextElement_Text();
 
 	/**
 	 * Returns the meta object for class '{@link htmlbsMM.Title <em>Title</em>}'.
@@ -519,14 +481,15 @@ public interface HtmlbsMMPackage extends EPackage {
 	EAttribute getTitle_Level();
 
 	/**
-	 * Returns the meta object for class '{@link htmlbsMM.RedirectionURL <em>Redirection URL</em>}'.
+	 * Returns the meta object for the attribute '{@link htmlbsMM.Title#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Redirection URL</em>'.
-	 * @see htmlbsMM.RedirectionURL
+	 * @return the meta object for the attribute '<em>Text</em>'.
+	 * @see htmlbsMM.Title#getText()
+	 * @see #getTitle()
 	 * @generated
 	 */
-	EClass getRedirectionURL();
+	EAttribute getTitle_Text();
 
 	/**
 	 * Returns the meta object for class '{@link htmlbsMM.Link <em>Link</em>}'.
@@ -613,15 +576,25 @@ public interface HtmlbsMMPackage extends EPackage {
 	EClass getBlock();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link htmlbsMM.Block#getContents <em>Contents</em>}'.
+	 * Returns the meta object for the containment reference list '{@link htmlbsMM.Block#getElements <em>Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Contents</em>'.
-	 * @see htmlbsMM.Block#getContents()
+	 * @return the meta object for the containment reference list '<em>Elements</em>'.
+	 * @see htmlbsMM.Block#getElements()
 	 * @see #getBlock()
 	 * @generated
 	 */
-	EReference getBlock_Contents();
+	EReference getBlock_Elements();
+
+	/**
+	 * Returns the meta object for class '{@link htmlbsMM.Text <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Text</em>'.
+	 * @see htmlbsMM.Text
+	 * @generated
+	 */
+	EClass getText();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -673,32 +646,22 @@ public interface HtmlbsMMPackage extends EPackage {
 		EReference PAGE__BLOCKS = eINSTANCE.getPage_Blocks();
 
 		/**
-		 * The meta object literal for the '{@link htmlbsMM.impl.ContentImpl <em>Content</em>}' class.
+		 * The meta object literal for the '{@link htmlbsMM.impl.TextElementImpl <em>Text Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see htmlbsMM.impl.ContentImpl
-		 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getContent()
+		 * @see htmlbsMM.impl.TextElementImpl
+		 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getTextElement()
 		 * @generated
 		 */
-		EClass CONTENT = eINSTANCE.getContent();
+		EClass TEXT_ELEMENT = eINSTANCE.getTextElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTENT__NAME = eINSTANCE.getContent_Name();
-
-		/**
-		 * The meta object literal for the '{@link htmlbsMM.impl.ParagraphImpl <em>Paragraph</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see htmlbsMM.impl.ParagraphImpl
-		 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getParagraph()
-		 * @generated
-		 */
-		EClass PARAGRAPH = eINSTANCE.getParagraph();
+		EAttribute TEXT_ELEMENT__TEXT = eINSTANCE.getTextElement_Text();
 
 		/**
 		 * The meta object literal for the '{@link htmlbsMM.impl.TitleImpl <em>Title</em>}' class.
@@ -719,14 +682,12 @@ public interface HtmlbsMMPackage extends EPackage {
 		EAttribute TITLE__LEVEL = eINSTANCE.getTitle_Level();
 
 		/**
-		 * The meta object literal for the '{@link htmlbsMM.impl.RedirectionURLImpl <em>Redirection URL</em>}' class.
+		 * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see htmlbsMM.impl.RedirectionURLImpl
-		 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getRedirectionURL()
 		 * @generated
 		 */
-		EClass REDIRECTION_URL = eINSTANCE.getRedirectionURL();
+		EAttribute TITLE__TEXT = eINSTANCE.getTitle_Text();
 
 		/**
 		 * The meta object literal for the '{@link htmlbsMM.impl.LinkImpl <em>Link</em>}' class.
@@ -801,12 +762,22 @@ public interface HtmlbsMMPackage extends EPackage {
 		EClass BLOCK = eINSTANCE.getBlock();
 
 		/**
-		 * The meta object literal for the '<em><b>Contents</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BLOCK__CONTENTS = eINSTANCE.getBlock_Contents();
+		EReference BLOCK__ELEMENTS = eINSTANCE.getBlock_Elements();
+
+		/**
+		 * The meta object literal for the '{@link htmlbsMM.impl.TextImpl <em>Text</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see htmlbsMM.impl.TextImpl
+		 * @see htmlbsMM.impl.HtmlbsMMPackageImpl#getText()
+		 * @generated
+		 */
+		EClass TEXT = eINSTANCE.getText();
 
 	}
 

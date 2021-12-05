@@ -18,8 +18,7 @@ package htmlbsMM;
  * @model
  * @generated
  */
-public interface Link extends RedirectionURL {
-
+public interface Link extends TextElement {
 	/**
 	 * Returns the value of the '<em><b>Lien</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -41,4 +40,5 @@ public interface Link extends RedirectionURL {
 	 * @generated
 	 */
 	void setLien(String value);
+
 } // Link

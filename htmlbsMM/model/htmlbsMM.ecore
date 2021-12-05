@@ -6,19 +6,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="blocks" upperBound="-1"
         eType="#//Block" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Content" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Paragraph" eSuperTypes="#//Content"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Title" eSuperTypes="#//Content">
+  <eClassifiers xsi:type="ecore:EClass" name="Title" eSuperTypes="#//Block">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="2"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RedirectionURL" abstract="true" eSuperTypes="#//Content"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//RedirectionURL">
+  <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//TextElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lien" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//RedirectionURL">
+  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//TextElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="page" lowerBound="1" eType="#//Page"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Site">
@@ -26,8 +25,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="pages" upperBound="-1"
         eType="#//Page" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Block">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
-        eType="#//Content" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Block" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//TextElement" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//TextElement"/>
 </ecore:EPackage>

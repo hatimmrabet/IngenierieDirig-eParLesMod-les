@@ -3,8 +3,8 @@
 package htmlbsMM.impl;
 
 import htmlbsMM.Block;
-import htmlbsMM.Content;
 import htmlbsMM.HtmlbsMMPackage;
+import htmlbsMM.TextElement;
 
 import java.util.Collection;
 
@@ -28,21 +28,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link htmlbsMM.impl.BlockImpl#getContents <em>Contents</em>}</li>
+ *   <li>{@link htmlbsMM.impl.BlockImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
+public abstract class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	/**
-	 * The cached value of the '{@link #getContents() <em>Contents</em>}' containment reference list.
+	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getContents()
+	 * @see #getElements()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Content> contents;
+	protected EList<TextElement> elements;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,11 +68,12 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Content> getContents() {
-		if (contents == null) {
-			contents = new EObjectContainmentEList<Content>(Content.class, this, HtmlbsMMPackage.BLOCK__CONTENTS);
+	public EList<TextElement> getElements() {
+		if (elements == null) {
+			elements = new EObjectContainmentEList<TextElement>(TextElement.class, this,
+					HtmlbsMMPackage.BLOCK__ELEMENTS);
 		}
-		return contents;
+		return elements;
 	}
 
 	/**
@@ -83,8 +84,8 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case HtmlbsMMPackage.BLOCK__CONTENTS:
-			return ((InternalEList<?>) getContents()).basicRemove(otherEnd, msgs);
+		case HtmlbsMMPackage.BLOCK__ELEMENTS:
+			return ((InternalEList<?>) getElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -97,8 +98,8 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case HtmlbsMMPackage.BLOCK__CONTENTS:
-			return getContents();
+		case HtmlbsMMPackage.BLOCK__ELEMENTS:
+			return getElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,9 +113,9 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case HtmlbsMMPackage.BLOCK__CONTENTS:
-			getContents().clear();
-			getContents().addAll((Collection<? extends Content>) newValue);
+		case HtmlbsMMPackage.BLOCK__ELEMENTS:
+			getElements().clear();
+			getElements().addAll((Collection<? extends TextElement>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -128,8 +129,8 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case HtmlbsMMPackage.BLOCK__CONTENTS:
-			getContents().clear();
+		case HtmlbsMMPackage.BLOCK__ELEMENTS:
+			getElements().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -143,8 +144,8 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case HtmlbsMMPackage.BLOCK__CONTENTS:
-			return contents != null && !contents.isEmpty();
+		case HtmlbsMMPackage.BLOCK__ELEMENTS:
+			return elements != null && !elements.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

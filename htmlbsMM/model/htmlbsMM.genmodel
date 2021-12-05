@@ -13,14 +13,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//Page/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference htmlbsMM.ecore#//Page/blocks"/>
     </genClasses>
-    <genClasses ecoreClass="htmlbsMM.ecore#//Content">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//Content/name"/>
+    <genClasses ecoreClass="htmlbsMM.ecore#//TextElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//TextElement/text"/>
     </genClasses>
-    <genClasses ecoreClass="htmlbsMM.ecore#//Paragraph"/>
     <genClasses ecoreClass="htmlbsMM.ecore#//Title">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//Title/level"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//Title/text"/>
     </genClasses>
-    <genClasses ecoreClass="htmlbsMM.ecore#//RedirectionURL"/>
     <genClasses ecoreClass="htmlbsMM.ecore#//Link">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute htmlbsMM.ecore#//Link/lien"/>
     </genClasses>
@@ -32,7 +31,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference htmlbsMM.ecore#//Site/pages"/>
     </genClasses>
     <genClasses ecoreClass="htmlbsMM.ecore#//Block">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference htmlbsMM.ecore#//Block/contents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference htmlbsMM.ecore#//Block/elements"/>
     </genClasses>
+    <genClasses ecoreClass="htmlbsMM.ecore#//Text"/>
   </genPackages>
 </genmodel:GenModel>

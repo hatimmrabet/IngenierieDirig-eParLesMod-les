@@ -4,14 +4,13 @@ package htmlbsMM.impl;
 
 import htmlbsMM.Block;
 import htmlbsMM.Button;
-import htmlbsMM.Content;
 import htmlbsMM.HtmlbsMMFactory;
 import htmlbsMM.HtmlbsMMPackage;
 import htmlbsMM.Link;
 import htmlbsMM.Page;
-import htmlbsMM.Paragraph;
-import htmlbsMM.RedirectionURL;
 import htmlbsMM.Site;
+import htmlbsMM.Text;
+import htmlbsMM.TextElement;
 import htmlbsMM.Title;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -40,14 +39,7 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass contentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass paragraphEClass = null;
+	private EClass textElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -55,13 +47,6 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 	 * @generated
 	 */
 	private EClass titleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass redirectionURLEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,6 +75,13 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 	 * @generated
 	 */
 	private EClass blockEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass textEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -187,8 +179,8 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getContent() {
-		return contentEClass;
+	public EClass getTextElement() {
+		return textElementEClass;
 	}
 
 	/**
@@ -196,17 +188,8 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContent_Name() {
-		return (EAttribute) contentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getParagraph() {
-		return paragraphEClass;
+	public EAttribute getTextElement_Text() {
+		return (EAttribute) textElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -232,8 +215,8 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRedirectionURL() {
-		return redirectionURLEClass;
+	public EAttribute getTitle_Text() {
+		return (EAttribute) titleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -313,8 +296,17 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBlock_Contents() {
+	public EReference getBlock_Elements() {
 		return (EReference) blockEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getText() {
+		return textEClass;
 	}
 
 	/**
@@ -350,15 +342,12 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 		createEAttribute(pageEClass, PAGE__NAME);
 		createEReference(pageEClass, PAGE__BLOCKS);
 
-		contentEClass = createEClass(CONTENT);
-		createEAttribute(contentEClass, CONTENT__NAME);
-
-		paragraphEClass = createEClass(PARAGRAPH);
+		textElementEClass = createEClass(TEXT_ELEMENT);
+		createEAttribute(textElementEClass, TEXT_ELEMENT__TEXT);
 
 		titleEClass = createEClass(TITLE);
 		createEAttribute(titleEClass, TITLE__LEVEL);
-
-		redirectionURLEClass = createEClass(REDIRECTION_URL);
+		createEAttribute(titleEClass, TITLE__TEXT);
 
 		linkEClass = createEClass(LINK);
 		createEAttribute(linkEClass, LINK__LIEN);
@@ -371,7 +360,9 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 		createEReference(siteEClass, SITE__PAGES);
 
 		blockEClass = createEClass(BLOCK);
-		createEReference(blockEClass, BLOCK__CONTENTS);
+		createEReference(blockEClass, BLOCK__ELEMENTS);
+
+		textEClass = createEClass(TEXT);
 	}
 
 	/**
@@ -403,11 +394,10 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		paragraphEClass.getESuperTypes().add(this.getContent());
-		titleEClass.getESuperTypes().add(this.getContent());
-		redirectionURLEClass.getESuperTypes().add(this.getContent());
-		linkEClass.getESuperTypes().add(this.getRedirectionURL());
-		buttonEClass.getESuperTypes().add(this.getRedirectionURL());
+		titleEClass.getESuperTypes().add(this.getBlock());
+		linkEClass.getESuperTypes().add(this.getTextElement());
+		buttonEClass.getESuperTypes().add(this.getTextElement());
+		textEClass.getESuperTypes().add(this.getTextElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -417,19 +407,16 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
-		initEClass(contentEClass, Content.class, "Content", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Content.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(paragraphEClass, Paragraph.class, "Paragraph", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(textElementEClass, TextElement.class, "TextElement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTextElement_Text(), ecorePackage.getEString(), "text", null, 0, 1, TextElement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(titleEClass, Title.class, "Title", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTitle_Level(), ecorePackage.getEInt(), "level", "2", 0, 1, Title.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(redirectionURLEClass, RedirectionURL.class, "RedirectionURL", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTitle_Text(), ecorePackage.getEString(), "text", null, 0, 1, Title.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLink_Lien(), ecorePackage.getEString(), "lien", null, 0, 1, Link.class, !IS_TRANSIENT,
@@ -447,10 +434,12 @@ public class HtmlbsMMPackageImpl extends EPackageImpl implements HtmlbsMMPackage
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
-		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBlock_Contents(), this.getContent(), null, "contents", null, 0, -1, Block.class,
+		initEClass(blockEClass, Block.class, "Block", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBlock_Elements(), this.getTextElement(), null, "elements", null, 0, -1, Block.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

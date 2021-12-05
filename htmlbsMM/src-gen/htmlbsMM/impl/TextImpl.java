@@ -3,24 +3,24 @@
 package htmlbsMM.impl;
 
 import htmlbsMM.HtmlbsMMPackage;
-import htmlbsMM.Paragraph;
+import htmlbsMM.Text;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Paragraph</b></em>'.
+ * An implementation of the model object '<em><b>Text</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ParagraphImpl extends ContentImpl implements Paragraph {
+public class TextImpl extends TextElementImpl implements Text {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ParagraphImpl() {
+	protected TextImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public class ParagraphImpl extends ContentImpl implements Paragraph {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return HtmlbsMMPackage.Literals.PARAGRAPH;
+		return HtmlbsMMPackage.Literals.TEXT;
 	}
 
-} //ParagraphImpl
+} //TextImpl

@@ -31,15 +31,6 @@ public interface HtmlbsMMFactory extends EFactory {
 	Page createPage();
 
 	/**
-	 * Returns a new object of class '<em>Paragraph</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Paragraph</em>'.
-	 * @generated
-	 */
-	Paragraph createParagraph();
-
-	/**
 	 * Returns a new object of class '<em>Title</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,13 +67,13 @@ public interface HtmlbsMMFactory extends EFactory {
 	Site createSite();
 
 	/**
-	 * Returns a new object of class '<em>Block</em>'.
+	 * Returns a new object of class '<em>Text</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Block</em>'.
+	 * @return a new object of class '<em>Text</em>'.
 	 * @generated
 	 */
-	Block createBlock();
+	Text createText();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -96,29 +96,6 @@ public class HtmlbsMMItemProviderAdapterFactory extends HtmlbsMMAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link htmlbsMM.Paragraph} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ParagraphItemProvider paragraphItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link htmlbsMM.Paragraph}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createParagraphAdapter() {
-		if (paragraphItemProvider == null) {
-			paragraphItemProvider = new ParagraphItemProvider(this);
-		}
-
-		return paragraphItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link htmlbsMM.Title} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -211,26 +188,26 @@ public class HtmlbsMMItemProviderAdapterFactory extends HtmlbsMMAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link htmlbsMM.Block} instances.
+	 * This keeps track of the one adapter used for all {@link htmlbsMM.Text} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BlockItemProvider blockItemProvider;
+	protected TextItemProvider textItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link htmlbsMM.Block}.
+	 * This creates an adapter for a {@link htmlbsMM.Text}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createBlockAdapter() {
-		if (blockItemProvider == null) {
-			blockItemProvider = new BlockItemProvider(this);
+	public Adapter createTextAdapter() {
+		if (textItemProvider == null) {
+			textItemProvider = new TextItemProvider(this);
 		}
 
-		return blockItemProvider;
+		return textItemProvider;
 	}
 
 	/**
@@ -334,8 +311,6 @@ public class HtmlbsMMItemProviderAdapterFactory extends HtmlbsMMAdapterFactory
 	public void dispose() {
 		if (pageItemProvider != null)
 			pageItemProvider.dispose();
-		if (paragraphItemProvider != null)
-			paragraphItemProvider.dispose();
 		if (titleItemProvider != null)
 			titleItemProvider.dispose();
 		if (linkItemProvider != null)
@@ -344,8 +319,8 @@ public class HtmlbsMMItemProviderAdapterFactory extends HtmlbsMMAdapterFactory
 			buttonItemProvider.dispose();
 		if (siteItemProvider != null)
 			siteItemProvider.dispose();
-		if (blockItemProvider != null)
-			blockItemProvider.dispose();
+		if (textItemProvider != null)
+			textItemProvider.dispose();
 	}
 
 }

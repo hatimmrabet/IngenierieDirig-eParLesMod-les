@@ -3,8 +3,8 @@
 package htmlbsMM.provider;
 
 import htmlbsMM.Button;
-
 import htmlbsMM.HtmlbsMMPackage;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -20,7 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ButtonItemProvider extends RedirectionURLItemProvider {
+public class ButtonItemProvider extends TextElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -90,7 +90,7 @@ public class ButtonItemProvider extends RedirectionURLItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Button) object).getName();
+		String label = ((Button) object).getText();
 		return label == null || label.length() == 0 ? getString("_UI_Button_type")
 				: getString("_UI_Button_type") + " " + label;
 	}

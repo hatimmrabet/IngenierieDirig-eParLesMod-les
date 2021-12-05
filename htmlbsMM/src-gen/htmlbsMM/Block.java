@@ -15,24 +15,24 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link htmlbsMM.Block#getContents <em>Contents</em>}</li>
+ *   <li>{@link htmlbsMM.Block#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @see htmlbsMM.HtmlbsMMPackage#getBlock()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Block extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Contents</b></em>' containment reference list.
-	 * The list contents are of type {@link htmlbsMM.Content}.
+	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+	 * The list contents are of type {@link htmlbsMM.TextElement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Contents</em>' containment reference list.
-	 * @see htmlbsMM.HtmlbsMMPackage#getBlock_Contents()
+	 * @return the value of the '<em>Elements</em>' containment reference list.
+	 * @see htmlbsMM.HtmlbsMMPackage#getBlock_Elements()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Content> getContents();
+	EList<TextElement> getElements();
 
 } // Block

@@ -72,23 +72,13 @@ public class HtmlbsMMAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseContent(Content object) {
-			return createContentAdapter();
-		}
-
-		@Override
-		public Adapter caseParagraph(Paragraph object) {
-			return createParagraphAdapter();
+		public Adapter caseTextElement(TextElement object) {
+			return createTextElementAdapter();
 		}
 
 		@Override
 		public Adapter caseTitle(Title object) {
 			return createTitleAdapter();
-		}
-
-		@Override
-		public Adapter caseRedirectionURL(RedirectionURL object) {
-			return createRedirectionURLAdapter();
 		}
 
 		@Override
@@ -109,6 +99,11 @@ public class HtmlbsMMAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseBlock(Block object) {
 			return createBlockAdapter();
+		}
+
+		@Override
+		public Adapter caseText(Text object) {
+			return createTextAdapter();
 		}
 
 		@Override
@@ -145,30 +140,16 @@ public class HtmlbsMMAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link htmlbsMM.Content <em>Content</em>}'.
+	 * Creates a new adapter for an object of class '{@link htmlbsMM.TextElement <em>Text Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see htmlbsMM.Content
+	 * @see htmlbsMM.TextElement
 	 * @generated
 	 */
-	public Adapter createContentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link htmlbsMM.Paragraph <em>Paragraph</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see htmlbsMM.Paragraph
-	 * @generated
-	 */
-	public Adapter createParagraphAdapter() {
+	public Adapter createTextElementAdapter() {
 		return null;
 	}
 
@@ -183,20 +164,6 @@ public class HtmlbsMMAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTitleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link htmlbsMM.RedirectionURL <em>Redirection URL</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see htmlbsMM.RedirectionURL
-	 * @generated
-	 */
-	public Adapter createRedirectionURLAdapter() {
 		return null;
 	}
 
@@ -253,6 +220,20 @@ public class HtmlbsMMAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBlockAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link htmlbsMM.Text <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see htmlbsMM.Text
+	 * @generated
+	 */
+	public Adapter createTextAdapter() {
 		return null;
 	}
 

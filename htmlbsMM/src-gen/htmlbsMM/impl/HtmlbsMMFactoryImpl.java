@@ -58,8 +58,6 @@ public class HtmlbsMMFactoryImpl extends EFactoryImpl implements HtmlbsMMFactory
 		switch (eClass.getClassifierID()) {
 		case HtmlbsMMPackage.PAGE:
 			return createPage();
-		case HtmlbsMMPackage.PARAGRAPH:
-			return createParagraph();
 		case HtmlbsMMPackage.TITLE:
 			return createTitle();
 		case HtmlbsMMPackage.LINK:
@@ -68,8 +66,8 @@ public class HtmlbsMMFactoryImpl extends EFactoryImpl implements HtmlbsMMFactory
 			return createButton();
 		case HtmlbsMMPackage.SITE:
 			return createSite();
-		case HtmlbsMMPackage.BLOCK:
-			return createBlock();
+		case HtmlbsMMPackage.TEXT:
+			return createText();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -83,16 +81,6 @@ public class HtmlbsMMFactoryImpl extends EFactoryImpl implements HtmlbsMMFactory
 	public Page createPage() {
 		PageImpl page = new PageImpl();
 		return page;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Paragraph createParagraph() {
-		ParagraphImpl paragraph = new ParagraphImpl();
-		return paragraph;
 	}
 
 	/**
@@ -140,9 +128,9 @@ public class HtmlbsMMFactoryImpl extends EFactoryImpl implements HtmlbsMMFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Block createBlock() {
-		BlockImpl block = new BlockImpl();
-		return block;
+	public Text createText() {
+		TextImpl text = new TextImpl();
+		return text;
 	}
 
 	/**
