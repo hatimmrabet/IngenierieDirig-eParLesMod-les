@@ -21,10 +21,9 @@ mapping filMM::Faculte::faculte2Site() : htmlbsMM::Site {
 	};
 }
 
-
 /** Presentation **/
 
-mapping filMM::Presentation::presentation2Block() : htmlbsMM::Title {
+mapping filMM::Presentation::presentation2Block() : htmlbsMM::Title when { self.contenue->notEmpty() } {
 	level := 3;
 	text := "Presentation :";
 	elements += object Text {text := self.contenue }
@@ -39,7 +38,7 @@ mapping filMM::Niveau::niveau2Page() : htmlbsMM::Page {
 	blocks += self -> map formations2Block();
 }
 
-mapping filMM::Niveau::responsables2Block() : htmlbsMM::Title {
+mapping filMM::Niveau::responsables2Block() : htmlbsMM::Title when{ self.responsables ->notEmpty() } {
 	level := 4;
 	text := "Responsables :";
 	self.responsables -> forEach(responsable) {
@@ -51,14 +50,14 @@ mapping filMM::Niveau::formations2Block() : htmlbsMM::Title when {self.formation
 	level := 4;
 	text := "Formations :";
 	self.formations -> forEach(formation) {
-		elements += object Button {text := formation.name; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = formation.name)};
+		elements += object Button {text := formation.name; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = formation.name+" - "+formation.pseudo)};
 	}
 }
 
 /** Formation **/
 
 mapping filMM::Formation::formation2Page() : htmlbsMM::Page {
-	name := self.name;
+	name := self.name+" - "+self.pseudo;
 	blocks += self.presentation -> map presentation2Block();
 	blocks += self -> map responsables2Block();
 	blocks += self -> map enseignants2Block();
@@ -82,8 +81,8 @@ mapping filMM::Formation::responsables2Block() : htmlbsMM::Title when {self.resp
 mapping filMM::Formation::enseignants2Block() : htmlbsMM::Title when {self.enseignants -> notEmpty()} {
 	level := 4;
 	text := "Enseignants :";
-	self.responsables -> forEach(responsable) {
-		elements += object Text {text := responsable.name +" "+responsable.prenom }
+	self.enseignants -> forEach(enseignant) {
+		elements += object Text {text := enseignant.name +" "+enseignant.prenom }
 	}
 }
 
@@ -101,7 +100,7 @@ mapping filMM::Semestre::ueObligatoires2Block() : htmlbsMM::Title when {self.ues
 	level := 4;
 	text := "UE OBLIGATOIRES :";
 	self.uesobligatoires -> forEach(ue) {
-		elements += object Button {text := ue.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = ue.name)}
+		elements += object Button {text := ue.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = ue.name+" - "+ue.pseudo)}
 	}
 }
 
@@ -109,14 +108,14 @@ mapping filMM::Semestre::ueOptionnelles2Block() : htmlbsMM::Title when {self.ues
 	level := 4;
 	text := "UE OPTIONNELLES :";
 	self.uesoptionnelles -> forEach(ue) {
-		elements += object Button {text := ue.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = ue.name)}
+		elements += object Button {text := ue.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = ue.name+" - "+ue.pseudo)}
 	}
 }
 
 /** UE **/
 
 mapping filMM::UE::ue2Page() : htmlbsMM::Page {
-	name := self.name;
+	name := self.name +" - "+self.pseudo;
 	blocks += self.presentation -> map presentation2Block();
 	blocks += self -> map responsables2Block();
 	blocks += self -> map enseignants2Block();
@@ -134,8 +133,8 @@ mapping filMM::UE::responsables2Block() : htmlbsMM::Title when {self.responsable
 mapping filMM::UE::enseignants2Block() : htmlbsMM::Title when {self.enseignants -> notEmpty()} {
 	level := 4;
 	text := "Enseignants :";
-	self.responsables -> forEach(responsable) {
-		elements += object Text {text := responsable.name +" "+responsable.prenom }
+	self.enseignants -> forEach(enseignant) {
+		elements += object Text {text := enseignant.name +" "+enseignant.prenom }
 	}
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <htmlbsMM:Site xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:htmlbsMM="http://www.example.org/htmlbsMM" name="FIL - Faculté de sciences" redirections="//@pages.16 //@pages.18">
-  <pages name="Architecture des systèmes d'exploitation">
+  <pages name="Architecture des systèmes d'exploitation - ASE">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :">
       <elements xsi:type="htmlbsMM:Text" text="Gilles Grimaud"/>
     </blocks>
@@ -9,15 +9,15 @@
       <elements xsi:type="htmlbsMM:Link" text="TDM Mémoire Virtuelle" lien="https://www.fil.univ-lille1.fr/~marquet/ase/mmu/"/>
     </blocks>
   </pages>
-  <pages name="Bases de données relationnelles"/>
-  <pages name="Introduction à la Sécurité Informatique"/>
-  <pages name="Introduction aux IHM"/>
-  <pages name="Projet encadré"/>
-  <pages name="Initiation à la recherche"/>
-  <pages name="Projet Individuel"/>
-  <pages name="Conception Objet Avancée"/>
-  <pages name="Anglais"/>
-  <pages name="Ingénierie Des Modèles">
+  <pages name="Bases de données relationnelles - BDR"/>
+  <pages name="Introduction à la Sécurité Informatique - ISI"/>
+  <pages name="Introduction aux IHM - IIHM"/>
+  <pages name="Projet encadré - PJE"/>
+  <pages name="Initiation à la recherche - IIR"/>
+  <pages name="Projet Individuel - PJI"/>
+  <pages name="Conception Objet Avancée - COA"/>
+  <pages name="Anglais - ANG"/>
+  <pages name="Ingénierie Des Modèles - IDM">
     <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
       <elements xsi:type="htmlbsMM:Text" text="Cette unité se déroule au S1 de la FORMATION. Il s’agit d’une UE optionnelle de cette mention."/>
     </blocks>
@@ -26,14 +26,16 @@
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Enseignants :">
       <elements xsi:type="htmlbsMM:Text" text="Dumoulin Cedric"/>
+      <elements xsi:type="htmlbsMM:Text" text="Le Pallec Xavier "/>
+      <elements xsi:type="htmlbsMM:Text" text="Launay Michael "/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Documents :">
       <elements xsi:type="htmlbsMM:Link" text="Générer du code avec Acceleo partie 1- Créer un projet Acceleo (Ville) (2021)" lien="http://www.fil.univ-lille1.fr/~dumoulin/docs/assets/listDesVideos-ac36a387.mp4"/>
     </blocks>
   </pages>
-  <pages name="Compilation des logiciels"/>
-  <pages name="Architecture des systèmes d'exploitation avancée"/>
-  <pages name="Technologies pour les Applications Connectées">
+  <pages name="Compilation des logiciels - Compil"/>
+  <pages name="Architecture des systèmes d'exploitation avancée - ASA"/>
+  <pages name="Technologies pour les Applications Connectées - TAC">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :">
       <elements xsi:type="htmlbsMM:Text" text="Tarby  Jean-Claude "/>
     </blocks>
@@ -41,7 +43,7 @@
       <elements xsi:type="htmlbsMM:Link" text="Que va-t-on voir dans cette UE" lien="http://www.fil.univ-lille1.fr/~tarby/portailFIL/ue-M1S1-TAC/documents/2021-2022/cours/1.contenu_UE.pdf"/>
     </blocks>
   </pages>
-  <pages name="Algorithmique et complexité">
+  <pages name="Algorithmique et complexité - ACT">
     <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
       <elements xsi:type="htmlbsMM:Text" text="Le but de l'algorithmique peut être résumé en &quot; trouver un &quot;bon&quot; algorithme &quot; pour un problème donné."/>
     </blocks>
@@ -51,12 +53,15 @@
       <elements xsi:type="htmlbsMM:Text" text="Voge Marie-Émilie"/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Enseignants :">
+      <elements xsi:type="htmlbsMM:Text" text="Berveglieri N."/>
+      <elements xsi:type="htmlbsMM:Text" text="Bilasco M."/>
       <elements xsi:type="htmlbsMM:Text" text="Derbel Bilel "/>
+      <elements xsi:type="htmlbsMM:Text" text="Fortin P."/>
       <elements xsi:type="htmlbsMM:Text" text="Tison Sophie "/>
       <elements xsi:type="htmlbsMM:Text" text="Voge Marie-Émilie"/>
     </blocks>
   </pages>
-  <pages name="Génie Logiciel">
+  <pages name="Génie Logiciel - GL">
     <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
       <elements xsi:type="htmlbsMM:Text" text="Le parcours Génie Logiciel s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."/>
     </blocks>
@@ -64,7 +69,9 @@
       <elements xsi:type="htmlbsMM:Text" text="Launay Michael "/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Enseignants :">
-      <elements xsi:type="htmlbsMM:Text" text="Launay Michael "/>
+      <elements xsi:type="htmlbsMM:Text" text="Quinton Clément "/>
+      <elements xsi:type="htmlbsMM:Text" text="Jean-Claude Tarby"/>
+      <elements xsi:type="htmlbsMM:Text" text="Dumoulin Cedric"/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Documents :">
       <elements xsi:type="htmlbsMM:Link" text="Slides de rentrée 2021/2022 M1" lien="https://bit.ly/m1s1-rentree-2021"/>
@@ -91,7 +98,7 @@
       <elements xsi:type="htmlbsMM:Button" text="ASA" page="//@pages.11"/>
     </blocks>
   </pages>
-  <pages name="E-Services">
+  <pages name="E-Services - ES">
     <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
       <elements xsi:type="htmlbsMM:Text" text="Le parcours E-Services s’articule autour de la conception et du développement des services numériques, c’est-à-dire des services accessibles au travers des moyens de communication numérique - notamment l’Internet – mais également au travers de tous les équipements liés à l’économie digitale : smartphones, tablettes, interfaces multi-touch, interfaces vocales, etc."/>
     </blocks>
@@ -132,7 +139,7 @@
       <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
     </blocks>
   </pages>
-  <pages name="LICENCE  2, parcours informatique">
+  <pages name="LICENCE  2, parcours informatique - L2INF">
     <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
       <elements xsi:type="htmlbsMM:Text" text="L2 informatique, parcours classique"/>
     </blocks>
@@ -146,7 +153,6 @@
     <blocks xsi:type="htmlbsMM:Title" level="3" text="Presentation :">
       <elements xsi:type="htmlbsMM:Text" text="La formation proposée par la licence d'informatique de l'Université Lille1 permet l'apprentissage des aspects tant théoriques qu'appliqués de l'informatique. Les titulaires de cette licence disposent de solides connaissances qui couvrent un large spectre de la discipline : divers paradigmes de programmation, bases de données, algorithmique, réseaux, etc."/>
     </blocks>
-    <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :"/>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Formations :">
       <elements xsi:type="htmlbsMM:Button" text="LICENCE  2, parcours informatique" page="//@pages.17"/>
     </blocks>
