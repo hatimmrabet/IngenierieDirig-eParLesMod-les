@@ -304,9 +304,9 @@
         <source xsi:type="ocl.ecore:VariableExp" name="lien" referredVariable="/0/generateTextElement.2/lien">
           <eType xsi:type="ecore:EClass" href="http://www.example.org/htmlbsMM#//Link"/>
         </source>
-        <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/htmlbsMM#//TextElement/text"/>
+        <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/htmlbsMM#//Link/lien"/>
       </body>
-      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".html&quot;>"/>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;>"/>
       <body xsi:type="ocl.ecore:PropertyCallExp">
         <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         <source xsi:type="ocl.ecore:VariableExp" name="lien" referredVariable="/0/generateTextElement.2/lien">
@@ -1362,7 +1362,7 @@
     </eAnnotations>
     <eAnnotations source="positions.113" references="/0/generateTextElement.2">
       <details key="start" value="2860"/>
-      <details key="end" value="2993"/>
+      <details key="end" value="2988"/>
       <details key="line" value="94"/>
     </eAnnotations>
     <eAnnotations source="positions.114" references="/0/generateTextElement.2/%">
@@ -1382,22 +1382,22 @@
     </eAnnotations>
     <eAnnotations source="positions.117" references="/0/generateTextElement.2/%.2">
       <details key="start" value="2954"/>
-      <details key="end" value="2961"/>
+      <details key="end" value="2956"/>
       <details key="line" value="95"/>
     </eAnnotations>
     <eAnnotations source="positions.118" references="/0/generateTextElement.2/%.3">
-      <details key="start" value="2962"/>
-      <details key="end" value="2971"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.119" references="/0/generateTextElement.2/%.3/lien">
-      <details key="start" value="2962"/>
+      <details key="start" value="2957"/>
       <details key="end" value="2966"/>
       <details key="line" value="0"/>
     </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/generateTextElement.2/%.3/lien">
+      <details key="start" value="2957"/>
+      <details key="end" value="2961"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
     <eAnnotations source="positions.120" references="/0/generateTextElement.2/%.4">
-      <details key="start" value="2973"/>
-      <details key="end" value="2981"/>
+      <details key="start" value="2968"/>
+      <details key="end" value="2976"/>
       <details key="line" value="95"/>
     </eAnnotations>
     <eAnnotations source="positions.121" references="/0/generateTextElement.2/lien">
@@ -1406,58 +1406,58 @@
       <details key="line" value="94"/>
     </eAnnotations>
     <eAnnotations source="positions.122" references="/0/generateTextElement.3">
-      <details key="start" value="2994"/>
-      <details key="end" value="3174"/>
+      <details key="start" value="2989"/>
+      <details key="end" value="3169"/>
       <details key="line" value="97"/>
     </eAnnotations>
     <eAnnotations source="positions.123" references="/0/generateTextElement.3/%">
-      <details key="start" value="3049"/>
-      <details key="end" value="3050"/>
+      <details key="start" value="3044"/>
+      <details key="end" value="3045"/>
       <details key="line" value="98"/>
     </eAnnotations>
     <eAnnotations source="positions.124" references="/0/generateTextElement.3/%.1">
-      <details key="start" value="3051"/>
-      <details key="end" value="3106"/>
+      <details key="start" value="3046"/>
+      <details key="end" value="3101"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.125" references="/0/generateTextElement.3/%.2">
-      <details key="start" value="3109"/>
-      <details key="end" value="3125"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.126" references="/0/generateTextElement.3/%.2/%">
-      <details key="start" value="3109"/>
+      <details key="start" value="3104"/>
       <details key="end" value="3120"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.127" references="/0/generateTextElement.3/%.2/%/bouton">
-      <details key="start" value="3109"/>
+    <eAnnotations source="positions.126" references="/0/generateTextElement.3/%.2/%">
+      <details key="start" value="3104"/>
       <details key="end" value="3115"/>
       <details key="line" value="0"/>
     </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/generateTextElement.3/%.2/%/bouton">
+      <details key="start" value="3104"/>
+      <details key="end" value="3110"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
     <eAnnotations source="positions.128" references="/0/generateTextElement.3/%.3">
-      <details key="start" value="3128"/>
-      <details key="end" value="3137"/>
+      <details key="start" value="3123"/>
+      <details key="end" value="3132"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.129" references="/0/generateTextElement.3/%.4">
-      <details key="start" value="3140"/>
-      <details key="end" value="3151"/>
-      <details key="line" value="0"/>
-    </eAnnotations>
-    <eAnnotations source="positions.130" references="/0/generateTextElement.3/%.4/bouton">
-      <details key="start" value="3140"/>
+      <details key="start" value="3135"/>
       <details key="end" value="3146"/>
       <details key="line" value="0"/>
     </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/generateTextElement.3/%.4/bouton">
+      <details key="start" value="3135"/>
+      <details key="end" value="3141"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
     <eAnnotations source="positions.131" references="/0/generateTextElement.3/%.5">
-      <details key="start" value="3154"/>
-      <details key="end" value="3160"/>
+      <details key="start" value="3149"/>
+      <details key="end" value="3155"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.132" references="/0/generateTextElement.3/bouton">
-      <details key="start" value="3031"/>
-      <details key="end" value="3046"/>
+      <details key="start" value="3026"/>
+      <details key="end" value="3041"/>
       <details key="line" value="97"/>
     </eAnnotations>
   </ecore:EAnnotation>

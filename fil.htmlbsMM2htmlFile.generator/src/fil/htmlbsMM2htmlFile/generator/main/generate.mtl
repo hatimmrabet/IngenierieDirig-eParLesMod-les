@@ -92,7 +92,7 @@ ERREUR
 	['<p class="card-text">'/][text.text/]['</p>'/]
 [/template]
 [template public generateTextElement(lien : Link)]
-	<p class="card-text"><a href="[lien.text/].html">[lien.text/]</a></p>
+	<p class="card-text"><a href="[lien.lien/]">[lien.text/]</a></p>
 [/template]
 [template public generateTextElement(bouton : Button)]
 	['<a class="btn btn-primary mb-3"  role="button" href="'/][bouton.page.name/]['.html">'/][bouton.text/]['</a>'/]
