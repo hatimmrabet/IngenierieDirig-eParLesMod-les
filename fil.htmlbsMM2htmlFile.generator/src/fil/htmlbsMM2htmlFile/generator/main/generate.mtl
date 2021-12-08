@@ -79,21 +79,23 @@ ERREUR
 [/template]
 
 [template public generateBlock(block : Title)]
+<div class = "p-3">
 	['<h'/][block.level/][' class="card-title">'/][block.text/]['</h'/][block.level/]['>'/]
 	[for (elem : TextElement| block.elements)]
 		[generateTextElement(elem)/]
 	[/for]
+</div>
 [/template]
 
 [template public generateTextElement(text : TextElement)]
 	Erreur
 [/template]
 [template public generateTextElement(text : Text)]
-	['<p class="card-text">'/][text.text/]['</p>'/]
+	['<p class="card-text m-0">'/][text.text/]['</p>'/]
 [/template]
 [template public generateTextElement(lien : Link)]
-	<p class="card-text"><a href="[lien.lien/]">[lien.text/]</a></p>
+	<p class="card-text m-0"><a href="[lien.lien/]">[lien.text/]</a></p>
 [/template]
 [template public generateTextElement(bouton : Button)]
-	['<a class="btn btn-primary mb-3"  role="button" href="'/][bouton.page.name/]['.html">'/][bouton.text/]['</a>'/]
+	['<a class="btn btn-primary m-0"  role="button" href="'/][bouton.page.name/]['.html">'/][bouton.text/]['</a>'/]
 [/template]

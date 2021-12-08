@@ -247,9 +247,9 @@ Gilles Grimaud
  
 ####  BDR - Bases de données relationnelles
  
-#  Licence mention Informatique - LINF
+#  Licence 3 mention Informatique - LINF
  
-##  LICENCE  2, parcours informatique - L2INF
+##  parcours internationale - L2INF
  
 L2 informatique, parcours classique
 

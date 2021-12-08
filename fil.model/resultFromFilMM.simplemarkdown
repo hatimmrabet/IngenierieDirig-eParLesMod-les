@@ -241,10 +241,10 @@
     <elements xsi:type="simplemarkdown:Text" text="BDR - Bases de données relationnelles"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="1">
-    <elements xsi:type="simplemarkdown:Text" text="Licence mention Informatique - LINF"/>
+    <elements xsi:type="simplemarkdown:Text" text="Licence 3 mention Informatique - LINF"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="2">
-    <elements xsi:type="simplemarkdown:Text" text="LICENCE  2, parcours informatique - L2INF"/>
+    <elements xsi:type="simplemarkdown:Text" text="parcours internationale - L2INF"/>
   </contents>
   <contents xsi:type="simplemarkdown:Paragraph">
     <elements xsi:type="simplemarkdown:Text" text="L2 informatique, parcours classique"/>

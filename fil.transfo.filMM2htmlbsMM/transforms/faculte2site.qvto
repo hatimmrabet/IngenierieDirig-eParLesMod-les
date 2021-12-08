@@ -16,6 +16,9 @@ mapping filMM::Faculte::faculte2Site() : htmlbsMM::Site {
 		niveau.formations -> forEach(formation) {
 			pages += formation -> map formation2Page();
 		};
+		niveau.ues -> forEach(ue) {
+			 html.objectsOfType(Page)->selectOne(p: Page | p.name = ue.name+" - "+ue.pseudo).blocks += ue -> map formationsDeUe2Block();
+		};
 		pages += niveau -> map niveau2Page();
 		redirections += pages->select(p: Page | p.name = niveau.name);
 	};
@@ -36,6 +39,7 @@ mapping filMM::Niveau::niveau2Page() : htmlbsMM::Page {
 	blocks += self.presentation -> map presentation2Block();
 	blocks += self -> map responsables2Block();
 	blocks += self -> map formations2Block();
+	blocks += self -> map ues2Block();
 }
 
 mapping filMM::Niveau::responsables2Block() : htmlbsMM::Title when{ self.responsables ->notEmpty() } {
@@ -54,6 +58,19 @@ mapping filMM::Niveau::formations2Block() : htmlbsMM::Title when {self.formation
 	}
 }
 
+mapping filMM::Niveau::ues2Block() : htmlbsMM::Title {
+	level := 4;
+	text := "Liste des UEs :";
+	if (self.ues->notEmpty())
+	{
+		self.ues -> forEach(ue){
+			elements += object Button {text := ue.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = ue.name+" - "+ue.pseudo)}
+		};
+	}else{
+		elements += object Text {text := "Pas d'Ue pour cette formations" };
+	};
+}
+
 /** Formation **/
 
 mapping filMM::Formation::formation2Page() : htmlbsMM::Page {
@@ -62,10 +79,10 @@ mapping filMM::Formation::formation2Page() : htmlbsMM::Page {
 	blocks += self -> map responsables2Block();
 	blocks += self -> map enseignants2Block();
 	blocks += self -> map documents2Block();
-	blocks += object Title {level := 5; text := "S1"};
+	blocks += self -> map semestre1Block();
 	blocks += self.s1 -> map ueObligatoires2Block();
 	blocks += self.s1 -> map ueOptionnelles2Block();
-	blocks += object Title {level := 5; text := "S2"};
+	blocks += self -> map semestre2Block();
 	blocks += self.s2 -> map ueObligatoires2Block();
 	blocks += self.s2 -> map ueOptionnelles2Block();
 }
@@ -94,19 +111,40 @@ mapping filMM::Formation::documents2Block() : htmlbsMM::Title when {self.documen
 	}
 }
 
+mapping filMM::Formation::semestre1Block() : htmlbsMM::Title {
+	level := 3;
+	text := "Semestre 1 :";
+	if(self.s1->isEmpty()){
+		elements += object Text {text := "Pas d'informations pour le moment !" }
+	}else{
+		elements += object Text {text := "Les cours du premier semestre." }
+	}
+}
+
+mapping filMM::Formation::semestre2Block() : htmlbsMM::Title {
+	level := 3;
+	text := "Semestre 2 :";
+	if(self.s2->isEmpty()){
+		elements += object Text {text := "Pas d'informations pour le moment !" }
+	}else{
+		elements += object Text {text := "Les cours du deuxieme semestre." }
+	}
+}
+
+
 /** SEMESTRE **/
 
 mapping filMM::Semestre::ueObligatoires2Block() : htmlbsMM::Title when {self.uesobligatoires -> notEmpty()} {
-	level := 4;
-	text := "UE OBLIGATOIRES :";
+	level := 5;
+	text := "UE obligatoires :";
 	self.uesobligatoires -> forEach(ue) {
 		elements += object Button {text := ue.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = ue.name+" - "+ue.pseudo)}
 	}
 }
 
 mapping filMM::Semestre::ueOptionnelles2Block() : htmlbsMM::Title when {self.uesoptionnelles -> notEmpty()} {
-	level := 4;
-	text := "UE OPTIONNELLES :";
+	level := 5;
+	text := "UE optionnelles :";
 	self.uesoptionnelles -> forEach(ue) {
 		elements += object Button {text := ue.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = ue.name+" - "+ue.pseudo)}
 	}
@@ -143,5 +181,41 @@ mapping filMM::UE::documents2Block() : htmlbsMM::Title when {self.documents -> n
 	text := "Documents :";
 	self.documents -> forEach(doc) {
 		elements += object Link {text := doc.name; lien := doc.lien}
+	}
+}
+
+mapping filMM::UE::formationsDeUe2Block() : htmlbsMM::Title {
+	level := 4;
+	text := "Les formations de cette UE :";
+	var formations : List(Formation) := List{};
+	fil.objectsOfType(Formation)->forEach(formation){
+		formation.s1.uesoptionnelles -> forEach(ue){
+			if(ue = self)
+			{
+				formations->add(formation);
+			}
+		};
+		formation.s1.uesobligatoires -> forEach(ue){
+			if(ue = self)
+			{
+				formations->add(formation);
+			}
+		};
+		formation.s2.uesoptionnelles -> forEach(ue){
+			if(ue = self)
+			{
+				formations->add(formation);
+			}
+		};
+		formation.s2.uesobligatoires -> forEach(ue){
+			if(ue = self)
+			{
+				formations->add(formation);
+			
+			}
+		};
+	};
+	formations->asSet()->forEach(formation){
+		elements += object Button {text := formation.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = formation.name+" - "+formation.pseudo)}
 	}
 }
