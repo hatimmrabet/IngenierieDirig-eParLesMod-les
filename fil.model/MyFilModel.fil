@@ -4,7 +4,7 @@
     <formations name="Génie Logiciel" pseudo="GL" responsables="//@intervenants.10" enseignants="//@intervenants.11 //@intervenants.12 //@intervenants.0">
       <presentation contenue="Le parcours Génie Logiciel s’articule autour de la conception et du développement des logiciels agiles, c'est-à-dire des applications dont les fonctionnalités sont en parfaite adéquation avec les besoins des utilisateurs. Le parcours Génie Logiciel allie donc méthodes, concepts et technologies pour favoriser l’émergence d’applications innovantes sans jamais perdre de vue l’efficacité. Les domaines applicatifs étudiés s’étendent depuis l’informatique embarquée jusqu’aux grands systèmes répartis."/>
       <s1 uesoptionnelles="//@niveaux.0/@ues.12" uesobligatoires="//@niveaux.0/@ues.13 //@niveaux.0/@ues.9 //@niveaux.0/@ues.8 //@niveaux.0/@ues.5 //@niveaux.0/@ues.4"/>
-      <s2 uesoptionnelles="//@niveaux.0/@ues.9" uesobligatoires="//@niveaux.0/@ues.0 //@niveaux.0/@ues.2 //@niveaux.0/@ues.6 //@niveaux.0/@ues.7 //@niveaux.0/@ues.10 //@niveaux.0/@ues.11"/>
+      <s2 uesobligatoires="//@niveaux.0/@ues.0 //@niveaux.0/@ues.2 //@niveaux.0/@ues.6 //@niveaux.0/@ues.7 //@niveaux.0/@ues.10 //@niveaux.0/@ues.11"/>
       <documents xsi:type="fIL:Fichier" name="Slides de rentrée 2021/2022 M1" lien="https://bit.ly/m1s1-rentree-2021"/>
       <documents xsi:type="fIL:Fichier" name="Formulaire d’inscription pédagogique" lien="https://bit.ly/m1s1-inscription-2021"/>
     </formations>

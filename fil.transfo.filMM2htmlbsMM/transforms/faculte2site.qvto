@@ -67,7 +67,7 @@ mapping filMM::Niveau::ues2Block() : htmlbsMM::Title {
 			elements += object Button {text := ue.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = ue.name+" - "+ue.pseudo)}
 		};
 	}else{
-		elements += object Text {text := "Pas d'Ue pour cette formations" };
+		elements += object Text {text := "Pas d'UE pour cette formation" };
 	};
 }
 
@@ -186,7 +186,7 @@ mapping filMM::UE::documents2Block() : htmlbsMM::Title when {self.documents -> n
 
 mapping filMM::UE::formationsDeUe2Block() : htmlbsMM::Title {
 	level := 4;
-	text := "Les formations de cette UE :";
+	text := "Les formations qui enseignent cette UE :";
 	var formations : List(Formation) := List{};
 	fil.objectsOfType(Formation)->forEach(formation){
 		formation.s1.uesoptionnelles -> forEach(ue){
@@ -216,6 +216,6 @@ mapping filMM::UE::formationsDeUe2Block() : htmlbsMM::Title {
 		};
 	};
 	formations->asSet()->forEach(formation){
-		elements += object Button {text := formation.pseudo; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = formation.name+" - "+formation.pseudo)}
+		elements += object Button {text := formation.name; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = formation.name+" - "+formation.pseudo)}
 	}
 }
