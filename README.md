@@ -1,5 +1,12 @@
 # Présentation du projet :
 
+**Ce projet est réalisé par :**
+- M'RABET EL KHOMSSI Hatim
+- Malick Sow
+  
+**Et encadré par:**
+- Dumoulin Cedric
+  
 Le projet consiste à présenter un portail pédagogique de deux manières :
 
 - En format linéaire, sous forme d’un seul fichier markdown qui contiendra toutes les informations des niveaux, parcours et des unités d’enseignement.
@@ -22,6 +29,12 @@ A partir de ce métamodèle, on a créé un model fil qui repend à ce qui est d
 Pour représenter notre model fil en fichier markdown, on a commencé par transformer notre model fil en model de type simplemarkdown, et qui va contenir toutes les données qu’on avait sur le model fil.
 
 Après cette étape, on passe à la génération d’un fichier markdown à partir du model simplemarkdown qu’on vient d’avoir, et comme ça on obtient notre fichier markdown.
+
+## Syntaxe textuelle :
+
+A partir de notre métamodèle, on a généré une grammaire et on l'a modifié pour le rendre plus facile à utiliser. 
+
+Avec cette grammaire on a créé un fichier xText qui a le même rôle que le fil model, sauf que, la représentation des données se fait d'une manière textuelle, et qu'on peut l'utiliser aussi pour générer un fichier mardown à partir de ses données ou un site web aussi.
 
 ## Génération du site web :
 
@@ -52,13 +65,6 @@ Notre projet ne permet pas de modifier, par exemple, la description et la prése
 Les améliorations qui sont possibles c’est au niveau des documents, et c’est d’ajouter plus de type de documents comme des images, vidéos… et de gérer comment les afficher soit sur le fichier markdown ou sur le site web. 
 
 A part cela, il y a aussi pas mal d’attribut qu’on peut ajouter dans certaines classes pour améliorer notre site, et surtout pour les intervenants. Et par la suite, on peut créer une page pour eux afin d’avoir un profile pour chaque professeur.
-
-**Ce projet est réalisé par :**
-- M'RABET EL KHOMSSI Hatim
-- Malick Sow
-  
-**Et encadré par:**
-- Dumoulin Cedric
   
 
 # Glossaire:
