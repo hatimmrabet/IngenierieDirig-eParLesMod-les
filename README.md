@@ -1,3 +1,8 @@
+# Présentation du projet
+
+Notre projet permet de generer, à partir d'un model fil qui est conforme à notre metamodel qu'on a developpé, de 
+un fichier de type Markdown () et un site web qui vont contenir toutes les informations qu'on a dans le Model, en representant ce contenue de maniere lineaire dans le fichier markdown, et sous forme de plusieurs sites web ...
+
 # Glossaire:
 
 **Faculté:** contient un nom pour la designé des autres Facultés.
