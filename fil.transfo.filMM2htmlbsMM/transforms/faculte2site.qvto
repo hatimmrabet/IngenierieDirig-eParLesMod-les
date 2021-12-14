@@ -215,7 +215,17 @@ mapping filMM::UE::formationsDeUe2Block() : htmlbsMM::Title {
 			}
 		};
 	};
-	formations->asSet()->forEach(formation){
-		elements += object Button {text := formation.name; page := html.objectsOfType(Page)->selectOne(p: Page | p.name = formation.name+" - "+formation.pseudo)}
+	if ( formations->asSet()->notEmpty())
+	{
+		formations->asSet()->forEach(formation){
+			elements += object Button {
+				text := formation.name;
+				page := html.objectsOfType(Page)->selectOne(p: Page | p.name = formation.name+" - "+formation.pseudo)
+				}
+		}
+	}
+	else
+	{
+		elements += object Text {text := "Cette UE n'est utilisé dans aucun parcours." }
 	}
 }

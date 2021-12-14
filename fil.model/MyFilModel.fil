@@ -38,6 +38,7 @@
     <ues name="Algorithmique et complexité" pseudo="ACT" responsables="//@intervenants.8 //@intervenants.7 //@intervenants.1" enseignants="//@intervenants.2 //@intervenants.3 //@intervenants.8 //@intervenants.5 //@intervenants.7 //@intervenants.1">
       <presentation contenue="Le but de l'algorithmique peut être résumé en &quot; trouver un &quot;bon&quot; algorithme &quot; pour un problème donné."/>
     </ues>
+    <ues name="Ingenierie du systeme informatique" pseudo="ISI"/>
   </niveaux>
   <niveaux name="Licence 3 mention Informatique" pseudo="LINF">
     <formations name="parcours internationale" pseudo="L2INF">

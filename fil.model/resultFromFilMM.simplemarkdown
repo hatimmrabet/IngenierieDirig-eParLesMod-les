@@ -127,26 +127,6 @@
   <contents xsi:type="simplemarkdown:Title" level="4">
     <elements xsi:type="simplemarkdown:Text" text="ASA - Architecture des systèmes d'exploitation avancée"/>
   </contents>
-  <contents xsi:type="simplemarkdown:Title" level="3">
-    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OPTIONNELLES :"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Title" level="4">
-    <elements xsi:type="simplemarkdown:Text" text="IDM - Ingénierie Des Modèles"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Paragraph">
-    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Responsables :"/>
-    <elements xsi:type="simplemarkdown:Text" text="Dumoulin Cedric"/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Paragraph">
-    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Enseignants :"/>
-    <elements xsi:type="simplemarkdown:Text" text="Dumoulin Cedric"/>
-    <elements xsi:type="simplemarkdown:Text" text="Le Pallec Xavier "/>
-    <elements xsi:type="simplemarkdown:Text" text="Launay Michael "/>
-  </contents>
-  <contents xsi:type="simplemarkdown:Paragraph">
-    <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
-    <elements xsi:type="simplemarkdown:Link" url="http://www.fil.univ-lille1.fr/~dumoulin/docs/assets/listDesVideos-ac36a387.mp4" title="Générer du code avec Acceleo partie 1- Créer un projet Acceleo (Ville) (2021)"/>
-  </contents>
   <contents xsi:type="simplemarkdown:Title" level="2">
     <elements xsi:type="simplemarkdown:Text" text="E-Services - ES"/>
   </contents>
@@ -203,6 +183,9 @@
   <contents xsi:type="simplemarkdown:Paragraph">
     <elements xsi:type="simplemarkdown:StrongEmphasis" text="Documents :"/>
     <elements xsi:type="simplemarkdown:Link" url="http://www.fil.univ-lille1.fr/~tarby/portailFIL/ue-M1S1-TAC/documents/2021-2022/cours/1.contenu_UE.pdf" title="Que va-t-on voir dans cette UE"/>
+  </contents>
+  <contents xsi:type="simplemarkdown:Title" level="3">
+    <elements xsi:type="simplemarkdown:StrongEmphasis" text="UES OPTIONNELLES :"/>
   </contents>
   <contents xsi:type="simplemarkdown:Title" level="4">
     <elements xsi:type="simplemarkdown:Text" text="IDM - Ingénierie Des Modèles"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<htmlbsMM:Site xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:htmlbsMM="http://www.example.org/htmlbsMM" name="FIL - Faculté de sciences" redirections="//@pages.16 //@pages.18">
+<htmlbsMM:Site xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:htmlbsMM="http://www.example.org/htmlbsMM" name="FIL - Faculté de sciences" redirections="//@pages.17 //@pages.19">
   <pages name="Architecture des systèmes d'exploitation - ASE">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Responsables :">
       <elements xsi:type="htmlbsMM:Text" text="Gilles Grimaud"/>
@@ -9,53 +9,53 @@
       <elements xsi:type="htmlbsMM:Link" text="TDM Mémoire Virtuelle" lien="https://www.fil.univ-lille1.fr/~marquet/ase/mmu/"/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
   </pages>
   <pages name="Bases de données relationnelles - BDR">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
   </pages>
   <pages name="Introduction à la Sécurité Informatique - ISI">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
   </pages>
   <pages name="Introduction aux IHM - IIHM">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
   </pages>
   <pages name="Projet encadré - PJE">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
   </pages>
   <pages name="Initiation à la recherche - IIR">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
   </pages>
   <pages name="Projet Individuel - PJI">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
   </pages>
   <pages name="Conception Objet Avancée - COA">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
     </blocks>
   </pages>
   <pages name="Anglais - ANG">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
   </pages>
   <pages name="Ingénierie Des Modèles - IDM">
@@ -74,19 +74,19 @@
       <elements xsi:type="htmlbsMM:Link" text="Générer du code avec Acceleo partie 1- Créer un projet Acceleo (Ville) (2021)" lien="http://www.fil.univ-lille1.fr/~dumoulin/docs/assets/listDesVideos-ac36a387.mp4"/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
   </pages>
   <pages name="Compilation des logiciels - Compil">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
     </blocks>
   </pages>
   <pages name="Architecture des systèmes d'exploitation avancée - ASA">
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
   </pages>
   <pages name="Technologies pour les Applications Connectées - TAC">
@@ -97,8 +97,8 @@
       <elements xsi:type="htmlbsMM:Link" text="Que va-t-on voir dans cette UE" lien="http://www.fil.univ-lille1.fr/~tarby/portailFIL/ue-M1S1-TAC/documents/2021-2022/cours/1.contenu_UE.pdf"/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
   </pages>
   <pages name="Algorithmique et complexité - ACT">
@@ -119,8 +119,13 @@
       <elements xsi:type="htmlbsMM:Text" text="Voge Marie-Émilie"/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
+    </blocks>
+  </pages>
+  <pages name="Ingenierie du systeme informatique - ISI">
+    <blocks xsi:type="htmlbsMM:Title" level="4" text="Les formations qui enseignent cette UE :">
+      <elements xsi:type="htmlbsMM:Text" text="Cette UE n'est utilisé dans aucun parcours."/>
     </blocks>
   </pages>
   <pages name="Génie Logiciel - GL">
@@ -205,8 +210,8 @@
       <elements xsi:type="htmlbsMM:Text" text="Launay Michael "/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Formations :">
-      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.14"/>
-      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="Génie Logiciel" page="//@pages.15"/>
+      <elements xsi:type="htmlbsMM:Button" text="E-Services" page="//@pages.16"/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Liste des UEs :">
       <elements xsi:type="htmlbsMM:Button" text="ASE" page="//@pages.0"/>
@@ -223,6 +228,7 @@
       <elements xsi:type="htmlbsMM:Button" text="ASA" page="//@pages.11"/>
       <elements xsi:type="htmlbsMM:Button" text="TAC" page="//@pages.12"/>
       <elements xsi:type="htmlbsMM:Button" text="ACT" page="//@pages.13"/>
+      <elements xsi:type="htmlbsMM:Button" text="ISI" page="//@pages.14"/>
     </blocks>
   </pages>
   <pages name="parcours internationale - L2INF">
@@ -244,7 +250,7 @@
       <elements xsi:type="htmlbsMM:Text" text="La formation proposée par la licence d'informatique de l'Université Lille1 permet l'apprentissage des aspects tant théoriques qu'appliqués de l'informatique. Les titulaires de cette licence disposent de solides connaissances qui couvrent un large spectre de la discipline : divers paradigmes de programmation, bases de données, algorithmique, réseaux, etc."/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Formations :">
-      <elements xsi:type="htmlbsMM:Button" text="parcours internationale" page="//@pages.17"/>
+      <elements xsi:type="htmlbsMM:Button" text="parcours internationale" page="//@pages.18"/>
     </blocks>
     <blocks xsi:type="htmlbsMM:Title" level="4" text="Liste des UEs :">
       <elements xsi:type="htmlbsMM:Text" text="Pas d'UE pour cette formation"/>
