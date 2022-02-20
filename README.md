@@ -2,7 +2,6 @@
 
 **Ce projet est réalisé par :**
 - M'RABET EL KHOMSSI Hatim
-- Malick Sow
   
 **Et encadré par:**
 - Dumoulin Cedric
@@ -16,7 +15,7 @@ Le projet consiste à présenter un portail pédagogique de deux manières :
 
 Pour présenter ce portail d’une manière complète, on a proposé le métamodèle suivant :
 
-![filMM](images/filMM.jpg "filMM")
+![filMM](docs/filMM.jpg "filMM")
 
 A partir de ce métamodèle, on peut remarquer qu’il contient la représentation du portail d’une faculté. Une faculté est composée de plusieurs niveaux et intervenants. Chaque niveau est composé d’une présentation, des responsables, des enseignants, des enseignants et de deux semestres.
 
@@ -40,7 +39,7 @@ Avec cette grammaire on a créé un fichier xText qui a le même rôle que le fi
 
 Pour la génération du site web, on va suivre les mêmes étapes qu’on a fait pour le fichier markdown, mais on va d’abord commencer par modéliser un site web en construisant un htmlbs métamodèle.
 
-![htmlbsMM](images/htmlbsMM.jpg "htmlbsMM")
+![htmlbsMM](docs/htmlbsMM.jpg "htmlbsMM")
 
 Dans notre htmlbs métamodèle, on trouve une classe site qui sera la page d’accueil de notre portail, ce site est composé de plusieurs pages, qui sont des pages de présentation d’un niveau, une formation ou une UE. La page Site fait référence aux premiers pages qu’on va utiliser, les pages des niveaux.
 
